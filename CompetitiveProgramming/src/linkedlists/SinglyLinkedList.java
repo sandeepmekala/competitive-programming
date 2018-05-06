@@ -3,7 +3,7 @@ package linkedlists;
 public class SinglyLinkedList {
 
 	private Node head;
-	SinglyLinkedList(){
+	public SinglyLinkedList(){
 		head = null;
 	}
 	
