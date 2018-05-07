@@ -12,7 +12,6 @@ public class QueueUsingArray {
 		}
 		if(front == -1 && rear == -1){
 			front = rear = 0;
-			elements[rear] = data;
 		}else{
 			rear++;
 		}
