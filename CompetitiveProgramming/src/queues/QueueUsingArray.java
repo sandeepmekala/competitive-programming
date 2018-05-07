@@ -1,5 +1,7 @@
 package queues;
 
+import java.util.Arrays;
+
 public class QueueUsingArray {
 	private int max_size = 10;
 	int elements[] = new int[max_size];
@@ -13,7 +15,7 @@ public class QueueUsingArray {
 		if(front == -1 && rear == -1){
 			front = rear = 0;
 		}else{
-			rear++;
+			rear = (rear + 1)%max_size;;
 		}
 		elements[rear] = data;
 	}
@@ -26,11 +28,11 @@ public class QueueUsingArray {
 		if(rear == front){
 			rear = front = -1;
 		}else{
-			front = front + 1;
+			front = (front + 1)%max_size;
 		}
 		return data;
 	}
-	public int peek(){
+	public int front(){
 		if(isEmpty()){
 			System.out.println("queue is empty");
 			return -1;
@@ -44,7 +46,7 @@ public class QueueUsingArray {
 		return false;
 	}
 	private boolean isFull(){
-		if(rear == max_size - 1){
+		if((rear+1)%max_size == front){
 			return true;
 		}
 		return false;
@@ -54,8 +56,6 @@ public class QueueUsingArray {
 			System.out.println("queue is empty");
 			return;
 		}
-		for(int i=front; i<=rear; i++){
-			System.out.print(elements[i]+" ");
-		}
+		System.out.print(Arrays.toString(elements));
 	}
 }
