@@ -13,10 +13,13 @@ public class BSTMain {
 		bst.insert(15);
 		bst.insert(3);
 		
-		bst.delete(4);
+		System.out.println("inorder:");
+		bst.inorderPrint();
 		
-		System.out.println("search 30:");
+		System.out.println("\nsearch 30:");
 		System.out.println(bst.search(30));
+		
+		/*bst.delete(4);
 		System.out.println();
 		System.out.println("inorder:");
 		bst.inorderPrint();
@@ -35,7 +38,7 @@ public class BSTMain {
 		System.out.println();
 		System.out.println(bst.pathAsArrayToX(30));
 		System.out.println();
-		System.out.println("lca "+bst.lca(2, 2));
+		System.out.println("lca "+bst.lca(2, 2));*/
 	}
 
 }

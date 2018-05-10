@@ -1,4 +1,4 @@
-package BST;
+package bst;
 import java.util.Scanner;
  
  class BSTNode

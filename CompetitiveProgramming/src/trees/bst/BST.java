@@ -2,16 +2,11 @@ package trees.bst;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Set;
 
 public class BST {
 
 	private Node root;
-	
-	private Node createNode(int data){
-		return new Node(data);
-	}
+
 	public void insert(int data){
 		root = insert(root, data);
 	}
@@ -45,9 +40,9 @@ public class BST {
 	
 	private Node insert(Node  root, int data){
 		if(root == null){
-			root  = createNode(data);
+			root  = new Node(data);
 		}else{
-			if(data < root.getData()){
+			if(data <= root.getData()){
 				root.setLeft(insert(root.getLeft(), data));
 			}else if(data > root.getData()){
 				root.setRight(insert(root.getRight(), data));
@@ -166,16 +161,16 @@ public class BST {
 	}
 	private void postoder(Node root){
 		if(root != null){	
-			preorder(root.getLeft());
-			preorder(root.getRight());
+			postoder(root.getLeft());
+			postoder(root.getRight());
 			System.out.print(root.getData()+" ");
 		}
 	}
 	private void inorder(Node root){
 		if(root != null){	
-			preorder(root.getLeft());
+			inorder(root.getLeft());
 			System.out.print(root.getData()+" ");
-			preorder(root.getRight());
+			inorder(root.getRight());
 		}
 	}
 }

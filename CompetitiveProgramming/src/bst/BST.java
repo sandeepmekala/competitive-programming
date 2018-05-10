@@ -1,4 +1,4 @@
-package BST;
+package bst;
 /* Class BST */
  class BST
  {
