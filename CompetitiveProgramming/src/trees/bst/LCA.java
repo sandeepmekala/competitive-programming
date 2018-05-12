@@ -34,8 +34,8 @@ public class LCA {
 			return a+"";
 		}
 		
-		ArrayList<String> pathToA = bst.pathAsArrayToX(a);
-		ArrayList<String> pathToB = bst.pathAsArrayToX(b);
+		ArrayList<String> pathToA = bst.pathAsArray(a);
+		ArrayList<String> pathToB = bst.pathAsArray(b);
 		if(pathToA.contains("Not Found") || pathToB.contains("Not Found"))
 			return "Not Found";
 		
