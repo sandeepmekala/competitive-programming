@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class BubbleSort {
 
 	public static void main(String[] args) {
-		int[] numbers = {1, 2, 5, 5, 6, 8, 9};				//time complexity is worst & avenrage case O(n^2). Best case O(n)
+		int[] numbers = {2,7,4,1,5,3};					//time complexity is worst & avenrage case O(n^2). Best case O(n)
+		System.out.println(Arrays.toString(numbers));
 		bubbleSort(numbers);							//stable sorting
-		System.out.println(Arrays.toString(numbers));	//space complexity is O(1). Means Inplace sorting.
+														//space complexity is O(1). Means Inplace sorting.
 	}
 
 	private static void bubbleSort(int[] numbers) {
@@ -25,6 +26,7 @@ public class BubbleSort {
 			if(sorted){
 				break;
 			}
+			System.out.println(Arrays.toString(numbers));
 		}
 		
 	}

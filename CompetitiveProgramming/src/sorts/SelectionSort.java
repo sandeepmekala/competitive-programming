@@ -5,9 +5,10 @@ import java.util.Arrays;
 public class SelectionSort {
 
 	public static void main(String[] args) {
-		int[] numbers = {5,2,6,8,5,9,1};				//time complexity is O(n^2)
-		selectionSort(numbers);							//stable sorting
-		System.out.println(Arrays.toString(numbers));	//space complexity is O(1). Means Inplace sorting.
+		int[] numbers = {2,7,4,1,5,3};					//time complexity is O(n^2)
+		System.out.println(Arrays.toString(numbers));
+		selectionSort(numbers);							//non-stable sorting
+														//space complexity is O(1). Means Inplace sorting.
 	}
 
 	private static void selectionSort(int[] numbers) {
@@ -21,6 +22,7 @@ public class SelectionSort {
 			int temp = numbers[imin];
 			numbers[imin] = numbers[i];
 			numbers[i] = temp;
+			System.out.println(Arrays.toString(numbers));
 		}		
 	}
 
