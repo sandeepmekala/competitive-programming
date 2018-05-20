@@ -18,7 +18,7 @@ public class QuickSort {
 			int pIndex = randomizedPartition(numbers, start, end);
 			quickSort(numbers, start, pIndex-1);
 			quickSort(numbers, pIndex+1, end);
-		}		
+		}
 	}
 	private static int randomizedPartition(int numbers[], int start, int end){
 		Random r = new Random();
