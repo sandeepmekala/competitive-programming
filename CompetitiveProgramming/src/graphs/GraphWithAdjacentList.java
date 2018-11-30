@@ -43,7 +43,7 @@ public class GraphWithAdjacentList {
 	}
 	
 	public void DFS(int startNode){
-		Stack s = new Stack();
+		Stack<Integer> s = new Stack<Integer>();
 		
 		s.add(startNode);
 		String path = "";
