@@ -1,3 +1,4 @@
+package algorithms;
 import entities.Point;
 
 public class OverlappingRectangles {
