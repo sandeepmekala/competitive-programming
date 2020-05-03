@@ -1,7 +1,6 @@
 package sorts;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class CountingSort {
 

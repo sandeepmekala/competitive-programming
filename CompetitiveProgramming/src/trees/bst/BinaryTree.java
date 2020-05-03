@@ -1,9 +1,6 @@
 package trees.bst;
 
 import java.util.Stack;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Stack;
 
 public class BinaryTree {
 	private Node root;	

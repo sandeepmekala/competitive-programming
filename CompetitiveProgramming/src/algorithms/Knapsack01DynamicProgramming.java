@@ -1,5 +1,4 @@
 package algorithms;
-import java.util.Arrays;
 
 public class Knapsack01DynamicProgramming {
 

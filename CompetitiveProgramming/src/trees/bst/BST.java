@@ -2,8 +2,6 @@ package trees.bst;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.Set;
 
 public class BST {
 

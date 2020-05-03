@@ -1,7 +1,6 @@
 package trees.bst;
-import java.util.Scanner;
- 
- class BstNode
+
+class BstNode
  {
      BstNode left, right;
      int data;

@@ -1,9 +1,5 @@
 package algorithms;
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
 public class Solution {
 
@@ -22,7 +18,6 @@ public class Solution {
                 return "YES";
         }
         return "NO";
-        
     }
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package java8;
-import java.util.ArrayList;  
-import java.util.Collections;  
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;  
 class Product{  
     int id;  
