@@ -1,4 +1,4 @@
-package BST;
+package trees.bst;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
     {                 
         Scanner scan = new Scanner(System.in);
         /* Creating object of BST */
-        BST bst = new BST(); 
+        Bst2 bst = new Bst2(); 
         System.out.println("Binary Search Tree Test\n");          
         char ch;
         /*  Perform tree operations  */

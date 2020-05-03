@@ -1,5 +1,5 @@
 package algorithms;
-import entities.Point;
+import models.Point;
 
 public class OverlappingRectangles {
 

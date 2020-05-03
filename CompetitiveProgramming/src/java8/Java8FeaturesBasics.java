@@ -40,12 +40,12 @@ import java.util.stream.Collectors;
 //Parallel Streams
 //Map
 //Date API
-public class Java8 {
+public class Java8FeaturesBasics {
 	static int outerstaticnum;
 	int outernum;
 
 	public static void main(String arge[]) {
-		Java8 java8 = new Java8();
+		Java8FeaturesBasics java8 = new Java8FeaturesBasics();
 		java8.java();
 	}
 

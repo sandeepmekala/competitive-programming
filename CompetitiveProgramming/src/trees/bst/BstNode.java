@@ -1,36 +1,36 @@
-package BST;
+package trees.bst;
 import java.util.Scanner;
  
- class BSTNode
+ class BstNode
  {
-     BSTNode left, right;
+     BstNode left, right;
      int data;
  
-     public BSTNode()
+     public BstNode()
      {
          left = null;
          right = null;
          data = 0;
      }
-     public BSTNode(int n)
+     public BstNode(int n)
      {
          left = null;
          right = null;
          data = n;
      }
-     public void setLeft(BSTNode n)
+     public void setLeft(BstNode n)
      {
          left = n;
      }
-     public void setRight(BSTNode n)
+     public void setRight(BstNode n)
      {
          right = n;
      }
-     public BSTNode getLeft()
+     public BstNode getLeft()
      {
          return left;
      }
-     public BSTNode getRight()
+     public BstNode getRight()
      {
          return right;
      }

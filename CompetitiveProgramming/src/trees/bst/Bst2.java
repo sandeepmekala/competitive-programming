@@ -1,11 +1,11 @@
-package BST;
+package trees.bst;
 /* Class BST */
- class BST
+ class Bst2
  {
-     private BSTNode root;
+     private BstNode root;
  
      /* Constructor */
-     public BST()
+     public Bst2()
      {
          root = null;
      }
@@ -20,10 +20,10 @@ package BST;
          root = insert(root, data);
      }
      /* Function to insert data recursively */
-     private BSTNode insert(BSTNode node, int data)
+     private BstNode insert(BstNode node, int data)
      {
          if (node == null)
-             node = new BSTNode(data);
+             node = new BstNode(data);
          else
          {
              if (data <= node.getData())
@@ -46,12 +46,12 @@ package BST;
              System.out.println(k+ " deleted from the tree");
          }
      }
-     private BSTNode delete(BSTNode root, int k)
+     private BstNode delete(BstNode root, int k)
      {
-         BSTNode p, p2, n;
+         BstNode p, p2, n;
          if (root.getData() == k)
          {
-             BSTNode lt, rt;
+             BstNode lt, rt;
              lt = root.getLeft();
              rt = root.getRight();
              if (lt == null && rt == null)
@@ -94,7 +94,7 @@ package BST;
          return countNodes(root);
      }
      /* Function to count number of nodes recursively */
-     private int countNodes(BSTNode r)
+     private int countNodes(BstNode r)
      {
          if (r == null)
              return 0;
@@ -112,7 +112,7 @@ package BST;
          return search(root, val);
      }
      /* Function to search for an element recursively */
-     private boolean search(BSTNode r, int val)
+     private boolean search(BstNode r, int val)
      {
          boolean found = false;
          while ((r != null) && !found)
@@ -136,7 +136,7 @@ package BST;
      {
          inorder(root);
      }
-     private void inorder(BSTNode r)
+     private void inorder(BstNode r)
      {
          if (r != null)
          {
@@ -150,7 +150,7 @@ package BST;
      {
          preorder(root);
      }
-     private void preorder(BSTNode r)
+     private void preorder(BstNode r)
      {
          if (r != null)
          {
@@ -164,7 +164,7 @@ package BST;
      {
          postorder(root);
      }
-     private void postorder(BSTNode r)
+     private void postorder(BstNode r)
      {
          if (r != null)
          {
