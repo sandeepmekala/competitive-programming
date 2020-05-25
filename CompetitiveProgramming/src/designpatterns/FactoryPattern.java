@@ -6,30 +6,30 @@ class FactoryPattern {
 	public static void main(String args[]) throws IOException {
 		PlanFactory planFactory = new PlanFactory();
 		Plan p = planFactory.getPlan("DOMESTICPLAN");
-		p.calculateBill(12, p.getRate());
+		p.calculateBill(12);
 		
 		Plan p2 = planFactory.getPlan("COMMERCIALPLAN");
-		p2.calculateBill(12, p2.getRate());
+		p2.calculateBill(12);
 	}
 }
 
 abstract class Plan {
-	abstract double getRate();
+	double rate;
 
-	public void calculateBill(int units, double rate) {
+	public void calculateBill(int units) {
 		System.out.println(units * rate);
 	}
 }
 
 class DomesticPlan extends Plan {
-	public double getRate() {
-		return 3.50;
+	DomesticPlan(){
+		rate = 3.50;
 	}
 }
 
 class CommercialPlan extends Plan {
-	public double getRate() {
-		return 7.50;
+	CommercialPlan() {
+		rate = 7.50;
 	}
 }
 
