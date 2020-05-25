@@ -5,19 +5,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAccumulator;
+import java.util.concurrent.atomic.LongAdder;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.concurrent.locks.StampedLock;
+import java.util.function.LongBinaryOperator;
 import java.util.stream.IntStream;
 
 //Executors
@@ -31,6 +38,12 @@ import java.util.stream.IntStream;
 //Lock: ReadWriteLock
 //Lock: StampedLock
 //Semaphores
+
+//AtomicInteger
+//LongAdder
+//LongAccumulator
+//ConcurrentMap
+//ConcurrentHashMap
 public class Concurrency {
 	public static void main(String args[]){
 		Concurrency concurrency = new Concurrency();
@@ -227,14 +240,14 @@ public class Concurrency {
 		
 		// Lock: ReadWriteLock -----------------------------------------------
 		ExecutorService executor9 = Executors.newFixedThreadPool(2);
-		Map<String, String> map = new HashMap<>();
+		Map<String, String> map1 = new HashMap<>();
 		ReadWriteLock lock3 = new ReentrantReadWriteLock();
 
 		executor9.submit(() -> {
 		    lock3.writeLock().lock();
 		    try {
 		        sleep(1);
-		        map.put("foo", "bar");
+		        map1.put("foo", "bar");
 		    } finally {
 		        lock3.writeLock().unlock();
 		    }
@@ -243,7 +256,7 @@ public class Concurrency {
 		Runnable readTask = () -> {
 		    lock3.readLock().lock();
 		    try {
-		        System.out.println(map.get("foo"));
+		        System.out.println(map1.get("foo"));
 		        sleep(1);
 		    } finally {
 		        lock3.readLock().unlock();
@@ -379,6 +392,138 @@ public class Concurrency {
 
 		stop(executor13);
 		// Semaphores -----------------------------------------------
+		
+		// AtomicInteger -----------------------------------------------
+		// Atomic classed make heavy use of Compare and Swap(CAS), an atamic instruction directly supported by most modern processors
+		// Prefer Atomic classes over locks
+		printBorder();
+		//incrementAndGet
+		AtomicInteger atomicInt = new AtomicInteger(0);
+		ExecutorService executor14 = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 1000)
+		    .forEach(i -> executor14.submit(atomicInt::incrementAndGet));
+		stop(executor14);
+		System.out.println(atomicInt.get()); 
+		
+		//updateAndGet
+		AtomicInteger atomicInt15 = new AtomicInteger(0);
+		ExecutorService executor15 = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 1000)
+		    .forEach(i -> {
+		        Runnable task15 = () ->
+		            atomicInt15.updateAndGet(n -> n + 2);
+		        executor15.submit(task15);
+		    });
+		stop(executor15);
+		System.out.println(atomicInt15.get());
+		
+		//accumulateAndGet
+		AtomicInteger atomicInt16 = new AtomicInteger(0);
+		ExecutorService executor16 = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 1000)
+		    .forEach(i -> {
+		        Runnable task16 = () ->
+		            atomicInt16.accumulateAndGet(i, (n, m) -> n + m);
+		        executor16.submit(task16);
+		    });
+		stop(executor16);
+		System.out.println(atomicInt16.get());    // => 499500
+		// AtomicInteger -----------------------------------------------
+		
+		// LongAdder -----------------------------------------------
+		// Preferable over Atomic Numbers
+		// Used as counters across the multiple threads
+		printBorder();
+		
+		LongAdder adder = new LongAdder();
+		ExecutorService executor17 = Executors.newFixedThreadPool(2);
+
+		IntStream.range(0, 1000)
+		    .forEach(i -> executor17.submit(adder::increment));
+
+		stop(executor17);
+
+		System.out.println(adder.sumThenReset());   // => 1000
+		System.out.println(adder.sum());
+		// LongAdder -----------------------------------------------
+		
+		// LongAccumulator -----------------------------------------------
+		// Generalized version of LongAdder
+		printBorder();
+		LongBinaryOperator op = (x, y) -> 2 * x + y;
+		LongAccumulator accumulator = new LongAccumulator(op, 1L);
+		ExecutorService executor18 = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 10)
+		    .forEach(i -> executor18.submit(() -> accumulator.accumulate(i)));
+		stop(executor18);
+		System.out.println(accumulator.getThenReset());     // => 2539
+		// LongAccumulator -----------------------------------------------
+		
+		// ConcurrentMap -----------------------------------------------
+		printBorder();
+		ConcurrentMap<String, String> map2 = new ConcurrentHashMap<>();
+		map2.put("foo", "bar");
+		map2.put("han", "solo");
+		map2.put("r2", "d2");
+		map2.put("c3", "p0");
+		
+		map2.forEach((key, value) -> System.out.println(key+"="+value));
+		
+		String value1 = map2.putIfAbsent("c3", "p1");
+		System.out.println(value1);    // p0
+		
+		String value2 = map2.getOrDefault("hi", "there");
+		System.out.println(value2);    // there
+		
+		map2.replaceAll((key, value) -> "r2".equals(key) ? "d3" : value);
+		System.out.println(map2.get("r2"));    // d3
+		
+		map2.compute("foo", (key, value) -> value + value);
+		System.out.println(map2.get("foo"));   // barbar
+		
+		map2.merge("foo", "boo", (oldVal, newVal) -> newVal + " was " + oldVal);
+		System.out.println(map2.get("foo"));   // boo was foo
+		// ConcurrentMap -----------------------------------------------
+		
+		// ConcurrentHashMap -----------------------------------------------
+		printBorder();
+		System.out.println(ForkJoinPool.getCommonPoolParallelism());
+		
+		ConcurrentHashMap<String, String> map3 = new ConcurrentHashMap<>();
+		map3.put("foo", "bar");
+		map3.put("han", "solo");
+		map3.put("r2", "d2");
+		map3.put("c3", "p0");
+		
+		//ForEach
+		map3.forEach(1, (key, value) ->
+	    System.out.printf("key: %s; value: %s; thread: %s\n",
+	        key, value, Thread.currentThread().getName()));
+		
+		//Search
+		//As soon as a non-null value is returned, furhter processing is suppressed
+		String result1 = map3.search(1, (key, value) -> {
+		    System.out.println(Thread.currentThread().getName());
+		    if ("foo".equals(key)) {
+		        return value;
+		    }
+		    return null;
+		});
+		System.out.println("Result: " + result1);
+		
+		//Reduce
+		String result2 = map3.reduce(1,
+			    (key, value) -> {
+			        System.out.println("Transform: " + Thread.currentThread().getName());
+			        return key + "=" + value;
+			    },
+			    (s1, s2) -> {
+			        System.out.println("Reduce: " + Thread.currentThread().getName());
+			        return s1 + ", " + s2;
+			    });
+
+			System.out.println("Result: " + result2);
+		// ConcurrentHashMap -----------------------------------------------
 		
 	}
 	
