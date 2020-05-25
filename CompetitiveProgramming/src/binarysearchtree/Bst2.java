@@ -1,4 +1,4 @@
-package trees.bst;
+package binarysearchtree;
 /* Class BST */
  class Bst2
  {

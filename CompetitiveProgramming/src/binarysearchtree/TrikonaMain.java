@@ -1,4 +1,4 @@
-package trees.bst;
+package binarysearchtree;
 
 public class TrikonaMain {
 
