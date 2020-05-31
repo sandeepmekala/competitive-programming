@@ -1,49 +1,69 @@
 package designpatterns;
 
-import java.io.IOException;
+// The Factory Pattern allows you to create objects without specifying the exact class of object that will be created 
+// When a method returns one of several possible classes that share a common super class
+public class FactoryPattern {
 
-class FactoryPattern {
-	public static void main(String args[]) throws IOException {
-		PlanFactory planFactory = new PlanFactory();
-		Plan p = planFactory.getPlan("DOMESTICPLAN");
-		p.calculateBill(12);
-		
-		Plan p2 = planFactory.getPlan("COMMERCIALPLAN");
-		p2.calculateBill(12);
+	public static void main(String[] args) {
+		EnemyShip enemyShip = null;
+		EnemyShipFactory enemyShipFactory = new EnemyShipFactory();
+		String shipType = "R";
+		enemyShip = enemyShipFactory.getEnemyShip(shipType);
+		if(null != enemyShip)doEnemyStuff(enemyShip);
 	}
+
+	private static void doEnemyStuff(EnemyShip enemyShip) {
+		enemyShip.displayEnemyShip();
+		enemyShip.followHeroShip();
+		enemyShip.enemyShipShoots();		
+	}	
 }
 
-abstract class Plan {
-	double rate;
-
-	public void calculateBill(int units) {
-		System.out.println(units * rate);
+abstract class EnemyShip{
+	private String shipName;
+	private double amtDamage;
+	public String getShipName() {
+		return shipName;
+	}
+	public void setShipName(String shipName) {
+		this.shipName = shipName;
+	}
+	public double getAmtDamage() {
+		return amtDamage;
+	}
+	public void setAmtDamage(double amtDamage) {
+		this.amtDamage = amtDamage;
+	}
+	public void followHeroShip(){
+		System.out.println(getShipName()+" is following hero ship");
+	}
+	public void displayEnemyShip(){
+		System.out.println(getShipName()+" is displayed on the screen");
+	}
+	public void enemyShipShoots(){
+		System.out.println(getShipName()+" attachs and does "+getAmtDamage());
 	}
 }
-
-class DomesticPlan extends Plan {
-	DomesticPlan(){
-		rate = 3.50;
+class UFOEnemyShip extends EnemyShip{
+	public UFOEnemyShip(){
+		setShipName("UFO Enemy ship");
+		setAmtDamage(20.0);
 	}
 }
-
-class CommercialPlan extends Plan {
-	CommercialPlan() {
-		rate = 7.50;
+class RocketEnemyShip extends EnemyShip{
+	public RocketEnemyShip(){
+		setShipName("Rocket Enemy ship");
+		setAmtDamage(10.0);
 	}
 }
-
-class PlanFactory {
-	// use getPlan method to get object of type Plan
-	public Plan getPlan(String planType) {
-		if (planType == null) {
-			return null;
+class EnemyShipFactory{
+	public EnemyShip getEnemyShip(String shipType){
+		EnemyShip enemyShip = null;
+		if("U".equals(shipType)){
+			enemyShip = new UFOEnemyShip();
+		}else if("R".equals(shipType)){
+			enemyShip = new RocketEnemyShip();
 		}
-		if (planType.equalsIgnoreCase("DOMESTICPLAN")) {
-			return new DomesticPlan();
-		} else if (planType.equalsIgnoreCase("COMMERCIALPLAN")) {
-			return new CommercialPlan();
-		}
-		return null;
+		return enemyShip;
 	}
 }
