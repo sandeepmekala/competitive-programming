@@ -5,8 +5,8 @@ package designpatterns;
 public class BuilderPattern {
 
 	public static void main(String[] args) {
-		RobotBuilder robotBuilder = new OldRobotBuilder();
-		RobotEngineer robotEngineer = new RobotEngineer(robotBuilder);
+		RobotBuilder oldStylerobotBuilder = new OldRobotBuilder();
+		RobotEngineer robotEngineer = new RobotEngineer(oldStylerobotBuilder);
 		robotEngineer.makeRobot();
 		Robot robot = robotEngineer.getRobot();
 		System.out.println(robot);
