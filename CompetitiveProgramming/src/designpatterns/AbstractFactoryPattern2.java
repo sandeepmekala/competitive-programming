@@ -1,6 +1,6 @@
 package designpatterns;
 
-//
+// Creational Pattern
 // It is like a factory pattern, but everything is encapsulated, the methods that create the object, the factoried that create the objects, the final objects. 
 // The final objects contains objects that use strategy pattern
 public class AbstractFactoryPattern2 {

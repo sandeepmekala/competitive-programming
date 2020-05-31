@@ -1,5 +1,6 @@
 package designpatterns;
 
+// Creational Pattern
 // Defines a family of algorithms, encapsulate each one, and make them interchangeable. The strategy pattern lets the algorithm vary independently from client that use it.
 // Needed when you need to use one of the several behaviors dynamically
 // Reduces code duplication

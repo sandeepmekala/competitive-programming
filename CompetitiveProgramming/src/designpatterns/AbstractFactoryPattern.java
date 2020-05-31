@@ -2,6 +2,7 @@ package designpatterns;
 
 import java.io.IOException;
 
+// Creational Pattern
 class AbstractFactoryPattern {
 	public static void main(String args[]) throws IOException {
 

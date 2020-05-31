@@ -1,5 +1,6 @@
 package designpatterns;
 
+// Creational Pattern
 // Used when we want to build an object made up from other objects
 // When we want to keep the creation of other object separate from main object
 public class BuilderPattern {

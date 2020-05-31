@@ -1,5 +1,6 @@
 package designpatterns;
 
+// Creational Pattern
 // The Factory Pattern allows you to create objects without specifying the exact class of object that will be created 
 // When a method returns one of several possible classes that share a common super class
 public class FactoryPattern {
