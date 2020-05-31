@@ -5,28 +5,31 @@ package designpatterns;
 // The final objects contains objects that use strategy pattern
 public class AbstractFactoryPattern2 {
 	public static void main(String args[]) {
-		EnemyShipBuilding makeUFOs = new UFOEnemyShipBuilding();
+		EnemyShipBuilding2 makeUFOs = new UFOEnemyShipBuilding2();
 		EnemyShip2 theGrunt = makeUFOs.orderTheShip("UFO");
+		doEnemyStuff(theGrunt);
 		System.out.println(theGrunt);
 		EnemyShip2 theBoss = makeUFOs.orderTheShip("UFO BOSS");
+		doEnemyStuff(theBoss);
 		System.out.println(theBoss);
 	}
+	private static void doEnemyStuff(EnemyShip2 theEnemyShip){
+		
+		theEnemyShip.displayEnemyShip();
+		theEnemyShip.followHeroShip();
+		theEnemyShip.enemyShipShoots();
+	}
 }
-abstract class EnemyShipBuilding{
+abstract class EnemyShipBuilding2{
 	protected abstract EnemyShip2 makeEnemyShip(String typeOfShip);
 	
 	public EnemyShip2 orderTheShip(String typeOfShip) {
 		EnemyShip2 theEnemyShip = makeEnemyShip(typeOfShip);
-		
 		theEnemyShip.makeShip();
-		theEnemyShip.displayEnemyShip();
-		theEnemyShip.followHeroShip();
-		theEnemyShip.enemyShipShoots();
-		
 		return theEnemyShip;
 	}
 }
-class UFOEnemyShipBuilding extends EnemyShipBuilding{
+class UFOEnemyShipBuilding2 extends EnemyShipBuilding2{
 
 	protected EnemyShip2 makeEnemyShip(String typeOfShip) {
 		EnemyShip2 theEnemyShip = null;
