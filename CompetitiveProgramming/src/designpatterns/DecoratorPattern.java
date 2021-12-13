@@ -1,6 +1,6 @@
 package designpatterns;
 
-// Behavioral Pattern
+// It is a Behavioral Pattern
 // Allows you to modify an object dynamically
 // You would use it when you want the capabilities of inheritance but want to add the functionality dynamically
 // It is more flexible then inheritance
