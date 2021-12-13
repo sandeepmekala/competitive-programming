@@ -3,7 +3,7 @@ package designpatterns;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-
+ 
 // Iterator pattern provides you uniform way of accessing different collections of objects
 // If you get array, arraylist and hashtable of objects, you can use iterator to uniformly access them
 // You can also write polymorphic code because you can refer to each collection of objects because they implement the same interface
