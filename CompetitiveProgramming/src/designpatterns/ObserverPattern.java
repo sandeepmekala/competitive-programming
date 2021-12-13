@@ -2,7 +2,7 @@ package designpatterns;
 
 import java.util.ArrayList;
 
-// Creational Pattern
+// It is a Creational Pattern
 // The Observer pattern is a software design pattern in which an object called subject, maintains a list of its dependents, called observers, and notify them automatically of any state changes, usually by calling one of their methods. 
 // Used when we need to update many other objects when another object changes
 // Publisher and Subscriber pattern 
