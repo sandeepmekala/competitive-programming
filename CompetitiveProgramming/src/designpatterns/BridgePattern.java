@@ -1,5 +1,5 @@
 package designpatterns;
-
+ 
 // Decouple abstraction from its implementation so that two can vary independently
 // 2 layers of abstraction between classes and 1 class is dependent on other
 // Can be used when you want to be able to change both the abstraction(abstract classes) and concrete classes independently
