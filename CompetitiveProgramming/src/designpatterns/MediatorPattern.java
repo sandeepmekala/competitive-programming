@@ -1,7 +1,7 @@
 package designpatterns;
 
 import java.util.ArrayList;
- 
+   
 // It is used to handle communication between related objects(Colleagues)
 // Allows loose coupling by encaptulating the way disperates sets of objects interact with each other. Allows for the actions of each object set to vary independently of one another.
 public class MediatorPattern {
