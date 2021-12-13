@@ -1,6 +1,6 @@
 package designpatterns;
 
-// Structural pattern
+// It is a Structural pattern
 // Provides a class with will limit access to another class
 // You may do this for security reasons
 // In this example, ATMProxy doesn't give us access to setter methods
