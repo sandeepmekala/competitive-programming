@@ -1,5 +1,5 @@
 package designpatterns;
-
+ 
 // This pattern sends data to an object, if that object is not able use it, it sends the same to any other number of other objects that may able to use it
 public class ChainOfResponsibilitiesPattern {
 	public static void main(String[] args) {
