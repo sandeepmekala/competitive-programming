@@ -1,6 +1,6 @@
 package designpatterns;
 
-// Behavioral pattern
+// It is a Behavioral pattern
 // When you create simplified interface that performs many other actions behind the scenes
 // In this example only deposit and withdraw are exposed to customer but behind the scenes we perform many actions to validate 
 public class FacadePattern {
