@@ -2,7 +2,7 @@ package designpatterns;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-
+ 
 // Allows you treat individual objects and compositions of objects uniformly
 // They allows you to represent part-hirarchies. Components can be further divided in to smaller components.
 // You can structure data, or represent the inner working of every part of a whole object individually
