@@ -1,5 +1,5 @@
 package designpatterns;
-
+ 
 // Allows a object to alter it behavior when its internal state changes. The object will appear to change its class.
 // Context(Account) : Maintains an instance of the concrete state subclass that defines the current state
 // State : Defines an interface for encapsulating the behaviors associated with a particular state of the context
