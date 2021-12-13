@@ -3,7 +3,7 @@ package designpatterns;
 import java.lang.management.ManagementFactory;
 import java.util.HashMap;
 import java.util.Random;
-
+ 
 // Used when you want to create large number similar objects in Hundreds of thousands
 // To reduce memory usage you share the object that are similar in some way rather then creating new ones
 // Intrinsic state and Extrinsic state
