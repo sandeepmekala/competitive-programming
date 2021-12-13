@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 
-// Creational Pattern
+// It is a Creational Pattern
 // Used when we want to eliminate the option of instantiating more then one object
 public class SingletonPattern {
 
