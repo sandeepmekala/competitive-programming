@@ -1,6 +1,6 @@
 package designpatterns;
 
-// Creational Pattern
+// It is a Creational Pattern
 // Used when we need to create new object by cloning(copying) other object
 public class PrototypePattern {
 
