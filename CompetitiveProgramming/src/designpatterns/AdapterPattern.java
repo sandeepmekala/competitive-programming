@@ -1,6 +1,6 @@
 package designpatterns;
 
-// Behavioural pattern
+// It is a Behavioural pattern
 // Allows two incompatible interfaces to works together
 // 
 public class AdapterPattern {
