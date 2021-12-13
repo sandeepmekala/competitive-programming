@@ -2,7 +2,7 @@ package designpatterns;
 
 import java.util.ArrayList;
 
-// Behavioral pattern
+// It is a Behavioral pattern
 // In this an object is used to represent and encapsulate all the information needed to call a method at later time
 // This information includes method name, object that owns this method and and parameter values
 public class CommandPattern {
