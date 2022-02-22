@@ -5,7 +5,7 @@ public class Node {
 	private Node next;
 	private Node prev;
 	
-	Node(){
+	private Node(){
 	}
 	
 	public Node(int data){

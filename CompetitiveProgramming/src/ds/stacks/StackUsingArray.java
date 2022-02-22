@@ -15,14 +15,14 @@ public class StackUsingArray {
 	}
 	public void pop(){
 		if(top == -1){
-			System.out.println("Error: Stack has no elements");
+			System.out.println("Error: Stack Underflows");
 			return;
 		}
 		top--;
 	}
 	public int top(){
 		if(top == -1){
-			System.out.println("Error: Stack has no elements");
+			System.out.println("Error: Stack Underflows");
 			return -1;
 		}
 		return elements[top];
@@ -38,5 +38,20 @@ public class StackUsingArray {
 			System.out.print(elements[i]+" ");
 		}
 	}
+	
+	public static void main(String[] args) {
+		StackUsingArray stack = new StackUsingArray();
+		
+		stack.push(10);
+		stack.print();
+		stack.push(20);
+		stack.print();
+		stack.push(30);
+		stack.print();
+		stack.pop();
+		stack.print();
+		System.out.println("\n"+stack.top());
+		stack.print();
 
+	}
 }

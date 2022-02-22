@@ -4,6 +4,14 @@ public class SingleLinkedList {
 
 	private Node head;
 	
+	public Node getHead() {
+		return head;
+	}
+
+	public void setHead(Node head) {
+		this.head = head;
+	}
+
 	public static void main(String[] args) {
 		SingleLinkedList sll = new SingleLinkedList();
 		
@@ -38,8 +46,7 @@ public class SingleLinkedList {
 	
 	public void insertAtEnd(int data){
 		if(head == null){
-			Node node = new Node();
-			node.setData(data);
+			Node node = new Node(data);
 			head = node;
 			return;
 		}
@@ -52,8 +59,7 @@ public class SingleLinkedList {
 		
 	}
 	public void insertAtBegining(int data){
-		Node node = new Node();
-		node.setData(data);
+		Node node = new Node(data);
 		node.setNext(head);
 		head = node;
 	}
@@ -82,6 +88,7 @@ public class SingleLinkedList {
 		node.setNext(temp.getNext());
 		temp.setNext(node);
 	}
+	
 	public void deleteAtNthPosition(int n){
 		Node temp = head;
 		if(n == 1){
@@ -94,6 +101,7 @@ public class SingleLinkedList {
 
 		temp.setNext(temp.getNext().getNext());
 	}
+	
 	public void reverse(){
 		Node prev = null, current = null, next;
 		current = head;
@@ -106,5 +114,30 @@ public class SingleLinkedList {
 		head = prev;
 	}
 	
+	public void recursivePrint(Node node){
+		if(node == null){
+			return;
+		}
+		System.out.print(node.getData()+" ");
+		recursivePrint(node.getNext());
+	}
+	
+	public void recursiveReversePrint(Node node){
+		if(node == null){
+			return;
+		}
+		recursiveReversePrint(node.getNext());
+		System.out.print(node.getData()+" ");
+	}
+	public void recursiveReveres(Node node){
+		if(node.getNext() == null){
+			head = node;
+			return;
+		}
+		recursiveReveres(node.getNext());
+		Node temp = node.getNext();
+		temp.setNext(node);
+		node.setNext(null);
+	}
 	
 }

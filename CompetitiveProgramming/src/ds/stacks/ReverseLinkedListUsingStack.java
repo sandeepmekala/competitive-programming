@@ -3,12 +3,12 @@ package ds.stacks;
 import java.util.Stack;
 
 import ds.linkedlists.Node;
-import ds.linkedlists.SinglyLinkedList;
+import ds.linkedlists.SingleLinkedList;
 
 public class ReverseLinkedListUsingStack {
 
 	public static void main(String[] args) {
-		SinglyLinkedList sll = new SinglyLinkedList();
+		SingleLinkedList sll = new SingleLinkedList();
 		
 		sll.insertAtEnd(10);
 		sll.insertAtEnd(20);
@@ -19,7 +19,7 @@ public class ReverseLinkedListUsingStack {
 		sll.print();
 		
 	}
-	private static void reverseLinkedListUsingStack(SinglyLinkedList sll){
+	private static void reverseLinkedListUsingStack(SingleLinkedList sll){
 		Stack<Node> stack = new Stack<Node>();
 		
 		Node temp = sll.getHead();
