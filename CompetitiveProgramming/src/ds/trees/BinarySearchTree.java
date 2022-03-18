@@ -5,180 +5,9 @@ import java.util.Arrays;
 
 public class BinarySearchTree {
 
-	private Node root;
+	public static Node root;
 	
-	public void insert(int data){
-		root = insert(root, data);
-	}
-	public Node search(int data){
-		return search(root, data);
-	}
-	public void delete(int data){
-		delete(root, data);
-	}
-	public int countNodes(){
-		return count(root);
-	}
-	public String pathAsStringToX(int data){
-		return pathAsStringToX(root, data);
-	}
-	public ArrayList<String> pathAsArrayToX(int data){
-		return pathAsArrayToX(root, data);
-	}
-	public String lca(int a, int b){
-		return lca(root, a, b);
-	}
-	public void preorderPrint(){
-		preorder(root);		
-	}
-	public void postorderPrint(){
-		postoder(root);		
-	}
-	public void inorderPrint(){
-		inorder(root);		
-	}
-	
-	private Node insert(Node  root, int data){
-		if(root == null){
-			root  = new Node(data);
-		}else{
-			if(data < root.getData()){
-				root.setLeft(insert(root.getLeft(), data));
-			}else if(data > root.getData()){
-				root.setRight(insert(root.getRight(), data));
-			}
-		}
-		
-		return root;
-	}
-	private Node search(Node  root, int data){
-		
-		if(root == null || root.getData() == data){
-			return root;
-		}
-		
-		if(data < root.getData()){
-			return search(root.getLeft(), data);
-		}else{
-			return search(root.getRight(), data);
-		}
-	}
-	private Node delete(Node root, int data){
-		if(root == null){
-			return null;
-		}else{
-			if(data < root.getData()){
-				root.setLeft(delete(root.getLeft(), data));
-			}else if(data > root.getData()){
-				root.setRight(delete(root.getRight(), data));
-			}else{
-				if(root.getLeft() == null && root.getRight() == null){
-					return null;
-				}else if(root.getLeft() == null){
-					return root.getRight();
-				}else if(root.getRight() == null){
-					return root.getLeft();
-				}else {
-					Node succParent = root;
-					Node succ = root.getRight();
-
-					while(succ.getLeft() != null){
-						succParent = succ;
-						succ = succ.getLeft();
-					}
-					if(succParent != root) {
-						succParent.setLeft(succ.getRight());
-					}else {
-						root.setRight(succ.getRight());
-					}
-					root.setData(succ.getData());
-					return root;
-				}
-			}
-		}
-		return root;
-	}
-	private int count(Node root){
-		if(root == null){
-			return 0;
-		}else{
-			int cnt = 1;
-			cnt += count(root.getLeft());
-			cnt += count(root.getRight());
-			return cnt;
-		}
-
-	}
-	private String pathAsStringToX(Node root, int data){
-		if(root == null){
-			return "Not Found";
-		}
-		
-		String path = root.getData()+"->";
-		if(data < root.getData()){
-			path += pathAsStringToX(root.getLeft(), data);
-		}else if(data > root.getData()){
-			path += pathAsStringToX(root.getRight(), data);
-		}else{
-			return root.getData()+"";
-		}
-		return path;
-	}
-	private ArrayList<String> pathAsArrayToX(Node root, int data){
-		if(root == null){
-			return new ArrayList<String>(Arrays.asList("Not Found"));
-		}
-		
-		ArrayList<String> path = new ArrayList<String>();
-		path.add(root.getData()+"");
-		if(data < root.getData()){
-			path.addAll(pathAsArrayToX(root.getLeft(), data));
-		}else if(data > root.getData()){
-			path.addAll(pathAsArrayToX(root.getRight(), data));
-		}else{
-			return new ArrayList<String>(Arrays.asList(root.getData()+""));
-		}
-		return path;
-	}
-	private String lca(Node root, int a, int b){
-		if(root == null)
-			return "Not Found";
-		
-		if(!(null == search(a)) || !(null == search(b)))
-			return "Not Found";
-		
-		if(a < root.getData() && b < root.getData()){
-			return lca(root.getLeft(), a, b);
-		}else if(a > root.getData() && b > root.getData()){
-			return lca(root.getRight(), a, b);
-		}else{
-			return root.getData()+"";
-		}		
-	}
-	
-	private void preorder(Node root){
-		if(root != null){	
-			System.out.print(root.getData()+" ");
-			preorder(root.getLeft());
-			preorder(root.getRight());
-		}
-	}
-	private void postoder(Node root){
-		if(root != null){	
-			preorder(root.getLeft());
-			preorder(root.getRight());
-			System.out.print(root.getData()+" ");
-		}
-	}
-	private void inorder(Node root){
-		if(root != null){	
-			inorder(root.getLeft());
-			System.out.print(root.getData()+" ");
-			inorder(root.getRight());
-		}
-	}
-	
-public static void main(String[] args) {
+	public static void main(String[] args) {	
 		
 		//			10
 		//		  /	   \		
@@ -190,40 +19,173 @@ public static void main(String[] args) {
 		//			  /
 		//			5
 		BinarySearchTree bst = new BinarySearchTree();
-		bst.insert(10);
-		bst.insert(2);
-		bst.insert(4);
-		bst.insert(6);
-		bst.insert(5);
-		bst.insert(15);
-		bst.insert(3);
+		root = bst.insert(null, 10);
+		bst.insert(root, 2);
+		bst.insert(root, 4);
+		bst.insert(root, 6);
+		bst.insert(root, 5);
+		bst.insert(root, 15);
+		bst.insert(root, 3);
 		
-		bst.inorderPrint();
+		bst.inorder(root);
 		System.out.println("delete: "+4);
-		bst.delete(4);
-		bst.inorderPrint();
+		bst.delete(root, 4);
+		bst.inorder(root);
 		System.out.println();
 		
 		System.out.println("search 30:");
-		System.out.println(bst.search(10).getData());
+		System.out.println(bst.search(root, 10).data);
 		System.out.println();
 		System.out.println("inorder:");
-		bst.inorderPrint();
+		bst.inorder(root);
 		System.out.println();
 		System.out.println("preorder:");
-		bst.preorderPrint();
+		bst.preorder(root);
 		System.out.println();
 		System.out.println("postorder:");
-		bst.postorderPrint();
-		System.out.println();
-		System.out.println("count:");
-		System.out.println(bst.countNodes());
-		System.out.println();
-		System.out.println("path:");
-		System.out.println(bst.pathAsStringToX(30));
-		System.out.println();
-		System.out.println(bst.pathAsArrayToX(30));
-		System.out.println();
-		System.out.println("lca "+bst.lca(2, 2));
+		bst.postorder(root);
+		
+		System.out.println("\nsize:");
+		System.out.println(bst.size(root));
+		
+		System.out.println(isBinary(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		
+		System.out.println("lca :"+bst.lca(root, 2, 5));
+	}
+	
+	private Node insert(Node  root, int data){
+		if(root == null){
+			root  = new Node(data);
+		}else{
+			if(data < root.data){
+				root.setLeft(insert(root.left, data));
+			}else if(data > root.data){
+				root.setRight(insert(root.right, data));
+			}
+		}
+		
+		return root;
+	}
+	private Node search(Node  root, int data){
+		
+		if(root == null || root.data == data){
+			return root;
+		}
+		
+		if(data < root.data){
+			return search(root.left, data);
+		}else{
+			return search(root.right, data);
+		}
+	}
+	private Node delete(Node root, int data){
+		if(root == null){
+			return null;
+		}else{
+			if(data < root.data){
+				root.setLeft(delete(root.left, data));
+			}else if(data > root.data){
+				root.setRight(delete(root.right, data));
+			}else{
+				if(root.left == null && root.right == null){
+					return null;
+				}else if(root.left == null){
+					return root.right;
+				}else if(root.right == null){
+					return root.left;
+				}else {
+					Node succParent = root;
+					Node succ = root.right;
+
+					while(succ.left != null){
+						succParent = succ;
+						succ = succ.left;
+					}
+					if(succParent != root) {
+						succParent.setLeft(succ.right);
+					}else {
+						root.setRight(succ.right);
+					}
+					root.setData(succ.data);
+					return root;
+				}
+			}
+		}
+		return root;
+	}
+	private int size(Node root){
+		if(root == null){
+			return 0;
+		}else{
+			int cnt = 1;
+			cnt += size(root.left);
+			cnt += size(root.right);
+			return cnt;
+		}
+
+	}
+	
+	private void preorder(Node root){
+		if(root != null){	
+			System.out.print(root.data+" ");
+			preorder(root.left);
+			preorder(root.right);
+		}
+	}
+	private void postorder(Node root){
+		if(root != null){	
+			preorder(root.left);
+			preorder(root.right);
+			System.out.print(root.data+" ");
+		}
+	}
+	private void inorder(Node root){
+		if(root != null){	
+			inorder(root.left);
+			System.out.print(root.data+" ");
+			inorder(root.right);
+		}
+	}
+	
+	public boolean path(Node root, int data, ArrayList<Integer> path){
+		if(root == null){
+			return false;
+		}
+		if(data == root.data){
+			path.add(root.data);
+			return true;
+		}
+		
+		if(path(root.left, data, path)) {
+			path.add(root.data);
+			return true;
+		}
+		
+		if(path(root.right, data, path)) {
+			path.add(root.data);
+			return true;
+		}
+		return false;
+	}
+	
+	public static boolean isBinary(Node root, int min, int max) {
+		if(root == null) {
+			return true;
+		}
+		if(root.data > min && root.data < max) {
+			return true;
+		}
+		return isBinary(root.left, min, root.data) && isBinary(root.right, root.data, max); 
+	}
+	
+	private int lca(Node root, int num1, int num2){
+
+		if(num1 < root.data && num2 < root.data){
+			return lca(root.left, num1, num2);
+		}else if(num1 > root.data && num2 > root.data){
+			return lca(root.right, num1, num2);
+		}else{
+			return root.data;
+		}		
 	}
 }

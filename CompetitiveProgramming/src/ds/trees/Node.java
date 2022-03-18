@@ -1,9 +1,9 @@
 package ds.trees;
 
 public class Node {
-	private Node left;
-	private Node right;
-	private int data;
+	public Node left;
+	public Node right;
+	public int data;
 	
 	public Node(int data){
 		this.left = null;
@@ -33,6 +33,11 @@ public class Node {
 
 	public void setData(int data) {
 		this.data = data;
+	}
+
+	@Override
+	public String toString() {
+		return "[" + data + "]";
 	}
 	
 
