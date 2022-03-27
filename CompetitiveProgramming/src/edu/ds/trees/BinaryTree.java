@@ -8,16 +8,16 @@ import java.util.Queue;
 import java.util.Stack;
 
 import edu.ds.stacks.ReverseStringUsingStack;
-import edu.ds.trees.model.Node;
+import edu.ds.trees.model.TreeNode;
 
 public class BinaryTree {
-	private Node root;	
+	private TreeNode root;	
 	
-	public Node getRoot() {
+	public TreeNode getRoot() {
 		return root;
 	}
 
-	public void setRoot(Node root) {
+	public void setRoot(TreeNode root) {
 		this.root = root;
 	}
 	
@@ -45,12 +45,12 @@ public class BinaryTree {
 		//		5
 		
 		BinaryTree bt = new BinaryTree();
-		Node root = bt.insert(null, 1, null);
-		Node n1 = bt.insert(root, 3, "l");
-		Node n2 = bt.insert(root, 4, "r");
-		Node n3 = bt.insert(n1, 2, "l");
-		Node n4 = bt.insert(n1, 6, "r");
-		Node n5 = bt.insert(n4, 5, "l");
+		TreeNode root = bt.insert(null, 1, null);
+		TreeNode n1 = bt.insert(root, 3, "l");
+		TreeNode n2 = bt.insert(root, 4, "r");
+		TreeNode n3 = bt.insert(n1, 2, "l");
+		TreeNode n4 = bt.insert(n1, 6, "r");
+		TreeNode n5 = bt.insert(n4, 5, "l");
 		
 		System.out.println("preorder:");
 		bt.preorder(root);
@@ -115,8 +115,8 @@ public class BinaryTree {
 		spiralorder(root);
 	}
 
-	public Node insert(Node root, int data, String side){
-		Node node = new Node(data);
+	public TreeNode insert(TreeNode root, int data, String side){
+		TreeNode node = new TreeNode(data);
 		if(root == null){
 			return node;
 		}
@@ -132,7 +132,7 @@ public class BinaryTree {
 		
 	}
 	
-	public void preorder(Node root){		// rt-l-r
+	public void preorder(TreeNode root){		// rt-l-r
 		if(root != null){	
 			System.out.print(root.getData()+" ");
 			preorder(root.getLeft());
@@ -140,7 +140,7 @@ public class BinaryTree {
 		}
 	}
 	
-	public void postorder(Node root){		// l-r-rt
+	public void postorder(TreeNode root){		// l-r-rt
 		if(root != null){	
 			preorder(root.getLeft());
 			preorder(root.getRight());
@@ -148,7 +148,7 @@ public class BinaryTree {
 		}
 	}
 	
-	public void inorder(Node root){			// l-rt-r
+	public void inorder(TreeNode root){			// l-rt-r
 		if(root != null){	
 			preorder(root.getLeft());
 			System.out.print(root.getData()+" ");
@@ -157,14 +157,14 @@ public class BinaryTree {
 	}
 
 	// use 2 queues if we want to print level by level. check Trie ds impl for details.
-	public void levelorder(Node root) {
+	public void levelorder(TreeNode root) {
 		if(root == null) {
 			return;
 		}
-		Queue<Node> queue = new ArrayDeque<Node>();
+		Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
 		queue.add(root);
 		while(!queue.isEmpty()) {
-			Node current = queue.poll();
+			TreeNode current = queue.poll();
 			System.out.print(current.data+" ");
 			if(current.left != null) {
 				queue.add(current.left);
@@ -177,38 +177,38 @@ public class BinaryTree {
 	
 	// use queue and a stack
 	// insert right first into queue so that it gets processed first and inserted into stack
-	public static void levelorderInBottomUp(Node root) {
+	public static void levelorderInBottomUp(TreeNode root) {
 		if(root == null) {
 			return;
 		}
 		
-		Queue<Node> queue = new ArrayDeque<Node>();
-		Stack<Node> stack = new Stack<Node>();
+		Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
 		queue.add(root);
 		while(!queue.isEmpty()) {
-			Node current = queue.poll();
+			TreeNode current = queue.poll();
 			stack.push(current);
 			if(current.right != null) queue.add(current.right);	//	right first
 			if(current.left != null) queue.add(current.left);
 		}
 		
 		while(!stack.isEmpty()) {
-			Node current = stack.pop();
+			TreeNode current = stack.pop();
 			System.out.print(current.data+" ");
 		}
 	}
 	
-	public static void spiralorder(Node root) {
+	public static void spiralorder(TreeNode root) {
 		if(root == null) {
 			return;
 		}
 		
-		Stack<Node> stack1 = new Stack<Node>(); //rl
-		Stack<Node> stack2 = new Stack<Node>(); //lr 
+		Stack<TreeNode> stack1 = new Stack<TreeNode>(); //rl
+		Stack<TreeNode> stack2 = new Stack<TreeNode>(); //lr 
 		stack1.push(root);
 		while(!stack1.isEmpty() || !stack2.isEmpty()) {
 			while(!stack1.isEmpty()) {
-				Node current = stack1.pop();
+				TreeNode current = stack1.pop();
 				System.out.print(current.data+" ");
 				if(current.left != null) {
 					stack2.push(current.left);
@@ -218,7 +218,7 @@ public class BinaryTree {
 				}
 			}
 			while(!stack2.isEmpty()) {
-				Node current = stack2.pop();
+				TreeNode current = stack2.pop();
 				System.out.print(current.data+" ");
 				if(current.right != null) {
 					stack1.push(current.right);			//right first
@@ -230,14 +230,14 @@ public class BinaryTree {
 		}
 	}
 	
-	private static boolean sameTree(Node root1, Node root2) {
+	private static boolean sameTree(TreeNode root1, TreeNode root2) {
 		if(root1 == null && root2 == null) {
 			return true;
 		}
 		return (root1.data ==  root2.data) && sameTree(root1.left, root2.left) && sameTree(root1.right, root2.right);
 	}
 	
-	private static int size(Node root) {
+	private static int size(TreeNode root) {
 		if(root == null) {
 			return 0;
 		}
@@ -245,7 +245,7 @@ public class BinaryTree {
 		return 1+size(root.left)+size(root.right);
 	}
 	
-	private static int height(Node root) {
+	private static int height(TreeNode root) {
 		if(root == null) {
 			return 0;
 		}
@@ -253,7 +253,7 @@ public class BinaryTree {
 		return 1 + Math.max(height(root.left), height(root.right));
 	}
 
-	public boolean path(Node root, int data, ArrayList<Integer> path){
+	public boolean path(TreeNode root, int data, ArrayList<Integer> path){
 		if(root == null){
 			return false;
 		}
@@ -274,7 +274,7 @@ public class BinaryTree {
 		return false;
 	}
 	
-	public boolean pathSum(Node root, int sum, ArrayList<Integer> path) {
+	public boolean pathSum(TreeNode root, int sum, ArrayList<Integer> path) {
 		if(root == null) {
 			return false;
 		}
@@ -296,7 +296,7 @@ public class BinaryTree {
 		return false;
 	}
 	
-	public static Node lca(Node root, int num1, int num2) {
+	public static TreeNode lca(TreeNode root, int num1, int num2) {
 		if(root == null) {
 			return null;
 		}
@@ -304,8 +304,8 @@ public class BinaryTree {
 			return root;
 		}
 		
-		Node left = lca(root.left, num1, num2);
-		Node right = lca(root.right, num1, num2);
+		TreeNode left = lca(root.left, num1, num2);
+		TreeNode right = lca(root.right, num1, num2);
 		if(left != null && right !=  null) {
 			return root;
 		}else if(left != null) {
@@ -317,7 +317,7 @@ public class BinaryTree {
 		}
 	}
 	// use a data structure int[]{isBst, height, min, max } 
-	public static int[] maxSizeBst(Node root) {
+	public static int[] maxSizeBst(TreeNode root) {
 		if(root == null) {
 			return new int[] {1, 0, 0, 0};
 		}else if(root.left == null && root.right == null) {
@@ -357,14 +357,14 @@ public class BinaryTree {
 	}
 	
 	// stack instead to compensate for recursion
-	public static void preorderIterative(Node root) {
+	public static void preorderIterative(TreeNode root) {
 		if(root == null) {
 			return;
 		}
-		Stack<Node> stack = new Stack<Node>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
 		stack.push(root);
 		while(!stack.isEmpty()) {
-			Node current = stack.pop();
+			TreeNode current = stack.pop();
 			System.out.print(current.data+" ");
 			if(current.right != null) {
 				stack.add(current.right);
@@ -374,13 +374,13 @@ public class BinaryTree {
 			}
 		}
 	}
-	public static void inorderIterative(Node root) {
+	public static void inorderIterative(TreeNode root) {
 		if(root == null) {
 			return;
 		}
 		
-		Stack<Node> stack = new Stack<Node>();
-		Node current = root;
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode current = root;
 		while(true) {
 			if(current != null) {
 				stack.push(current);
@@ -396,14 +396,14 @@ public class BinaryTree {
 		}
 	}
 	
-	public static void morrisInorder(Node root) {
-		Node current = root;
+	public static void morrisInorder(TreeNode root) {
+		TreeNode current = root;
 		while(current != null) {
 			if(current.left == null) {
 				System.out.print(current.data+" ");
 				current = current.right;
 			}else {
-				Node predcescor = current.left;
+				TreeNode predcescor = current.left;
 				while(predcescor.right != null && predcescor.right != current) { 
 					predcescor = predcescor.right;
 				}
@@ -419,41 +419,41 @@ public class BinaryTree {
 		}
 	}
 	
-	public static void postorderIterativeTwoStacks(Node root) {
+	public static void postorderIterativeTwoStacks(TreeNode root) {
 		if(root == null) {
 			return;
 		}
 		
-		Stack<Node> stack1 = new Stack<Node>();
-		Stack<Node> stack2 = new Stack<Node>();
+		Stack<TreeNode> stack1 = new Stack<TreeNode>();
+		Stack<TreeNode> stack2 = new Stack<TreeNode>();
 		
 		stack1.push(root);
 		while(!stack1.isEmpty()) {
-			Node current = stack1.pop();
+			TreeNode current = stack1.pop();
 			stack2.push(current);
 			if(current.left != null) stack1.push(current.left);
 			if(current.right != null) stack1.push(current.right);
 		}
 		
 		while(!stack2.isEmpty()) {
-			Node current = stack2.pop();
+			TreeNode current = stack2.pop();
 			System.out.print(current.data+" ");
 		}
 	}
-	public static void postorderIterativeOneStack(Node root) {
+	public static void postorderIterativeOneStack(TreeNode root) {
 		if(root == null) {
 			return;
 		}
 		
-		Stack<Node> stack = new Stack<Node>();
-		Node current = root;
+		Stack<TreeNode> stack = new Stack<TreeNode>();
+		TreeNode current = root;
 		while(!stack.isEmpty() || current != null) {
 			if(current != null) {
 				stack.push(current);
 				current = current.left;
 			}
 			if(current == null) {
-				Node right = stack.peek().right;
+				TreeNode right = stack.peek().right;
 				if(right == null || right == stack.peek().right) {
 					System.out.print(stack.pop().data+" ");
 				}else {

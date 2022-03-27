@@ -3,11 +3,11 @@ package edu.ds.trees;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import edu.ds.trees.model.Node;
+import edu.ds.trees.model.TreeNode;
 
 public class BinarySearchTree {
 
-	public static Node root;
+	public static TreeNode root;
 	
 	public static void main(String[] args) {	
 		
@@ -59,9 +59,9 @@ public class BinarySearchTree {
 		System.out.println("lca :"+bst.lca(root, 2, 5));
 	}
 	
-	private Node insert(Node  root, int data){
+	private TreeNode insert(TreeNode  root, int data){
 		if(root == null){
-			root  = new Node(data);
+			root  = new TreeNode(data);
 		}else{
 			if(data < root.data){
 				root.setLeft(insert(root.left, data));
@@ -72,7 +72,7 @@ public class BinarySearchTree {
 		
 		return root;
 	}
-	private Node search(Node  root, int data){
+	private TreeNode search(TreeNode  root, int data){
 		
 		if(root == null || root.data == data){
 			return root;
@@ -84,7 +84,7 @@ public class BinarySearchTree {
 			return search(root.right, data);
 		}
 	}
-	private Node delete(Node root, int data){
+	private TreeNode delete(TreeNode root, int data){
 		if(root == null){
 			return null;
 		}else{
@@ -100,8 +100,8 @@ public class BinarySearchTree {
 				}else if(root.right == null){
 					return root.left;
 				}else {
-					Node succParent = root;
-					Node succ = root.right;
+					TreeNode succParent = root;
+					TreeNode succ = root.right;
 
 					while(succ.left != null){
 						succParent = succ;
@@ -119,28 +119,28 @@ public class BinarySearchTree {
 		}
 		return root;
 	}
-	private int size(Node root){
+	private int size(TreeNode root){
 		if(root == null){
 			return 0;
 		}
 		return 1+size(root.left)+size(root.right);
 	}
 	
-	private void preorder(Node root){
+	private void preorder(TreeNode root){
 		if(root != null){	
 			System.out.print(root.data+" ");
 			preorder(root.left);
 			preorder(root.right);
 		}
 	}
-	private void postorder(Node root){
+	private void postorder(TreeNode root){
 		if(root != null){	
 			preorder(root.left);
 			preorder(root.right);
 			System.out.print(root.data+" ");
 		}
 	}
-	private void inorder(Node root){
+	private void inorder(TreeNode root){
 		if(root != null){	
 			inorder(root.left);
 			System.out.print(root.data+" ");
@@ -148,7 +148,7 @@ public class BinarySearchTree {
 		}
 	}
 	
-	public boolean path(Node root, int data, ArrayList<Integer> path){
+	public boolean path(TreeNode root, int data, ArrayList<Integer> path){
 		if(root == null){
 			return false;
 		}
@@ -170,7 +170,7 @@ public class BinarySearchTree {
 		return false;
 	}
 	
-	public static boolean isBinary(Node root, int min, int max) {
+	public static boolean isBinary(TreeNode root, int min, int max) {
 		if(root == null) {
 			return true;
 		}
@@ -180,7 +180,7 @@ public class BinarySearchTree {
 		return isBinary(root.left, min, root.data) && isBinary(root.right, root.data, max); 
 	}
 	
-	private int lca(Node root, int num1, int num2){
+	private int lca(TreeNode root, int num1, int num2){
 
 		if(num1 < root.data && num2 < root.data){
 			return lca(root.left, num1, num2);

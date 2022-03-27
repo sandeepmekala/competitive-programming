@@ -2,32 +2,32 @@ package edu.ds.trees;
 
 import java.util.ArrayList;
 
-import edu.ds.trees.model.Node;
+import edu.ds.trees.model.TreeNode;
 
 public class Trikona {
 
-	private Node root;
+	private TreeNode root;
 	
-	public Node buildTrikona(int L){
+	public TreeNode buildTrikona(int L){
 		
 		if(L == 1){
-			root = new Node(1);
+			root = new TreeNode(1);
 		}
 		
-		ArrayList<Node> prevNodes = new ArrayList<Node>();
-		ArrayList<Node> nextNodes;
+		ArrayList<TreeNode> prevNodes = new ArrayList<TreeNode>();
+		ArrayList<TreeNode> nextNodes;
 		int nodeValue = 1;
 		for(int i=0; i<Math.pow(2, L-1); i++){
-			prevNodes.add(new Node(nodeValue++));
+			prevNodes.add(new TreeNode(nodeValue++));
 		}
 		
 		int ind;
 		for(int j=0; j<L-1; j++){
 			ind = 0;
-			nextNodes = new ArrayList<Node>();
+			nextNodes = new ArrayList<TreeNode>();
 			while(ind < prevNodes.size()-1){
 				int newVal = prevNodes.get(ind).getData()*prevNodes.get(ind+1).getData();
-				Node newNode = new Node(newVal);
+				TreeNode newNode = new TreeNode(newVal);
 				newNode.setLeft(prevNodes.get(ind));
 				newNode.setRight(prevNodes.get(ind+1));
 				nextNodes.add(newNode);
@@ -38,18 +38,18 @@ public class Trikona {
 		}
 		return prevNodes.get(0);	
 	}
-	public int trikonaLevelSum(Node root, int N, int X, int Y){
+	public int trikonaLevelSum(TreeNode root, int N, int X, int Y){
 		if(N == 1 && X == 1 && Y == 1){
 			return root.getData();
 		}
 		
-		ArrayList<Node> prevNodes = new ArrayList<Node>();
-		ArrayList<Node> nextNodes;
+		ArrayList<TreeNode> prevNodes = new ArrayList<TreeNode>();
+		ArrayList<TreeNode> nextNodes;
 		prevNodes.add(root);
 		int d=1;
 		int sum = 0;
 		while(d < N){
-			nextNodes = new ArrayList<Node>();
+			nextNodes = new ArrayList<TreeNode>();
 			for(int i=0; i<prevNodes.size(); i++){
 				nextNodes.add(prevNodes.get(i).getLeft());
 				nextNodes.add(prevNodes.get(i).getRight());
@@ -63,7 +63,7 @@ public class Trikona {
 		}
 		return sum;
 	}
-	public void preorder(Node root){
+	public void preorder(TreeNode root){
 		if(root != null){	
 			System.out.print(root.getData()+" ");
 			preorder(root.getLeft());
@@ -74,7 +74,7 @@ public class Trikona {
 	public static void main(String[] args) {
 		Trikona tr = new Trikona();
 		
-		Node root = tr.buildTrikona(3);
+		TreeNode root = tr.buildTrikona(3);
 		tr.preorder(root);
 		System.out.println();
 		System.out.println(tr.trikonaLevelSum(root, 2, 1, 2));

@@ -34,8 +34,8 @@ public class ShartestPathBelmanFord {
 			dist[i] = Integer.MAX_VALUE;
 			parent[i] = -1;
 		}
-		dist[srcs] = 0;		
 		
+		dist[srcs] = 0;		
 		for(int i=0; i<g.V-1; i++) {
 			for(Edge edge : g.edges) {
 				int src = edge.src;

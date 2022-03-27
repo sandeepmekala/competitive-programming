@@ -6,14 +6,24 @@ public class TotalBitsFrom1ToN {
 		int number = 7;
 		System.out.println(countBits(number));
 	}
-
+	/*
+	 * 	000
+	 * 	001
+	 * 	010
+	 * 	011
+	 * 	100
+	 * 	101
+	 * 	110
+	 * 	111
+	 * 
+	 * */
 	private static int countBits(int number) {
 		if(number <= 1) {
 			return number;
 		}
 		int x = findLowestPowOf2(number);
 		int bitsUntilLowestPowOd2 =  x*(int)Math.pow(2, x-1);
-		int OneBitsAfterLowestPowOf2 = number-(int)Math.pow(x, 2);
+		int OneBitsAfterLowestPowOf2 = number-(int)Math.pow(x, 2)-1;
 		int numOfBitsInDiffAmount = countBits(number-(int)Math.pow(x, 2));
 		
 		return bitsUntilLowestPowOd2+OneBitsAfterLowestPowOf2+numOfBitsInDiffAmount;

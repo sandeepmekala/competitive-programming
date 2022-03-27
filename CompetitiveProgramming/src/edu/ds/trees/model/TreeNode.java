@@ -1,29 +1,29 @@
 package edu.ds.trees.model;
 
-public class Node {
-	public Node left;
-	public Node right;
+public class TreeNode {
+	public TreeNode left;
+	public TreeNode right;
 	public int data;
 	
-	public Node(int data){
+	public TreeNode(int data){
 		this.left = null;
 		this.right = null;
 		this.data = data;
 	}
 
-	public Node getLeft() {
+	public TreeNode getLeft() {
 		return left;
 	}
 
-	public void setLeft(Node left) {
+	public void setLeft(TreeNode left) {
 		this.left = left;
 	}
 
-	public Node getRight() {
+	public TreeNode getRight() {
 		return right;
 	}
 
-	public void setRight(Node right) {
+	public void setRight(TreeNode right) {
 		this.right = right;
 	}
 

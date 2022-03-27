@@ -40,12 +40,12 @@ import java.util.stream.Collectors;
 //Parallel Streams
 //Map
 //Date API
-public class Basics {
+public class TopicsAll {
 	static int outerstaticnum;
 	int outernum;
 
 	public static void main(String arge[]) {
-		Basics java8 = new Basics();
+		TopicsAll java8 = new TopicsAll();
 		java8.java();
 	}
 
@@ -426,9 +426,11 @@ public class Basics {
 	
 	// Functional Interfaces --------------------------------------------------
 	// function interface
+	// it can have object class methods as abstract methods. This won't violate it property. 
 	@FunctionalInterface
 	interface Convert<F, T> {
 		T convert(F from);
+		int hashCode();
 	}
 
 	// Functional Interfaces --------------------------------------------------

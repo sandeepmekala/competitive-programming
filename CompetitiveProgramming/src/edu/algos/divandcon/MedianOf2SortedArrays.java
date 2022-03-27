@@ -1,5 +1,7 @@
 package edu.algos.divandcon;
 
+import java.sql.ResultSet;
+
 public class MedianOf2SortedArrays {
 
 	public static void main(String[] args) {

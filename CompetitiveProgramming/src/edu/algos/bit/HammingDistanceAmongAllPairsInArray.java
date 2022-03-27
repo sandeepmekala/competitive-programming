@@ -9,9 +9,9 @@ public class HammingDistanceAmongAllPairsInArray {
 	
 	// we can get the hamming distance by doing xor
 	// getting all pairs will lead to O(n*2)
-	// if we look at all the bits at a perticular position, we can figure out the each 1 need to be paired with each o
+	// if we look at all the bits at a perticular position, we can figure out the each 1 need to be paired with each 0	
 	// i.e no. of 1's * no. of 0's 
-	private static int totalHammingDistance(int[] numbers) {
+	private static int totalHammingDistance(int[] numbers) {	
 		int count = 0; 
 		for(int i=0; i<32; i++) {
 			int noOfOnes = 0;	
@@ -20,7 +20,8 @@ public class HammingDistanceAmongAllPairsInArray {
 					noOfOnes++;
 				}
 			}
-			count += 2*(noOfOnes*(numbers.length-noOfOnes));
+			int numOfZeros = numbers.length-noOfOnes;
+			count += 2*(noOfOnes*numOfZeros);
 		}
 		return count;
 	}
