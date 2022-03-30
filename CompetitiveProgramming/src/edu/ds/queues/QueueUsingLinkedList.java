@@ -1,17 +1,17 @@
 package edu.ds.queues;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 
 public class QueueUsingLinkedList {
 
-	private Node front;
-	private Node rear;
+	private ListNode front;
+	private ListNode rear;
 	QueueUsingLinkedList(){
 		front = null;
 		rear = null;
 	}
 	public void enqueue(int data){
-		Node node = new Node(data);
+		ListNode node = new ListNode(data);
 		if(front == null && rear == null){
 			front = rear = node;
 		}else{
@@ -34,7 +34,7 @@ public class QueueUsingLinkedList {
 		return false;
 	}
 	public void print(){
-		Node temp = front;
+		ListNode temp = front;
 		while(temp != null){
 			System.out.print(temp.getData()+" ");
 			temp = temp.getNext();

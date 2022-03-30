@@ -2,7 +2,7 @@ package edu.ds.stacks;
 
 import java.util.Stack;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 import edu.ds.linkedlists.SingleLinkedList;
 
 public class ReverseLinkedListUsingStack {
@@ -20,15 +20,15 @@ public class ReverseLinkedListUsingStack {
 		
 	}
 	private static void reverseLinkedListUsingStack(SingleLinkedList sll){
-		Stack<Node> stack = new Stack<Node>();
+		Stack<ListNode> stack = new Stack<ListNode>();
 		
-		Node temp = sll.getHead();
+		ListNode temp = sll.getHead();
 		while(temp != null){
 			stack.push(temp);
 			temp = temp.getNext();
 		}
 		
-		Node temp1 = stack.pop();
+		ListNode temp1 = stack.pop();
 		sll.setHead(temp1);
 		while(!stack.isEmpty()){
 			temp1.setNext(stack.pop());

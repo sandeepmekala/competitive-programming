@@ -1,16 +1,16 @@
 package edu.ds.stacks;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 
 public class StackUsingLinkedList {
 
-	private Node top;
+	private ListNode top;
 	StackUsingLinkedList(){
 		top = null;
 	}
 	
 	public void push(int data){
-		Node node = new Node(data);
+		ListNode node = new ListNode(data);
 		node.setNext(top);
 		top = node;
 	}
@@ -19,7 +19,7 @@ public class StackUsingLinkedList {
 			System.out.println("stack is empty");
 			return;
 		}
-		Node temp = top;
+		ListNode temp = top;
 		while(temp !=  null){
 			System.out.print(temp.getData()+" ");
 			temp = temp.getNext();

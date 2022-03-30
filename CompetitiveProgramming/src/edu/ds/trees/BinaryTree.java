@@ -89,7 +89,7 @@ public class BinaryTree {
 		System.out.println("inorder:");
 		bt.inorder(root);
 		System.out.println();
-		System.out.println("lca(4 2):"+lca(root,4,2).data);
+		System.out.println("lca(4 2):"+lca(root,4,2).val);
 		
 		System.out.println("size of max bst:"+ maxSizeBst(root)[1]);
 		
@@ -165,7 +165,7 @@ public class BinaryTree {
 		queue.add(root);
 		while(!queue.isEmpty()) {
 			TreeNode current = queue.poll();
-			System.out.print(current.data+" ");
+			System.out.print(current.val+" ");
 			if(current.left != null) {
 				queue.add(current.left);
 			}
@@ -194,7 +194,7 @@ public class BinaryTree {
 		
 		while(!stack.isEmpty()) {
 			TreeNode current = stack.pop();
-			System.out.print(current.data+" ");
+			System.out.print(current.val+" ");
 		}
 	}
 	
@@ -209,7 +209,7 @@ public class BinaryTree {
 		while(!stack1.isEmpty() || !stack2.isEmpty()) {
 			while(!stack1.isEmpty()) {
 				TreeNode current = stack1.pop();
-				System.out.print(current.data+" ");
+				System.out.print(current.val+" ");
 				if(current.left != null) {
 					stack2.push(current.left);
 				}
@@ -219,7 +219,7 @@ public class BinaryTree {
 			}
 			while(!stack2.isEmpty()) {
 				TreeNode current = stack2.pop();
-				System.out.print(current.data+" ");
+				System.out.print(current.val+" ");
 				if(current.right != null) {
 					stack1.push(current.right);			//right first
 				}
@@ -234,7 +234,7 @@ public class BinaryTree {
 		if(root1 == null && root2 == null) {
 			return true;
 		}
-		return (root1.data ==  root2.data) && sameTree(root1.left, root2.left) && sameTree(root1.right, root2.right);
+		return (root1.val ==  root2.val) && sameTree(root1.left, root2.left) && sameTree(root1.right, root2.right);
 	}
 	
 	private static int size(TreeNode root) {
@@ -258,17 +258,17 @@ public class BinaryTree {
 			return false;
 		}
 		if(data == root.getData()){
-			path.add(root.data);
+			path.add(root.val);
 			return true;
 		}
 		
 		if(path(root.left, data, path)) {
-			path.add(root.data);
+			path.add(root.val);
 			return true;
 		}
 		
 		if(path(root.right, data, path)) {
-			path.add(root.data);
+			path.add(root.val);
 			return true;
 		}
 		return false;
@@ -279,18 +279,18 @@ public class BinaryTree {
 			return false;
 		}
 		
-		if(root.data == sum) {
-			path.add(root.data);
+		if(root.val == sum) {
+			path.add(root.val);
 			return true;
 		}
 		
-		if(pathSum(root.left, sum-root.data, path)) {
-			path.add(root.data);
+		if(pathSum(root.left, sum-root.val, path)) {
+			path.add(root.val);
 			return true;
 		}
 		
-		if(pathSum(root.right, sum-root.data, path)) {
-			path.add(root.data);
+		if(pathSum(root.right, sum-root.val, path)) {
+			path.add(root.val);
 			return true;
 		}
 		return false;
@@ -300,7 +300,7 @@ public class BinaryTree {
 		if(root == null) {
 			return null;
 		}
-		if(root.data == num1 || root.data == num2) {
+		if(root.val == num1 || root.val == num2) {
 			return root;
 		}
 		
@@ -321,27 +321,27 @@ public class BinaryTree {
 		if(root == null) {
 			return new int[] {1, 0, 0, 0};
 		}else if(root.left == null && root.right == null) {
-			return new int[] {1, 1, root.data, root.data};
+			return new int[] {1, 1, root.val, root.val};
 		}
 		
 		int[] left = maxSizeBst(root.left);
 		int[] right = maxSizeBst(root.right);
 		
 		if(root.left == null && root.right != null) {
-			if(root.data < right[2]) {
-				return new int[] {1, right[1]+1, root.data, right[3]};
+			if(root.val < right[2]) {
+				return new int[] {1, right[1]+1, root.val, right[3]};
 			}else {
 				return new int[] {1, right[1], 0, 0};
 			}
 		}else if(root.left != null && root.right == null) {
-			if(root.data > left[3]) {
-				return new int[] {1, left[1]+1, left[2], root.data};	
+			if(root.val > left[3]) {
+				return new int[] {1, left[1]+1, left[2], root.val};	
 			}else {
 				return new int[] {1, left[1], 0, 0};
 			}
 		}else {
 			if(left[0] == 1 && right[0] == 1) {
-				if(left[3]<root.data && root.data<right[2]) {
+				if(left[3]<root.val && root.val<right[2]) {
 					return new int[] {1, left[1]+right[1]+1, left[2], right[3]};
 				}else {
 					return new int[] {1, Math.max(left[1], right[1]), 0, 0};
@@ -365,7 +365,7 @@ public class BinaryTree {
 		stack.push(root);
 		while(!stack.isEmpty()) {
 			TreeNode current = stack.pop();
-			System.out.print(current.data+" ");
+			System.out.print(current.val+" ");
 			if(current.right != null) {
 				stack.add(current.right);
 			}
@@ -390,7 +390,7 @@ public class BinaryTree {
 					break;
 				}
 				current = stack.pop();
-				System.out.print(current.data+" ");
+				System.out.print(current.val+" ");
 				current = current.right;
 			}
 		}
@@ -400,7 +400,7 @@ public class BinaryTree {
 		TreeNode current = root;
 		while(current != null) {
 			if(current.left == null) {
-				System.out.print(current.data+" ");
+				System.out.print(current.val+" ");
 				current = current.right;
 			}else {
 				TreeNode predcescor = current.left;
@@ -412,7 +412,7 @@ public class BinaryTree {
 					current = current.left;
 				}else {
 					predcescor.right = null;
-					System.out.print(current.data+" ");
+					System.out.print(current.val+" ");
 					current = current.right;
 				}
 			}
@@ -437,7 +437,7 @@ public class BinaryTree {
 		
 		while(!stack2.isEmpty()) {
 			TreeNode current = stack2.pop();
-			System.out.print(current.data+" ");
+			System.out.print(current.val+" ");
 		}
 	}
 	public static void postorderIterativeOneStack(TreeNode root) {
@@ -455,7 +455,7 @@ public class BinaryTree {
 			if(current == null) {
 				TreeNode right = stack.peek().right;
 				if(right == null || right == stack.peek().right) {
-					System.out.print(stack.pop().data+" ");
+					System.out.print(stack.pop().val+" ");
 				}else {
 					current = right;
 				}

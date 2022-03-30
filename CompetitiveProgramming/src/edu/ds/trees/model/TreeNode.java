@@ -3,12 +3,12 @@ package edu.ds.trees.model;
 public class TreeNode {
 	public TreeNode left;
 	public TreeNode right;
-	public int data;
+	public int val;
 	
-	public TreeNode(int data){
+	public TreeNode(int val){
 		this.left = null;
 		this.right = null;
-		this.data = data;
+		this.val = val;
 	}
 
 	public TreeNode getLeft() {
@@ -28,16 +28,16 @@ public class TreeNode {
 	}
 
 	public int getData() {
-		return data;
+		return val;
 	}
 
 	public void setData(int data) {
-		this.data = data;
+		this.val = data;
 	}
 
 	@Override
 	public String toString() {
-		return "[" + data + "]";
+		return "[" + val + "]";
 	}
 	
 

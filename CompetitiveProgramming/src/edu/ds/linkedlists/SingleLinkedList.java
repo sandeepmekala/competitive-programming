@@ -1,16 +1,16 @@
 package edu.ds.linkedlists;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 
 public class SingleLinkedList {
 
-	private Node head;
+	public ListNode head;
 	
-	public Node getHead() {
+	public ListNode getHead() {
 		return head;
 	}
 
-	public void setHead(Node head) {
+	public void setHead(ListNode head) {
 		this.head = head;
 	}
 
@@ -48,20 +48,20 @@ public class SingleLinkedList {
 	
 	public void insertAtEnd(int data){
 		if(head == null){
-			Node node = new Node(data);
+			ListNode node = new ListNode(data);
 			head = node;
 			return;
 		}
-		Node temp = head;
+		ListNode temp = head;
 		while(temp.getNext()!= null){
 			temp = temp.getNext();
 		}
 		
-		temp.setNext(new Node(data));
+		temp.setNext(new ListNode(data));
 		
 	}
 	public void insertAtBegining(int data){
-		Node node = new Node(data);
+		ListNode node = new ListNode(data);
 		node.setNext(head);
 		head = node;
 	}
@@ -71,19 +71,19 @@ public class SingleLinkedList {
 			return;
 		}
 		
-		Node temp = head;
+		ListNode temp = head;
 		while(temp != null){
 			System.out.print(temp.getData()+" ");
 			temp = temp.getNext();
 		}
 	}
 	public void insertAtNthPosition(int data, int n){
-		Node node  = new Node(data);
+		ListNode node  = new ListNode(data);
 		if(n == 1){
 			head = node;
 			return;
 		}
-		Node temp = head;
+		ListNode temp = head;
 		for(int i=0; i<n-2; i++){
 			temp = temp.getNext();
 		}
@@ -92,7 +92,7 @@ public class SingleLinkedList {
 	}
 	
 	public void deleteAtNthPosition(int n){
-		Node temp = head;
+		ListNode temp = head;
 		if(n == 1){
 			head = head.getNext();
 			return;
@@ -105,7 +105,7 @@ public class SingleLinkedList {
 	}
 	
 	public void reverse(){
-		Node prev = null, current = null, next;
+		ListNode prev = null, current = null, next;
 		current = head;
 		while(current != null){
 			next = current.getNext();
@@ -116,7 +116,7 @@ public class SingleLinkedList {
 		head = prev;
 	}
 	
-	public void recursivePrint(Node node){
+	public void recursivePrint(ListNode node){
 		if(node == null){
 			return;
 		}
@@ -124,22 +124,32 @@ public class SingleLinkedList {
 		recursivePrint(node.getNext());
 	}
 	
-	public void recursiveReversePrint(Node node){
+	public void recursiveReversePrint(ListNode node){
 		if(node == null){
 			return;
 		}
 		recursiveReversePrint(node.getNext());
 		System.out.print(node.getData()+" ");
 	}
-	public void recursiveReveres(Node node){
+	public void recursiveReveres(ListNode node){
 		if(node.getNext() == null){
 			head = node;
 			return;
 		}
 		recursiveReveres(node.getNext());
-		Node temp = node.getNext();
+		ListNode temp = node.getNext();
 		temp.setNext(node);
 		node.setNext(null);
+	}
+
+	public int count() {
+		int count = 0;
+		ListNode temp = head;
+		while(temp != null) {
+			temp = temp.next;
+			count++;
+		}
+		return count;
 	}
 	
 }

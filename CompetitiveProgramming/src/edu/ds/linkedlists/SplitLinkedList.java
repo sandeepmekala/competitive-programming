@@ -1,6 +1,6 @@
 package edu.ds.linkedlists;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 
 public class SplitLinkedList {
 
@@ -14,9 +14,9 @@ public class SplitLinkedList {
 		sll.insertAtEnd(2);
 		
 	
-		Node head2 = splitLinkedList(sll.getHead());
+		ListNode head2 = splitLinkedList(sll.getHead());
 		
-		Node head1 = sll.getHead();
+		ListNode head1 = sll.getHead();
 		sll.print();
 		
 		System.out.println();
@@ -24,21 +24,21 @@ public class SplitLinkedList {
 		sll.print();
 		
 	}
-	private static Node mergeSort(Node node){
-		Node head1 = node;
+	private static ListNode mergeSort(ListNode node){
+		ListNode head1 = node;
 		if(node == null || node.getNext() == null) {
 			return node;
 		}
-		Node head2 = splitLinkedList(node);
+		ListNode head2 = splitLinkedList(node);
 		
-		Node neaHead1 = mergeSort(head1);
-		Node neaHead2 = mergeSort(head2);
-		Node neaHead = merge(neaHead1, neaHead2);
+		ListNode neaHead1 = mergeSort(head1);
+		ListNode neaHead2 = mergeSort(head2);
+		ListNode neaHead = merge(neaHead1, neaHead2);
 		return neaHead;
 	}
-	private static Node merge(Node head1, Node head2) {
-		Node newHead = new Node(-1);
-		Node temp = newHead;
+	private static ListNode merge(ListNode head1, ListNode head2) {
+		ListNode newHead = new ListNode(-1);
+		ListNode temp = newHead;
 		while(head1 != null && head2 != null) {
 			if(head1.getData() < head2.getData()) {
 				temp.setNext(head1);
@@ -63,14 +63,14 @@ public class SplitLinkedList {
 		
 	}
 	
-	private static Node splitLinkedList(Node head) {
-		Node slowPtr = head;
-		Node fastPtr = head.getNext();
+	private static ListNode splitLinkedList(ListNode head) {
+		ListNode slowPtr = head;
+		ListNode fastPtr = head.getNext();
 		while(fastPtr != null && fastPtr.getNext() != null) {
 			slowPtr = slowPtr.getNext();
 			fastPtr = fastPtr.getNext().getNext();
 		}
-		Node head2 = slowPtr.getNext();
+		ListNode head2 = slowPtr.getNext();
 		slowPtr.setNext(null);
 		return head2;
 	}

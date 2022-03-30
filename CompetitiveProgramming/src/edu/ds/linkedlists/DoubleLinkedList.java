@@ -1,9 +1,9 @@
 package edu.ds.linkedlists;
 
-import edu.ds.linkedlist.model.Node;
+import edu.ds.linkedlist.model.ListNode;
 
 public class DoubleLinkedList {
-	private Node head;
+	private ListNode head;
 	
 	public static void main(String[] args) {
 		DoubleLinkedList dll = new DoubleLinkedList();
@@ -18,7 +18,7 @@ public class DoubleLinkedList {
 	}
 	
 	public void insertAtHead(int data){
-		Node node = new Node(data);
+		ListNode node = new ListNode(data);
 		if(head == null){
 			head = node;
 			return;
@@ -33,7 +33,7 @@ public class DoubleLinkedList {
 			return;
 		}
 		
-		Node temp = head;
+		ListNode temp = head;
 		while(temp != null){
 			System.out.print(temp.getData()+" ");
 			temp = temp.getNext();
@@ -43,7 +43,7 @@ public class DoubleLinkedList {
 		if(head == null){
 			System.out.println("List is empty");
 		}
-		Node temp = head;
+		ListNode temp = head;
 		while(temp.getNext() != null){
 			temp = temp.getNext();
 		}

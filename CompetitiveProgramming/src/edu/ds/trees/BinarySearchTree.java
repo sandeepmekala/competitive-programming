@@ -36,7 +36,7 @@ public class BinarySearchTree {
 		System.out.println();
 		
 		System.out.println("search 30:");
-		System.out.println(bst.search(root, 10).data);
+		System.out.println(bst.search(root, 10).val);
 		System.out.println();
 		System.out.println("inorder:");
 		bst.inorder(root);
@@ -54,7 +54,7 @@ public class BinarySearchTree {
 		System.out.println(bst.path(root, 5, path));
 		System.out.println("path"+path);
 		
-		System.out.println(isBinary(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
+		System.out.println(isBst(root, Integer.MIN_VALUE, Integer.MAX_VALUE));
 		
 		System.out.println("lca :"+bst.lca(root, 2, 5));
 	}
@@ -63,9 +63,9 @@ public class BinarySearchTree {
 		if(root == null){
 			root  = new TreeNode(data);
 		}else{
-			if(data < root.data){
+			if(data < root.val){
 				root.setLeft(insert(root.left, data));
-			}else if(data > root.data){
+			}else if(data > root.val){
 				root.setRight(insert(root.right, data));
 			}
 		}
@@ -74,11 +74,11 @@ public class BinarySearchTree {
 	}
 	private TreeNode search(TreeNode  root, int data){
 		
-		if(root == null || root.data == data){
+		if(root == null || root.val == data){
 			return root;
 		}
 		
-		if(data < root.data){
+		if(data < root.val){
 			return search(root.left, data);
 		}else{
 			return search(root.right, data);
@@ -88,9 +88,9 @@ public class BinarySearchTree {
 		if(root == null){
 			return null;
 		}else{
-			if(data < root.data){
+			if(data < root.val){
 				root.setLeft(delete(root.left, data));
-			}else if(data > root.data){
+			}else if(data > root.val){
 				root.setRight(delete(root.right, data));
 			}else{
 				if(root.left == null && root.right == null){
@@ -112,7 +112,7 @@ public class BinarySearchTree {
 					}else {
 						root.setRight(succ.right);
 					}
-					root.setData(succ.data);
+					root.setData(succ.val);
 					return root;
 				}
 			}
@@ -126,24 +126,26 @@ public class BinarySearchTree {
 		return 1+size(root.left)+size(root.right);
 	}
 	
-	private void preorder(TreeNode root){
+	public void preorder(TreeNode root){
 		if(root != null){	
-			System.out.print(root.data+" ");
+			System.out.print(root.val+" ");
 			preorder(root.left);
 			preorder(root.right);
 		}
 	}
-	private void postorder(TreeNode root){
+	
+	public void postorder(TreeNode root){
 		if(root != null){	
 			preorder(root.left);
 			preorder(root.right);
-			System.out.print(root.data+" ");
+			System.out.print(root.val+" ");
 		}
 	}
-	private void inorder(TreeNode root){
+	
+	public void inorder(TreeNode root){
 		if(root != null){	
 			inorder(root.left);
-			System.out.print(root.data+" ");
+			System.out.print(root.val+" ");
 			inorder(root.right);
 		}
 	}
@@ -152,17 +154,17 @@ public class BinarySearchTree {
 		if(root == null){
 			return false;
 		}
-		if(data == root.data){
-			path.add(root.data);
+		if(data == root.val){
+			path.add(root.val);
 			return true;
-		}else if(data < root.data) {
+		}else if(data < root.val) {
 			if(path(root.left, data, path)) {
-				path.add(root.data);
+				path.add(root.val);
 				return true;
 			}
 		}else {
 			if(path(root.right, data, path)) {
-				path.add(root.data);
+				path.add(root.val);
 				return true;
 			}
 		}
@@ -170,24 +172,22 @@ public class BinarySearchTree {
 		return false;
 	}
 	
-	public static boolean isBinary(TreeNode root, int min, int max) {
+	public static boolean isBst(TreeNode root, int min, int max) {
 		if(root == null) {
 			return true;
 		}
-		if(root.data > min && root.data < max) {
-			return true;
-		}
-		return isBinary(root.left, min, root.data) && isBinary(root.right, root.data, max); 
+		return (root.val > min && root.val < max) && 
+				isBst(root.left, min, root.val) && isBst(root.right, root.val, max); 
 	}
 	
 	private int lca(TreeNode root, int num1, int num2){
 
-		if(num1 < root.data && num2 < root.data){
+		if(num1 < root.val && num2 < root.val){
 			return lca(root.left, num1, num2);
-		}else if(num1 > root.data && num2 > root.data){
+		}else if(num1 > root.val && num2 > root.val){
 			return lca(root.right, num1, num2);
 		}else{
-			return root.data;
+			return root.val;
 		}		
 	}
 }

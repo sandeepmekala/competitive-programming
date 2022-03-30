@@ -1,4 +1,4 @@
-package edu.ds.trees;
+package edu.algos.tree;
 
 public class SortedArrayToBinarySearchTree {
 
