@@ -2,7 +2,7 @@ package edu.practice.leatcode;
 
 import java.util.Stack;
 
-import edu.ds.trees.model.TreeNode;
+import edu.ds.model.TreeNode;
 
 class BSTIterator {
     private TreeNode next = null;

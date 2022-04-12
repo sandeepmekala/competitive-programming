@@ -1,12 +1,12 @@
 package edu.ds.graph.model;
 
 public class Subset {
-	public int data;
+	public int val;
 	public int parent;
 	public int rank;
 
-	public Subset(int data, int parent, int rank) {
-		this.data = data;
+	public Subset(int val, int parent, int rank) {
+		this.val = val;
 		this.parent = parent;
 		this.rank = rank;
 	}

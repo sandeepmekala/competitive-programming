@@ -1,8 +1,8 @@
 package edu.algos.tree;
 
 import edu.ds.linkedlists.SingleLinkedList;
+import edu.ds.model.TreeNode;
 import edu.ds.trees.BinarySearchTree;
-import edu.ds.trees.model.TreeNode;
 
 public class SortedLinkedListToBinarySearchTree {
 
@@ -23,7 +23,7 @@ public class SortedLinkedListToBinarySearchTree {
 		System.out.println("Given Linked List ");
 		list.print();
 
-		TreeNode root = obj.sortedListToBst(list, list.count());
+		TreeNode root = obj.sortedListToBst(list, list.size());
 		System.out.println();
 		System.out.println("Pre-Order Traversal of constructed BST ");
 		bst.preorder(root);

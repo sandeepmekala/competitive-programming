@@ -8,7 +8,7 @@ public class Hashtable {
 		// -> Chaining: 
 		//		-> can use linked list, arraylist or balance bst for storing elements
 		// -> open addressing: keep looking the hashtable until an empty slot is found
-		//		-> for delete, mark deleted nodes so that search won't fail
+		//		-> for delete, mark deleted nodes as 'x' so that search won't fail
 		//		-> next slot can be found using these methods:
 		//			-> 1. linear probing: search next slot linearly (hash(x)+1)%size
 		//				-> good cache performance and but clustering problem

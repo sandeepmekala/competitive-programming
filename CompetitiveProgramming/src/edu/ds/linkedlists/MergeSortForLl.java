@@ -13,14 +13,14 @@ public class MergeSortForLl {
 		sll.insertAtEnd(3);
 		sll.insertAtEnd(2);
 		
-		ListNode newHead = mergeSort(sll.getHead());
-		sll.setHead(newHead);
+		ListNode newHead = mergeSort(sll.head);
+		sll.head = newHead;
 		sll.print();
 		
 	}
 	private static ListNode mergeSort(ListNode node){
 		ListNode head1 = node;
-		if(node == null || node.getNext() == null) {
+		if(node == null || node.next == null) {
 			return node;
 		}
 		ListNode head2 = splitLinkedList(node);
@@ -34,38 +34,38 @@ public class MergeSortForLl {
 		ListNode newHead = new ListNode(-1);
 		ListNode temp = newHead;
 		while(head1 != null && head2 != null) {
-			if(head1.getData() < head2.getData()) {
-				temp.setNext(head1);
-				head1 = head1.getNext();
+			if(head1.getVal() < head2.getVal()) {
+				temp.next = head1;
+				head1 = head1.next;
 			}else {
-				temp.setNext(head2);
-				head2 = head2.getNext();
+				temp.next = head2;
+				head2 = head2.next;
 			}
-			temp = temp.getNext();
+			temp = temp.next;
 		}
 		while(head1 != null) {
-			temp.setNext(head1);
-			temp = temp.getNext();
-			head1 = head1.getNext();
+			temp.next = head1;
+			temp = temp.next;
+			head1 = head1.next;
 		}
 		while(head2 != null) {
-			temp.setNext(head2);
-			temp = temp.getNext();
-			head2 = head2.getNext();
+			temp.next = head2;
+			temp = temp.next;
+			head2 = head2.next;
 		}
-		return newHead.getNext();
+		return newHead.next;
 		
 	}
 	
 	private static ListNode splitLinkedList(ListNode head) {
 		ListNode slowPtr = head;
-		ListNode fastPtr = head.getNext();
-		while(fastPtr != null && fastPtr.getNext() != null) {
-			slowPtr = slowPtr.getNext();
-			fastPtr = fastPtr.getNext().getNext();
+		ListNode fastPtr = head.next;
+		while(fastPtr != null && fastPtr.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
 		}
-		ListNode head2 = slowPtr.getNext();
-		slowPtr.setNext(null);
+		ListNode head2 = slowPtr.next;
+		slowPtr.next = (null);
 		return head2;
 	}
 }

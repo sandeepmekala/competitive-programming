@@ -1,6 +1,6 @@
 package edu.ds.trees;
 
-import edu.ds.trees.model.AvlNode;
+import edu.ds.model.AvlNode;
 
 public class AvlTree {
 

@@ -4,20 +4,17 @@ public class ListNode {
 	public int val;
 	public ListNode next;
 	public ListNode prev;
-	
-	private ListNode(){
-	}
-	
+
 	public ListNode(int data){
 		this.val = data;
 	}
 
-	public int getData() {
+	public int getVal() {
 		return val;
 	}
 
-	public void setData(int data) {
-		this.val = data;
+	public void setVal(int val) {
+		this.val = val;
 	}
 
 	public ListNode getNext() {

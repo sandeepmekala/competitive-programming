@@ -3,7 +3,7 @@ package edu.ds.trees;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import edu.ds.trees.model.TreeNode;
+import edu.ds.model.TreeNode;
 
 public class BinarySearchTree {
 

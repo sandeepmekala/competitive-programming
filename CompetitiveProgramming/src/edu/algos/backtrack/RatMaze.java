@@ -21,7 +21,7 @@ public class RatMaze {
 	{
 		int sol[][] = new int[N][N];
 
-		if (solveMazeUtil(maze, 0, 0, sol) == false) {
+		if (!solveMazeUtil(maze, 0, 0, sol)) {
 			System.out.print("Solution doesn't exist");
 			return false;
 		}

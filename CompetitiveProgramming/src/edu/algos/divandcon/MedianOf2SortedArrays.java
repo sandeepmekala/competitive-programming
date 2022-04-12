@@ -1,12 +1,10 @@
 package edu.algos.divandcon;
 
-import java.sql.ResultSet;
-
 public class MedianOf2SortedArrays {
 
 	public static void main(String[] args) {
-		int arr1[] = {1, 12, 15, 26, 38};
-		int arr2[] = {2, 13, 17, 30, 45};
+		int arr1[] = {1, 2, 3, 4, 5};
+		int arr2[] = {6, 7, 8, 9, 10};
         int n1 = arr1.length;
         int n2 = arr1.length;
         
@@ -21,10 +19,10 @@ public class MedianOf2SortedArrays {
 	}
 
 	//concept: find the medians of respective arrays and compare the medians, recursively reduce the search space to 2 elements in each array
-	private static int getMedian(int[] arr1, int[] arr2, int start1, int start2, int end1, int end2) {
+	private static double getMedian(int[] arr1, int[] arr2, int start1, int start2, int end1, int end2) {
 
 		if(end1 - start1 == 1) {
-			return (Math.max(arr1[start1], arr2[start1])+Math.min(arr1[end2], arr2[end2]))/2;
+			return (Math.max(arr1[start1], arr2[start2])+Math.min(arr1[end1], arr2[end2]))/2.0;
 		}
 		int m1 = median(arr1, start1, end1);
 		int m2 = median(arr2, start2, end2);
@@ -42,7 +40,7 @@ public class MedianOf2SortedArrays {
 	private static int median(int[] arr, int start, int end) {
 		int n = end - start + 1;
 		if(n%2 == 0) {
-			return (arr[start+n/2]+arr[start+n/2-1])/2;
+			return (arr[start+n/2]+arr[start+n/2-1])/2;		//[1, 2] -> n = 2-0+1 = 2, n/2=1, n/2-1=0
 		}else {
 			return arr[start+n/2];
 		}

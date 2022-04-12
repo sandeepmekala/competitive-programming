@@ -16,9 +16,9 @@ public class PowOfX {
 		}
 		
 		if(y % 2 == 0) {
-			return pow(x, y/2)*pow(x, y/2);
+			return pow(x, y/2)*pow(x, y/2);		// 2^4 -> 2^(4/2).2^(4/2) -> 2^2.2^2
 		}else {
-			return x*pow(x, y/2)*pow(x, y/2);
+			return x*pow(x, y/2)*pow(x, y/2);	// 2^3 -> 2.2^2 -> 2.2^(3/2).2^(3/2)
 		}
 	}
 

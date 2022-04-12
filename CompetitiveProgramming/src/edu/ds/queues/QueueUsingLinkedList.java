@@ -36,7 +36,7 @@ public class QueueUsingLinkedList {
 	public void print(){
 		ListNode temp = front;
 		while(temp != null){
-			System.out.print(temp.getData()+" ");
+			System.out.print(temp.getVal()+" ");
 			temp = temp.getNext();
 		}
 	}

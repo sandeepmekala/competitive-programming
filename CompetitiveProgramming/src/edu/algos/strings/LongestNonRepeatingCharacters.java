@@ -11,27 +11,28 @@ public class LongestNonRepeatingCharacters {
 	}
 	
 	// use 2 pointers 
-	// once you find a repeating char on the right side remove all the old chars from set until the repeating item
+	// once you find a repeating char on the right side remove all the old chars from list until the repeating item
 	private static int maxSubstringLenthOfNonRepeatingChars(String input) {
 		List<Character> list = new ArrayList<Character>();
 		int maxLength = 0;
-		for(int i=0,j=0; j<input.length(); j++) {
-			char currentChar = input.charAt(j);
-			if(!list.contains(currentChar)) {
-				list.add(currentChar);
+		for(int j=0,i=0; i<input.length(); i++) {
+			char current = input.charAt(i);
+			if(!list.contains(current)) {
+				list.add(current);
 			}else {
-				int length = j-i;
+				int length = i-j;
 				if(length > maxLength) {
 					maxLength = length;
 				}
-				while(i<j && !list.isEmpty()) {
-					Character oldChar = list.get(i++);
+				//update j
+				while(j<i && !list.isEmpty()) {
+					Character oldChar = input.charAt(j++);
 					list.remove(oldChar);
-					if(oldChar ==  currentChar) {
+					if(oldChar ==  current) {
 						break;
 					}
 				}
-				list.add(currentChar);
+				list.add(current);
 			}
 		}
 		return maxLength;

@@ -7,7 +7,7 @@ public class FindMax {
 		System.out.println(findMax(numbers, 0, numbers.length));
 	}
 	
-	//this is DC becuase 
+	//this is DC becuase we are dividing the problem into smaller sub problems and find solution to them and the finding the solution to bigger problem by from the smaller problem
 	private static int findMax(int[] numbers, int index, int n) {
 		
 		// this make sure it stops at last but one index

@@ -35,7 +35,7 @@ public class DoubleLinkedList {
 		
 		ListNode temp = head;
 		while(temp != null){
-			System.out.print(temp.getData()+" ");
+			System.out.print(temp.getVal()+" ");
 			temp = temp.getNext();
 		}
 	}
@@ -48,7 +48,7 @@ public class DoubleLinkedList {
 			temp = temp.getNext();
 		}
 		while(temp != null){
-			System.out.print(temp.getData()+" ");
+			System.out.print(temp.getVal()+" ");
 			temp = temp.getPrev();
 		}
 	}

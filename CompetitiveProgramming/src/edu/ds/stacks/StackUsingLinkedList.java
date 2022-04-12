@@ -21,7 +21,7 @@ public class StackUsingLinkedList {
 		}
 		ListNode temp = top;
 		while(temp !=  null){
-			System.out.print(temp.getData()+" ");
+			System.out.print(temp.getVal()+" ");
 			temp = temp.getNext();
 		}
 	}
@@ -38,7 +38,7 @@ public class StackUsingLinkedList {
 			return -1;
 		}
 
-		return top.getData();
+		return top.getVal();
 	}
 	public boolean isEmpty(){
 		if(top == null){

@@ -3,7 +3,7 @@ package edu.ds.trees;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-import edu.ds.trees.model.TrieNode;
+import edu.ds.model.TrieNode;
 
 public class Trie {
 	

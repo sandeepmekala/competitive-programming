@@ -2,7 +2,7 @@ package edu.ds.trees;
 
 import java.util.ArrayList;
 
-import edu.ds.trees.model.TreeNode;
+import edu.ds.model.TreeNode;
 
 public class Trikona {
 

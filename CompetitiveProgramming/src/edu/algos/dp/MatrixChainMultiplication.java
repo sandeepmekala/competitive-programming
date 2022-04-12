@@ -9,23 +9,6 @@ public class MatrixChainMultiplication {
 		System.out.println(minOperationsCountBottomUp(dimensions));
 	}
 
-	// O(n^3)
-	private static int minOperationsCountTopDown(int[] dimensions, int i, int j) {
-		int min = Integer.MAX_VALUE;
-		
-		if(i == j) {
-			return 0;
-		}
-		for(int k=i; k<j; k++) {
-			int count = minOperationsCountTopDown(dimensions, i, k)+
-					minOperationsCountTopDown(dimensions, k+1, j)+
-					dimensions[i-1]*dimensions[k]*dimensions[j];
-			if(count < min) {
-				min = count;
-			}
-		}
-		return min;
-	}
 	/*
 	 * 			(1,2),	(2,3),	(3,4),	(4,3)
 	 * i\j	0	1		2		3		4
@@ -54,4 +37,20 @@ public class MatrixChainMultiplication {
 		return mem[1][n-1];
 	}
 
+	// O(n^3)
+	private static int minOperationsCountTopDown(int[] dimensions, int i, int j) {
+		int min = Integer.MAX_VALUE;
+
+		if (i == j) {
+			return 0;
+		}
+		for (int k = i; k < j; k++) {
+			int count = minOperationsCountTopDown(dimensions, i, k) + minOperationsCountTopDown(dimensions, k + 1, j)
+					+ dimensions[i - 1] * dimensions[k] * dimensions[j];
+			if (count < min) {
+				min = count;
+			}
+		}
+		return min;
+	}
 }

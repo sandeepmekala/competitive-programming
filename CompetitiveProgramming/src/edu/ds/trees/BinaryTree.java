@@ -7,8 +7,8 @@ import java.util.Collections;
 import java.util.Queue;
 import java.util.Stack;
 
+import edu.ds.model.TreeNode;
 import edu.ds.stacks.ReverseStringUsingStack;
-import edu.ds.trees.model.TreeNode;
 
 public class BinaryTree {
 	private TreeNode root;	

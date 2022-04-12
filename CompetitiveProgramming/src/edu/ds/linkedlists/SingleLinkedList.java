@@ -6,41 +6,35 @@ public class SingleLinkedList {
 
 	public ListNode head;
 	
-	public ListNode getHead() {
-		return head;
-	}
-
-	public void setHead(ListNode head) {
-		this.head = head;
-	}
-
 	public static void main(String[] args) {
 		SingleLinkedList sll = new SingleLinkedList();
 		
-//		sll.print();
-//		sll.insertAtEnd(10);
-//		System.out.println();
-//		sll.print();
-//		sll.insertAtEnd(20);
-//		sll.insertAtEnd(30);
-//		System.out.println();
-//		sll.print();
+		sll.print();
+		sll.insertAtEnd(10);
+		System.out.println();
+		sll.print();
+		sll.insertAtEnd(20);
+		sll.insertAtEnd(30);
+		System.out.println();
+		sll.print();
 
-//		sll.insertAtBegining(40);
-//		System.out.println();
-//		sll.print();
-//		sll.insertAtBegining(50);
-//		System.out.println();
-//		sll.print();
+		sll.insertAtBegining(40);
+		System.out.println();
+		sll.print();
+		sll.insertAtBegining(50);
+		System.out.println();
+		sll.print();
 		
 		sll.insertAtNthPosition(60, 1);
 		sll.insertAtNthPosition(70, 2);
 		sll.insertAtNthPosition(80, 3);
 		System.out.println();
 		sll.print();
-//		sll.deleteAtNthPosition(1);
-//		System.out.println();
-//		sll.print();
+		
+		sll.deleteAtNthPosition(1);
+		System.out.println();
+		sll.print();
+		
 		sll.reverse();
 		System.out.println();
 		sll.print();
@@ -53,16 +47,16 @@ public class SingleLinkedList {
 			return;
 		}
 		ListNode temp = head;
-		while(temp.getNext()!= null){
-			temp = temp.getNext();
+		while(temp.next!= null){
+			temp = temp.next;
 		}
 		
-		temp.setNext(new ListNode(data));
+		temp.next = new ListNode(data);
 		
 	}
 	public void insertAtBegining(int data){
 		ListNode node = new ListNode(data);
-		node.setNext(head);
+		node.next = head;
 		head = node;
 	}
 	public void print(){
@@ -73,76 +67,77 @@ public class SingleLinkedList {
 		
 		ListNode temp = head;
 		while(temp != null){
-			System.out.print(temp.getData()+" ");
-			temp = temp.getNext();
+			System.out.print(temp.val+" ");
+			temp = temp.next;
 		}
 	}
 	public void insertAtNthPosition(int data, int n){
 		ListNode node  = new ListNode(data);
 		if(n == 1){
+			node.next = head;
 			head = node;
 			return;
 		}
 		ListNode temp = head;
 		for(int i=0; i<n-2; i++){
-			temp = temp.getNext();
+			temp = temp.next;
 		}
-		node.setNext(temp.getNext());
-		temp.setNext(node);
+		node.next = temp.next;
+		temp.next = node;
 	}
 	
 	public void deleteAtNthPosition(int n){
 		ListNode temp = head;
 		if(n == 1){
-			head = head.getNext();
+			head = head.next;
 			return;
 		}
 		for(int i=0; i<n-2; i++){
-			temp = temp.getNext();
+			temp = temp.next;
 		}
 
-		temp.setNext(temp.getNext().getNext());
+		temp.next = temp.next.next;
 	}
 	
 	public void reverse(){
 		ListNode prev = null, current = null, next;
 		current = head;
 		while(current != null){
-			next = current.getNext();
-			current.setNext(prev);
+			next = current.next;
+			current.next = prev;
 			prev = current;
 			current = next;
 		}
 		head = prev;
 	}
 	
-	public void recursivePrint(ListNode node){
+	public void printRec(ListNode node){
 		if(node == null){
 			return;
 		}
-		System.out.print(node.getData()+" ");
-		recursivePrint(node.getNext());
+		System.out.print(node.val+" ");
+		printRec(node.next);
 	}
 	
-	public void recursiveReversePrint(ListNode node){
+	public void reversePrintRec(ListNode node){
 		if(node == null){
 			return;
 		}
-		recursiveReversePrint(node.getNext());
-		System.out.print(node.getData()+" ");
+		reversePrintRec(node.next);
+		System.out.print(node.val+" ");
 	}
-	public void recursiveReveres(ListNode node){
-		if(node.getNext() == null){
+	public void reveresRec(ListNode node){
+		if(node.next == null){
 			head = node;
 			return;
 		}
-		recursiveReveres(node.getNext());
-		ListNode temp = node.getNext();
-		temp.setNext(node);
-		node.setNext(null);
+		reveresRec(node.next);
+		ListNode temp = node.next;
+		temp.next = node;
+		node.next = null;
 	}
 
-	public int count() {
+	public int size() {
 		int count = 0;
 		ListNode temp = head;
 		while(temp != null) {

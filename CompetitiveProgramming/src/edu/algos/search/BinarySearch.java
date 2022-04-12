@@ -11,7 +11,7 @@ public class BinarySearch {
 		System.out.println(bs.search(arr, 0, n-1, x));
 	}
 
-	// concept: divide the array in half every based on if mid element is greater or smaller
+	// concept: divide the array in half every time based on if mid element is greater or smaller
 	private int search(int[] numbers, int start, int end, int x) {
 		
 		if (start <= end) {

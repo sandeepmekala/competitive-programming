@@ -9,9 +9,9 @@ public class KnightsTour {
 	}
 
 	// Question: With the xMove and yMove moves can we explore all the cells?
-	// Concept: explore all moves parallelly, if any move reaches N*N, return true, else return false
+	// Concept: explore all moves in parallel, if any move reaches N*N, return true, else return false
 	// If any of the recursion returns true, return true to above.	
-	// prepare N*N empty solution matrix and pass it to recursive call which update the respective move numbers in solution matrix. if not solution exits, it will backtrack.
+	// prepare N*N empty solution matrix and pass it to recursive call which update the respective move numbers in solution matrix. if no solution exits, it will backtrack.
 	// Time complexity: O(8^n) as we with 8 moves in parallel. Each recursion checks for 8 positions. It will be tree with 8 children and 8 depth.
 	// Space complexity: O(n^2) where n is number of moves
 	private boolean solveKT() {

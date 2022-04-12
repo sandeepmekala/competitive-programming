@@ -77,6 +77,7 @@ public class RotateMatrixByOneElement {
 		}
 		
 		//incase of rectangle matrix with odd dimention, there will be one last row/colum to be processed
+		//odd number of rows
 		if(startI < endI) {
 			prev = matrix[endI][endJ];
 			for(int i=startI; i<=endI; i++) {
@@ -85,6 +86,8 @@ public class RotateMatrixByOneElement {
 				prev = curr;
 			}
 		}
+		
+		//odd number of cols
 		if(startJ < endJ) {
 			prev = matrix[endI][endJ];
 			for(int j=startJ; j<=endJ; j++) {

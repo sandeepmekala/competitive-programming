@@ -21,9 +21,6 @@ public class RotateMatrixLeftBy90 {
 		print(matrix);
 		rotateBy90(matrix);
 
-		System.out.println();
-		print(matrix);
-
 	}
 
 	// rotate in anti clockwise
@@ -38,9 +35,7 @@ public class RotateMatrixLeftBy90 {
 		int endI = matrix.length - 1;
 		int endJ = matrix[0].length - 1;
 		
-		for (int n = matrix.length; n > 1; n=n/2) {
-			System.err.println("n:"+n+" startI:"+startI +" endI:"+endI);
-			
+		while(startI < endI && startJ < endJ) {
 			int temp;
 			// top -> left
 			for (int i = endI, j=0; i > startI; i--,j++ ) {
@@ -48,9 +43,7 @@ public class RotateMatrixLeftBy90 {
 				matrix[i][startJ] = matrix[startI][startJ+j];
 				matrix[startI][startJ+j] = temp;
 			}
-
-			System.out.println();
-			print(matrix);
+			
 			// right -> top
 			for (int j = startJ, i=0; j < endJ; j++, i++) {
 				temp = matrix[startI][j];
@@ -58,8 +51,6 @@ public class RotateMatrixLeftBy90 {
 				matrix[startI + i][endJ] = temp;
 			}
 
-			System.out.println();
-			print(matrix);
 			// bottom -> right
 			for (int i = startI, j=endJ; i < endI; i++, j--) {
 				temp = matrix[i][endJ];
