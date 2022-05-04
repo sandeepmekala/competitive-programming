@@ -1,11 +1,12 @@
 package edu.algos.graph;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.TreeMap;
 
-import edu.ds.graph.model.Edge;
-import edu.ds.graph.model.Subset;
-import edu.ds.graphs.Graph;
-import edu.ds.graphs.UnionFind;
+import edu.algos.graph.model.Edge;
+import edu.algos.graphs.Graph;
+import edu.algos.graphs.UnionFind;
 
 public class Algo07_KruskalsMinimumSpanningTree {
 	
@@ -28,6 +29,7 @@ public class Algo07_KruskalsMinimumSpanningTree {
 			System.out.println(mstEdge.src+"->"+mstEdge.dest);
 			minCost += mstEdge.weight;
 		}
+
 		System.out.println("Min Cost:"+minCost);
 	}
 	

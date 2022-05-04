@@ -12,6 +12,7 @@ public class Algo03_NumbersRepeating3TimesAndOneOddOneInArray {
 		int oddNumber = 0; 
 		for(int i=0; i<32; i++) {
 			int noOfOnes = 0;	
+			
 			for(int j=0; j<numbers.length; j++) {
 				if(((numbers[j]>>i)&(1))>0) {
 					noOfOnes++;

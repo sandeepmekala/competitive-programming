@@ -1,8 +1,8 @@
 package edu.algos.tree;
 
-import edu.ds.linkedlists.SingleLinkedList;
-import edu.ds.model.TreeNode;
-import edu.ds.trees.BinarySearchTree;
+import edu.algos.linkedlists.SingleLinkedList;
+import edu.algos.model.TreeNode;
+import edu.algos.trees.BinarySearchTree;
 
 public class SortedLinkedListToBinarySearchTree {
 
@@ -29,6 +29,10 @@ public class SortedLinkedListToBinarySearchTree {
 		bst.preorder(root);
 	}
 
+	/*
+	 * Concept: head pointer is global for all recursive calls.
+	 * 
+	 * */
 	TreeNode sortedListToBst(SingleLinkedList list, int n) {
 		if (n <= 0)
 			return null;

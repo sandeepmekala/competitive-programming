@@ -2,8 +2,8 @@ package edu.algos.graph;
 
 import java.util.Arrays;
 
-import edu.ds.graph.model.Edge;
-import edu.ds.graphs.Graph;
+import edu.algos.graph.model.Edge;
+import edu.algos.graphs.Graph;
 
 public class Algo08_ShartestPathBellmanFord {
 

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import edu.ds.graphs.GraphAdjLst;
+import edu.algos.graphs.GraphAdjLst;
 
 public class Algo11_StronglyConnectedComponentsKosarajuAlgo {
 

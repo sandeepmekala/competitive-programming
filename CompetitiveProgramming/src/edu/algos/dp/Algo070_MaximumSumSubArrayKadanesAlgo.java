@@ -7,9 +7,9 @@ public class Algo070_MaximumSumSubArrayKadanesAlgo {
 		System.out.println(result);
 	} 
 	
-	//It is DP algo because at each element we have 2 choices. whether to take that element or continue with previous sum OR start a new range
-	// concept: continuously add numbers, if sum goes above global sum, update global sum
-	// if sum goes negative, reset it to 0.
+	// It is DP algo because at each element we have 2 choices. whether to take that element or continue with previous sum OR start a new range
+	// Concept: Continuously add numbers, if sum goes above global sum, update global sum
+	// If sum goes negative, reset it to 0.
 	private int findMaxSubArray(int nums[]){
 		
 		if(nums.length == 0){

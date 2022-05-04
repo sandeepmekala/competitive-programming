@@ -3,7 +3,7 @@ package edu.algos.graph;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.ds.graphs.GraphAdjLst;
+import edu.algos.graphs.GraphAdjLst;
 
 public class Algo00_BreadthFirstSearch {
 

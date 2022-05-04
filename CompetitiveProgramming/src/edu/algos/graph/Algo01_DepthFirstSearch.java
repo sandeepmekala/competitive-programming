@@ -2,7 +2,7 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.ds.graphs.GraphAdjLst;
+import edu.algos.graphs.GraphAdjLst;
 
 public class Algo01_DepthFirstSearch {
 

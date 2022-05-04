@@ -2,7 +2,7 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.ds.graphs.GraphAdjLst;
+import edu.algos.graphs.GraphAdjLst;
 
 class Algo03_DetectCycleInDirectedGraph {
 	public static void main(String args[]) {

@@ -2,9 +2,9 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.ds.graph.model.Edge;
-import edu.ds.graphs.Graph;
-import edu.ds.graphs.UnionFind;
+import edu.algos.graph.model.Edge;
+import edu.algos.graphs.Graph;
+import edu.algos.graphs.UnionFind;
 
 public class Algo04_DetectCycleInUndirectedGraph {
 

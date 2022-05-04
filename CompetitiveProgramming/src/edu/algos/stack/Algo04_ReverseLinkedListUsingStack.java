@@ -2,8 +2,8 @@ package edu.algos.stack;
 
 import java.util.Stack;
 
-import edu.ds.linkedlist.model.ListNode;
-import edu.ds.linkedlists.SingleLinkedList;
+import edu.algos.linkedlist.model.ListNode;
+import edu.algos.linkedlists.SingleLinkedList;
 
 public class Algo04_ReverseLinkedListUsingStack {
 

@@ -3,23 +3,23 @@ package edu.algos.backtrack;
 public class PermutaionsOfString {
 
 	public static void main(String[] args) {
+		PermutaionsOfString obj = new PermutaionsOfString();
 		String str = "ABC";
-		int n = str.length();
-		permute(str, 0, n - 1);
+		obj.permute(str, 0);
 	}
 
 	// question: get all the permutation of given string
 	// concept: fix each char at first position and explore the results other chars in other positions
 	// Time complexity: O(n^n)
 	// Space complexity: O(1)
-	private static void permute(String str, int l, int r) {
-		if (l == r)
+	private void permute(String str, int index) {
+		if (index == str.length())
 			System.out.println(str);
 		else {
-			for (int i = l; i <= r; i++) {
-				str = swap(str, l, i);
-				permute(str, l + 1, r);
-				str = swap(str, l, i);		// backtrack to previous state
+			for (int i = index; i < str.length(); i++) {
+				str = swap(str, index, i);
+				permute(str, index + 1);
+				str = swap(str, index, i);		// backtrack to previous state
 			}
 		}
 	}

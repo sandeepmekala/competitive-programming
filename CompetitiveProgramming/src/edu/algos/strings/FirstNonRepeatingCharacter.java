@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 public class FirstNonRepeatingCharacter {
 
 	public static void main(String[] args) {
-		System.out.println(firstNonRepeatingCharacter("sandeep"));
+		System.out.println(firstNonRepeatingCharacter("google"));
 	}
 
 	private static Character firstNonRepeatingCharacter(String str) {
