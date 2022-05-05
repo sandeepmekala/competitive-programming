@@ -3,8 +3,6 @@ package edu.algos.graph;
 import java.util.Stack;
 
 import edu.algos.graph.model.Edge;
-import edu.algos.graphs.Graph;
-import edu.algos.graphs.UnionFind;
 
 public class Algo04_DetectCycleInUndirectedGraph {
 

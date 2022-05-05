@@ -2,7 +2,7 @@ package edu.algos.tree;
 
 import edu.algos.model.TreeNode;
 
-public class SortedArrayToBinarySearchTree {
+public class ConvertSortedArrayToBst {
 
 	public static void main(String[] args) {
 		ConvertSortedArrayToBst obj = new ConvertSortedArrayToBst();
@@ -29,5 +29,4 @@ public class SortedArrayToBinarySearchTree {
         return null;
 
     }
-
 }

@@ -6,8 +6,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import edu.algos.graphs.GraphAdjLst;
-
 public class Algo11_StronglyConnectedComponentsKosarajuAlgo {
 
 	public static void main(String[] args) {

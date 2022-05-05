@@ -2,7 +2,6 @@ package edu.algos.tree;
 
 import edu.algos.linkedlists.SingleLinkedList;
 import edu.algos.model.TreeNode;
-import edu.algos.trees.BinarySearchTree;
 
 public class SortedLinkedListToBinarySearchTree {
 

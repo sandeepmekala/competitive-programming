@@ -5,8 +5,6 @@ import java.util.Comparator;
 import java.util.TreeMap;
 
 import edu.algos.graph.model.Edge;
-import edu.algos.graphs.Graph;
-import edu.algos.graphs.UnionFind;
 
 public class Algo07_KruskalsMinimumSpanningTree {
 	

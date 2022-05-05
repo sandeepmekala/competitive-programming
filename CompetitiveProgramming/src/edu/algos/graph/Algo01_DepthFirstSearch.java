@@ -2,8 +2,6 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.algos.graphs.GraphAdjLst;
-
 public class Algo01_DepthFirstSearch {
 
 	public static void main(String[] args) {

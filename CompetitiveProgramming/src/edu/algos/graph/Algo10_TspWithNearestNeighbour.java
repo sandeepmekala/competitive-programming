@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import edu.algos.graphs.GraphMatrix;
-
 public class Algo10_TspWithNearestNeighbour {
 
 	public static void main(String args[]){

@@ -2,8 +2,6 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.algos.graphs.GraphAdjLst;
-
 class Algo03_DetectCycleInDirectedGraph {
 	public static void main(String args[]) {
 		Algo03_DetectCycleInDirectedGraph obj = new Algo03_DetectCycleInDirectedGraph();

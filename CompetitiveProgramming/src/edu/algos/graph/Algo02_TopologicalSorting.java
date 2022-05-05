@@ -2,8 +2,6 @@ package edu.algos.graph;
 
 import java.util.Stack;
 
-import edu.algos.graphs.GraphAdjLst;
-
 public class Algo02_TopologicalSorting {
 
 	public static void main(String[] args) {
