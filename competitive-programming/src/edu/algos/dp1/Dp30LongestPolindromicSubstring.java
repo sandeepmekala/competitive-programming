@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp06LongestPolindromicSubstring {
+public class Dp30LongestPolindromicSubstring {
 
 	public static void main(String[] args) {
-		Dp06LongestPolindromicSubstring obj = new Dp06LongestPolindromicSubstring();
+		Dp30LongestPolindromicSubstring obj = new Dp30LongestPolindromicSubstring();
 		
 		//String text = "cbbd";
 		//String text = "aacabdkacaa";

@@ -1,4 +1,4 @@
-package edu.algos.tries;
+package edu.algos.trie;
 
 import edu.algos.model.TrieNode;
 
@@ -26,13 +26,13 @@ public class WordDictionary {
         TrieNode current = root;
         for(int i=0; i<word.length(); i++){
             char ch = word.charAt(i);
-            if(!current.map.containsKey(ch)){
+            if(!current.children.containsKey(ch)){
                 TrieNode newNode = new TrieNode();
-                current.map.put(ch, newNode);
+                current.children.put(ch, newNode);
             }
-            current = current.map.get(ch);
+            current = current.children.get(ch);
         }
-        current.endOfWord = true;
+        current.eow = true;
     }
     
     public boolean search(String word) {
@@ -43,20 +43,20 @@ public class WordDictionary {
         for(int i=ind; i<word.length(); i++){
             char ch = word.charAt(i);
             if(ch == '.'){
-                for(TrieNode child: current.map.values()){
+                for(TrieNode child: current.children.values()){
                     if(search(word, i+1, child)){
                         return true;
                     }
                 }
                 return false;
             }else{
-                if(!current.map.containsKey(ch)){
+                if(!current.children.containsKey(ch)){
                     return false;
                 }
-                current = current.map.get(ch);
+                current = current.children.get(ch);
             }
         }
-        return current.endOfWord;
+        return current.eow;
     }
 
 }

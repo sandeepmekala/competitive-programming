@@ -1,8 +1,8 @@
 package edu.algos.dp1;
 
-public class Dp11UniqueBinarySearchTrees {
+public class Dp35UniqueBinarySearchTrees {
 	public static void main(String[] orgs) {
-		Dp11UniqueBinarySearchTrees obj = new Dp11UniqueBinarySearchTrees();
+		Dp35UniqueBinarySearchTrees obj = new Dp35UniqueBinarySearchTrees();
 		
 		int n=5;
 		System.out.println(obj.numTrees(n));

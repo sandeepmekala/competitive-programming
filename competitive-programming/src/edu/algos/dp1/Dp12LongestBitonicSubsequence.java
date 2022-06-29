@@ -2,7 +2,7 @@ package edu.algos.dp1;
 
 import java.util.Arrays;
 
-public class Algo072_LongestBitonicSubsequence {
+public class Dp12LongestBitonicSubsequence {
 
 	public static void main(String[] args) {
 		int[] input = new int[] { 2, -1, 4, 3, 5, -1, 3, 2 };

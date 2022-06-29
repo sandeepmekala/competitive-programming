@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp12UniqueBinaryTreesGivenPreorder {
+public class Dp36UniqueBinaryTreesGivenPreorder {
 
 	public static void main(String[] args) {
-		Dp12UniqueBinaryTreesGivenPreorder obj = new Dp12UniqueBinaryTreesGivenPreorder();
+		Dp36UniqueBinaryTreesGivenPreorder obj = new Dp36UniqueBinaryTreesGivenPreorder();
 		
 		int n=5;
 		System.out.println(obj.numTrees(n));

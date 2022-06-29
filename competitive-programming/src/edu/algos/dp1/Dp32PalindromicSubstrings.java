@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp08PalindromicSubstrings {
+public class Dp32PalindromicSubstrings {
 
 	public static void main(String[] args) {
-		Dp08PalindromicSubstrings obj = new Dp08PalindromicSubstrings();
+		Dp32PalindromicSubstrings obj = new Dp32PalindromicSubstrings();
 
 		String text = "aaa";
 		System.out.println(obj.countSubstrings(text));

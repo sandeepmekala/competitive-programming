@@ -1,6 +1,6 @@
 package edu.algos.dp1;
 
-public class Dp13BinarySearchTreeWithOptimalCost {
+public class Dp37BinarySearchTreeWithOptimalCost {
 
 	public static void main(String[] args) {
 		int[] items = new int[] {10,12,16,21};

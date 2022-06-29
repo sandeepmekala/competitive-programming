@@ -1,14 +1,14 @@
-package edu.algos.tries;
+package edu.algos.trie;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
 
 import edu.algos.model.TrieNode;
 
-public class Trie {
+public class ImplementTriePrefixTree {
 	
 	public static void main(String[] args) {
-		Trie trie = new Trie();
+		ImplementTriePrefixTree trie = new ImplementTriePrefixTree();
 		trie.addWord("abc");
 		trie.addWord("abgl");
 		trie.addWord("cdf");
@@ -30,7 +30,7 @@ public class Trie {
 	}
 
 	TrieNode root;
-	public Trie(){
+	public ImplementTriePrefixTree(){
 		root = new TrieNode();
 	}
 	
@@ -40,13 +40,13 @@ public class Trie {
 		TrieNode current = root;
         for(int i=0; i<word.length(); i++){
             char ch = word.charAt(i);
-            if(!current.map.containsKey(ch)){
+            if(!current.children.containsKey(ch)){
                 TrieNode newNode = new TrieNode();
-                current.map.put(ch, newNode);
+                current.children.put(ch, newNode);
             }
-            current = current.map.get(ch);
+            current = current.children.get(ch);
         }
-        current.endOfWord = true;	// after new node is created current will be pointing to new node after for loop
+        current.eow = true;	// after new node is created current will be pointing to new node after for loop
 	}
 	
 	private boolean prefixSearch(String prefix) {
@@ -54,10 +54,10 @@ public class Trie {
         int count = 0;
         for(int i=0; i<prefix.length(); i++){
             char ch = prefix.charAt(i);
-            if(!current.map.containsKey(ch)){
+            if(!current.children.containsKey(ch)){
                 return false;
             }
-            current = current.map.get(ch);
+            current = current.children.get(ch);
         }
         return true;
 	}
@@ -67,12 +67,12 @@ public class Trie {
 		TrieNode current = root;
         for(int i=0; i<word.length(); i++){
             char ch = word.charAt(i);
-            if(!current.map.containsKey(ch)){
+            if(!current.children.containsKey(ch)){
                 return false;
             }
-            current = current.map.get(ch);
+            current = current.children.get(ch);
         }
-        return current.endOfWord == true;
+        return current.eow == true;
 	}
 	
 	private void delete(String word) {
@@ -81,19 +81,19 @@ public class Trie {
 	
 	private boolean delete(TrieNode root, String word, int index) {
 		if(index == word.length()) {
-			return root.map.isEmpty();
+			return root.children.isEmpty();
 		}
 		char ch = word.charAt(index);
-		if(root.map.containsKey(ch)) {
-			TrieNode current = root.map.get(ch);
+		if(root.children.containsKey(ch)) {
+			TrieNode current = root.children.get(ch);
 			boolean deleteCurrentFromRoot = delete(current, word, index+1);
 			if(deleteCurrentFromRoot) {
-				root.map.remove(ch);
+				root.children.remove(ch);
 			}else {
-				current.endOfWord = false;
+				current.eow = false;
 			}
 		}
-		return root.map.isEmpty();
+		return root.children.isEmpty();
 	}
 	
 	private void print() {
@@ -103,14 +103,14 @@ public class Trie {
 		while(!queue1.isEmpty() || !queue2.isEmpty()) {
 			while(!queue1.isEmpty()) {
 				TrieNode current = queue1.remove();
-				System.out.print(current.map.keySet());
-				queue2.addAll(current.map.values());
+				System.out.print(current.children.keySet());
+				queue2.addAll(current.children.values());
 			}
 			System.out.println();
 			while(!queue2.isEmpty()) {
 				TrieNode current = queue2.remove();
-				System.out.print(current.map.keySet());
-				queue1.addAll(current.map.values());
+				System.out.print(current.children.keySet());
+				queue1.addAll(current.children.values());
 			}
 			System.out.println();
 		}

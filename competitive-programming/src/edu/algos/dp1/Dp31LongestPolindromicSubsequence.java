@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp07LongestPolindromicSubsequence {
+public class Dp31LongestPolindromicSubsequence {
 
 	public static void main(String[] args) {
-		Dp07LongestPolindromicSubsequence obj = new Dp07LongestPolindromicSubsequence();
+		Dp31LongestPolindromicSubsequence obj = new Dp31LongestPolindromicSubsequence();
 		
 		String text = "agbdba";
 		int n = text.length();

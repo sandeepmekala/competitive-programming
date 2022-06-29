@@ -14,10 +14,12 @@ public class WordSearch {
 	}
 
 	public boolean exist(char[][] board, String word) {
-		HashSet<Pair<Integer,Integer>> path = new HashSet<Pair<Integer,Integer>>();
-		for (int i = 0; i < board.length; i++) {
-			for (int j = 0; j < board[i].length; j++) {
-				if (dfs(board, word, i, j, 0, path)) {
+		int m = board.length;
+		int n = board[0].length;
+		boolean[][] visited = new boolean[m][n];
+		for (int i = 0; i < m; i++) {
+			for (int j = 0; j < n; j++) {
+				if (dfs(board, word, i, j, 0, visited)) {
 					return true;
 				}
 			}
@@ -25,32 +27,31 @@ public class WordSearch {
 		return false;
 	}
 
-	private boolean dfs(char[][] board, String word, int i, int j, int ind, HashSet<Pair<Integer,Integer>> path) {
+	private boolean dfs(char[][] board, String word, int i, int j, int ind, boolean[][] visited) {
 		if (ind == word.length()) {
 			return true;
 		}
 
-		if (isSafe(board, word, i, j, ind, path)) {
-			Pair<Integer,Integer> pair = new Pair<>(i,j);
-			path.add(pair);
+		if (isSafe(board, word, i, j, ind, visited)) {
+			visited[i][j] = true;
 
-			boolean result = (dfs(board, word, i + 1, j, ind + 1, path)) || 
-					(dfs(board, word, i - 1, j, ind + 1, path)) || 
-					(dfs(board, word, i, j + 1, ind + 1, path)) || 
-					(dfs(board, word, i, j - 1, ind + 1, path));
+			boolean result = (dfs(board, word, i + 1, j, ind + 1, visited)) || 
+					(dfs(board, word, i - 1, j, ind + 1, visited)) || 
+					(dfs(board, word, i, j + 1, ind + 1, visited)) || 
+					(dfs(board, word, i, j - 1, ind + 1, visited));
 
 			if (result) {
 				return true;
 			}
-			path.remove(pair);
+			visited[i][j] = false;
 		}
 
 		return false;
 
 	}
 
-	private boolean isSafe(char[][] board, String word, int i, int j, int ind, HashSet<Pair<Integer, Integer>> path) {
-		if (i < 0 || j < 0 || i >= board.length || j >= board[i].length || path.contains(new Pair<Integer, Integer>(i, j))
+	private boolean isSafe(char[][] board, String word, int i, int j, int ind, boolean[][] visited) {
+		if (i < 0 || j < 0 || i >= board.length || j >= board[i].length || visited[i][j]
 				|| word.charAt(ind) != board[i][j]) {
 			return false;
 		}

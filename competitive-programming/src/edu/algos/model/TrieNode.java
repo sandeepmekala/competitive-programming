@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TrieNode {
-	public Map<Character, TrieNode> map;
-	public boolean endOfWord;
+	public Map<Character, TrieNode> children;
+	public boolean eow;
 	public TrieNode(){
-		map = new HashMap<Character, TrieNode>();
+		children = new HashMap<Character, TrieNode>();
 	}
 	
 	public String toString() {
 		
-		return map.keySet()+"";
+		return children.keySet()+"";
 	}
 }

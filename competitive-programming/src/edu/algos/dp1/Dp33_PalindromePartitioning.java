@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp09_PalindromePartitioning {
+public class Dp33_PalindromePartitioning {
 
 	public static void main(String[] args) {
-		Dp09_PalindromePartitioning obj = new Dp09_PalindromePartitioning();
+		Dp33_PalindromePartitioning obj = new Dp33_PalindromePartitioning();
 		
 		String s = "abcbm";
 		System.out.println(obj.minCut(s));

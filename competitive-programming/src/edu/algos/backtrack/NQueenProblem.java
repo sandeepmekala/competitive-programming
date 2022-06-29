@@ -20,6 +20,7 @@ public class NQueenProblem {
 	// Time complexity: O(4^n) as we start by placing 4 queens in each row and col 0. Each recursion checks for different col. It will be tree with 4 children and col depth.
 	// Space complexity: O(n^2)
 	final int N = 4;
+	
 	boolean solveNQueen(int board[][], int col) {
 		if (col >= N) {
 			return true;

@@ -1,4 +1,4 @@
-package edu.algos.queue;
+package edu.algos.heap;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;

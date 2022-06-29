@@ -2,17 +2,18 @@ package edu.algos.dp1;
 
 import java.util.Arrays;
 
-public class Algo074_MinimumJumpsToReachEnd {
+public class Dp14MinimumJumpsToReachEnd {
 
 	public static void main(String[] args) {
-		Algo074_MinimumJumpsToReachEnd obj = new Algo074_MinimumJumpsToReachEnd();
+		Dp14MinimumJumpsToReachEnd obj = new Dp14MinimumJumpsToReachEnd();
+		
 		int[] jumps = new int[] {2,3,1,1,2,4,2,0,1,1};
 		int n = jumps.length;
 		System.out.println(obj.minJumps(jumps, n));
 	}
 
 	/*
-	 * concept: if i is reachable from j, minj[i] = min(minj[i], minj[j]+1)
+	 * Concept: If i is reachable from j, minj[i] = min(minj[i], minj[j]+1)
 	 * 
 	 * 	i		2	3	1	1	2	4	2	0	1	1
 	 * 	minj	0	1	1	2	2	3	3	4	4	4
@@ -26,21 +27,16 @@ public class Algo074_MinimumJumpsToReachEnd {
 		}
 		
 		int[] minj = new int[n];
-		int[] path = new int[n];
 		Arrays.fill(minj, Integer.MAX_VALUE);
 		minj[0] = 0;
 		for(int i=1; i<n; i++) {
 			for(int j=0; j<i; j++) {
 				if(j+jumps[j] >= i) {
-					if(minj[j]+1 < minj[i]) {
-						minj[i] = minj[j]+1;
-						path[i] = j;
-					}
+					minj[i] = Math.min(minj[i], minj[j]+1);
 				}
 			}
 		}
 		System.out.println(Arrays.toString(minj));
-		System.out.println(Arrays.toString(path));
 		if(minj[n-1] == Integer.MAX_VALUE) {
 			return -1;
 		}

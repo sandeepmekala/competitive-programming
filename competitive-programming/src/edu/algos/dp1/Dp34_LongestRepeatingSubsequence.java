@@ -1,9 +1,9 @@
 package edu.algos.dp1;
 
-public class Dp10_LongestRepeatingSubsequence {
+public class Dp34_LongestRepeatingSubsequence {
 
 	public static void main(String[] args) {
-		Dp10_LongestRepeatingSubsequence obj = new Dp10_LongestRepeatingSubsequence();
+		Dp34_LongestRepeatingSubsequence obj = new Dp34_LongestRepeatingSubsequence();
 		String string = "axxxy";
 		System.out.println(obj.longest(string));
 	}
