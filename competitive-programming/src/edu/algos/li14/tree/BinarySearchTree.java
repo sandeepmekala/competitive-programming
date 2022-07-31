@@ -21,7 +21,7 @@ public class BinarySearchTree {
 		//			  /
 		//			5
 		BinarySearchTree bst = new BinarySearchTree();
-		root = bst.insert(null, 10);
+		TreeNode root = bst.insert(null, 10);
 		bst.insert(root, 2);
 		bst.insert(root, 4);
 		bst.insert(root, 6);

@@ -1,9 +1,9 @@
 package edu.algos.li10.patternmatch;
 
-public class Algo03_RabinKarpAlgorithm {
+public class RabinKarpAlgorithm {
 
 	public static void main(String[] args) {
-		Algo03_RabinKarpAlgorithm robinkarp = new Algo03_RabinKarpAlgorithm();
+		RabinKarpAlgorithm robinkarp = new RabinKarpAlgorithm();
 		String input = "GEEKS FOR GEEKS";
 		String pattern = "GEEK";
 		

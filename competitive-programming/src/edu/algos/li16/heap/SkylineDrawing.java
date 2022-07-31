@@ -1,30 +1,24 @@
-package edu.algos.li11.queue;
+package edu.algos.li16.heap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 import java.util.TreeMap;
 
 public class SkylineDrawing {
 
 	public static void main(String[] args) {
 		SkylineDrawing skyline = new SkylineDrawing();
-		int[][] buildings = { 
-				{ 1, 3, 4 }, 
-				{ 3, 4, 4 }, 
-				{ 2, 6, 2 }, 
-				{ 8, 11, 4 }, 
-				{ 7, 9, 3 }, 
-				{ 10, 11, 2 } 
-				};
-		ArrayList<int[]> resultPoints = skyline.getSkyline(buildings, buildings.length);
-		resultPoints.forEach(point -> {System.out.println(Arrays.toString(point));});
+		int[][] buildings = {{2,9,10},{3,7,15},{5,12,12},{15,20,10},{19,24,8}};
+		
+		List<List<Integer>> resultPoints = skyline.getSkyline(buildings);
+		resultPoints.forEach(point -> System.out.println(point));
 	}
 
-	private ArrayList<int[]> getSkyline(int[][] buildings, int length) {
-		
-		ArrayList<int[]> resultPoints = new ArrayList<int[]>(); 
+	public List<List<Integer>> getSkyline(int[][] buildings) {
+		List<List<Integer>> resultPoints = new ArrayList<>(); 
 		ArrayList<Point> points = new ArrayList<Point>();
 		for (int i = 0; i < buildings.length; i++) {
 			points.add(new Point(buildings[i][0], buildings[i][2], true));
@@ -32,16 +26,8 @@ public class SkylineDrawing {
 		}
 		Collections.sort(points);
 		
-		System.out.println(points);
-		
-		TreeMap<Integer, Integer> priorityQueue = new TreeMap<Integer, Integer>(new Comparator<Integer>() {
-			@Override
-			public int compare(Integer o1, Integer o2) {
-				return o2-o1;
-			}
-		});
-		priorityQueue.put(0, 1);
-		
+		TreeMap<Integer, Integer> priorityQueue = new TreeMap<Integer, Integer>((o1, o2) -> o2-o1);
+		priorityQueue.put(0, 1);		
 		
 		for(Point point: points) {
 			if(point.isStart) {
@@ -49,7 +35,7 @@ public class SkylineDrawing {
 				priorityQueue.put(point.h, priorityQueue.getOrDefault(point.h, 0)+1);
 				int newMaxHeight = priorityQueue.firstKey();
 				if(newMaxHeight > prevMaxHeight){
-					resultPoints.add(new int[] {point.x, newMaxHeight});
+					resultPoints.add(new ArrayList<Integer>(Arrays.asList(point.x, newMaxHeight)) );
 				}
 			}else {
 				int prevMaxHeight = priorityQueue.firstKey();
@@ -60,7 +46,7 @@ public class SkylineDrawing {
 				}
 				int newMaxHeight = priorityQueue.firstKey();
 				if(newMaxHeight < prevMaxHeight){
-					resultPoints.add(new int[] {point.x, newMaxHeight});
+					resultPoints.add(new ArrayList<Integer>(Arrays.asList(point.x, newMaxHeight)));
 				}
 			}
 		}

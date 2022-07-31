@@ -1,4 +1,4 @@
-package edu.algos.li13.linkedlist;
+package edu.algos.li26.design;
 
 import java.util.HashMap;
 

@@ -1,6 +1,6 @@
 package edu.algos.li10.patternmatch;
 
-public class Algo01_NumberOfOccurences {
+public class NumberOfOccurences {
 
 	public static void main(String[] args) {
 		String input = "AABAACAADAABAABA";

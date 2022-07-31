@@ -2,10 +2,10 @@ package edu.algos.li10.patternmatch;
 
 import java.util.Arrays;
 
-public class Algo02_KmpSearchingAlgorithm {
+public class KmpSearchingAlgorithm {
 
 	public static void main(String[] args) {
-		Algo02_KmpSearchingAlgorithm kmps = new Algo02_KmpSearchingAlgorithm();
+		KmpSearchingAlgorithm kmps = new KmpSearchingAlgorithm();
 		String input = "ABABDABACDABABCABAB";
 		String pattern = "ABABCABAB";
 		kmps.kmpSearch(input, pattern);

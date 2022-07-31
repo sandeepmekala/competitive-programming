@@ -2,24 +2,25 @@ package edu.algos.li21.dp2;
 
 import java.util.Stack;
 
-public class Algo103_MatrixMaxRectangleOfAll1s {
+public class Dp24MaximalRectangle {
 
 	public static void main(String[] args) {
-		Algo103_MatrixMaxRectangleOfAll1s obj = new Algo103_MatrixMaxRectangleOfAll1s();
-		int[][] matrix = new int[][] {
+		Dp24MaximalRectangle obj = new Dp24MaximalRectangle();
+		char[][] matrix = new char[][] {
 			{1,0,0,1,1,1},
 			{1,0,1,1,0,1},
 			{0,1,1,1,1,1},
 			{0,0,1,1,1,1}
 		};
-		System.out.println(obj.maxRecArea(matrix, matrix.length, matrix[0].length));
+		System.out.println(obj.maximalRectangle(matrix));
 	}
 	
 	// concept: idea is to use max rec area in histogram logic to find the max area of 1's
 	// for the subsequence rows cumulatively add rows so that we get bigger histograms by consecutive 1's in each column
 	// time = O(rows*cols)
 	// space = O(cols) 
-	private int maxRecArea(int[][] matrix, int m, int n) {
+	public int maximalRectangle(char[][] matrix) {
+		int m = matrix.length, n = matrix[0].length;
 		int globalMax = Integer.MIN_VALUE;
 		int[] histogram = new int[n];
 		for(int i=0; i<m; i++) {
@@ -33,17 +34,19 @@ public class Algo103_MatrixMaxRectangleOfAll1s {
 		return globalMax;
 	}
 
-	private static int[] add(int[] array1, int[] array2) {
+	private int[] add(int[] array1, char[] matrix) {
 		int[] temp = new int[array1.length];
 		for(int i=0; i<array1.length; i++) {
-			if(array2[i] != 0) {				//skip column the col as bottom of histogram can't be zero. It should be continuation of 1's
-				temp[i] = array1[i]+array2[i];
+			if(matrix[i] == 1) {				//skip column the col as bottom of histogram can't be zero. It should be continuation of 1's
+				temp[i] = array1[i]+1;
+			}else {
+				temp[i] = 0;
 			}
 		}
 		return temp;
 	}
 
-	private static int maxArea(int[] array, int n) {
+	private int maxArea(int[] array, int n) {
 		int maxArea = 0;
 		int i;
 		Stack<Integer> stack = new Stack<Integer>();

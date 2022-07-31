@@ -1,57 +1,53 @@
 package edu.algos.li26.sort;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Algo04_MergeSort {
 
 	public static void main(String[] args) {
 		Algo04_MergeSort msort = new Algo04_MergeSort();
-		int[] numbers = {2,4,1,6,8,5,3,7};					
-		msort.mergeSort(numbers);									
+		
+		int[] nums = {2,4,1,6,8,5,3,7};					
+		msort.mergeSort(nums, 0, nums.length-1);									
 	}
 	
 	//concept: divide array into two arrays(copied) and call mergeSort recursively for other 2 half then call merge
 	//time complexity is worst case O(nlogn)
 	//stable sorting
 	//space complexity is O(n) if we clear the unused memory during runtime. it will be O(nlogn) if we don't clear the space during runtime. So, it is not inplace sorting.
-	private void mergeSort(int[] numbers) {
-		System.out.println(Arrays.toString(numbers));
-		if(numbers.length < 2){
+	private void mergeSort(int[] nums, int low, int high) {
+		if(low >= high){
 			return;
 		}
-		int mid = numbers.length/2;
-		int left[] = new int[mid];
-		int right[] = new int[numbers.length-mid];
-		
-		for(int i=0; i<mid; i++){
-			left[i] = numbers[i];
-		}
-		for(int i=mid; i<numbers.length; i++){
-			right[i-mid] = numbers[i];
-		}
-		mergeSort(left);
-		mergeSort(right);
-		merge(left, right, numbers);
+		int mid = (low+high)/2;
+		mergeSort(nums, low, mid);
+		mergeSort(nums, mid+1, high);
+		merge(nums, low, mid, high);
 	}
-	private void merge(int left[], int right[], int numbers[]){
-		int leftInd = 0;
-		int rightInd = 0;
-		int ind=0;
+	private void merge(int nums[], int low, int mid, int high){
+		int left = low;
+		int right = mid+1;
 		
-		while(leftInd < left.length && rightInd < right.length){
-			if(left[leftInd] <= right[rightInd]){
-				numbers[ind++] = left[leftInd++];
+		ArrayList<Integer> temp = new ArrayList<>();
+		while(left <= mid && right <= high){
+			if(nums[left] <= nums[right]){
+				temp.add(nums[left++]);
 			}else{
-				numbers[ind++] = right[rightInd++];
+				temp.add(nums[right++]);
 			}
 		}
-		while(leftInd < left.length ){
-			numbers[ind++] = left[leftInd++];
+		while(left <= mid){
+			temp.add(nums[left++]);
 		}
-		while(rightInd < right.length){
-			numbers[ind++] = right[rightInd++];
+		while(right <= high){
+			temp.add(nums[right++]);
 		}
-		System.out.println(Arrays.toString(numbers));
+		
+		for(int i=low; i<=high; i++) {
+			nums[i] = temp.get(i-low);
+		}
+		System.out.println(Arrays.toString(nums));
 	} 
 
 }

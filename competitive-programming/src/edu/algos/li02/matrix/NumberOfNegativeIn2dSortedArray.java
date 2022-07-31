@@ -1,4 +1,4 @@
-package edu.algos.li01.array;
+package edu.algos.li02.matrix;
 
 public class NumberOfNegativeIn2dSortedArray {
 

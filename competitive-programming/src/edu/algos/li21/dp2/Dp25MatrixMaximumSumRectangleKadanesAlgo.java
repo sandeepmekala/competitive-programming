@@ -2,10 +2,10 @@ package edu.algos.li21.dp2;
 
 import java.util.Arrays;
 
-public class Algo104_MatrixMaximumSumRectangleKadanesAlgo {
+public class Dp25MatrixMaximumSumRectangleKadanesAlgo {
 
 	public static void main(String[] args) {
-		Algo104_MatrixMaximumSumRectangleKadanesAlgo obj = new Algo104_MatrixMaximumSumRectangleKadanesAlgo();
+		Dp25MatrixMaximumSumRectangleKadanesAlgo obj = new Dp25MatrixMaximumSumRectangleKadanesAlgo();
 		int[][] matrix = new int[][] {
 			{2,1,-3,-4,5},
 			{0,6,3,4,1},
