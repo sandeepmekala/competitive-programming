@@ -1,4 +1,4 @@
-package edu.algos.li05.slidingwindow;
+package edu.algos.li11.queue;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

@@ -14,19 +14,19 @@ public class GenerateParentheses {
 
 	public List<String> generateParenthesis(int n) {
         List<String> list = new ArrayList<>();
-        generateParenthesisRec(list, "", n, 0, 0);
+        generateParenthesis(list, "", n, 0, 0);
         return list;
     }
 	
-	public void generateParenthesisRec(List<String> list, String str, int n, int open, int close) {
+	public void generateParenthesis(List<String> list, String str, int n, int open, int close) {
         if(open == close && open == n){
             list.add(str);
         }
         if(open < n){
-            generateParenthesisRec(list, str+"(", n, open+1, close);
+            generateParenthesis(list, str+"(", n, open+1, close);
         }
         if(close < open){
-            generateParenthesisRec(list, str+")", n, open, close+1);
+            generateParenthesis(list, str+")", n, open, close+1);
         }
     }
 }

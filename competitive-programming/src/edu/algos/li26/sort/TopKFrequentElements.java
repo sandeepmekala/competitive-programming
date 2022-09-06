@@ -1,4 +1,4 @@
-package edu.algos.li03.hashing;
+package edu.algos.li26.sort;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,6 +12,11 @@ public class TopKFrequentElements {
 		System.out.println(Arrays.toString(obj.topKFrequent(new int[] {1,1,1,2,2,3,3,4}, 2)));
 	}
 
+	/*
+	 * Problem: https://leetcode.com/problems/top-k-frequent-elements/
+	 * 
+	 * Concept: Hashing and bucket sorting
+	 * */
 	public int[] topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int i=0; i<nums.length; i++){
@@ -22,12 +27,10 @@ public class TopKFrequentElements {
         for(Map.Entry<Integer, Integer> entry: map.entrySet()) {
         	ArrayList<Integer> bucket = buckets[entry.getValue()];
         	if(bucket == null){
-        		ArrayList<Integer> newBucket = new ArrayList<Integer>();
-        		newBucket.add(entry.getKey());
-        		buckets[entry.getValue()] = newBucket;
-        	}else {
-        		bucket.add(entry.getKey());
+        		bucket = new ArrayList<Integer>();
+        		buckets[entry.getValue()] = bucket;
         	}
+        	bucket.add(entry.getKey());
         }
         
         int count = 0;

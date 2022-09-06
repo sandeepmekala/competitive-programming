@@ -17,21 +17,21 @@ public class TrappingRainWater {
 	 * 
 	 * */
 	public int trap(int[] height) {
-        int l=0, r=height.length-1;
-        int sum = 0, maxl = height[l], maxr = height[r];
-        while(l<r){
+        int sum = 0, n = height.length, maxl = height[0], maxr = height[n-1];
+        int l=1, r=n-2;
+        while(l<=r){
             if(maxl <= maxr){
-                l++;
                 if(maxl-height[l] > 0){
                     sum += maxl-height[l];
                 }
                 maxl = Math.max(maxl, height[l]);
+                l++;
             }else{
-                r--;
                 if(maxr-height[r] > 0){
                     sum += maxr-height[r];
                 }
                 maxr = Math.max(maxr, height[r]);
+                r--;
             }
         }
         
