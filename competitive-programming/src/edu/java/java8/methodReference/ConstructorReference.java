@@ -1,4 +1,5 @@
-package edu.java.java8;
+package edu.java.java8.methodReference;
+
 interface Messageable{  
     Message getMessage(String msg);  
 }  
