@@ -1,4 +1,5 @@
 package edu.java.java8;
+
 import java.time.Clock;
 import java.time.DayOfWeek;
 import java.time.Instant;
@@ -50,126 +51,19 @@ public class TopicsAll {
 	}
 
 	private void java() {
-		
-		// Default Methods for Interfaces ----------------------------------		
-		System.out.println(formula.calculate(100));
-		System.out.println(formula.sqrt(16));		
-		// Default Methods for Interfaces ----------------------------------
-		
-		// Lambda expressions ----------------------------------------------
-		List<String> list = Arrays.asList("a", "x", "b");
-
-		// anonymous comparator
-		Collections.sort(list, new Comparator<String>() {
-
-			@Override
-			public int compare(String a, String b) {
-				return a.compareTo(b);
-			}
-		});
-		System.out.println(list);
-
-		// lamda expression
-		// all functional intefaces can be replaces with lamda expressions
-		Collections.sort(list, (String a, String b) -> {
-			return a.compareTo(b);
-		});
-
-		// if body is single line, we don't need to add return and flower
-		// brackets
-		Collections.sort(list, (String a, String b) -> a.compareTo(b));
-
-		// compiler is already aware of the parameter types, you can even ignore
-		// them
-		Collections.sort(list, (a, b) -> a.compareTo(b));
-		
-		// Lambda expressions ----------------------------------------------
-
-		// Functional Interfaces -------------------------------------------
-		
-		Convert<String, Integer> converter = (from) -> Integer.parseInt(from);
-		Integer integer = converter.convert("123");
-		System.out.println(integer);
-		
-		// Functional Interfaces -------------------------------------------
-
-		// Method and Constructor References -------------------------------
-		// static method reference
-		Convert<String, Integer> converter2 = Integer::parseInt;
-		Integer integer2 = converter2.convert("123");
-		System.out.println(integer2);
-
-		// object reference
-		Something something = new Something();
-		Convert<String, String> converter3 = something::startsWith;
-		String start = converter3.convert("sandeep");
-		System.out.println(start);
-
-		// constructor reference
-		PersonFactory<Person> personFactory = Person::new;
-		Person person = personFactory.create("Sandeep", "Mekala");
-		System.out.println(person.firstName);// bug
-
-		// Method and Constructor References -------------------------------
-		
-		// Lamda scopes ----------------------------------------------------
-		// lamda can access local final variables, instance variables, static
-		// variables
-		// even if final keyword is not used, it should be effectively final
-		final int num = 1;
-		Convert<Integer, String> converter4 = (from) -> String.valueOf(num);
-		// num =3;
-
-		// same applies for anonymous objects
-		int num2 = 2;
-		Formula formula = new Formula() {
-
-			@Override
-			public double calculate(int a) {
-				return a * num2;
-			}
-		};
-		// num2 = 3;
-
-		// Even modify from outer static variables
-		Convert<Integer, String> convert4 = (from) -> {
-			outerstaticnum = 12;
-			return String.valueOf(from);
-		};
-
-		// Even modify from outer instance variables
-		Convert<Integer, String> convert5 = (from) -> {
-			outernum = 12;
-			return String.valueOf(from);
-		};
-
-		// default methods can not be access from lamda expression but can be
-		// accessed from anonymous objects
-		// This gives compilation error
-		// Formula formula2 = (a) -> sqrt(a);
-
-		// This works fine
-		Formula formula2 = new Formula() {
-
-			@Override
-			public double calculate(int a) {
-				return sqrt(a);
-			}
-		};
-		// Lamda scopes ----------------------------------------------------
-		
 		// Built-in Functional Interfaces ----------------------------------
-		// Predicates - boolean test(arg1)
+		// 1. Predicates - boolean test(arg1)
 		// accept one agrument and return boolean
 		// interface contains various default methods to compose a complex
 		// boolean logic(and, or and negate)
 		Predicate<String> predicate = (s) -> s.length() > 0;
 		System.out.println(predicate.test("foo"));
 		System.out.println(predicate.negate().test("foo"));
+
 		Predicate<String> isEmpty = String::isEmpty;
 		Predicate<String> isNotEmpty = isEmpty.negate();
 
-		// Functions - apply
+		// 2. Functions - apply
 		// takes one/two arg and return one arg
 		// default methods can gloue multiple functions together
 		Function<String, Integer> stringToInteger = (from) -> Integer.valueOf(from);
@@ -179,7 +73,7 @@ public class TopicsAll {
 		BiFunction<String, String, String> concat = (s1, s2) -> s1 + s2;
 		System.out.println(concat.apply("sandeep", "mekala"));
 
-		// Suppliers - get
+		// 3. Suppliers - get
 		// don't take arg but produce one generic type
 		Supplier<Person> supplier = Person::new;
 		supplier.get();
@@ -369,20 +263,21 @@ public class TopicsAll {
 				.withLocale(Locale.GERMAN);
 		LocalTime leetTime = LocalTime.parse("13:37", germanFormatter);
 		System.out.println(leetTime);
-		
+
 		LocalDate today = LocalDate.now();
 		LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
 		LocalDate yesterday = tomorrow.minusDays(2);
 		System.out.println(yesterday);
-		
+
 		LocalDate independenceDay = LocalDate.of(2014, Month.AUGUST, 15);
 		DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
 		System.out.println(dayOfWeek);
-		
-		DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.GERMAN);
+
+		DateTimeFormatter dateTimeFormatter2 = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM)
+				.withLocale(Locale.GERMAN);
 		LocalDate xmas = LocalDate.parse("24.12.2014", dateTimeFormatter2);
 		System.out.println(xmas);
-		
+
 		LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);
 		DayOfWeek dayOfWeek2 = sylvester.getDayOfWeek();
 		System.out.println(dayOfWeek2);
@@ -390,21 +285,19 @@ public class TopicsAll {
 		System.out.println(month);
 		long minuteOfDay = sylvester.getLong(ChronoField.MINUTE_OF_DAY);
 		System.out.println(minuteOfDay);
-		
+
 		Instant instant2 = sylvester.atZone(ZoneId.systemDefault()).toInstant();
 		Date legacyDate2 = Date.from(instant2);
 		System.out.println(legacyDate2);
-		
+
 		DateTimeFormatter dateTimeFormatter3 = DateTimeFormatter.ofPattern("MMM dd, yyyy - HH:mm");
 		LocalDateTime parsed = LocalDateTime.parse("Nov 03, 2014 - 07:13", dateTimeFormatter3);
 		String string = dateTimeFormatter3.format(parsed);
-		System.out.println(string);	
+		System.out.println(string);
 
 		// Date API --------------------------------------------------------
 	}
 
-	// Default Methods for Interfaces --------------------------------------
-	// default method
 	interface Formula {
 		double calculate(int a);
 
@@ -413,37 +306,6 @@ public class TopicsAll {
 		}
 	}
 
-	// anonymous object/class
-	Formula formula = new Formula() {
-
-		@Override
-		public double calculate(int a) {
-			return sqrt(a);
-		}
-	};
-
-	// Default Methods for Interfaces --------------------------------------
-	
-	// Functional Interfaces --------------------------------------------------
-	// function interface
-	// it can have object class methods as abstract methods. This won't violate it property. 
-	@FunctionalInterface
-	interface Convert<F, T> {
-		T convert(F from);
-		int hashCode();
-	}
-
-	// Functional Interfaces --------------------------------------------------
-	
-	// Method and Constructor References --------------------------------------
-	// object reference
-	class Something {
-		public String startsWith(String s) {
-			return String.valueOf(s.charAt(0));
-		}
-	}
-
-	// constructor reference
 	class Person {
 		private String firstName;
 		private String lastName;
@@ -458,8 +320,4 @@ public class TopicsAll {
 
 	}
 
-	interface PersonFactory<P extends Person> {
-		P create(String firstName, String lastName);
-	}
-	// Method and Constructor References --------------------------------------
 }
