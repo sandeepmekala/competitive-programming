@@ -1,4 +1,4 @@
-package edu.java.java8.methodReference;
+package edu.java.java8.li02.methodReference;
 
 import java.util.function.BiFunction;
 
@@ -12,7 +12,13 @@ class Arithmetic {
 	}
 }
 
-public class InstanceMethodReference {
+class Something {
+    public String startsWith(String s) {
+        return String.valueOf(s.charAt(0));
+    }
+}
+
+public class ObjectMethodReference {
     public void saySomething() {
         System.out.println("Hello, this is non-static method.");
     }
@@ -33,5 +39,8 @@ public class InstanceMethodReference {
         BiFunction<Integer, Integer, Integer> adder = new Arithmetic()::add;
 		int result = adder.apply(10, 20);
 		System.out.println(result);
+
+
+        
     }
 }

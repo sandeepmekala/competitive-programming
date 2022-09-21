@@ -1,4 +1,4 @@
-package edu.java.java8.concurrency;
+package edu.java.java8.li07.concurrency;
 
 import java.util.HashMap;
 import java.util.Map;

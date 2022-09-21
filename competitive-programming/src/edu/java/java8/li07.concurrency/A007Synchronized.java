@@ -1,32 +1,49 @@
-package edu.java.java8.concurrency;
+package edu.java.java8.li07.concurrency;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.IntStream;
 
-public class A013LongAdder {
+public class A007Synchronized {
 
 	public static void main(String[] args) {
-		A013LongAdder obj = new A013LongAdder();
+		A007Synchronized obj = new A007Synchronized();
 		obj.execute();
 	}
 
 	private void execute() {
-		// Preferable over Atomic Numbers
-		// Used as counters across the multiple threads
-		LongAdder adder = new LongAdder();
 		ExecutorService executor = Executors.newFixedThreadPool(2);
 
-		IntStream.range(0, 1000)
-		.forEach(i -> executor.submit(adder::increment));
+		IntStream.range(0, 10000)
+		.forEach(i -> executor.submit(this::increment));
 
+		System.out.println(count);
 		stop(executor);
 
-		System.out.println(adder.sumThenReset()); // => 1000
-		System.out.println(adder.sum());
+		ExecutorService executor2 = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 10000)
+		.forEach(i -> executor2.submit(this::incrementSync));
+		
+		System.out.println(count2);
+		stop(executor2);
 	}
+
+	int count = 0;
+	void increment() {
+		count = count + 1;
+	}
+
+	int count2 = 0;
+	synchronized void incrementSync() {
+		count2 = count2 + 1;
+	}
+
+	void incrementSync2() {
+		synchronized (this) {
+			count2 = count2 + 1;
+		}
+	} 
 
 	public void stop(ExecutorService executor) {
 		try {

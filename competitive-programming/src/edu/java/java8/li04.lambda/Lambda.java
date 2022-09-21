@@ -1,8 +1,11 @@
-package edu.java.java8.lambda;
+package edu.java.java8.li04.lambda;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 interface Drawable {
@@ -22,6 +25,7 @@ interface Addable {
 }
 
 public class Lambda {
+    static int outerstaticnum;
     public static void main(String[] args) {
         int width = 10;
 
@@ -109,6 +113,81 @@ public class Lambda {
         filtered_data.forEach(  
                 product -> System.out.println(product.name+": "+product.price)  
         );  
+
+
+        // sort
+        List<String> list3 = Arrays.asList("a", "x", "b");
+
+		// anonymous comparator
+		Collections.sort(list3, new Comparator<String>() {
+
+			@Override
+			public int compare(String a, String b) {
+				return a.compareTo(b);
+			}
+		});
+		System.out.println(list3);
+
+		// lamda expression
+		// all functional intefaces can be replaces with lamda expressions
+		Collections.sort(list3, (String a, String b) -> {
+			return a.compareTo(b);
+		});
+
+		// if body is single line, we don't need to add return and flower
+		// brackets
+		Collections.sort(list3, (String a, String b) -> a.compareTo(b));
+
+		// compiler is already aware of the parameter types, you can even ignore
+		// them
+		Collections.sort(list3, (a, b) -> a.compareTo(b));
+
+
+        // Lamda scopes ----------------------------------------------------
+		// lamda can access local final variables, instance variables, static
+		// variables even if final keyword is not used, it should be effectively final
+		final int num = 1;
+		Function<Integer, String> converter = (from) -> String.valueOf(num);
+		//num =3;
+
+		// same applies for anonymous objects
+		int num2 = 2;
+		Formula formula = new Formula() {
+
+			@Override
+			public double calculate(int a) {
+				return a * num2;
+			}
+		};
+		// num2 = 3;
+
+		// Even modify from outer static variables
+		Function<Integer, String> convert4 = (from) -> {
+			outerstaticnum = 12;
+			return String.valueOf(from);
+		};
+
+		// Even modify from outer instance variables
+        int outernum;
+		Function<Integer, String> convert5 = (from) -> {
+			outernum = 12;
+			return String.valueOf(from);
+		};
+
+		// default methods can not be access from lamda expression but can be
+		// accessed from anonymous objects
+		// This gives compilation error
+		// Formula formula2 = (a) -> sqrt(a);
+
+		// This works fine
+		Formula formula2 = new Formula() {
+
+			@Override
+			public double calculate(int a) {
+				return sqrt(a);
+			}
+		};
+		// Lamda scopes ----------------------------------------------------
     }
 }
 
@@ -123,3 +202,11 @@ class Product{
         this.price = price;  
     }  
 }  
+
+interface Formula {
+    double calculate(int a);
+
+    default double sqrt(int a) {
+        return Math.sqrt(a);
+    }
+}

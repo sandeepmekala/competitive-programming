@@ -1,49 +1,31 @@
-package edu.java.java8.concurrency;
+package edu.java.java8.li07.concurrency;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.LongAccumulator;
+import java.util.function.LongBinaryOperator;
 import java.util.stream.IntStream;
 
-public class A007Synchronized {
+public class A014LongAccumulator {
 
 	public static void main(String[] args) {
-		A007Synchronized obj = new A007Synchronized();
+		A014LongAccumulator obj = new A014LongAccumulator();
 		obj.execute();
 	}
 
 	private void execute() {
-		ExecutorService executor = Executors.newFixedThreadPool(2);
-
-		IntStream.range(0, 10000)
-		.forEach(i -> executor.submit(this::increment));
-
-		System.out.println(count);
-		stop(executor);
-
-		ExecutorService executor2 = Executors.newFixedThreadPool(2);
-		IntStream.range(0, 10000)
-		.forEach(i -> executor2.submit(this::incrementSync));
+		// Generalized version of LongAdder
+		LongBinaryOperator op = (x, y) -> 2 * x + y;
+		LongAccumulator accumulator = new LongAccumulator(op, 1L);
 		
-		System.out.println(count2);
-		stop(executor2);
+		ExecutorService executor = Executors.newFixedThreadPool(2);
+		IntStream.range(0, 10)
+		.forEach(i -> executor.submit(() -> accumulator.accumulate(i)));
+		
+		stop(executor);
+		System.out.println(accumulator.getThenReset()); // => 2539
 	}
-
-	int count = 0;
-	void increment() {
-		count = count + 1;
-	}
-
-	int count2 = 0;
-	synchronized void incrementSync() {
-		count2 = count2 + 1;
-	}
-
-	void incrementSync2() {
-		synchronized (this) {
-			count2 = count2 + 1;
-		}
-	} 
 
 	public void stop(ExecutorService executor) {
 		try {

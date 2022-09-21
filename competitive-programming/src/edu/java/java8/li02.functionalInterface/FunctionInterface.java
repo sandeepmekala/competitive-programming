@@ -1,4 +1,4 @@
-package edu.java.java8.functionalInterface;
+package edu.java.java8.li02.functionalInterface;
 
 @FunctionalInterface
 interface sayable {
@@ -25,6 +25,15 @@ interface sayable {
 	// }
 }
 
+// it can have object class methods as abstract methods. This won't violate it
+// property.
+@FunctionalInterface
+interface Convert<F, T> {
+	T convert(F from);
+
+	int hashCode();
+}
+
 public class FunctionInterface implements sayable {
 	public void say(String msg) {
 		System.out.println(msg);
@@ -34,5 +43,9 @@ public class FunctionInterface implements sayable {
 		FunctionInterface fie = new FunctionInterface();
 		fie.say("Hello there");
 		fie.doIt();
+
+		Convert<String, Integer> converter = (from) -> Integer.parseInt(from);
+		Integer integer = converter.convert("123");
+		System.out.println(integer);
 	}
 }

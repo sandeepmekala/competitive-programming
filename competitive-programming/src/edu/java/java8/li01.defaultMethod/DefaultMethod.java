@@ -1,5 +1,5 @@
 
-package edu.java.java8.defaultMethod;
+package edu.java.java8.li01.defaultMethod;
 
 @FunctionalInterface
 interface Interface1 {
@@ -9,7 +9,6 @@ interface Interface1 {
 	default void log(String str) {
 		System.out.println("I1 logging::" + str);
 	}
-
 }
 
 interface Interface2 {
@@ -38,4 +37,17 @@ public class DefaultMethod implements Interface1, Interface2 {
 		System.out.println("MyClass logging::" + str);
 	}
 
+	public static void main(String[] args) {
+		DefaultMethod obj = new DefaultMethod();
+		obj.log("Java");
+
+		// anonymous object/class
+		Interface1 int1 = new Interface1(){
+
+			@Override
+			public void method1(String str) {
+				
+			}
+		}
+	}
 }

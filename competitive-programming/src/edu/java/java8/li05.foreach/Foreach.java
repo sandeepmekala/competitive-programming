@@ -1,4 +1,4 @@
-package edu.java.java8.foreach;
+package edu.java.java8.li05.foreach;
 
 import java.util.ArrayList;
 import java.util.Iterator;
