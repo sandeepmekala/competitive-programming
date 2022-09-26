@@ -6,7 +6,9 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.StringJoiner;
+import java.util.UUID;
 import java.util.concurrent.ForkJoinPool;
 import java.util.function.Supplier;
 import java.util.stream.Collector;
@@ -418,6 +420,95 @@ public class Streams {
 				.forEach(s -> System.out.format("forEach: %s [%s]\n",
 						s, Thread.currentThread().getName()));
 		// End: Parallel Streams ------------------------------
+
+
+
+		// Streams ---------------------------------------------------------
+		// Collection interface in java8 extended to create stream
+		List<String> stringCollection = new ArrayList<String>();
+		stringCollection.add("ddd2");
+		stringCollection.add("aaa2");
+		stringCollection.add("bbb1");
+		stringCollection.add("aaa1");
+		stringCollection.add("bbb3");
+		stringCollection.add("ccc");
+		stringCollection.add("bbb2");
+		stringCollection.add("ddd1");
+
+		// Match - terminal
+		// returns boolean based on the match
+		boolean anyStartsWith = stringCollection.stream().anyMatch((s) -> s.startsWith("a"));
+		System.out.println(anyStartsWith);
+
+		boolean allStartsWithA = stringCollection.stream().allMatch((s) -> s.startsWith("a"));
+		System.out.println(allStartsWithA);
+
+		boolean noneStartsWithZ = stringCollection.stream().noneMatch((s) -> s.startsWith("s"));
+		System.out.println(noneStartsWithZ);
+
+		// Count - terminal
+		// returns count of stream
+		long count = stringCollection.stream().count();
+		System.out.println(count);
+
+		// Reduce - terminal
+		// perform some aggregation operation on the stream
+		// Returns optional
+		Optional<String> reduced = stringCollection.stream().reduce((s1, s2) -> s1 + "#" + s2);
+		reduced.ifPresent(System.out::println);
+
+		// foreach - terminal
+		stringCollection.stream().forEach(System.out::println);
+
+		// collect - terminal
+		Set<String> set = stringCollection.stream().collect(Collectors.toSet());
+		System.out.println(set);
+
+		// Filter - intermediate
+		stringCollection.stream().filter((s) -> s.startsWith("a")).forEach(System.out::println);
+
+		// Sorted - intermediate
+		// it doesn't modify the base collection
+		stringCollection.stream().sorted().forEach(System.out::println);
+		// custom sorter
+		stringCollection.stream().sorted((s1, s2) -> -1 * s1.compareTo(s2)).forEach(System.out::println);
+		;
+
+		// Map - intermediate
+		// converts each element to another object/type by a given function
+		// map returns a new stream
+		stringCollection.stream().map(String::toUpperCase).forEach(System.out::println);
+		stringCollection.stream().map(String::length).forEach(System.out::println);
+
+		// Streams ---------------------------------------------------------
+
+
+		// Parallel Streams ------------------------------------------------
+
+		int max = 1000000;
+		List<String> values = new ArrayList<>(max);
+		for (int i = 0; i < max; i++) {
+			UUID uuid = UUID.randomUUID();
+			values.add(uuid.toString());
+		}
+
+		// Sequential Sort
+		long t0 = System.currentTimeMillis();
+		long count2 = values.stream().sorted().count();
+		System.out.println(count2);
+		long t1 = System.currentTimeMillis();
+		long millis = t1 - t0;
+		System.out.printf("Sequence sorting: %d ms", millis);
+
+		// Parallel Sort
+		long t2 = System.currentTimeMillis();
+		long count3 = values.parallelStream().sorted().count();
+		System.out.println(count3);
+		long t3 = System.currentTimeMillis();
+		long millis2 = t3 - t2;
+		System.out.printf("Parallel sort: %d ms", millis2);
+
+		// Parallel Streams ------------------------------------------------
 
 	}
 

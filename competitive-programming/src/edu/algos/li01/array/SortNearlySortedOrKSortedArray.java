@@ -1,7 +1,6 @@
 package edu.algos.li01.array;
 
 import java.util.Arrays;
-import java.util.Iterator;
 import java.util.PriorityQueue;
 
 public class SortNearlySortedOrKSortedArray {
