@@ -89,7 +89,8 @@ public class FunctionInterface implements sayable {
 		Consumer<Person> greeter = (p) -> {
 			System.out.println("Hello " + p.firstName);
 		};
-		greeter.accept(new Person("Abc", "123"));
+		Person p = new Person("firstName", "lastname");
+		greeter.accept(p);
 
 		// Comparators - compare
 		// Same as conventional comparator, few default methods added to same

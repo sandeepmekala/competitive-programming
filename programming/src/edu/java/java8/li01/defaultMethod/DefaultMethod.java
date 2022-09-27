@@ -48,6 +48,6 @@ public class DefaultMethod implements Interface1, Interface2 {
 			public void method1(String str) {
 				
 			}
-		}
+		};
 	}
 }
