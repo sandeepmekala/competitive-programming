@@ -1,17 +1,19 @@
-package edu.algos.li02.matrix;
+package edu.algos.li02.matrix.medium;
 
 import java.util.Arrays;
 
-public class SpiralMatrixII {
+public class L59_SpiralMatrixII {
 
 	public static void main(String[] args) {
-		SpiralMatrixII obj = new SpiralMatrixII();
+		L59_SpiralMatrixII obj = new L59_SpiralMatrixII();
 		int[][] matrix = obj.generateMatrix(3);
 		for(int[] row: matrix) {
 			System.out.println(Arrays.toString(row));
 		}
 	}
 
+    // Problem: https://leetcode.com/problems/spiral-matrix-ii/
+    // Idea: Use two pointers for each row/column and move the pointer once that row/column processed.
 	public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         int startI = 0, startJ = 0, endI = matrix.length-1, endJ = matrix[0].length-1;

@@ -1,15 +1,17 @@
-package edu.algos.li02.matrix;
+package edu.algos.li02.matrix.medium;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpiralMatrix {
+public class L54_SpiralMatrix {
 
 	public static void main(String[] args) {
-		SpiralMatrix obj = new SpiralMatrix();
+		L54_SpiralMatrix obj = new L54_SpiralMatrix();
 		System.out.println(obj.spiralOrder(new int[][] {{1,2,3},{4,5,6},{7,8,9}}));
 	}
 
+    // Problem: https://leetcode.com/problems/spiral-matrix/
+    // Idea: Use two pointers for each row/column and move the pointer once that row/column processed.
 	public List<Integer> spiralOrder(int[][] matrix) {
         int startI = 0, startJ = 0, endI = matrix.length-1, endJ = matrix[0].length-1;
         List<Integer> result = new ArrayList<Integer>();

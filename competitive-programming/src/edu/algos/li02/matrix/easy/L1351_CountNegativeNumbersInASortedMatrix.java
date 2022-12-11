@@ -1,9 +1,9 @@
-package edu.algos.li02.matrix;
+package edu.algos.li02.matrix.easy;
 
-public class CountNegativeNumbersInASortedMatrix {
+public class L1351_CountNegativeNumbersInASortedMatrix {
 
 	public static void main(String[] args) {
-		CountNegativeNumbersInASortedMatrix obj = new CountNegativeNumbersInASortedMatrix();
+		L1351_CountNegativeNumbersInASortedMatrix obj = new L1351_CountNegativeNumbersInASortedMatrix();
 		
 		int[][] grid = new int[][]{
 			{4,3,2,-1},
@@ -16,6 +16,7 @@ public class CountNegativeNumbersInASortedMatrix {
 
 	/*
 	 * Problem: https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
+	 * Idea: Start at the top-right and count the negatives in each column. You can even start at bottom-left.
 	 * 
 	 * */
 	public int countNegatives(int[][] grid) {

@@ -3,42 +3,22 @@ package edu.algos.li02.matrix;
 public class RotateMatrixByOneElement {
 
 	public static void main(String[] args) {
-//		int[][] matrix = new int[][] {
-//			{1,2,3}, 
-//			{4,5,6}, 
-//			{7,8,9}
-//			};
-		
-//		int[][] matrix = new int[][] {
-//			{1,2,3,4},
-//			{5,6,7,8},
-//			{9,10,11,12},
-//			{13,14,15,16}
-//		};
-//		int[][] matrix = new int[][] {
-//		{1,2,3}, 
-//		{4,5,6}, 
-//		{7,8,9},
-//		{10,11,12}
-//		};
+		RotateMatrixByOneElement obj = new RotateMatrixByOneElement();
 		int[][] matrix = new int[][] {
-		{1,2,3,11}, 
-		{4,5,6,12}, 
-		{7,8,9,13},
-		};
+			{1,2,3}, 
+			{4,5,6}, 
+			{7,8,9}
+			};
 		
 		print(matrix);
-		rotate(matrix);
+		obj.rotate(matrix);
 		
 		System.out.println();
 		print(matrix);
 	}
 	
-	private static void rotate(int[][] matrix) {
-		int startI = 0;
-		int startJ = 0;
-		int endI = matrix.length-1;
-		int endJ = matrix[0].length-1;
+	private void rotate(int[][] matrix) {
+		int startI = 0, startJ = 0, endI = matrix.length-1, endJ = matrix[0].length-1;
 		int curr, prev;
 		while(startI < endI && startJ < endJ) {
 			//shift top row
@@ -97,6 +77,7 @@ public class RotateMatrixByOneElement {
 			}
 		}
 	}
+	
 	private static void print(int[][] matrix) {
 		for(int i=0; i<matrix.length; i++) {
 			for(int j=0; j<matrix[i].length; j++) {
