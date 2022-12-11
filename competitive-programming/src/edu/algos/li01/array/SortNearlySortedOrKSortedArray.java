@@ -12,7 +12,7 @@ public class SortNearlySortedOrKSortedArray {
 		
 		PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 		
-		//takes O(k)
+		//takes O(k*logk)
 		for(int i=0; i<k; i++) {
 			minHeap.add(arr[i]);
 		}

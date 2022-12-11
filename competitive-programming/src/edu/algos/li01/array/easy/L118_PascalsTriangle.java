@@ -1,19 +1,18 @@
-	package edu.algos.li01.array;
+	package edu.algos.li01.array.easy;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class PascalsTriangle {
+public class L118_PascalsTriangle {
 
 	public static void main(String[] args) {
-		PascalsTriangle obj = new PascalsTriangle();
+		L118_PascalsTriangle obj = new L118_PascalsTriangle();
 		System.out.println(obj.generate(5));
 	}
 
 	/*
 	 * Problem: https://leetcode.com/problems/pascals-triangle/
-	 * 
+	 * Idea: Track the last row list in a variable
 	 * */
 	public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<>();

@@ -5,18 +5,20 @@ import java.util.Arrays;
 public class RandomlyReorderArray {
 
 	public static void main(String[] args) {
+		RandomlyReorderArray obj = new RandomlyReorderArray();
 		int values[] = { 1, 0, 3, 9, 2 };
-		System.out.println(Arrays.toString(randomlyReorderArray(values)));
+		System.out.println(Arrays.toString(obj.randomlyReorderArray(values)));
 	}
 
-	private static int[] randomlyReorderArray(int[] values) {
+	public int[] randomlyReorderArray(int[] nums) {
 
-		for (int i = values.length - 1; i >= 0; i--) {
+		for (int i = 0; i < nums.length; i++) {
 			int randInd = (int) (Math.random() * i);
-			int temp = values[i];
-			values[i] = values[randInd];
-			values[randInd] = temp;
+
+			int temp = nums[i];
+			nums[i] = nums[randInd];
+			nums[randInd] = temp;
 		}
-		return values;
+		return nums;
 	}
 }

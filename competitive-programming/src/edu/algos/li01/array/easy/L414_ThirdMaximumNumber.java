@@ -1,9 +1,9 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.easy;
 
-public class ThirdMaximumNumber {
+public class L414_ThirdMaximumNumber {
 
 	public static void main(String[] args) {
-		ThirdMaximumNumber obj = new ThirdMaximumNumber();
+		L414_ThirdMaximumNumber obj = new L414_ThirdMaximumNumber();
 		
 		int[] nums = new int[] {-2147483648,-2147483648,-2147483648,-2147483648,1,1,1};
 		System.out.println(obj.thirdMax(nums));
@@ -11,6 +11,7 @@ public class ThirdMaximumNumber {
 
 	/*
 	 * Problem: https://leetcode.com/problems/third-maximum-number/
+     * Idea: Swap max -> secMax, secMax -> thirdMax
 	 * */
 	public int thirdMax(int[] nums) {
         if(nums.length == 1) return nums[0];
@@ -18,7 +19,7 @@ public class ThirdMaximumNumber {
         
         Integer max = null, secondMax = null, thirdMax = null;
         for(Integer num: nums){
-            if(num == max || num == secondMax || num == thirdMax) continue;
+            if(num.equals(max) || num.equals(secondMax) || num.equals(thirdMax)) continue;
             
             if(max == null || num > max){
                 thirdMax = secondMax;   //n

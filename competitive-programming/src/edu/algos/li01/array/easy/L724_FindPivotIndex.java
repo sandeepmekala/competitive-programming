@@ -1,11 +1,11 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.easy;
 
 import java.util.Arrays;
 
-public class FindPivotIndex {
+public class L724_FindPivotIndex {
 
 	public static void main(String[] args) {
-		FindPivotIndex obj  = new FindPivotIndex();
+		L724_FindPivotIndex obj  = new L724_FindPivotIndex();
 		
 		int[] nums = new int[] {1,7,3,6,5,6};
 		System.out.println(obj.pivotIndex(nums));
@@ -14,7 +14,7 @@ public class FindPivotIndex {
 	
 	/*
 	 * Problem: https://leetcode.com/problems/find-pivot-index/
-	 * 
+	 * Idea: Just use sum and prefix sum
 	 * */
 	public int pivotIndex(int[] nums) {
         int sum = Arrays.stream(nums).sum();

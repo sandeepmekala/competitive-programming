@@ -1,11 +1,11 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.easy;
 
 import java.util.Arrays;
 
-public class SetMismatch {
+public class L645_SetMismatch {
 
 	public static void main(String[] args) {
-		SetMismatch obj = new SetMismatch();
+		L645_SetMismatch obj = new L645_SetMismatch();
 
 		int[] nums = new int[] {4,2,1,2};
 		System.out.println(Arrays.toString(obj.findErrorNums(nums)));
@@ -13,7 +13,7 @@ public class SetMismatch {
 
 	/*
 	 * Problem: https://leetcode.com/problems/set-mismatch/
-	 * 
+	 * Idea: Place the nums at its index position
 	 * */
 	public int[] findErrorNums(int[] nums) {
         int i=0;                                //0
@@ -36,6 +36,5 @@ public class SetMismatch {
         }
         
         return new int[]{-1, -1};
-        
     }
 }

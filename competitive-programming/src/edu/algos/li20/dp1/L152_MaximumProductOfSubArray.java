@@ -1,13 +1,15 @@
-package edu.algos.li01.array;
+package edu.algos.li20.dp1;
 
-public class MaximumProductOfSubArray {
+public class L152_MaximumProductOfSubArray {
 
 	public static void main(String[] args) {
-		MaximumProductOfSubArray obj = new MaximumProductOfSubArray();
-		System.out.println(obj.getSum(new int[] {-2,-3,-2,-4}));
+		L152_MaximumProductOfSubArray obj = new L152_MaximumProductOfSubArray();
+		System.out.println(obj.maxProduct(new int[] {-2,-3,-2,-4}));
 	}
 
-	private int getSum(int[] nums) {
+	// Problem: https://leetcode.com/problems/maximum-product-subarray/
+	// Idea: Use Kadances algo. 
+	public int maxProduct(int[] nums) {
 		int localMax = nums[0];
 		int localMin = nums[0];
         int globalMax = localMax;
@@ -21,6 +23,6 @@ public class MaximumProductOfSubArray {
 		}
         globalMax = Math.max(globalMax, localMax);
 		return globalMax;
-	}
+    }
 
 }

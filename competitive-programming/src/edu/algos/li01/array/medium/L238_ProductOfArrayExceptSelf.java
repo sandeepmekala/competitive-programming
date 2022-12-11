@@ -1,30 +1,27 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.medium;
 
 import java.util.Arrays;
 
-public class ProductOfArrayExceptSelf {
+public class L238_ProductOfArrayExceptSelf {
 
 	public static void main(String[] args) {
-		ProductOfArrayExceptSelf obj = new ProductOfArrayExceptSelf();
+		L238_ProductOfArrayExceptSelf obj = new L238_ProductOfArrayExceptSelf();
 		System.out.println(Arrays.toString(obj.productExceptSelf(new int[] {1,2,3,4})));
 	}
+
+    // Problem: https://leetcode.com/problems/product-of-array-except-self/
+    // Idea: Track prefix and suffix products. Result is prefix prod*suffix prod.
 	public int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
         int prefixProd = 1;
         int postfixProd = 1;
         for(int i=0; i<nums.length; i++){
-            if(i == 0){
-                result[i] = 1;
-            }else{
-                result[i] = prefixProd;    
-            }
+            result[i] = prefixProd;    
             prefixProd *= nums[i];
         }
         
         for(int i=nums.length-1; i>=0; i--){
-            if(i < nums.length-1){
-                result[i] *= postfixProd;
-            }
+            result[i] *= postfixProd;
             postfixProd *= nums[i];
         }
         

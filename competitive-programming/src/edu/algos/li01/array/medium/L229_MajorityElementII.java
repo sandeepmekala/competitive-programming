@@ -1,18 +1,19 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.medium;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MajorityElementII {
+public class L229_MajorityElementII {
 
 	public static void main(String[] args) {
-		MajorityElementII obj = new MajorityElementII();
+		L229_MajorityElementII obj = new L229_MajorityElementII();
 		
 		int[] nums = new int[] {2,1,1,3,1,4,5,6};
 		System.out.println(obj.majorityElement(nums));
 	}
 
-	// Moore's Voting algorithm
+    // Problem: https://leetcode.com/problems/majority-element-ii/description/
+    // Idea: Use Moore's Voting algorithm
 	public List<Integer> majorityElement(int[] nums) {
         int num1 = -1, num2 = -1, cnt1 = 0, cnt2 = 0, n=nums.length;
         for(int num: nums){

@@ -32,16 +32,17 @@ public class Algo10_TspWithNearestNeighbour {
 	public List<Integer> tsp(GraphMatrix g, int start){
 		List<Integer> path = new ArrayList<Integer>();
 		Stack<Integer> stack = new Stack<Integer>();
+		boolean[] visited = new boolean[g.V];
 		stack.add(start);
 		while(!stack.isEmpty()){
 			int current = stack.pop();
-			g.visited[current] = true;			
+			visited[current] = true;			
 			path.add(current);
 			
 			int minInd = -1;
 			int minWeight = Integer.MAX_VALUE;
 			for(int i=0; i<g.adjMatrix[current].length; i++){
-				if((g.adjMatrix[current][i] < minWeight) && !g.visited[i]){
+				if((g.adjMatrix[current][i] < minWeight) && !visited[i]){
 					minInd = i;
 					minWeight = g.adjMatrix[current][i];
 				}
@@ -54,8 +55,8 @@ public class Algo10_TspWithNearestNeighbour {
 			}
 		}
 		
-		for(int i=0; i<g.visited.length; i++){
-			if(!g.visited[i]){
+		for(int i=0; i<visited.length; i++){
+			if(!visited[i]){
 				System.out.println("No path exist to cover all nodes");
 				return new ArrayList<Integer>();
 			}

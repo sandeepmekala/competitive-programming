@@ -1,17 +1,18 @@
-package edu.algos.li01.array;
+package edu.algos.li01.array.easy;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SummaryRanges {
+public class L228_SummaryRanges {
 
 	public static void main(String[] args) {
-		SummaryRanges obj = new SummaryRanges();
+		L228_SummaryRanges obj = new L228_SummaryRanges();
 		
 		int[] nums = new int[] {0,1,2,4,5,7};
 		System.out.println(obj.summaryRanges(nums));
 	}
-	
+	// Problem: https://leetcode.com/problems/summary-ranges/description/
+    // Idea: Use two pointers to find the start and end of range.
 	public List<String> summaryRanges(int[] nums) {
         int n = nums.length;
         List<String> result = new ArrayList<>();
