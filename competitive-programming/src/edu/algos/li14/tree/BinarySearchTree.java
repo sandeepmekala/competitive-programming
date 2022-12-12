@@ -3,7 +3,7 @@ package edu.algos.li14.tree;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 
 public class BinarySearchTree {
 

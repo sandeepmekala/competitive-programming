@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 
 public class FindModeInBinarySearchTree {
 

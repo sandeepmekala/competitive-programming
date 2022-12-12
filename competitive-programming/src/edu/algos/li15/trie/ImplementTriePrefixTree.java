@@ -3,7 +3,7 @@ package edu.algos.li15.trie;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-import edu.algos.li00.model.TrieNode;
+import edu.algos.li00_model.TrieNode;
 
 public class ImplementTriePrefixTree {
 	

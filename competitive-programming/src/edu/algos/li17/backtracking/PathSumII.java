@@ -3,7 +3,7 @@ package edu.algos.li17.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 import edu.algos.li14.tree.BinaryTree;
 
 public class PathSumII {

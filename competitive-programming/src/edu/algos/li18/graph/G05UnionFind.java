@@ -3,9 +3,9 @@ package edu.algos.li18.graph;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import edu.algos.li00.model.Edge;
-import edu.algos.li00.model.GraphAdjLst;
-import edu.algos.li00.model.Subset;
+import edu.algos.li00_model.Edge;
+import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li00_model.Subset;
 
 public class G05UnionFind {
 

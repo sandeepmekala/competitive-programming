@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 
 public class BinaryTree {
 	public TreeNode root;	

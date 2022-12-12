@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 
 public class MostFrequentSubtreeSum {
 

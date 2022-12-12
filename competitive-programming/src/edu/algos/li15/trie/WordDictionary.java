@@ -1,6 +1,6 @@
 package edu.algos.li15.trie;
 
-import edu.algos.li00.model.TrieNode;
+import edu.algos.li00_model.TrieNode;
 
 public class WordDictionary {
 

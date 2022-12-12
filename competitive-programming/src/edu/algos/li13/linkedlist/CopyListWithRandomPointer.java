@@ -2,7 +2,7 @@ package edu.algos.li13.linkedlist;
 
 import java.util.HashMap;
 
-import edu.algos.li00.model.Node;
+import edu.algos.li00_model.Node;
 
 public class CopyListWithRandomPointer {
 

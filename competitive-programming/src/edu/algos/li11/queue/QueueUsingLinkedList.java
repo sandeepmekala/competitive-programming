@@ -1,6 +1,6 @@
 package edu.algos.li11.queue;
 
-import edu.algos.li00.model.ListNode;
+import edu.algos.li00_model.ListNode;
 
 public class QueueUsingLinkedList {
 

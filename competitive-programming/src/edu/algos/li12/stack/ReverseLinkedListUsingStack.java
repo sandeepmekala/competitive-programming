@@ -2,7 +2,7 @@ package edu.algos.li12.stack;
 
 import java.util.Stack;
 
-import edu.algos.li00.model.ListNode;
+import edu.algos.li00_model.ListNode;
 import edu.algos.li13.linkedlist.SingleLinkedList;
 
 public class ReverseLinkedListUsingStack {

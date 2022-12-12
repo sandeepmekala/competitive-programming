@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
 
-import edu.algos.li00.model.Pair;
+import edu.algos.li00_model.Pair;
 
 public class CarFleet {
 

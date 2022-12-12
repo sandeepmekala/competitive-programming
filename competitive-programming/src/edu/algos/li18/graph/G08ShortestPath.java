@@ -4,8 +4,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li00.model.GraphAdjLst;
-import edu.algos.li00.model.Pair;
+import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li00_model.Pair;
 
 public class G08ShortestPath {
 

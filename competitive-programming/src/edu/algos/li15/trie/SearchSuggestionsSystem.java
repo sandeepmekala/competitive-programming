@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.algos.li00.model.TrieNode;
+import edu.algos.li00_model.TrieNode;
 
 public class SearchSuggestionsSystem {
 

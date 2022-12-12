@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import edu.algos.li00.model.Pair;
+import edu.algos.li00_model.Pair;
 
 public class G04RottingOranges {
 

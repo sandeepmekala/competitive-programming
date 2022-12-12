@@ -3,7 +3,7 @@ package edu.algos.li24.geometric;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import edu.algos.li00.model.Pair;
+import edu.algos.li00_model.Pair;
 
 class DetectSquares {
 	

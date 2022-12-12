@@ -2,7 +2,7 @@ package edu.algos.li18.graph;
 
 import java.util.Arrays;
 
-import edu.algos.li00.model.GraphMatrix;
+import edu.algos.li00_model.GraphMatrix;
 
 public class Algo09_AllPairShartedPathFloydWarshall {
 

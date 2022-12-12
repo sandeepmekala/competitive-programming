@@ -2,7 +2,7 @@ package edu.algos.li26.design;
 
 import java.util.HashMap;
 
-import edu.algos.li00.model.ListNode;
+import edu.algos.li00_model.ListNode;
 
 public class LruCache {
 

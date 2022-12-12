@@ -2,7 +2,7 @@ package edu.algos.li18.graph;
 
 import java.util.HashSet;
 
-import edu.algos.li00.model.GraphAdjLst;
+import edu.algos.li00_model.GraphAdjLst;
 
 public class G06NumberOfConnectedComponents {
 

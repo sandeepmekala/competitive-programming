@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Stack;
 
-import edu.algos.li00.model.GraphAdjLst;
+import edu.algos.li00_model.GraphAdjLst;
 
 class G03DetectCycleInDirectedGraph {
 	public static void main(String args[]) {

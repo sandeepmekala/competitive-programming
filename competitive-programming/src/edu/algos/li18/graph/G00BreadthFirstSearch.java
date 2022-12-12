@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li00.model.GraphAdjLst;
+import edu.algos.li00_model.GraphAdjLst;
 
 public class G00BreadthFirstSearch {
 

@@ -2,7 +2,7 @@ package edu.algos.li17.backtracking;
 
 import java.util.HashSet;
 
-import edu.algos.li00.model.Pair;
+import edu.algos.li00_model.Pair;
 
 public class WordSearch {
 

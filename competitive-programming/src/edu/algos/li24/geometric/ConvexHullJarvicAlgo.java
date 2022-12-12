@@ -3,7 +3,7 @@ package edu.algos.li24.geometric;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.algos.li00.model.Point;
+import edu.algos.li00_model.Point;
 
 class ConvexHullJarvicAlgo {
 

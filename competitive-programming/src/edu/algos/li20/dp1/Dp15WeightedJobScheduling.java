@@ -3,7 +3,7 @@ package edu.algos.li20.dp1;
 import java.util.Arrays;
 import java.util.Comparator;
 
-import edu.algos.li00.model.Job;
+import edu.algos.li00_model.Job;
 
 public class Dp15WeightedJobScheduling {
 

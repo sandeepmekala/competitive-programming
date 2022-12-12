@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import edu.algos.li00.model.GraphMatrix;
+import edu.algos.li00_model.GraphMatrix;
 
 public class Algo10_TspWithNearestNeighbour {
 

@@ -2,7 +2,7 @@ package edu.algos.li14.tree;
 
 import java.util.Stack;
 
-import edu.algos.li00.model.TreeNode;
+import edu.algos.li00_model.TreeNode;
 
 class BstIterator {
     private TreeNode next = null;
