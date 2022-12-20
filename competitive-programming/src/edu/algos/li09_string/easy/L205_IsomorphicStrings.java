@@ -7,14 +7,14 @@ public class L205_IsomorphicStrings {
 	public static void main(String[] args) {
 		L205_IsomorphicStrings obj = new L205_IsomorphicStrings();
 		
-		String s = "egg";
-		String t = "add";
+		String s = "paper";
+		String t = "title";
 		System.out.println(obj.isIsomorphic(s, t));
 	}
 	
 	/*
 	 * Problem: https://leetcode.com/problems/isomorphic-strings/
-	 * Idea: Create a mapping from a->b and b->a
+	 * Idea: Create a mapping a->b if a is not in map and b is not already taken.
 	 * 
 	 * */
 	public boolean isIsomorphic(String s, String t) {
@@ -22,16 +22,16 @@ public class L205_IsomorphicStrings {
         for(int i=0; i<s.length(); i++){
             char sch = s.charAt(i);
             char tch = t.charAt(i);
-            if(!map.containsKey(sch) && !map.containsKey(tch)) {
+            if(!map.containsKey(sch) && !map.containsValue(tch)) 
 				map.put(sch, tch);
-				map.put(tch, sch);
-			}else if(map.containsKey(sch) && !map.containsKey(tch)) {
-				return false;
-			}else if(!map.containsKey(sch) && map.containsKey(tch)) {
-				return false;
+            
+            if(!map.containsKey(sch) && map.containsValue(tch)) 
+                return false;
+            if(map.get(sch) != tch) 
+                return false;
         }
         
-		return true;
+        return true;
     }
 
 }

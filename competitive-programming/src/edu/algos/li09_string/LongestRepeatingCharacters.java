@@ -3,11 +3,13 @@ package edu.algos.li09_string;
 public class LongestRepeatingCharacters {
 
 	public static void main(String[] args) {
+		LongestRepeatingCharacters obj = new LongestRepeatingCharacters();
+
 		String sequence = "AABCDAADBBBEA";
-		System.out.println(longestConsecutiveCharacters(sequence));
+		System.out.println(obj.longestConsecutiveCharacters(sequence));
 	}
 	
-	private static String longestConsecutiveCharacters(String sequence){
+	public String longestConsecutiveCharacters(String sequence){
 		
 		int maxCount = 0;
 		char maxChar = 0;
