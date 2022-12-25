@@ -1,14 +1,14 @@
 package edu.algos.li15_tree;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li14_linkedlist.SingleLinkedList;
+import edu.algos.li14_linkedlist._A01_SingleLinkedList;
 
 public class SortedLinkedListToBinarySearchTree {
 
 	public static void main(String[] args) {
 		SortedLinkedListToBinarySearchTree obj = new SortedLinkedListToBinarySearchTree();
 
-		SingleLinkedList list = new SingleLinkedList();
+		_A01_SingleLinkedList list = new _A01_SingleLinkedList();
 		BinarySearchTree bst = new BinarySearchTree();
 
 		list.insertAtBegining(7);
@@ -32,7 +32,7 @@ public class SortedLinkedListToBinarySearchTree {
 	 * Idea: head pointer is global for all recursive calls.
 	 * 
 	 * */
-	TreeNode sortedListToBst(SingleLinkedList list, int n) {
+	TreeNode sortedListToBst(_A01_SingleLinkedList list, int n) {
 		if (n <= 0)
 			return null;
 
