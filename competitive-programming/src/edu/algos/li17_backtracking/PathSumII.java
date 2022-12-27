@@ -4,20 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree.BinaryTree;
+
 
 public class PathSumII {
 
 	public static void main(String[] args) {
 		PathSumII obj = new PathSumII();
 		
-		BinaryTree bt = new BinaryTree();
-		TreeNode root = bt.insert(null, 1, null);
-		TreeNode n1 = bt.insert(root, 3, "l");
-		TreeNode n2 = bt.insert(root, 4, "r");
-		TreeNode n3 = bt.insert(n1, 2, "l");
-		TreeNode n4 = bt.insert(n1, 6, "r");
-		TreeNode n5 = bt.insert(n4, 5, "l");
+				TreeNode root = new TreeNode(1);
+		root.left = new TreeNode(3);
+		root.right = new TreeNode(4);
+		root.left.left = new TreeNode(2);
+        root.left.right = new TreeNode(6);
+        root.left.right.left = new TreeNode(5);
 		
 		System.out.println(obj.pathSum(root, 6));
 	}

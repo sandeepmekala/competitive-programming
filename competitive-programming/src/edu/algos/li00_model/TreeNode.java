@@ -27,12 +27,12 @@ public class TreeNode {
 		this.right = right;
 	}
 
-	public int getData() {
+	public int getVal() {
 		return val;
 	}
 
-	public void setData(int data) {
-		this.val = data;
+	public void setVal(int val) {
+		this.val = val;
 	}
 
 	@Override
