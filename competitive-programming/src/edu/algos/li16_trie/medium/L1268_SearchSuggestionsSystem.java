@@ -1,4 +1,4 @@
-package edu.algos.li16_trie;
+package edu.algos.li16_trie.medium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,10 +6,10 @@ import java.util.List;
 
 import edu.algos.li00_model.TrieNode;
 
-public class SearchSuggestionsSystem {
+public class L1268_SearchSuggestionsSystem {
 
 	public static void main(String[] args) {
-		SearchSuggestionsSystem obj = new SearchSuggestionsSystem();
+		L1268_SearchSuggestionsSystem obj = new L1268_SearchSuggestionsSystem();
 		
 		String[] products = new String[] {"mobile","mouse","moneypot","monitor","mousepad"};
 		String searchWord = "mouse";
@@ -19,19 +19,22 @@ public class SearchSuggestionsSystem {
 	/*
 	 * Problem: https://leetcode.com/problems/search-suggestions-system/
 	 * Companies: Amazon
+     * Idea: Sort words first as we need to return in lexicographic order
+     * Whild building the trie only maintain the words at each node. Maintain the words in char trie node.
+     * 
 	 * */
 	public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> result = new ArrayList<>();
         
         TrieNode root = new TrieNode();
-        Arrays.sort(products);
+        Arrays.sort(products);      
         for(String product: products){
             TrieNode current = root;
             for(char ch: product.toCharArray()){
-                if(!current.children.containsKey(ch)){
-                    current.children.put(ch, new TrieNode());
+                if(!current.map.containsKey(ch)){
+                    current.map.put(ch, new TrieNode());
                 }
-                current = current.children.get(ch);
+                current = current.map.get(ch);
                 if(current.suggestions.size() < 3)
                     current.suggestions.add(product);
             }            
@@ -39,8 +42,8 @@ public class SearchSuggestionsSystem {
         
         TrieNode current = root;
         for(char ch: searchWord.toCharArray()){
-            if(current != null && current.children.containsKey(ch)){
-                current = current.children.get(ch);
+            if(current != null && current.map.containsKey(ch)){
+                current = current.map.get(ch);
                 result.add(current.suggestions);
             }else{
                 current = null;

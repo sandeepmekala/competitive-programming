@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Map;
 
 public class TrieNode {
-	public Map<Character, TrieNode> children;
-	public boolean eow;
+	public Map<Character, TrieNode> map;
+	public boolean endOfWord;
 	public List<String> suggestions;
 	public TrieNode(){
-		children = new HashMap<Character, TrieNode>();
+		map = new HashMap<Character, TrieNode>();
 		suggestions = new ArrayList<>();
 	}
 	
 	public String toString() {
 		
-		return children.keySet()+"";
+		return map.keySet()+"";
 	}
 }

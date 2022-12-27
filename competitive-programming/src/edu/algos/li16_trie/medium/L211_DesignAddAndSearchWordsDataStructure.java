@@ -1,11 +1,11 @@
-package edu.algos.li16_trie;
+package edu.algos.li16_trie.medium;
 
 import edu.algos.li00_model.TrieNode;
 
-public class WordDictionary {
+public class L211_DesignAddAndSearchWordsDataStructure {
 
 	public static void main(String[] args) {
-		WordDictionary obj = new WordDictionary();
+		L211_DesignAddAndSearchWordsDataStructure obj = new L211_DesignAddAndSearchWordsDataStructure();
 		
 		obj.addWord("bad");
 		obj.addWord("dad");
@@ -17,8 +17,11 @@ public class WordDictionary {
 		System.out.println(obj.search("b.."));
 	}
 	
+    // Problem: https://leetcode.com/problems/design-add-and-search-words-data-structure/
+    // Idea: Use Trie to store words
+    // For seach if char is '.'. Then loop over all chars in current map and check if any recursion returns true. You need to skip one char from work fow '.'.
 	TrieNode root;
-    public WordDictionary() {
+    public L211_DesignAddAndSearchWordsDataStructure() {
         root = new TrieNode();
     }
 	
@@ -26,13 +29,13 @@ public class WordDictionary {
         TrieNode current = root;
         for(int i=0; i<word.length(); i++){
             char ch = word.charAt(i);
-            if(!current.children.containsKey(ch)){
+            if(!current.map.containsKey(ch)){
                 TrieNode newNode = new TrieNode();
-                current.children.put(ch, newNode);
+                current.map.put(ch, newNode);
             }
-            current = current.children.get(ch);
+            current = current.map.get(ch);
         }
-        current.eow = true;
+        current.endOfWord = true;
     }
     
     public boolean search(String word) {
@@ -43,20 +46,20 @@ public class WordDictionary {
         for(int i=ind; i<word.length(); i++){
             char ch = word.charAt(i);
             if(ch == '.'){
-                for(TrieNode child: current.children.values()){
+                for(TrieNode child: current.map.values()){
                     if(search(word, i+1, child)){
                         return true;
                     }
                 }
                 return false;
             }else{
-                if(!current.children.containsKey(ch)){
+                if(!current.map.containsKey(ch)){
                     return false;
                 }
-                current = current.children.get(ch);
+                current = current.map.get(ch);
             }
         }
-        return current.eow;
+        return current.endOfWord;
     }
 
 }
