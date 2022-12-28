@@ -1,17 +1,19 @@
-package edu.algos.li17_backtracking;
+package edu.algos.li17_backtracking.medium;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CombinationSum {
+public class L39_CombinationSum {
 
 	public static void main(String[] args) {
-		CombinationSum obj = new CombinationSum();
+		L39_CombinationSum obj = new L39_CombinationSum();
 		int[] nums = new int[] { 2, 3, 6, 7 };
 		int target = 7;
 		System.out.println(obj.combinationSum(nums, target));
 	}
 
+	// Problem: https://leetcode.com/problems/combination-sum/
+	// Idea: Similar like subset problem. But we have to track sum with subsets to compare with target.
 	public List<List<Integer>> combinationSum(int[] candidates, int target) {
 		List<List<Integer>> result = new ArrayList<>();
 		dfs(candidates, target, 0, 0, new ArrayList<Integer>(), result);
@@ -24,10 +26,8 @@ public class CombinationSum {
 			result.add(new ArrayList<Integer>(list));
 			return;
 		}
-
-		if (index >= candidates.length || total > target) {
+		if (index == candidates.length || total > target) 
 			return;
-		}
 
 		list.add(candidates[index]);
 		dfs(candidates, target, total + candidates[index], index, list, result);

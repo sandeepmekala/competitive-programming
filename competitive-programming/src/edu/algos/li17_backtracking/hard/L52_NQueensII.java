@@ -1,33 +1,29 @@
-package edu.algos.li17_backtracking;
+package edu.algos.li17_backtracking.hard;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class NQueens0 {
+public class L52_NQueensII {
 	public static void main(String args[]) {
-		NQueens0 nqueen = new NQueens0();
+		L52_NQueensII nqueen = new L52_NQueensII();
 
-		System.out.println(nqueen.solveNQueens(4));
+		System.out.println(nqueen.totalNQueens(4));
 	}
 
-	// Question: Place N queens on a board so that they don't attach each other
+	// Problem: https://leetcode.com/problems/n-queens-ii/
 	// Idea: For each row, recursively check if col gives solution. Else,
 	// increment col. If none of the cols give solution, increment row.
 	// Time complexity: O(4^n) as we start by placing 4 queens in each row and col
 	// 0. Each recursion checks for different col. It will be tree with 4 children
 	// and col depth.
 	// Space complexity: O(n^2)
-	public boolean solveNQueens(int n) {
+	public int totalNQueens(int n) {
 		int board[][] = new int[n][n];
 		
 		return dfs(board, 0);
-
 	}
 
-	private boolean dfs(int board[][], int col) {
+	private int dfs(int board[][], int col) {
 		int n = board.length;
 		if (col >= n) {
-			return true;
+			return 1;
 		}
 
 		int count = 0;
@@ -35,15 +31,13 @@ public class NQueens0 {
 			if (isSafe(board, row, col)) {
 				board[row][col] = 1;
 
-				if(dfs(board, col + 1)){
-					return true;
-				}
+				count += dfs(board, col + 1);
 
 				board[row][col] = 0; // Backtrack
 			}
 		}
 		
-		return false;
+		return count;
 	}
 
 	boolean isSafe(int board[][], int curRow, int curCol) {
@@ -54,12 +48,12 @@ public class NQueens0 {
 			if (board[curRow][i] == 1)
 				return false;
 
-		// upper diagonal
+		// upper-left diagonal
 		for (i = curRow, j = curCol; i >= 0 && j >= 0; i--, j--)
 			if (board[i][j] == 1)
 				return false;
 
-		// lower diagonal
+		// lower-left diagonal
 		for (i = curRow, j = curCol; j >= 0 && i < n; i++, j--)
 			if (board[i][j] == 1)
 				return false;

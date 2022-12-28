@@ -1,4 +1,4 @@
-package edu.algos.li17_backtracking;
+package edu.algos.li17_backtracking.medium;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,10 @@ import java.util.List;
 import edu.algos.li00_model.TreeNode;
 
 
-public class PathSumII {
+public class L113_PathSumII {
 
 	public static void main(String[] args) {
-		PathSumII obj = new PathSumII();
+		L113_PathSumII obj = new L113_PathSumII();
 		
 				TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
@@ -24,6 +24,7 @@ public class PathSumII {
 	/*
 	 * Problem: https://leetcode.com/problems/path-sum-ii/
 	 * Companies: Amazon
+     * Idea: Add the node to list when node processing started, remove while exiting.
 	 * */
 	public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();

@@ -1,17 +1,20 @@
-package edu.algos.li17_backtracking;
+package edu.algos.li17_backtracking.medium;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LetterCombinationsOfAPhoneNumber {
+public class L17_LetterCombinationsOfAPhoneNumber {
 
 	public static void main(String[] args) {
-		LetterCombinationsOfAPhoneNumber obj = new LetterCombinationsOfAPhoneNumber();
+		L17_LetterCombinationsOfAPhoneNumber obj = new L17_LetterCombinationsOfAPhoneNumber();
 		System.out.println(obj.letterCombinations("23"));
 	}
 
+    // Problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+    // Idea: Run the recursion for each digit index
+    // Get the digit of index and run a loop on length of digit possible chars str.
 	public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<String>();
         Map<String, String> map = new HashMap<String, String>();
@@ -29,16 +32,17 @@ public class LetterCombinationsOfAPhoneNumber {
         return result;
     }
     
-    public void dfs(String digits, int index, String curr, Map<String, String> map, List<String> result) {
+    public void dfs(String digits, int index, String str, Map<String, String> map, List<String> result) {
         if(digits.isEmpty()){
             return;
         }
-        if(curr.length() == digits.length()){
-            result.add(curr);
+        if(str.length() == digits.length()){
+            result.add(str);
             return;
         }
-        for(int i=0; i<map.get(digits.charAt(index)+"").length(); i++){
-           dfs(digits, index+1, curr+map.get(digits.charAt(index)+"").charAt(i), map, result);
+        String digit = String.valueOf(digits.charAt(index));
+        for(int i=0; i<map.get(digit).length(); i++){
+           dfs(digits, index+1, str+map.get(digit).charAt(i), map, result);
         }
     }
 }
