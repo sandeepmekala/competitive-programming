@@ -1,9 +1,9 @@
-package edu.algos.li19_graph_grid;
+package edu.algos.li19_graph_grid.easy;
 
-public class IslandPerimeter {
+public class L463_Dfs_IslandPerimeter {
 
 	public static void main(String[] args) {
-		IslandPerimeter obj = new IslandPerimeter();
+		L463_Dfs_IslandPerimeter obj = new L463_Dfs_IslandPerimeter();
 		
 		int[][] gird = new int[][]{{0,1,0,0},{1,1,1,0},{0,1,0,0},{1,1,0,0}};
 		System.out.println(obj.islandPerimeter(gird));
@@ -11,11 +11,12 @@ public class IslandPerimeter {
 	
 	/*
 	 * Problem: https://leetcode.com/problems/island-perimeter/
-	 * 
+	 * Idea: Adjacent water cell contributes 1 to perimeter. Once dfs goes to water return 1.
+     * Track the visited cells so that perimeter counted only once per cell.
+     * TODO
 	 * */
 	public int islandPerimeter(int[][] grid) {
         int m=grid.length, n=grid[0].length;
-        int count = 0;
         boolean[][] visited = new boolean[m][n];
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
@@ -24,13 +25,15 @@ public class IslandPerimeter {
             }
         }
         
-        return count;
+        return 0;
     }
     
     private int islandPerimeter(int[][] grid, int i, int j, boolean[][] visited) {
-        if(!isSafe(grid, i, j, visited)) return 1;
+        if(!isSafe(grid, i, j, visited)) 
+            return 1;
         
-        if(visited[i][j]) return 0;
+        if(visited[i][j]) 
+            return 0;
         
         visited[i][j] = true;
         int count = 0;
@@ -45,9 +48,8 @@ public class IslandPerimeter {
     
     private boolean isSafe(int[][] grid, int i, int j, boolean[][] visited) {
         int m=grid.length, n=grid[0].length;
-        if(i>=0 && i<m && j>=0 && j<n && grid[i][j] == 1)
-            return true;
-        return false;
+        
+        return i>=0 && i<m && j>=0 && j<n && grid[i][j] == 1;
     }
 
 }

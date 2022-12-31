@@ -1,16 +1,14 @@
-package edu.algos.li19_graph_grid;
+package edu.algos.li19_graph_grid.medium;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import edu.algos.li00_model.Pair;
-
-public class G04RottingOranges {
+public class L994_MultiBfs_RottingOranges {
 
 	public static void main(String[] args) {
-		G04RottingOranges obj = new G04RottingOranges();
+		L994_MultiBfs_RottingOranges obj = new L994_MultiBfs_RottingOranges();
 //		int[][] grid = new int[][]{
 //			{2,1,1},
 //			{1,1,0},
@@ -20,7 +18,11 @@ public class G04RottingOranges {
 		System.out.println(obj.orangesRotting(grid));
 	}
 
-	// multi source bfs
+	// Problem: https://leetcode.com/problems/rotting-oranges/
+    // Idea: We have to multi source bfs and increase time for every level.
+    // We need to count the fresh nodes and load all the roatten oranges to queue
+    // In every step, for every orange in queue, check in its 4 direction, if you find a rotten orange make it rotten, reduce the fresh counter and load the rotten one to queue.
+    // Run this algo until there no more fresh oranges, or there no rotten orange can reach remaining fresh one's.
 	public int orangesRotting(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -28,28 +30,22 @@ public class G04RottingOranges {
         Queue<int[]> queue = new LinkedList<>();
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                if(grid[i][j] == 1){
+                if(grid[i][j] == 1)
                     fresh++;
-                }
-                
-                if(grid[i][j] == 2){
+                if(grid[i][j] == 2)
                     queue.add(new int[] {i,j});
-                }
             }
         }
         
         int minutes = 0;
-        while(fresh > 0 &&  !queue.isEmpty()){
-            List<int[]> list = new ArrayList<>();
-            while(!queue.isEmpty()){
-                list.add(queue.remove());
-            }
-            
+        while(fresh > 0 &&  !queue.isEmpty()){           
+            int size = queue.size();
             int[][] directions = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
-            for(int[] rotten: list){
+            for(int i=0; i<size; i++){
+                int[] rottenOr = queue.remove();
                 for(int[] direction: directions) {
-                	int row = rotten[0]+direction[0];
-                	int col = rotten[1]+direction[1];
+                	int row = rottenOr[0]+direction[0];
+                	int col = rottenOr[1]+direction[1];
                 	if(isSafe(grid, row, col)){
                         queue.add(new int[] {row, col});
                         grid[row][col] = 2;
@@ -63,11 +59,6 @@ public class G04RottingOranges {
     }
     
     private boolean isSafe(int[][] grid, int i, int j){
-        int m = grid.length;
-        int n = grid[0].length;
-        if(i>=0 && i<m && j>=0 && j<n && grid[i][j] == 1){
-            return true;
-        }
-        return false;
+        return i>=0 && i<grid.length && j>=0 && j<grid[0].length && grid[i][j] == 1;
     }
 }

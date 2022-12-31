@@ -12,7 +12,7 @@ public class L520_DetectCapital {
 	/*
 	 * Problem: https://leetcode.com/problems/detect-capital/
 	 * Idea: Use startCapital and continuesCapital vars to track the status
-     * CHECK
+     * TODO
 	 * */
 	public boolean detectCapitalUse(String word) {
 		boolean startCapital = false, continuesCapital = false;

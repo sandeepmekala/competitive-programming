@@ -10,7 +10,7 @@ public class L14_LongestCommonPrefix {
 	
     // Problem: https://leetcode.com/problems/longest-common-prefix/
     // Idea: Next loops compare the string and track min matching len.
-    // CHECK
+    // TODO
     public String longestCommonPrefix(String[] strs) {
         String first = strs[0];
         int minlen = first.length();

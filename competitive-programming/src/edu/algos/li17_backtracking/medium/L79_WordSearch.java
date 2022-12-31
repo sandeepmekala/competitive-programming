@@ -13,7 +13,7 @@ public class L79_WordSearch {
 	// Idea: Do dfs on the grid and check the char at index is matching the board grid char.
 	// Pass the index of word in the recursion
 	// If index == word len, the return true.
-	// CHECK
+	// TODO
 	public boolean exist(char[][] board, String word) {
 		int m = board.length;
 		int n = board[0].length;

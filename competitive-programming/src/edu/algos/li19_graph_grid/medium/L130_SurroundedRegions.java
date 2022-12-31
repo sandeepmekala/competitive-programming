@@ -1,11 +1,11 @@
-package edu.algos.li19_graph_grid;
+package edu.algos.li19_graph_grid.medium;
 
 import java.util.Arrays;
 
-public class G06SurroundedRegions {
+public class L130_SurroundedRegions {
 
 	public static void main(String[] args) {
-		G06SurroundedRegions obj = new G06SurroundedRegions();
+		L130_SurroundedRegions obj = new L130_SurroundedRegions();
 		char[][] board = new char[][] {
 			{'X','X','X','X'},
 			{'X','O','O','X'},
@@ -17,6 +17,9 @@ public class G06SurroundedRegions {
 		}
 	}
 
+    // Problem: https://leetcode.com/problems/surrounded-regions/
+    // Idea: Just do dfs from all border cells which contains O and change all O to T
+    // Then replace all the O->X and T->O
 	public void solve(char[][] board) {
         int m = board.length;
         int n = board[0].length;
@@ -33,17 +36,11 @@ public class G06SurroundedRegions {
             for(int j=0; j<n; j++){
                 if(board[i][j] == 'O'){
                     board[i][j] = 'X';
-                }
-            }
-        }
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                if(board[i][j] == 'T'){
+                }else if(board[i][j] == 'T'){
                     board[i][j] = 'O';
                 }
             }
         }
-        
     }
     
     private void dfs(char[][] board, int i, int j){
@@ -63,9 +60,7 @@ public class G06SurroundedRegions {
     private boolean isSafe(char[][] board, int i, int j){
         int m = board.length;
         int n = board[0].length;
-        if(i>=0 && i<m && j>=0 && j<n && board[i][j] == 'O'){
-            return true;
-        }
-        return false;
+
+        return i>=0 && i<m && j>=0 && j<n && board[i][j] == 'O';
     }
 }

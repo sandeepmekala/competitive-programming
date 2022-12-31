@@ -6,10 +6,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-public class L332_ReconstructItinerary {
+public class L332_Dfs_ReconstructItinerary {
 
 	public static void main(String[] args) {
-		L332_ReconstructItinerary obj = new L332_ReconstructItinerary();
+		L332_Dfs_ReconstructItinerary obj = new L332_Dfs_ReconstructItinerary();
 
 		String[][] tickets = new String[][] { { "MUC", "LHR" }, { "JFK", "MUC" }, { "SFO", "SJC" }, { "LHR", "SFO" } };
 		List<List<String>> list = new ArrayList<>();
@@ -20,9 +20,11 @@ public class L332_ReconstructItinerary {
 	}
 
 	// Problem: https://leetcode.com/problems/reconstruct-itinerary/
-	// Idea: We need to find path in tree/graph where path contains all the nodes.
-	// Use tree path finding algorithm
+	// Idea: We need to find path in tree/graph where path contains all edges in order.
 	// Since, we need to give preference to arivals in lex order, we need to sort the tickets in that order and build graph adj list in that order.
+	// We need to consider each edge only once. Hence edge will be removed from graph once it is considered.
+	// If that path doesn't give solution, we backtrack and add that edge back.
+	// TODO
 	public List<String> findItinerary(List<List<String>> tickets) {
 		
 		Collections.sort(tickets, (a, b)->{

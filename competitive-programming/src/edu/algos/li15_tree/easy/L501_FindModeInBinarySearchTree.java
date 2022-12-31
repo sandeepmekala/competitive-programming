@@ -25,7 +25,7 @@ public class L501_FindModeInBinarySearchTree {
 	/*
 	 * Problem: https://leetcode.com/problems/find-mode-in-binary-search-tree/
 	 * Idea: Traverse the BST in preorder and find counts and max.
-     * CHECK
+     * TODO
 	 * */
 	int max = 0;
     public int[] findMode(TreeNode root) {

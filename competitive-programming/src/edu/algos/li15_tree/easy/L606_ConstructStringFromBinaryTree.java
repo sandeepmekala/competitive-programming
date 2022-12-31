@@ -24,7 +24,7 @@ public class L606_ConstructStringFromBinaryTree {
 	 * Problem: https://leetcode.com/problems/construct-string-from-binary-tree/
      * Idea: If left child is not there and right child is there, we need to keep () for left child. But not need to keep if right child is not there.
      * Hence, we need to pass flag to dinote if it left child recursive call or right child call.
-	 * CHECK
+	 * TODO
      * */
 	public String tree2str(TreeNode root) {
         return tree2str(root, false);

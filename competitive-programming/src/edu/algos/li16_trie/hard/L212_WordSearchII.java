@@ -23,7 +23,7 @@ public class L212_WordSearchII {
 	 * Do dfs of the grid and track the word that is being formed. If each char in that is going into word, track its trie node.
 	 * If trie node is eow, then add word to result;
 	 * 
-	 * CHECK
+	 * TODO
 	 * */
 	TrieNode root = new TrieNode();
     public List<String> findWords(char[][] board, String[] words) {

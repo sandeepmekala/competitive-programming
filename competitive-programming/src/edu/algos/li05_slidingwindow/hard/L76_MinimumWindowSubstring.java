@@ -16,7 +16,7 @@ public class L76_MinimumWindowSubstring {
 	 * Idea: Maintain the frequencies of window chars of s. If every char freq in s >= t char freq, it is a match
 	 * while matching, update the res len and remove the char from left window and see if len can be minimized
 	 * 
-	 * CHECK
+	 * TODO
 	 * */
 	
 	public String minWindow(String s, String t) {

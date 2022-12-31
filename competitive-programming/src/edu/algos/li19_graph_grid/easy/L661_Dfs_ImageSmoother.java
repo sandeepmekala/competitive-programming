@@ -1,11 +1,11 @@
-package edu.algos.li19_graph_grid;
+package edu.algos.li19_graph_grid.easy;
 
 import java.util.Arrays;
 
-public class ImageSmoother {
+public class L661_Dfs_ImageSmoother {
 
 	public static void main(String[] args) {
-		ImageSmoother obj = new ImageSmoother();
+		L661_Dfs_ImageSmoother obj = new L661_Dfs_ImageSmoother();
 		
 		int[][] img = new int[][]{
 			{100,200,100},
@@ -22,10 +22,11 @@ public class ImageSmoother {
 	
 	/*
 	 * Problem: https://leetcode.com/problems/image-smoother/
-	 * */
+     * Idea: Run 3 loops, 2 for matrix one inner loop over 8 directions to calculate sum and count of cells to calculate avg.
+	 * TODO
+     * */
 	public int[][] imageSmoother(int[][] img) {
-        int m=img.length;
-        int n=img[0].length;
+        int m=img.length, n=img[0].length;
         
         int[][] directions = new int[][]{{-1,-1}, {-1,0}, {-1,1}, {0,-1}, {0,0}, {0,1}, {1,-1}, {1,0}, {1,1}};
         int[][] result = new int[m][n];
@@ -48,11 +49,9 @@ public class ImageSmoother {
     }
     
     private boolean isSafe(int[][] img, int i, int j){
-        int m=img.length;
-        int n=img[0].length;
+        int m=img.length, n=img[0].length;
         
-        if(i>=0 && i<m && j>=0 && j<n) return true;
-        return false;
+        return i>=0 && i<m && j>=0 && j<n;
     }
 
 }

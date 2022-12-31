@@ -14,7 +14,7 @@ public class L3_LongestSubstringWithoutRepeatingCharacters {
 	// Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
 	// Idea: Use 2 pointers. 
 	// Once you find a repeating char on the right side, remove all the old chars from list until the repeating item.
-	// CHECK
+	// TODO
 	public int lengthOfLongestSubstring(String s) {
 		List<Character> list = new ArrayList<Character>();
 		int maxLength = 0;

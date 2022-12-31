@@ -33,7 +33,7 @@ public class L208_ImplementTriePrefixTree {
 	// Problem: https://leetcode.com/problems/implement-trie-prefix-tree/
 	// Idea: Start with root node which contains map of first chars.
 	// Deletion need to be handled in recursively as we need to delete the node in bottom up way.
-	// CHECK
+	// TODO
 	TrieNode root;
 	public L208_ImplementTriePrefixTree(){
 		root = new TrieNode();

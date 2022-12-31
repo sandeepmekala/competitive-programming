@@ -17,7 +17,7 @@ public class L49_GroupAnagrams {
     // Problem: https://leetcode.com/problems/group-anagrams/
     // Idea: Create Counter for each str using TreeMap. From TreeMap create a composite key for grouping the strings. 
     // Each anagram gets same key as TreeMap stores the keys in the same order.
-    // CHECK
+    // TODO
 	public List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List<String>> aggMap = new HashMap<String, List<String>>();
         for(int i=0; i<strs.length; i++){
