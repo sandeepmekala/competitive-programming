@@ -3,13 +3,12 @@ package edu.algos.li15_tree.medium;
 import java.util.Stack;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree._A02_BinarySearchTree;
 
 public class L230_KthSmallestElementinBst {
 
 	public static void main(String[] args) {
 		L230_KthSmallestElementinBst obj = new L230_KthSmallestElementinBst();
-		_A02_BinarySearchTree bst = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
 		TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);

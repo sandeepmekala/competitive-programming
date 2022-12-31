@@ -10,7 +10,8 @@ public class L199_BinaryTreeRightSideView {
 
 	public static void main(String[] args) {
 		L199_BinaryTreeRightSideView obj = new L199_BinaryTreeRightSideView();
-				TreeNode root = new TreeNode(1);
+		
+        TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

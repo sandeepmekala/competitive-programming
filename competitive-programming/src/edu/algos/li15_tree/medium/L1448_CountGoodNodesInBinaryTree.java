@@ -8,7 +8,7 @@ public class L1448_CountGoodNodesInBinaryTree {
 	public static void main(String[] args) {
 		L1448_CountGoodNodesInBinaryTree obj = new L1448_CountGoodNodesInBinaryTree();
 		
-				TreeNode root = new TreeNode(1);
+		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

@@ -21,8 +21,7 @@ public class L297_SerializeAndDeserializeBinaryTree {
 		String serialized = obj.serialize(root);
 		System.out.println(serialized);
 		root = obj.deserialize(serialized);
-		bt.inorder(root);
-		;
+		//bt.inorder(root);
 	}
 
 	// Problem: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/

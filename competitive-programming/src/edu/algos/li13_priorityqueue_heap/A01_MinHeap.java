@@ -1,4 +1,4 @@
-package edu.algos.li13_priorityqueue_heap.heap;
+package edu.algos.li13_priorityqueue_heap;
 
 public class A01_MinHeap {
 

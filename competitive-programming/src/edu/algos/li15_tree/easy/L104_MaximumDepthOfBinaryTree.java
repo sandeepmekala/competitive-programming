@@ -14,7 +14,7 @@ public class L104_MaximumDepthOfBinaryTree {
         root.left.right = new TreeNode(6);
         root.left.right.left = new TreeNode(5);
 		
-		System.out.println(bt.height(root));
+		System.out.println(obj.maxDepth(root));
 		
 	}
 

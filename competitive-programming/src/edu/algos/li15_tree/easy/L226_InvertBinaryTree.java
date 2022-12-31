@@ -14,10 +14,7 @@ public class L226_InvertBinaryTree {
         root.left.right = new TreeNode(6);
         root.left.right.left = new TreeNode(5);
 		
-		bt.inorder(root);
 		obj.invertTree(root);
-		System.out.println();
-		bt.inorder(root);
 	}
 	
 	// Problem: https://leetcode.com/problems/invert-binary-tree/

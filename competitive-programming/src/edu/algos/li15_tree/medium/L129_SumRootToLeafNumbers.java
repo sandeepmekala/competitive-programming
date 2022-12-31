@@ -8,7 +8,7 @@ public class L129_SumRootToLeafNumbers {
 	public static void main(String[] args) {
 		L129_SumRootToLeafNumbers obj = new L129_SumRootToLeafNumbers();
 		
-				TreeNode root = new TreeNode(1);
+		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

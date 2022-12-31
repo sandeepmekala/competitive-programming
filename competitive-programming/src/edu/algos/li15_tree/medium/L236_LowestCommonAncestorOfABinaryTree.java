@@ -14,7 +14,7 @@ public class L236_LowestCommonAncestorOfABinaryTree {
         root.left.right = new TreeNode(6);
         root.left.right.left = new TreeNode(5);
 
-        System.err.println(obj.lowestCommonAncestor(root, n2, n3));
+        System.err.println(obj.lowestCommonAncestor(root, root.left.left, root.left.right.left));
     }
 
     // Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/

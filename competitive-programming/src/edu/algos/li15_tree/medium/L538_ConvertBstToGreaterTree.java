@@ -1,14 +1,13 @@
 package edu.algos.li15_tree.medium;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree._A02_BinarySearchTree;
 
 public class L538_ConvertBstToGreaterTree {
 
 	public static void main(String[] args) {
 		L538_ConvertBstToGreaterTree obj = new L538_ConvertBstToGreaterTree();
 		
-		_A02_BinarySearchTree bst = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
 		TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);

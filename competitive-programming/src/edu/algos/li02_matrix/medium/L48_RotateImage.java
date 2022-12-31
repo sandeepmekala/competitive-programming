@@ -1,4 +1,4 @@
-package edu.algos.li02_matrix.matrix.medium;
+package edu.algos.li02_matrix.medium;
 
 public class L48_RotateImage {
 

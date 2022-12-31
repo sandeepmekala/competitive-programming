@@ -20,7 +20,7 @@ public class L145_BinaryTreePostorderTraversal {
 
         System.out.println(obj.postorderTraversal(root));
         System.out.println(obj.postorderIterativeTwoStacks(root));
-        System.out.println(obj.postorderIterativeOneStack(root));
+        //System.out.println(obj.postorderIterativeOneStack(root));
     }
 
     // Problem: https://leetcode.com/problems/binary-tree-postorder-traversal/

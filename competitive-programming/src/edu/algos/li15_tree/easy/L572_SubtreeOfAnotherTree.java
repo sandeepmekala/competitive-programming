@@ -7,7 +7,8 @@ public class L572_SubtreeOfAnotherTree {
 
 	public static void main(String[] args) {
 		L572_SubtreeOfAnotherTree obj = new L572_SubtreeOfAnotherTree();
-				TreeNode root = new TreeNode(1);
+		
+		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

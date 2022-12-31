@@ -13,7 +13,7 @@ public class L103_BinaryTreeZigzagLevelOrderTraversal {
     public static void main(String[] args) {
         L103_BinaryTreeZigzagLevelOrderTraversal obj = new L103_BinaryTreeZigzagLevelOrderTraversal();
 
-        		TreeNode root = new TreeNode(1);
+        TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

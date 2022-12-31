@@ -13,7 +13,7 @@ public class L508_MostFrequentSubtreeSum {
 	public static void main(String[] args) {
 		L508_MostFrequentSubtreeSum obj = new L508_MostFrequentSubtreeSum();
 		
-				TreeNode root = new TreeNode(1);
+		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

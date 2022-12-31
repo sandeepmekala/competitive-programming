@@ -13,7 +13,7 @@ public class L102_BinaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
         L102_BinaryTreeLevelOrderTraversal obj = new L102_BinaryTreeLevelOrderTraversal();
         
-        		TreeNode root = new TreeNode(1);
+        TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
 		root.left.left = new TreeNode(2);

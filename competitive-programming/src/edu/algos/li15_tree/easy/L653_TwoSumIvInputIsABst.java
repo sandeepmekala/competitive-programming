@@ -3,14 +3,14 @@ package edu.algos.li15_tree.easy;
 import java.util.HashSet;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree._A02_BinarySearchTree;
+import edu.algos.li15_tree.medium.L701_InsertIntoABinarySearchTree;
 
 public class L653_TwoSumIvInputIsABst {
 
 	public static void main(String[] args) {
 		L653_TwoSumIvInputIsABst obj = new L653_TwoSumIvInputIsABst();
 		
-		_A02_BinarySearchTree bst = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
 		TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);

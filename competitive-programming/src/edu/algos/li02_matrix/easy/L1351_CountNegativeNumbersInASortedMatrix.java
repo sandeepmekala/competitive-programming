@@ -1,4 +1,4 @@
-package edu.algos.li02_matrix.matrix.easy;
+package edu.algos.li02_matrix.easy;
 
 public class L1351_CountNegativeNumbersInASortedMatrix {
 

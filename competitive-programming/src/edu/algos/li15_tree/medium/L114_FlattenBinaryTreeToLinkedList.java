@@ -16,7 +16,7 @@ public class L114_FlattenBinaryTreeToLinkedList {
         root.left.right.left = new TreeNode(5);
 		
 		obj.flatten(root);
-		bt.inorder(root);
+		//bt.inorder(root);
 	}
 
 	/*

@@ -1,14 +1,14 @@
 package edu.algos.li15_tree.easy;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree._A02_BinarySearchTree;
+import edu.algos.li15_tree.medium.L701_InsertIntoABinarySearchTree;
 
 public class L617_MergeTwoBinaryTrees {
 
 	public static void main(String[] args) {
 		L617_MergeTwoBinaryTrees obj = new L617_MergeTwoBinaryTrees();
 		
-		_A02_BinarySearchTree bst1 = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst1 = new L701_InsertIntoABinarySearchTree();
 		TreeNode root1 = bst1.insertIntoBST(null, 10);
 		bst1.insertIntoBST(root1, 2);
 		bst1.insertIntoBST(root1, 4);
@@ -17,7 +17,7 @@ public class L617_MergeTwoBinaryTrees {
 		bst1.insertIntoBST(root1, 15);
 		bst1.insertIntoBST(root1, 3);
 		
-		_A02_BinarySearchTree bst2 = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst2 = new L701_InsertIntoABinarySearchTree();
 		TreeNode root2 = bst2.insertIntoBST(null, 10);
 		bst2.insertIntoBST(root2, 2);
 		bst2.insertIntoBST(root2, 4);
@@ -27,7 +27,7 @@ public class L617_MergeTwoBinaryTrees {
 		bst2.insertIntoBST(root2, 3);
 		
 		obj.mergeTrees(root1, root2);
-		bst1.inorder(root1);
+		//bst1.inorder(root1);
 	}
 
 	/*

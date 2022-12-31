@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import edu.algos.li00_model.TreeNode;
+import edu.algos.li15_tree.easy.L94_BinaryTreeInorderTraversal;
 
 
 public class L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
@@ -12,10 +13,10 @@ public class L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
 	public static void main(String[] args) {
 		L105_ConstructBinaryTreeFromPreorderAndInorderTraversal obj = new L105_ConstructBinaryTreeFromPreorderAndInorderTraversal();
 		
-		_A01_BinaryTree bt = new _A01_BinaryTree();
+		L94_BinaryTreeInorderTraversal bt = new L94_BinaryTreeInorderTraversal();
 		//TreeNode root = obj.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
 		TreeNode root = obj.buildTree(new int[] {1,2}, new int[] {2,1});
-		bt.inorder(root);
+		System.out.println(bt.inorderTraversal(root));
 	}
 	
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/

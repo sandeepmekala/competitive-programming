@@ -2,7 +2,6 @@ package edu.algos.li15_tree.medium;
 
 import edu.algos.li00_model.TreeNode;
 import edu.algos.li14_linkedlist._A01_SingleLinkedList;
-import edu.algos.li15_tree._A02_BinarySearchTree;
 
 public class L109_SortedLinkedListToBinarySearchTree {
 
@@ -10,7 +9,7 @@ public class L109_SortedLinkedListToBinarySearchTree {
 		L109_SortedLinkedListToBinarySearchTree obj = new L109_SortedLinkedListToBinarySearchTree();
 
 		_A01_SingleLinkedList list = new _A01_SingleLinkedList();
-		_A02_BinarySearchTree bst = new _A02_BinarySearchTree();
+		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
 
 		list.insertAtBegining(7);
 		list.insertAtBegining(6);
@@ -26,7 +25,7 @@ public class L109_SortedLinkedListToBinarySearchTree {
 		TreeNode root = obj.sortedListToBst(list, list.size());
 		System.out.println();
 		System.out.println("Pre-Order Traversal of constructed BST ");
-		bst.preorder(root);
+		//bst.preorder(root);
 	}
 
 	/*
