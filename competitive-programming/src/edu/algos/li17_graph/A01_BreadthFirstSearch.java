@@ -23,18 +23,19 @@ public class A01_BreadthFirstSearch {
 		obj.bfs(g, 0);
 	}
 
-	public void bfs(GraphAdjLst g, int start) {
+	public void bfs(GraphAdjLst g, int src) {
 		Queue<Integer> q = new LinkedList<Integer>();
 		Set<Integer> visited = new HashSet<Integer>();
 		
-		q.add(start);
+		q.add(src);
+		visited.add(src);
 		while (!q.isEmpty()) {
-			int current = q.remove();
-			if (!visited.contains(current)) {
-				visited.add(current);
-				System.out.println(current);
-				for (int child: g.adjList.get(current)) {
-					q.add(child);
+			int node = q.remove();
+			System.out.println(node);
+			for (int neigh: g.adj.get(node)) {
+				if (!visited.contains(neigh)) {
+					visited.add(neigh);
+					q.add(neigh);
 				}
 			}
 		}

@@ -23,9 +23,10 @@ public class A13_AllPairShartedPath_FloydWarshall {
 
 	}
 
-	// Idea: Take a random vertex k and see if the path from i to j vai k is shorter.
+	// Idea: Take a random vertex k and see if the path from i to j via k is shorter.
 	// If yes, update the dist[i,j] = dist[i,k]+dist[k,j]
-	// j need to be reached vai k. Hence, update j's parent as k.
+	// j need to be reached via k. Hence, update j's parent as k.
+	// It can detect negative weight cycles also. Once the algo ran, if the cost[i][i] goes negative, means algo would have gone through negative cycle and updated the cost[i][i] to negative. Run a for loop 0 to n and check if any the diagonals id negative.
 	// time: O(V^3)
 	private void getShartestPaths(GraphMatrix g) {
 		//each row represents shortest path from that vertex to all other vertices
@@ -51,15 +52,15 @@ public class A13_AllPairShartedPath_FloydWarshall {
 		System.out.println("Initialization:");
 		print(parent, dist);
 
-		for (int k = 0; k < g.adjMatrix.length; k++) {
+		for (int via = 0; via < g.adjMatrix.length; via++) {
 			for (int i = 0; i < g.adjMatrix.length; i++) {
 				for (int j = 0; j < g.adjMatrix.length; j++) {
-					if(dist[i][k] == INF || dist[k][j] == INF) 
+					if(dist[i][via] == INF || dist[via][j] == INF) 
 						continue;
 					
-					if(dist[i][j] > dist[i][k]+dist[k][j]) {
-						dist[i][j] = dist[i][k]+dist[k][j];
-						parent[i][j] = parent[k][j];
+					if(dist[i][via]+dist[via][j] < dist[i][j]) {
+						dist[i][j] = dist[i][via]+dist[via][j];
+						parent[i][j] = parent[via][j];
 					}
 				}
 			}

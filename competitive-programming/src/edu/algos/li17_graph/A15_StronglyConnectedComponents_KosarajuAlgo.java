@@ -38,7 +38,7 @@ public class A15_StronglyConnectedComponents_KosarajuAlgo {
 		List<HashSet<Integer>> components = new ArrayList<HashSet<Integer>>();
 		Stack<Integer> resStack = new Stack<Integer>();
 		Set<Integer> visited = new HashSet<>();
-		for (int current: g.adjList.keySet()) {
+		for (int current: g.adj.keySet()) {
 			if(!visited.contains(current)) {
 				dfs(g, current, resStack, visited);   // dfs and populate resStack in reverse topological order
 			}
@@ -61,8 +61,8 @@ public class A15_StronglyConnectedComponents_KosarajuAlgo {
 
 	private GraphAdjLst reverGraph(GraphAdjLst g) {
 		GraphAdjLst newG = new GraphAdjLst();
-		for (int src: g.adjList.keySet()) {
-			for(int dest: g.adjList.get(src)) {
+		for (int src: g.adj.keySet()) {
+			for(int dest: g.adj.get(src)) {
 				newG.addEdge(dest, src);
 			}
 		}
@@ -71,7 +71,7 @@ public class A15_StronglyConnectedComponents_KosarajuAlgo {
 
 	private void dfs(GraphAdjLst g, int current, Stack<Integer> resStack, Set<Integer> visited) {
 		visited.add(current);
-		for (int neigh: g.adjList.get(current)) {
+		for (int neigh: g.adj.get(current)) {
 			if (!visited.contains(neigh)) {
 				dfs(g, neigh, resStack, visited);
 			}
@@ -82,7 +82,7 @@ public class A15_StronglyConnectedComponents_KosarajuAlgo {
 	private void dfs2(GraphAdjLst g, int current, Set<Integer> set, Set<Integer> visited) {
 		visited.add(current);
 		set.add(current);
-		for (int neigh: g.adjList.get(current)) {
+		for (int neigh: g.adj.get(current)) {
 			if (!visited.contains(neigh)) {
 				dfs2(g, neigh, set, visited);
 			}

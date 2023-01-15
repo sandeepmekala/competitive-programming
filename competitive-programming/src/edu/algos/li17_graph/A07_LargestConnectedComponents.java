@@ -27,7 +27,7 @@ public class A07_LargestConnectedComponents {
 	private int largestConnectedComponents(GraphAdjLst g) {
 		int max = 0;
 		HashSet<Integer> visited = new HashSet<Integer>();
-		for(int src: g.adjList.keySet()) {
+		for(int src: g.adj.keySet()) {
 			max = Math.max(max, dfs(g, src, visited));
 		}
 		return max;
@@ -40,7 +40,7 @@ public class A07_LargestConnectedComponents {
 		
 		visited.add(src);
 		int count = 1;
-		for(int child: g.adjList.get(src)) {
+		for(int child: g.adj.get(src)) {
 			count += dfs(g, child, visited);
 		}
 		return count;

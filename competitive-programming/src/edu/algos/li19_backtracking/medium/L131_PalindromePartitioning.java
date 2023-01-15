@@ -16,12 +16,12 @@ public class L131_PalindromePartitioning {
     // Run a loop i, starts with index and find a polindrome. And call the recursion to find subsequent polindromes with index as i+1.
 	public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
-        dfs(s, 0, new ArrayList<String>(), result);
+        partition(s, 0, new ArrayList<String>(), result);
         return result;
     }
     
-    private void dfs(String s, int index, List<String> polindromes, List<List<String>> result){
-        if(index >= s.length()){
+    private void partition(String s, int index, List<String> polindromes, List<List<String>> result){
+        if(index == s.length()){
             result.add(new ArrayList<String>(polindromes));
             return;
         }
@@ -29,7 +29,7 @@ public class L131_PalindromePartitioning {
         for(int i=index; i<s.length(); i++){
             if(isPolindrome(s, index, i)){
                 polindromes.add(s.substring(index,i+1));
-                dfs(s, i+1, polindromes, result);
+                partition(s, i+1, polindromes, result);
                 polindromes.remove(polindromes.size()-1);
             }
         }

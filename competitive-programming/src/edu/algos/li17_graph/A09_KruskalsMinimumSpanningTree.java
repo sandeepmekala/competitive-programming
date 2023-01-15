@@ -45,7 +45,7 @@ public class A09_KruskalsMinimumSpanningTree {
 			
 			if(srcParent != destParent) {
 				mst.add(edge);
-				uf.union(srcParent, destParent);	//O(1)
+				uf.unionByRank(srcParent, destParent);	//O(1)
 			}
 		}
 		

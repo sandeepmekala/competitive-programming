@@ -21,13 +21,13 @@ public class L51_NQueens {
 		List<List<String>> result = new ArrayList<>();
 		int board[][] = new int[n][n];
 		
-		dfs(board, 0, result);
+		solveNQueens(board, 0, result);
 		return result;
 	}
 
-	private void dfs(int board[][], int col, List<List<String>> result) {
+	private void solveNQueens(int board[][], int col, List<List<String>> result) {
 		int n = board.length;
-		if (col >= n) {
+		if (col == n) {
 			saveResult(board, result);
 		}
 
@@ -35,7 +35,7 @@ public class L51_NQueens {
 			if (isSafe(board, row, col)) {
 				board[row][col] = 1;
 
-				dfs(board, col + 1, result);
+				solveNQueens(board, col + 1, result);
 
 				board[row][col] = 0; // Backtrack
 			}
@@ -58,6 +58,9 @@ public class L51_NQueens {
 		result.add(list);
 	}
 
+	// Can be optimized using hashing
+	// lower left diagonal: row+col = 2*n-1
+	// upper left diagonal: (n-1) -(row-col) = 2*n-1
 	boolean isSafe(int board[][], int curRow, int curCol) {
 		int i, j, n = board.length;
 

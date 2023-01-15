@@ -1,5 +1,6 @@
 package edu.algos.li17_graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Stack;
@@ -23,7 +24,7 @@ public class A02_DepthFirstSearch {
 		System.out.println();
 		
 		HashSet<Integer> visited = new HashSet<Integer>();
-		obj.dfsRec(g, visited, 0);
+		obj.dfs(g.adj, visited, 0);
 	}
 
 	private void dfs(GraphAdjLst g, int start) {
@@ -31,25 +32,25 @@ public class A02_DepthFirstSearch {
 		HashSet<Integer> visited = new HashSet<Integer>();
 
 		s.add(start);
+		visited.add(start);
 		while (!s.isEmpty()) {
-			int current = s.pop();
-			if (!visited.contains(current)) {
-				visited.add(current);
-				System.out.println(current);
-
-				for (int child : g.adjList.get(current)) {
-					s.add(child);
+			int node = s.pop();
+			System.out.println(node);
+			for (int neigh : g.adj.get(node)) {
+				if (!visited.contains(neigh)) {
+					visited.add(neigh);
+					s.add(neigh);
 				}
 			}
 		}
 	}
 
-	private void dfsRec(GraphAdjLst g, HashSet<Integer> visited, int src) {
-		if(!visited.contains(src)) {
-			visited.add(src);
-			System.out.println(src);
-			for(int child: g.adjList.get(src)) {
-				dfsRec(g, visited, child);
+	private void dfs(HashMap<Integer, ArrayList<Integer>> adj, HashSet<Integer> visited, int node) {
+		visited.add(node);
+		System.out.println(node);
+		for(int neigh: adj.get(node)) {
+			if(!visited.contains(neigh)) {
+				dfs(adj, visited, neigh);
 			}
 		}
 	}

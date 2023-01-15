@@ -1,8 +1,10 @@
 package edu.algos.li19_backtracking;
 
+import java.util.Arrays;
+
 public class A01_RatMaze {
 
-	static int N;
+	static int n;
 
 	public static void main(String args[]) {
 		A01_RatMaze rat = new A01_RatMaze();
@@ -13,61 +15,49 @@ public class A01_RatMaze {
 				{ 1, 1, 1, 1 }
 		};
 
-		N = maze.length;
 		rat.solveMaze(maze);
 	}
 
-	boolean solveMaze(int maze[][]) {
-		int sol[][] = new int[N][N];
+	public void solveMaze(int maze[][]) {
+		int n = maze.length;
+		int sol[][] = new int[n][n];
 
-		if (!solveMazeUtil(maze, 0, 0, sol)) {
+		if (solveMaze(maze, 0, 0, sol)) 
+			print(sol);
+		else
 			System.out.print("Solution doesn't exist");
-			return false;
-		}
-
-		printSolution(sol);
-		return true;
 	}
 
-	boolean solveMazeUtil(int maze[][], int i, int j,
-			int sol[][]) {
-		if (i == N - 1 && j == N - 1
-				&& maze[i][j] == 1) {
-			sol[i][j] = 1;
+	boolean solveMaze(int maze[][], int i, int j, int vis[][]) {
+		int n = maze.length;
+		if (i == n - 1 && j == n - 1) {
+			vis[i][j] = 1;
 			return true;
 		}
 
-		if (isSafe(maze, i, j, sol)) {
-			sol[i][j] = 1;
-
-			if (solveMazeUtil(maze, i + 1, j, sol))
-				return true;
-
-			if (solveMazeUtil(maze, i, j + 1, sol))
-				return true;
-
-			if (solveMazeUtil(maze, i - 1, j, sol))
-				return true;
-
-			if (solveMazeUtil(maze, i, j - 1, sol))
-				return true;
-
-			sol[i][j] = 0; 		// backtrack
-			return false;
+		int[][] directions = new int[][]{{0,-1}, {-1,0}, {0,1}, {1,0}};
+		for(int[] direction: directions){
+			int row = i+direction[0], col = j+direction[1]; 
+			if (isSafe(maze, row, col, vis)) {
+				vis[row][col] = 1;
+				if (solveMaze(maze, row, col, vis))
+					return true;
+				vis[row][col] = 0; 	// backtrack
+			}
 		}
+		
 		return false;
 	}
 
 	private boolean isSafe(int[][] maze, int i, int j, int[][] sol) {
-		return (i >= 0 && i < N && j >= 0 && j < N && maze[i][j] == 1 && sol[i][j] == 0);
+		int n = maze.length;
+		return i >= 0 && i < n && j >= 0 && j < n && maze[i][j] == 1 && sol[i][j] == 0;
 	}
 
-	void printSolution(int sol[][]) {
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++)
-				System.out.print(
-						" " + sol[i][j] + " ");
-			System.out.println();
+	void print(int sol[][]) {
+		int n = sol.length;
+		for (int i = 0; i < n; i++) {
+			System.out.println(Arrays.toString(sol[i]));
 		}
 	}
 

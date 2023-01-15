@@ -17,12 +17,12 @@ public class L52_NQueensII {
 	public int totalNQueens(int n) {
 		int board[][] = new int[n][n];
 		
-		return dfs(board, 0);
+		return totalNQueens(board, 0);
 	}
 
-	private int dfs(int board[][], int col) {
+	private int totalNQueens(int board[][], int col) {
 		int n = board.length;
-		if (col >= n) {
+		if (col == n) {
 			return 1;
 		}
 
@@ -31,7 +31,7 @@ public class L52_NQueensII {
 			if (isSafe(board, row, col)) {
 				board[row][col] = 1;
 
-				count += dfs(board, col + 1);
+				count += totalNQueens(board, col + 1);
 
 				board[row][col] = 0; // Backtrack
 			}

@@ -14,7 +14,8 @@ public class Dp02CoinsChange {
 	}
 
 	/*
-	 * Idea: same as knapsack problem. 
+	 * Problem: https://leetcode.com/problems/coin-change/
+	 * Idea: Same as knapsack problem. Index i and the amount that is remiain will become parameters.
 	 * If total becomes 0, then return 0 so that the min can be calculation. Count of actual number already happened with +1.
 	 * If total < 0 or index < 0, then return MAX so that it will be excluded at min calculation.
 	 * 

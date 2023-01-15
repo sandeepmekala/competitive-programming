@@ -29,6 +29,7 @@ public class A06_DetectCycleInUndirectedGraph {
 		System.out.println(obj.isCyclicByUnionFind(g));
 	}
 
+	// DFS
 	public boolean isCyclic(GraphAdjLst g) {
 		HashSet<Integer> visited = new HashSet<Integer>();
 		Stack<Integer> stack = new Stack<Integer>();
@@ -36,7 +37,7 @@ public class A06_DetectCycleInUndirectedGraph {
 		while (!stack.isEmpty()) {
 			int current = stack.pop();
 			visited.add(current);
-			for (int neigh : g.adjList.get(current)) {
+			for (int neigh : g.adj.get(current)) {
 				if (visited.contains(neigh) && neigh != current) {
 					return true;
 				} else {
@@ -53,15 +54,15 @@ public class A06_DetectCycleInUndirectedGraph {
 	public boolean isCyclicByUnionFind(GraphAdjLst g) {
 		uf.makeSet(g);
 
-		for (int src : g.adjList.keySet()) {
+		for (int src : g.adj.keySet()) {
 			int srcParent = uf.find(src);
-			for(int dest: g.adjList.get(src)) {
+			for(int dest: g.adj.get(src)) {
 				int destParent = uf.find(dest);
 
 				if (srcParent == destParent) {
 					return true;
 				}
-				uf.union(srcParent, destParent);
+				uf.unionByRank(srcParent, destParent);
 			}
 		}
 

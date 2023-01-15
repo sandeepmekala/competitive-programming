@@ -10,54 +10,44 @@ public class L333_LargestBstSubtree {
     public static void main(String[] args) {
         L333_LargestBstSubtree obj = new L333_LargestBstSubtree();
 
-        		TreeNode root = new TreeNode(1);
+        TreeNode root = new TreeNode(6);
 		root.left = new TreeNode(3);
-		root.right = new TreeNode(4);
-		root.left.left = new TreeNode(2);
-        root.left.right = new TreeNode(6);
-        root.left.right.left = new TreeNode(5);
+		root.right = new TreeNode(5);
+        root.left.right = new TreeNode(2);
+		root.right.left = new TreeNode(0);
+        root.left.right.right = new TreeNode(1);
 
         System.out.println(obj.maxSizeBst(root));
     }
 
     // Problem: https://leetcode.com/problems/largest-bst-subtree/
-    // Idea: Use a data structure int[]{isBst, size, min, max } 
-	public int[] maxSizeBst(TreeNode root) {
-		if(root == null) {
-			return new int[] {1, 0, 0, 0};
-		}else if(root.left == null && root.right == null) {
-			return new int[] {1, 1, root.val, root.val};
+	// https://www.lintcode.com/problem/1106/
+    // Idea: Use a data structure int[]{size, min, max } 
+	public int maxSizeBst(TreeNode root) {
+		return maxSizeBstRec(root).maxSize;
+	}
+	public NodeState maxSizeBstRec(TreeNode root) {
+		if(root == null) {	// a empty tree is bst of size 0
+			return new NodeState(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
 		}
 		
-		int[] left = maxSizeBst(root.left);
-		int[] right = maxSizeBst(root.right);
+		NodeState left = maxSizeBstRec(root.left);
+		NodeState right = maxSizeBstRec(root.right);
 		
-		if(root.left == null && root.right != null) {
-			if(root.val < right[2]) {
-				return new int[] {1, right[1]+1, root.val, right[3]};
-			}else {
-				return new int[] {1, right[1], 0, 0};
-			}
-		}else if(root.left != null && root.right == null) {
-			if(root.val > left[3]) {
-				return new int[] {1, left[1]+1, left[2], root.val};	
-			}else {
-				return new int[] {1, left[1], 0, 0};
-			}
-		}else {
-			if(left[0] == 1 && right[0] == 1) {
-				if(left[3]<root.val && root.val<right[2]) {
-					return new int[] {1, left[1]+right[1]+1, left[2], right[3]};
-				}else {
-					return new int[] {1, Math.max(left[1], right[1]), 0, 0};
-				}
-			}else if(left[0] == 1 && right[0] == 0) {
-				return new int[] {0, left[1], 0, 0};
-			}else if(left[0] == 0 && right[0] == 1) {
-				return new int[] {0, right[1], 0, 0};
-			}else {
-				return new int[] {0, Math.max(left[1], right[1]), 0, 0};
-			}
-		}	
+		if(root.val > left.maxNode && root.val < right.minNode){
+			return new NodeState(left.maxSize+right.maxSize+1, 
+				Math.min(left.minNode, root.val), Math.max(right.maxNode, root.val));
+		}else{
+			return new NodeState(Math.max(left.maxSize, right.maxSize), 
+				Integer.MIN_VALUE, Integer.MAX_VALUE);
+		}
+	}
+}
+class NodeState{
+	public int maxSize, minNode, maxNode;
+	public NodeState(int size, int min, int max) {
+		this.maxSize = size;
+		this.minNode = min;
+		this.maxNode = max;
 	}
 }

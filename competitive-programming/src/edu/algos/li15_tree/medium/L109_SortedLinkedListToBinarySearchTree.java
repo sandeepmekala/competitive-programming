@@ -9,7 +9,7 @@ public class L109_SortedLinkedListToBinarySearchTree {
 		L109_SortedLinkedListToBinarySearchTree obj = new L109_SortedLinkedListToBinarySearchTree();
 
 		_A01_SingleLinkedList list = new _A01_SingleLinkedList();
-		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
+		Bst_L701_InsertIntoABinarySearchTree bst = new Bst_L701_InsertIntoABinarySearchTree();
 
 		list.insertAtBegining(7);
 		list.insertAtBegining(6);
