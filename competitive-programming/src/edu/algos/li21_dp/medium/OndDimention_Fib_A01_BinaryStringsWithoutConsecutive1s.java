@@ -1,9 +1,9 @@
 package edu.algos.li21_dp.medium;
 
-public class OndD_Fib_A01_BinaryStringsWithoutConsecutive1s {
+public class OndDimention_Fib_A01_BinaryStringsWithoutConsecutive1s {
 
 	public static void main(String[] args) {
-		OndD_Fib_A01_BinaryStringsWithoutConsecutive1s obj = new OndD_Fib_A01_BinaryStringsWithoutConsecutive1s();
+		OndDimention_Fib_A01_BinaryStringsWithoutConsecutive1s obj = new OndDimention_Fib_A01_BinaryStringsWithoutConsecutive1s();
 		
 		int n = 4;
 		System.out.println(obj.count(n));

@@ -1,9 +1,9 @@
 package edu.algos.li21_dp.easy;
 
-public class OneD_Fib_L746_MinCostClimbingStairs {
+public class OndDimention_Fib_L746_MinCostClimbingStairs {
 
 	public static void main(String[] args) {
-		OneD_Fib_L746_MinCostClimbingStairs obj = new OneD_Fib_L746_MinCostClimbingStairs();
+		OndDimention_Fib_L746_MinCostClimbingStairs obj = new OndDimention_Fib_L746_MinCostClimbingStairs();
 		
 		int[] cost = new int[] {10,15,20};
 		System.out.println(obj.minCostClimbingStairs(cost));

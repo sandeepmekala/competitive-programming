@@ -1,9 +1,9 @@
 package edu.algos.li21_dp.easy;
 
-public class OneD_Fib_L70_ClimbingStairs {
+public class OndDimention_Fib_L70_ClimbingStairs {
 
 	public static void main(String[] args) {
-		OneD_Fib_L70_ClimbingStairs obj = new OneD_Fib_L70_ClimbingStairs();
+		OndDimention_Fib_L70_ClimbingStairs obj = new OndDimention_Fib_L70_ClimbingStairs();
 		System.out.println(obj.climbStairs(3));
 		System.out.println(obj.stairchasesXBottomUp(4, new int[] { 1, 3, 5 }));
 	}

@@ -1,9 +1,9 @@
 package edu.algos.li21_dp.medium;
 
-public class OndD_Fib_L198_HouseRobber {
+public class OndDimention_Fib_L198_HouseRobber {
 
 	public static void main(String[] args) {
-		OndD_Fib_L198_HouseRobber obj = new OndD_Fib_L198_HouseRobber();
+		OndDimention_Fib_L198_HouseRobber obj = new OndDimention_Fib_L198_HouseRobber();
 		
 		int[] nums = new int[] {2,7,9,3,1};
 		System.out.println(obj.rob(nums));

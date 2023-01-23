@@ -1,9 +1,9 @@
 package edu.algos.li21_dp.easy;
 
-public class OneD_Fib_L509_FibonacciNumber {
+public class OndDimention_Fib_L509_FibonacciNumber {
 
 	public static void main(String[] args) {
-		OneD_Fib_L509_FibonacciNumber obj = new OneD_Fib_L509_FibonacciNumber();
+		OndDimention_Fib_L509_FibonacciNumber obj = new OndDimention_Fib_L509_FibonacciNumber();
 
 		System.out.println(obj.fibBottomUp(25));
 		

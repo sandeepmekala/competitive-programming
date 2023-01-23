@@ -2,10 +2,10 @@ package edu.algos.li21_dp.easy;
 
 import java.util.HashMap;
 
-public class OneD_Recursion_L1025_DivisorGame {
+public class OndDimention_Recursion_L1025_DivisorGame {
 
 	public static void main(String[] args) {
-		OneD_Recursion_L1025_DivisorGame obj = new OneD_Recursion_L1025_DivisorGame();
+		OndDimention_Recursion_L1025_DivisorGame obj = new OndDimention_Recursion_L1025_DivisorGame();
 		
 		System.out.println(obj.divisorGame(10));
 	}

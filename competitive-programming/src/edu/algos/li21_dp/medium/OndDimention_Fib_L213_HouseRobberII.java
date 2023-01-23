@@ -2,10 +2,10 @@ package edu.algos.li21_dp.medium;
 
 import java.util.Arrays;
 
-public class OndD_Fib_L213_HouseRobberII {
+public class OndDimention_Fib_L213_HouseRobberII {
 
 	public static void main(String[] args) {
-		OndD_Fib_L213_HouseRobberII obj = new OndD_Fib_L213_HouseRobberII();
+		OndDimention_Fib_L213_HouseRobberII obj = new OndDimention_Fib_L213_HouseRobberII();
 		
 		//int[] nums = new int[] {2,3,2};
 		int[] nums = new int[] {0,0};

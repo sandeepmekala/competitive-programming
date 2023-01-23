@@ -2,10 +2,10 @@ package edu.algos.li21_dp.medium;
 
 import java.util.HashMap;
 
-public class OndD_Fib_L740_DeleteAndEarn {
+public class OndDimention_Fib_L740_DeleteAndEarn {
 
 	public static void main(String[] args) {
-		OndD_Fib_L740_DeleteAndEarn obj = new OndD_Fib_L740_DeleteAndEarn();
+		OndDimention_Fib_L740_DeleteAndEarn obj = new OndDimention_Fib_L740_DeleteAndEarn();
 		
 		int[] nums = new int[] {2,2,3,3,3,4};
 		System.out.println(obj.deleteAndEarn(nums));
