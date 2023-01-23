@@ -1,5 +1,5 @@
 
-package edu.algos.li21_dp2.medium;
+package edu.algos.li21_dp.medium;
 
 public class Subsequence_L322_CoinsChange {
 

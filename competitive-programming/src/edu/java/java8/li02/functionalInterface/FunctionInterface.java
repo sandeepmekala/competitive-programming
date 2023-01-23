@@ -119,10 +119,14 @@ public class FunctionInterface implements sayable {
 		Person() {
 		}
 
+		Person(String firstName) {
+			this.firstName = firstName;
+		}
 		Person(String firstName, String lastName) {
 			this.firstName = firstName;
 			this.lastName = lastName;
 		}
+
 
 	}
 }

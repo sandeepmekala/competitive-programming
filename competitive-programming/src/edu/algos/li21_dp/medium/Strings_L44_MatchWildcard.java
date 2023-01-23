@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2;
+package edu.algos.li21_dp.medium;
 
 public class Strings_L44_MatchWildcard {
 

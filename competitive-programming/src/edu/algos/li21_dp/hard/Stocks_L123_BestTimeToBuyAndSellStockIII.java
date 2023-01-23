@@ -1,8 +1,8 @@
-package edu.algos.li21_dp2.hard;
+package edu.algos.li21_dp.hard;
 
 public class Stocks_L123_BestTimeToBuyAndSellStockIII {
     public static void main(String[] args) {
-        Stocks_L123_BestTimeToBuyAndSellStockIV obj = new Stocks_L123_BestTimeToBuyAndSellStockIV();
+        Stocks_L123_BestTimeToBuyAndSellStockIII obj = new Stocks_L123_BestTimeToBuyAndSellStockIII();
 
         int[] prices = new int[] {3,3,5,0,0,3,1,4};
 		System.out.println(obj.maxProfit(prices));

@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2;
+package edu.algos.li21_dp;
 
 public class Dp34_LongestRepeatingSubsequence {
 

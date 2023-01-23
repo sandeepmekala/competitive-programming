@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.hard;
+package edu.algos.li21_dp.hard;
 
 public class Strings_Lcs_L1312_MinimumInsertionStepsToMakeAStringPalindrome {
     public static void main(String[] args) {

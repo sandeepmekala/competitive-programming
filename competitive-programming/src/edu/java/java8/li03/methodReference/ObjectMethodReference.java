@@ -1,4 +1,4 @@
-package edu.java.java8.li02.methodReference;
+package edu.java.java8.li03.methodReference;
 
 import java.util.function.BiFunction;
 

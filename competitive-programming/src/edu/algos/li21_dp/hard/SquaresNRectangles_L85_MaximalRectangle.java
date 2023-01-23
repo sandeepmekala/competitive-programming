@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.hard;
+package edu.algos.li21_dp.hard;
 
 import java.util.Stack;
 

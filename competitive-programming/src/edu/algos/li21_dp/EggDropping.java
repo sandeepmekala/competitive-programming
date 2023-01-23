@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2;
+package edu.algos.li21_dp;
 
 public class EggDropping {
 	// https://www.youtube.com/watch?v=3hcaVyX00_4&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr&index=12

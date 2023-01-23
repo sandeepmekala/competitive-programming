@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.medium;
+package edu.algos.li21_dp.medium;
 
 public class SquaresNRectangles_L1277_CountSquareSubmatricesWithAllOnes {
     public static void main(String[] args) {

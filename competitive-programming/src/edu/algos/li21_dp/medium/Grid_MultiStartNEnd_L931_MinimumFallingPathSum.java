@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.medium;
+package edu.algos.li21_dp.medium;
 
 public class Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
     public static void main(String[] args) {

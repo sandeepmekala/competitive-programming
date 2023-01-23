@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2;
+package edu.algos.li21_dp.medium;
 
 public class Subsequence_A01_Knapsack {
 

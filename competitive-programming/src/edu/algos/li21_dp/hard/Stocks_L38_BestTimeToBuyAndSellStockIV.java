@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.hard;
+package edu.algos.li21_dp.hard;
 
 public class Stocks_L38_BestTimeToBuyAndSellStockIV {
     public static void main(String[] args) {

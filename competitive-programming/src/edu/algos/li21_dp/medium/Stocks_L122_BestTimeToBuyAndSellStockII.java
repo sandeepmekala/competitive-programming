@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.medium;
+package edu.algos.li21_dp.medium;
 
 public class Stocks_L122_BestTimeToBuyAndSellStockII {
 

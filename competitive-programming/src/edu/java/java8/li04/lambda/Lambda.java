@@ -168,9 +168,9 @@ public class Lambda {
 		};
 
 		// Even modify from outer instance variables
-        int outernum;
+        //int outernum;
 		Function<Integer, String> convert5 = (from) -> {
-			outernum = 12;
+			//outernum = 12;
 			return String.valueOf(from);
 		};
 

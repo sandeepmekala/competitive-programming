@@ -1,4 +1,4 @@
-package edu.algos.li21_dp2.hard;
+package edu.algos.li21_dp.hard;
 
 public class Grid_MultiEnd_L1463_CherryPickupII {
     public static void main(String args[]){
