@@ -17,7 +17,7 @@ public class Stocks_L121_BestTimeToBuyAndSellStock {
 	 * 
 	 * */
 	public int maxProfit(int[] prices) {
-        int minPrice = prices[0], n = prices.length;
+        int minPrice = (int)1e9, n = prices.length;
         int profit = 0;
         for(int i=1; i<n; i++) {
 			int cost = prices[i]-minPrice;

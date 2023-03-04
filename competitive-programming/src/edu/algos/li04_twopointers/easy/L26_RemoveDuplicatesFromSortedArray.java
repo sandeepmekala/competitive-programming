@@ -17,7 +17,7 @@ public class L26_RemoveDuplicatesFromSortedArray {
             if(nums[i] != nums[j]){
                 nums[++j] = nums[i];                
             }
-        }
+        } 
         return j+1;
     }
 

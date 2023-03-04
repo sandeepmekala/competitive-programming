@@ -23,17 +23,18 @@ public class Bt_L144_BinaryTreePreorderTraversal {
     // Problem: https://leetcode.com/problems/binary-tree-preorder-traversal
     // Idea: rt-l-r
     public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        preorderTraversal(root, list);
-        return list;
+        List<Integer> preorder = new ArrayList<>();
+        preorderTraversal(root, preorder);
+        return preorder;
     }
     
     private void preorderTraversal(TreeNode root, List<Integer> list) {
-        if(root != null){
-            list.add(root.val);
-            preorderTraversal(root.left, list);
-            preorderTraversal(root.right, list);
-        }
+        if(root == null)
+			return;
+        
+		list.add(root.val);
+		preorderTraversal(root.left, list);
+		preorderTraversal(root.right, list);
     }
 
     // Use stack to compensate for recursion
@@ -43,12 +44,12 @@ public class Bt_L144_BinaryTreePreorderTraversal {
 			return new ArrayList<>();
 		}
         
-        List<Integer> list = new ArrayList<>();
+        List<Integer> preorder = new ArrayList<>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		stack.push(root);
 		while(!stack.isEmpty()) {
 			TreeNode current = stack.pop();
-			list.add(current.val);
+			preorder.add(current.val);
 			if(current.right != null) {
 				stack.add(current.right);
 			}
@@ -57,7 +58,7 @@ public class Bt_L144_BinaryTreePreorderTraversal {
 			}
 		}
 
-        return list;
+        return preorder;
 	}
 
     public List<Integer> morrisPreorder(TreeNode root) {

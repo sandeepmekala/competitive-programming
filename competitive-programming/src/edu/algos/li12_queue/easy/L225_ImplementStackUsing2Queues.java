@@ -22,7 +22,7 @@ public class L225_ImplementStackUsing2Queues {
     public L225_ImplementStackUsing2Queues() {
         queue1 = new LinkedList<>();
         queue2 = new LinkedList<>();
-    }
+    } 
     
     public void push(int x) {
         while(!queue1.isEmpty())

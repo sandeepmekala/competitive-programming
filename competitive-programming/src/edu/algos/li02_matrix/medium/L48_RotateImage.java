@@ -10,45 +10,46 @@ public class L48_RotateImage {
 		{7,8,9}
 		};
 
-		print(matrix);
+		obj.print(matrix);
 		obj.rotate(matrix);
-		print(matrix);
+		obj.print(matrix);
 	}
 
 	// Problem: https://leetcode.com/problems/rotate-image/
 	// Idea: Use two pointers for each row/column and move the pointer once that row/column processed.
+    // You can also solve it by doing transpose of matrix
 	public void rotate(int[][] matrix) {
-        int startI = 0, startJ = 0, endI = matrix.length-1, endJ = matrix.length-1; 
-        while(startI<endI && startJ<endJ){
+        int si = 0, sj = 0, ei = matrix.length-1, ej = matrix.length-1; 
+        while(si<ei && sj<ej){
             //left->top
-            for(int j=startJ,i=endI; j<endJ; j++,i--){
-                int temp = matrix[startI][j];
-                matrix[startI][j] = matrix[i][startJ];
-                matrix[i][startJ] = temp;
+            for(int j=sj,i=ei; j<ej; j++,i--){
+                int temp = matrix[si][j];
+                matrix[si][j] = matrix[i][sj];
+                matrix[i][sj] = temp;
             }
             
             //bottom->left
-            for(int i=endI,j=endJ; i>startI; i--,j--){
-                int temp = matrix[i][startJ];
-                matrix[i][startJ] = matrix[endI][j];
-                matrix[endI][j] = temp;
+            for(int i=ei,j=ej; i>si; i--,j--){
+                int temp = matrix[i][sj];
+                matrix[i][sj] = matrix[ei][j];
+                matrix[ei][j] = temp;
             }
             
             //right->bottom
-            for(int j=endI,i=startI; j>startI; j--,i++){
-                int temp = matrix[endI][j];
-                matrix[endI][j] = matrix[i][endJ];
-                matrix[i][endJ] = temp;
+            for(int j=ei,i=si; j>si; j--,i++){
+                int temp = matrix[ei][j];
+                matrix[ei][j] = matrix[i][ej];
+                matrix[i][ej] = temp;
             }
             
-            startI++;
-            endI--;
-            startJ++;
-            endJ--;
+            si++;
+            ei--;
+            sj++;
+            ej--;
         }
     }
 
-	private static void print(int[][] matrix) {
+	private void print(int[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix[i].length; j++) {
 				System.out.print(matrix[i][j] + " ");

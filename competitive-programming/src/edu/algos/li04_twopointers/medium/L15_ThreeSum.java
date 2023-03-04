@@ -18,9 +18,9 @@ public class L15_ThreeSum {
 		Arrays.sort(nums);
 		if (nums.length >= 3) {
 			for (int i = 0; i <= nums.length - 3; i++) {
-				if (i > 0 && nums[i] == nums[i - 1]) {
+				if (i > 0 && nums[i] == nums[i - 1]) 
 					continue;
-				}
+				
 				int left = i + 1, right = nums.length - 1;
 				while (left < right) {
 					if (nums[i] + nums[left] + nums[right] == 0) {

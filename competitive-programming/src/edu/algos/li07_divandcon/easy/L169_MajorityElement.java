@@ -10,8 +10,25 @@ public class L169_MajorityElement {
 	}
 
     // Problem: https://leetcode.com/problems/majority-element/
+    // Idea: Moore's Voting algorithm
+    public int majorityElement2(int[] nums) {
+        int major = -1, count = 0;
+        for(int num: nums){
+            if(num == major){
+                count++;
+            } else if(count == 0){
+                major = num;
+                count++;
+            } else{
+                count--;
+            }
+        }
+
+        return major;
+    }
+    
     // Idea: Divide the array recursively and find the left and right major elements. Loop through the array and find which one is major out of these two.
-	public int majorityElement(int[] nums) {
+    public int majorityElement(int[] nums) {
         int[] result = majorityElement(nums, 0, nums.length-1);
         return result[0];
     }
@@ -38,22 +55,5 @@ public class L169_MajorityElement {
             else return right;
         }
         
-    }
-
-    // Idea: Moore's Voting algorithm
-    public int majorityElement2(int[] nums) {
-        int major = -1, count = 0;
-        for(int num: nums){
-            if(num == major){
-                count++;
-            } else if(count == 0){
-                major = num;
-                count++;
-            } else{
-                count--;
-            }
-        }
-
-        return major;
     }
 }

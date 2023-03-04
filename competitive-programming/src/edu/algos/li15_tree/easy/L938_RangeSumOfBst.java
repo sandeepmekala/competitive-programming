@@ -1,14 +1,14 @@
 package edu.algos.li15_tree.easy;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree.medium.Bst_L701_InsertIntoABinarySearchTree;
+import edu.algos.li15_tree.medium._Bst_L701_InsertIntoABinarySearchTree;
 
 public class L938_RangeSumOfBst {
 
 	public static void main(String[] args) {
 		L938_RangeSumOfBst obj = new L938_RangeSumOfBst();
 		
-		Bst_L701_InsertIntoABinarySearchTree bst = new Bst_L701_InsertIntoABinarySearchTree();
+		_Bst_L701_InsertIntoABinarySearchTree bst = new _Bst_L701_InsertIntoABinarySearchTree();
 		TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);

@@ -20,8 +20,7 @@ public class L141_LinkedListCycle {
     // Idea: Use Floyds Cycle Detection algorithm.
     // Use slow and fast ptr's. They can meet at any node.
 	public boolean hasCycle(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
+        ListNode slow = head, fast = head;
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;

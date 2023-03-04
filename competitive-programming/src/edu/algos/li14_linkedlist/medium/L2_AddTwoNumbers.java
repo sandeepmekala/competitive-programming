@@ -21,9 +21,9 @@ public class L2_AddTwoNumbers {
 		list.head = obj.addTwoNumbers(list1.head, list2.head);
 		list.print();
 	}
-
+ 
 	// Problem: https://leetcode.com/problems/add-two-numbers/
-	// Idea: Use similar number addition technique.
+	// Idea: Use similar number addition technique.	
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
 		ListNode head = new ListNode();

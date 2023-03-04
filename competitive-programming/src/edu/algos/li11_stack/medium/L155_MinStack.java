@@ -15,7 +15,7 @@ public class L155_MinStack {
 		System.out.println(obj.getMin());
 	}
 
-    // Problem: https://leetcode.com/problems/min-stack/
+    // Problem: https://leetcode.com/problems/min-stack/ 
     // Idea: Idea is simple. Use 2 stack. One normal stack to support normal stack operations like push, pop and peek.
     // Use another stack which tracks the min till every element. While push of element, min stack pushes min(curr, peek) which will become min till that element.
 	Stack<Integer> stack;

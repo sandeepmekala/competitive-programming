@@ -18,6 +18,7 @@ public class A01_StackUsingArray {
 		stack.print();
 		System.out.println("\n"+stack.top());
 		stack.print();
+		stack.isEmpty();
 	}
 	
 	private void push(int data){
@@ -44,7 +45,7 @@ public class A01_StackUsingArray {
 		return elements[top];
 	}
 
-	private void isEmpty(){
+	private void isEmpty(){ 
 		if(top == -1){
 			System.out.println("Stack is empty");
 		}

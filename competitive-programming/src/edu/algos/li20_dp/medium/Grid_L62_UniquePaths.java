@@ -22,6 +22,11 @@ public class Grid_L62_UniquePaths {
 	 * 2	1	3	6	10
 	 * 3	1	4	10	20
 	 * 
+	 * The same problem can be solved as combinatotics problem.
+	 * We have to m-1 down and n-1 right directions to reach target. Total will (m-1)+(n-1) = m+n-2.
+	 * Out of these m+n-2 direction we need to choose either m-1 down direction or n-1 right directions.
+	 * Hence, ans will be (m+n-2)C(m-1) or (m+n-2)C(n-1)
+	 * 
 	 * */
 	public int uniquePaths(int m, int n) {
 		int[][] ways = new int[m][n];

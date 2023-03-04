@@ -21,7 +21,7 @@ public class L206_ReverseLinkedList {
 	}
 	
 	// Problem: https://leetcode.com/problems/reverse-linked-list/
-	// Idea: Use prev and curr ptr's
+	// Idea: Use prev, curr and next ptr's
 	public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;

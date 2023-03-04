@@ -24,21 +24,19 @@ public class L25_ReverseNodesInKGroup {
 	// We need to track curr group first which will become last after reverse and it will become previous group last once this group is processed.
 	// 
 	public ListNode reverseKGroup(ListNode head, int k) {
-        if(head == null || k == 1){
+        if(head == null || k == 1)
             return head;
-        }
 
         int length = getLength(head);
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
         
-        ListNode curr = head, prev = null;
+        ListNode prev = null, curr = head;
         ListNode prevGroupLast = dummy, currGroupLast = null;
         while(length >= k){
             for(int i=0; i<k; i++) {
-            	if(i == 0) {
-            		currGroupLast = curr;
-            	}
+            	if(i == 0) currGroupLast = curr;
+            	
             	ListNode next = curr.next;
         		curr.next = prev;
         		prev = curr;

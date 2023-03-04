@@ -19,7 +19,7 @@ public class Bt_L104_MaximumDepthOfBinaryTree {
 	}
 
 	// Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
-	// Idea: 1+max(left, right)
+	// Idea: 1+max(left, right) 
 	public int maxDepth(TreeNode root) {
         if(root == null) {
 			return 0;

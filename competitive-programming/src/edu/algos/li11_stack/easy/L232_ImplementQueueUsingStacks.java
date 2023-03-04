@@ -16,9 +16,9 @@ public class L232_ImplementQueueUsingStacks {
 	}
 
 	// Problem: https://leetcode.com/problems/implement-queue-using-stacks/
-	// Idea: Use two stacks. inputStack and outputStack. Push elements to input stack and pop elements from output stack.
+	// Idea: Use two stacks. s1->s2, s1.push(x), s2->s1.
+    // Alternative to achieve O(1) armotized complexity. Use two stacks. input and output. Push elements to input stack and pop elements from output stack.
 	// If output stack is empty move all the elements from input stack to output stack.
-
 	Stack<Integer> stack1;
     Stack<Integer> stack2;
     public L232_ImplementQueueUsingStacks() {

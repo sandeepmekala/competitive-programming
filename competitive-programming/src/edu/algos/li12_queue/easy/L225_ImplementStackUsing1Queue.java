@@ -21,7 +21,7 @@ public class L225_ImplementStackUsing1Queue {
 	Queue<Integer> queue1;
     public L225_ImplementStackUsing1Queue() {
         queue1 = new LinkedList<>();
-    }
+    } 
     
     public void push(int x) {
     	queue1.add(x);

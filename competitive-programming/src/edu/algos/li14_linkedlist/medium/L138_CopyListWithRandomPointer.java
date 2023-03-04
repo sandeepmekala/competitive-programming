@@ -8,7 +8,6 @@ import edu.algos.li14_linkedlist._A01_SingleLinkedList;
 public class L138_CopyListWithRandomPointer {
 
 	public static void main(String[] args) {
-		L138_CopyListWithRandomPointer obj = new L138_CopyListWithRandomPointer();
 
 		_A01_SingleLinkedList list = new _A01_SingleLinkedList();
 		list.insertAtEnd(1);
@@ -23,6 +22,7 @@ public class L138_CopyListWithRandomPointer {
     // Idea: Use map to store the mapping between node and its copy
     // In first pass create copies of each node and and store
     // In second pass, get the copy of each node and adjust its bext and ran pointers.
+    // You can solve it inplace. You need to insert copy nodes next to their original nodes. Then change random pointers. Then break the link between old and new nodes.
     public Node copyRandomList(Node head) {
         HashMap<Node, Node> map = new HashMap<Node, Node>();
         

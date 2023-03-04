@@ -16,13 +16,14 @@ public class PlaceEachAtIndex_L47_PermutationsII {
 
     // Problem: https://leetcode.com/problems/permutations-ii/
     // Idea: Fix each position once swap each element to that position to generat permutations.
-    // Skip duplicate numbers using set.
+    // Skip duplicate numbers using set. Alternatively, you can sort nums also.
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
+        //Arrays.sort(nums);
         permute(nums, 0, result);
         return result;
     }
-
+ 
     public void permute(int[] nums, int index, List<List<Integer>> result) {
         if (index == nums.length - 1) {
             result.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
@@ -30,6 +31,7 @@ public class PlaceEachAtIndex_L47_PermutationsII {
         }
         HashSet<Integer> distinct = new HashSet<>();
         for (int i = index; i <= nums.length - 1; i++) {
+            //if(i>index && nums[i] == nums[i-1]) continue;
             if (distinct.add(nums[i])) {
                 swap(nums, index, i);
                 permute(nums, index + 1, result);

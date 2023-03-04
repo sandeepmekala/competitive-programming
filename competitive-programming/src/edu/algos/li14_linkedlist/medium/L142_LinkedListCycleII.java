@@ -23,7 +23,7 @@ public class L142_LinkedListCycleII {
 	 	    Step 2: Place one pointer at head of LL | Another pointer should be at the point where fast and slow meet.
 		    Step 3: Move 1st pointer and 2nd pointer by one step each. 
 		    Step 4: Both will meet again at entry point of cycle.
-	 */
+	 */ 
     public ListNode detectCycle(ListNode head) {
         
         ListNode slow = head;

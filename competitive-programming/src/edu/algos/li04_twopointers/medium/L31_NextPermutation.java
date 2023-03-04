@@ -22,13 +22,15 @@ public class L31_NextPermutation {
         if(n < 2) return;
         
         int i=n-2;
-        while(i>=0 && nums[i] >= nums[i+1]) i--;    // finds 2 in 2,3,1
+        while(i>=0 && nums[i] >= nums[i+1])    
+            i--;                // finds 2 in 2,3,1
         
         if(i >= 0){
             int j = n-1;
-            while(j>=0 && nums[j] <= nums[i]) j--;  // finds 3 in 2,3,1, which is greater then 2.
+            while(j>=0 && nums[j] <= nums[i]) 
+                j--;            // finds 3 in 2,3,1, which is greater then 2.
             
-            swap(nums, i, j);                       // 2,3,1 -> 3,2,1
+            swap(nums, i, j);   // 2,3,1 -> 3,2,1
         }
         reverse(nums, i+1, n-1);
     }

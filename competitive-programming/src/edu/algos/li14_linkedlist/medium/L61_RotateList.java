@@ -22,7 +22,7 @@ public class L61_RotateList {
 	}
 	
     // Problem: https://leetcode.com/problems/rotate-list/
-    // Idea: Go to end make the list circular. Then traverse again and make n-kth node head.
+    // Idea: Go to end and make the list circular. Then traverse again and make n-kth node head.
 	public ListNode rotateRight(ListNode head, int k) {
         if(head == null || head.next == null) return head;
         

@@ -25,8 +25,7 @@ public class PickOrNotPick_L39_CombinationSum {
 		if (index == candidates.length){
 			if (target == 0) {
 				result.add(new ArrayList<Integer>(list));
-				return;
-			}	
+			}
 			return;	
 		} 
 

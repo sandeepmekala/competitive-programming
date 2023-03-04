@@ -28,7 +28,7 @@ public class PickOrNotPick_L90_SubsetsII {
         if (index == nums.length) {
 			result.add(new ArrayList<>(list));
 			return;
-		}
+		} 
 
 		list.add(nums[index]);
 		subsets(nums, index + 1, list, result);

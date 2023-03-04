@@ -24,19 +24,19 @@ public class Bt_L543_DiameterOfBinaryTree {
     // If we bubble this max, it gets complex as we need to max of curr root, max came from left and right. 
     // To simplify this we use global max variable.
     public int diameterOfBinaryTree(TreeNode root) {
-        if(root == null){
+        if(root == null)
             return 0;
-        }
         
         int[] diameter = new int[1];
         height(root, diameter);
         return diameter[0];
     }
 
+    //height
     private int height(TreeNode root, int[] diameter) {
-		if(root == null) {
+		if(root == null) 
 			return 0;
-		}
+		
 		int leftHt = height(root.left, diameter);
 		int rightHt = height(root.right, diameter);
 		

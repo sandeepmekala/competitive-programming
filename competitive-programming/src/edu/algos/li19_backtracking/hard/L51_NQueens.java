@@ -59,23 +59,24 @@ public class L51_NQueens {
 	}
 
 	// Can be optimized using hashing
-	// lower left diagonal: row+col = 2*n-1
-	// upper left diagonal: (n-1) -(row-col) = 2*n-1
-	boolean isSafe(int board[][], int curRow, int curCol) {
+	// left: n size array hash
+	// lower left diagonal: index = row+col | 2*n-1 size array hash
+	// upper left diagonal: index = (n-1)-(row-col) | 2*n-1 size array hash
+	boolean isSafe(int board[][], int row, int col) {
 		int i, j, n = board.length;
 
 		// left side
-		for (i = 0; i < curCol; i++)
-			if (board[curRow][i] == 1)
+		for (i = 0; i < col; i++)
+			if (board[row][i] == 1)
 				return false;
 
 		// upper-left diagonal
-		for (i = curRow, j = curCol; i >= 0 && j >= 0; i--, j--)
+		for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
 			if (board[i][j] == 1)
 				return false;
 
 		// lower-left diagonal
-		for (i = curRow, j = curCol; j >= 0 && i < n; i++, j--)
+		for (i = row, j = col; j >= 0 && i < n; i++, j--)
 			if (board[i][j] == 1)
 				return false;
 

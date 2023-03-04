@@ -12,7 +12,7 @@ public class L131_PalindromePartitioning {
 	}
 
     // Problem: https://leetcode.com/problems/palindrome-partitioning/
-    // Idea: Pass index as a pointer in str. Starts with 0.
+    // Idea: Pass index as a pointer in str. Starts with 0. 
     // Run a loop i, starts with index and find a polindrome. And call the recursion to find subsequent polindromes with index as i+1.
 	public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();

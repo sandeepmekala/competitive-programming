@@ -25,7 +25,7 @@ public class PlaceEachAtIndex_L46_Permutations {
     public void permute(int[] nums, int index, List<List<Integer>> result) {
         if(index == nums.length-1){
             result.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
-            return;
+            return; 
         }
         for(int i=index; i<=nums.length-1; i++){
             swap(nums, index, i);

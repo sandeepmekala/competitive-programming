@@ -16,20 +16,20 @@ public class Kadanes_L53_MaximumSubarray {
 	// If sum goes negative, reset it to 0.
 	public int maxSubArray(int nums[]) {
 		int start = 0, end = 0;
-		int global_sum = Integer.MIN_VALUE;
-		int local_sum = 0;
+		int maxsum = Integer.MIN_VALUE;
+		int sum = 0;
 		for (int i = 0; i < nums.length; i++) {
-			local_sum += nums[i];
-			if (local_sum > global_sum) {
-				global_sum = local_sum;
+			sum += nums[i];
+			if (sum > maxsum) {
+				maxsum = sum;
 				end = i;
 			}
-			if (local_sum < 0) {
-				local_sum = 0;
+			if (sum < 0) {
+				sum = 0;
 				start = i + 1;
 			}
 		}
 		System.out.println(start + ":" + end);
-		return global_sum;
+		return maxsum;
 	}
 }

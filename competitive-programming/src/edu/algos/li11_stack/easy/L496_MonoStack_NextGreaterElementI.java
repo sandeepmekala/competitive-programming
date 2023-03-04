@@ -17,30 +17,12 @@ public class L496_MonoStack_NextGreaterElementI {
 	}
 	
     // Problem: https://leetcode.com/problems/next-greater-element-i/
-    // Idea: Move left to right and build monotonically decreasing stack.
+    // Idea: Move right to left and build monotonically decreasing stack.
 	public int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Stack<Integer> stack = new Stack<>();
         HashMap<Integer, Integer> map = new HashMap<>();
-        int i=0, n=nums2.length;
-        while(i<n){
-            if(stack.isEmpty() || nums2[i] <= stack.peek())
-                stack.push(nums2[i++]);
-            else
-                map.put(stack.pop(), nums2[i]);
-        }
-        
-        int[] result = new int[nums1.length];
-        for(i=0; i<nums1.length; i++)
-            result[i] = map.getOrDefault(nums1[i], -1);
-        
-        return result;
-    }
-
-    public int[] nextGreaterElement2(int[] nums1, int[] nums2) {
-        Stack<Integer> stack = new Stack<>();
-        HashMap<Integer, Integer> map = new HashMap<>();
         for(int i=nums2.length-1; i>=0; i--){
-            while(!stack.isEmpty() && stack.peek() < nums2[i]) 
+            while(!stack.isEmpty() && stack.peek() <= nums2[i]) 
                 stack.pop();
             if(stack.isEmpty())
                 map.put(nums2[i], -1);

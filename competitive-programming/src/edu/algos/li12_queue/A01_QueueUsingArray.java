@@ -6,7 +6,7 @@ public class A01_QueueUsingArray {
 	private int max_size = 10;
 	int elements[] = new int[max_size];
 	private int front = -1, rear = -1;
-
+	
 	public void enqueue(int data){
 		if(isFull()){
 			System.out.println("Queue Overflow");

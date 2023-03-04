@@ -28,21 +28,20 @@ public class L239_MonoDeque_SlidingWindowMaximum {
 		int n = nums.length;
 		int[] result = new int[n-k+1];
 		
-		int l=0, r=0, ind=0;
+		int l=0, r=0;
 		Deque<Integer> dq = new ArrayDeque<>();				//indices
 		while(r<n) {
 			while(!dq.isEmpty() && nums[dq.peekLast()] < nums[r]) {
 				dq.removeLast();
 			}
 			
-			dq.add(r);										//add and remove one element. q size will be maintained.
+			dq.add(r);						//add and remove one element. q size will be maintained.
 			if(dq.peekFirst() < l) {
 				dq.removeFirst();
 			}
 			
-			if(r-l+1 >= k) {								// this condition to skip first indices like 0,1 etc.
-				result[ind++] = nums[dq.peekFirst()];
-				l++;
+			if(r-l+1 >= k) {				// this condition to skip first indices like 0,1 etc.
+				result[l++] = nums[dq.peekFirst()];
 			}
 			r++;
 		}

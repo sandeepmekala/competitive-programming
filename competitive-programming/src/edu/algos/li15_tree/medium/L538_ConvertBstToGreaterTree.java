@@ -7,7 +7,7 @@ public class L538_ConvertBstToGreaterTree {
 	public static void main(String[] args) {
 		L538_ConvertBstToGreaterTree obj = new L538_ConvertBstToGreaterTree();
 		
-		Bst_L701_InsertIntoABinarySearchTree bst = new Bst_L701_InsertIntoABinarySearchTree();
+		_Bst_L701_InsertIntoABinarySearchTree bst = new _Bst_L701_InsertIntoABinarySearchTree();
 		TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);

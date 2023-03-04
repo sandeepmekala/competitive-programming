@@ -5,14 +5,14 @@ public class L50_PowOfX {
 	public static void main(String[] args) {
 		L50_PowOfX obj = new L50_PowOfX();
 		int x = 2;
-		int n = 3;
+		int n = -3;
 		
 		System.out.println(obj.myPow(x,n));
 	}
 
     // Problem: https://leetcode.com/problems/powx-n/
-    // Idea: 2^4 = 2^4/2*2^4/2
-    // 2^5 = 2^5/2*2^5/2*2^1
+    // Idea: 2^4 = 2^(4/2) * 2^(4/2)
+    // 2^5 = 2^(5/2) * 2^(5/2) * 2^1
     // 2^0 = 1
     // 2^-3 = 1/2^3
 	public double myPow(double x, int n){

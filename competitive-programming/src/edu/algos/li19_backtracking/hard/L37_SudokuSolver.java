@@ -19,6 +19,7 @@ public class L37_SudokuSolver {
         System.out.println();
     }
 
+    // Problem: https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1#
     public void solveSudoku(char[][] board) {
         solve(board);
     }

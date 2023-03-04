@@ -7,7 +7,7 @@ public class L52_NQueensII {
 		System.out.println(nqueen.totalNQueens(4));
 	}
 
-	// Problem: https://leetcode.com/problems/n-queens-ii/
+	// Problem: https://leetcode.com/problems/n-queens-ii/ 
 	// Idea: For each row, recursively check if col gives solution. Else,
 	// increment col. If none of the cols give solution, increment row.
 	// Time complexity: O(4^n) as we start by placing 4 queens in each row and col

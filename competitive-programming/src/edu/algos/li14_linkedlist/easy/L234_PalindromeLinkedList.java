@@ -10,8 +10,6 @@ public class L234_PalindromeLinkedList {
 	
     // Problem: https://leetcode.com/problems/palindrome-linked-list/
     // Idea: Split the linked list and reverse the second half and compare both the half elements one by one.
-    // While splitting left half will have one extra element incase odd elements in list.
-    // In case you want one extra element in right half use dummy node.
 	public boolean isPalindrome(ListNode head1) {
         ListNode middle = split(head1);
         ListNode head2 = reverse(middle);
@@ -22,10 +20,12 @@ public class L234_PalindromeLinkedList {
             head1 = head1.next;
             head2 = head2.next;
         }
-
+        
         return true;
     }
     
+    // Incase odd elements in list, while splitting left half will have one extra element. Incase you want one extra element in right half use dummy node or start fast from head.next.
+    // Similar, incase of even nodes. slow will point to second middle. To make it point it to first mid, use dummy node or start fast from head.next.
     private ListNode split(ListNode head){
         ListNode slow = head, fast = head.next;
         while(fast != null && fast.next != null){

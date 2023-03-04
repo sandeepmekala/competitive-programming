@@ -1,7 +1,5 @@
 package edu.algos.li15_tree.easy;
 
-import java.util.ArrayList;
-
 import edu.algos.li00_model.TreeNode;
 
 

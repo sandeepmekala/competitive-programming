@@ -14,7 +14,7 @@ public class PickOrNotPick_L40_CombinationSumII {
 	}
 
     // Problem: https://leetcode.com/problems/combination-sum-ii/
-    // Idea: Similar like unique subsets problem.
+    // Idea: Similar like unique subsets problem. 
 	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(candidates);

@@ -22,7 +22,6 @@ public class Bt_L101_SymmetricTree {
 	 * Recursively, pass corresponding symmetric roots.
 	 * */
 	public boolean isSymmetric(TreeNode root) {
-
 		return isSymmetric(root.left, root.right);
 	}
 

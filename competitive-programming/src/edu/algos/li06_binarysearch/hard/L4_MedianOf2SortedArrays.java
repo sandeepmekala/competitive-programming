@@ -20,38 +20,29 @@ public class L4_MedianOf2SortedArrays {
 	 * 
 	 * */
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-		
-		if (nums1.length > nums2.length){		// run BS on min array to reduce the time
-			int[] temp = nums2;
-			nums2 = nums1;
-			nums1 = temp;			
-		}
-		
-		int n1 = nums1.length, n2 = nums2.length;		
-		int totalNums = n1+n2, half = totalNums/2;
-		int l=0, r=n1-1;
-		while(true) {
-			int m1 = (int) Math.floor((l+r)/2.0);
-			int m2 = half-m1-2;
-			int n1left, n1right, n2left, n2right;
+		int m=nums1.length, n=nums2.length;
+		if(n>m)
+			return findMedianSortedArrays(nums2,nums1);	// ensuring that binary search happens on minimum size array
 			
-			n1left = (m1 >= 0)?nums1[m1]:Integer.MIN_VALUE;
-			n1right = (m1+1 < n1)?nums1[m1+1]:Integer.MAX_VALUE;
-			n2left = (m2 >= 0)?nums2[m2]:Integer.MIN_VALUE;
-			n2right = (m2+1 < n2)?nums2[m2+1]:Integer.MAX_VALUE;
-			if(n1left <= n2right && n2left <= n1right) {
-				if(totalNums % 2 == 1) {
-					return Math.min(n1right, n2right);
-				}else {
-					return (Math.max(n1left, n2left) + Math.min(n1right, n2right))/2.0;
-				}
-			}else if(n1left > n2right) {
-				r = m1-1;
-			}else {
-				l = m1+1;
-			}
+		int low=0, high=m, mid=(m+n+1)/2;	// +1 to hand even and odd total lens
+		while(low<=high) {
+			int cut1 = (low+high)>>1;
+			int cut2 = mid - cut1;
 			
+			int l1 = (cut1 == 0)? Integer.MIN_VALUE:nums1[cut1-1];
+			int l2 = (cut2 == 0)? Integer.MIN_VALUE:nums2[cut2-1];
+			int r1 = (cut1 == m)? Integer.MAX_VALUE:nums1[cut1];
+			int r2 = (cut2 == n)? Integer.MAX_VALUE:nums2[cut2];
+			
+			if(l1<=r2 && l2<=r1) {
+				if((m+n)%2 != 0)
+					return Math.max(l1,l2);
+				else 
+					return (Math.max(l1,l2)+Math.min(r1,r2))/2.0;
+			}else if(l1>r2) high = cut1-1;
+			else low = cut1+1;
 		}
+		return 0.0;
 	}
 
 }

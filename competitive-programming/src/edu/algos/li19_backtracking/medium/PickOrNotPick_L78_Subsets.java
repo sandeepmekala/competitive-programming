@@ -20,16 +20,16 @@ public class PickOrNotPick_L78_Subsets {
 		return result;
 	}
 
-	public void subsets(int[] nums, int index, List<Integer> list, List<List<Integer>> result) {
-		if (index == nums.length) {
+	public void subsets(int[] nums, int ind, List<Integer> list, List<List<Integer>> result) {
+		if (ind == nums.length) {
 			result.add(new ArrayList<>(list));
 			return;
 		}
 
-		list.add(nums[index]);	// pick
-		subsets(nums, index + 1, list, result);
+		list.add(nums[ind]);	// pick
+		subsets(nums, ind + 1, list, result);
 		
 		list.remove(list.size() - 1);	// not pick
-		subsets(nums, index + 1, list, result);
+		subsets(nums, ind + 1, list, result);
 	}
 }

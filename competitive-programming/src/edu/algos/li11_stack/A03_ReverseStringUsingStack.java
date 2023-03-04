@@ -1,6 +1,5 @@
 package edu.algos.li11_stack;
 
-import java.util.Scanner;
 import java.util.Stack;
 
 public class A03_ReverseStringUsingStack {

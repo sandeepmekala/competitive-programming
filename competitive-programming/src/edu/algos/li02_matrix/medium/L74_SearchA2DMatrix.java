@@ -15,7 +15,11 @@ public class L74_SearchA2DMatrix {
 	}
 
     // Problem: https://leetcode.com/problems/search-a-2d-matrix/
-    // Idea: Use binary search from top-right corner
+    // Idea: There are 2 variations of this problem.
+    // 1. each row and columns are in increasing order
+    // 2. each row and columns are in increasing order and first element of next is greater then last element of curr row.
+    // Boelow algo is best for 1st case. Use binary search from top-right corner.
+    // For 2nd case optimal approach is to apply BS on range 0 to n*m-1 as the elments are continueously increasing from 0 to n*m-1.
     public boolean searchMatrix(int[][] matrix, int target) {
         int i=0, j=matrix[0].length-1;
         while(j>=0 && i<matrix.length){

@@ -32,19 +32,18 @@ public class Bt_L145_BinaryTreePostorderTraversal {
     }
     
     private void postorderTraversal(TreeNode root, List<Integer> list) {
-        if(root != null){
-            postorderTraversal(root.left, list);
-            postorderTraversal(root.right, list);
-            list.add(root.val);
-        }
+        if(root == null)
+			return;
+		postorderTraversal(root.left, list);
+		postorderTraversal(root.right, list);
+		list.add(root.val);
     }
 
     public List<Integer> postorderIterativeTwoStacks(TreeNode root) {
-		if(root == null) {
+		if(root == null) 
 			return new ArrayList<>();
-		}
 		
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> postorder = new ArrayList<Integer>();
 		Stack<TreeNode> stack1 = new Stack<TreeNode>();
 		Stack<TreeNode> stack2 = new Stack<TreeNode>();
 		stack1.push(root);
@@ -57,18 +56,17 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 		
 		while(!stack2.isEmpty()) {
 			TreeNode current = stack2.pop();
-			list.add(current.val);
+			postorder.add(current.val);
 		}
 
-        return list;
+        return postorder;
 	}
 
 	public List<Integer> postorderIterativeOneStack(TreeNode root) {
-		if(root == null) {
+		if(root == null) 
 			return new ArrayList<Integer>();
-		}
 		
-        List<Integer> list = new ArrayList<Integer>();
+        List<Integer> postorder = new ArrayList<Integer>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode current = root;
 		while(!stack.isEmpty() || current != null) {
@@ -79,10 +77,10 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 				TreeNode right = stack.peek().right;
 				if(right == null) {
 					right = stack.pop();
-					list.add(right.val);
+					postorder.add(right.val);
 					while(!stack.isEmpty() && right == stack.peek().right){
 						right = stack.pop();
-						list.add(right.val);
+						postorder.add(right.val);
 					}
 				}else {
 					current = right;
@@ -92,6 +90,6 @@ public class Bt_L145_BinaryTreePostorderTraversal {
             
 		}
 
-        return list;
+        return postorder;
 	}
 }

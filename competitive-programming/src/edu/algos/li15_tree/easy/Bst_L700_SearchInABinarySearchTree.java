@@ -1,13 +1,13 @@
 package edu.algos.li15_tree.easy;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree.medium.Bst_L701_InsertIntoABinarySearchTree;
+import edu.algos.li15_tree.medium._Bst_L701_InsertIntoABinarySearchTree;
 
 public class Bst_L700_SearchInABinarySearchTree {
     public static void main(String[] args) {
         Bst_L700_SearchInABinarySearchTree obj = new Bst_L700_SearchInABinarySearchTree();
         
-        Bst_L701_InsertIntoABinarySearchTree bst = new Bst_L701_InsertIntoABinarySearchTree();
+        _Bst_L701_InsertIntoABinarySearchTree bst = new _Bst_L701_InsertIntoABinarySearchTree();
         TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);
@@ -20,7 +20,7 @@ public class Bst_L700_SearchInABinarySearchTree {
 		System.out.println(obj.searchBstIterative(root, 4));   
     }
 
-    // Problem: https://leetcode.com/problems/search-in-a-binary-search-tree/
+    // Problem: https://leetcode.com/problems/search-in-a-binary-search-tree/ 
     // Idea: If val < root, search in left subtree else search in right subtree.
     public TreeNode searchBST(TreeNode  root, int val){
 		if(root == null || root.val == val)

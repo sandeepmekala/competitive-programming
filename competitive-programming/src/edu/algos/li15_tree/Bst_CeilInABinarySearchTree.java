@@ -1,13 +1,13 @@
 package edu.algos.li15_tree;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree.medium.Bst_L701_InsertIntoABinarySearchTree;
+import edu.algos.li15_tree.medium._Bst_L701_InsertIntoABinarySearchTree;
 
 public class Bst_CeilInABinarySearchTree {
     public static void main(String[] args) {
         Bst_CeilInABinarySearchTree obj = new Bst_CeilInABinarySearchTree();
 
-        Bst_L701_InsertIntoABinarySearchTree bst = new Bst_L701_InsertIntoABinarySearchTree();
+        _Bst_L701_InsertIntoABinarySearchTree bst = new _Bst_L701_InsertIntoABinarySearchTree();
         TreeNode root = bst.insertIntoBST(null, 10);
 		bst.insertIntoBST(root, 2);
 		bst.insertIntoBST(root, 4);
@@ -21,7 +21,7 @@ public class Bst_CeilInABinarySearchTree {
 
     // Idea: when root val is larger, that could be one possible ceil value.
     // Assign it to ceild and try to minumize the ceil value by going left.
-    // Floor of a num is also similar logic.
+    // Floor of a num is also similar logic. 
     public int findCeil(TreeNode root, int key){
         int ceil = -1;
         TreeNode curr = root;

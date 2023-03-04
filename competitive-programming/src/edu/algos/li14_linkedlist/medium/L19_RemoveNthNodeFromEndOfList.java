@@ -22,24 +22,23 @@ public class L19_RemoveNthNodeFromEndOfList {
     // First move right ptr ton nodes. Then move both left and right ptr till right is null.
     // Now the left node which was pointing dummy node, points to n+1th node fron last. Remove nth node.
 	public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode dummy = new ListNode();
-        dummy.next = head;
+        ListNode start = new ListNode();
+        start.next = head;
         
-        ListNode left = dummy;
-        ListNode right = head;
+        ListNode slow = start, fast = start;
         int cnt = 1;
-        while(right != null && cnt++ <= n){
-            right = right.next;
+        while(cnt <= n){
+            fast = fast.next;
+            cnt++;
         }
         
-        while(right != null){
-            left = left.next;
-            right = right.next;
+        while(fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
         }
 
-        left.next = left.next.next;
-        
-        return dummy.next;
+        slow.next = slow.next.next;
+        return start.next;
     }
 
 }
