@@ -1,7 +1,6 @@
 package edu.algos.li15_tree;
 
 import edu.algos.li00_model.TreeNode;
-import edu.algos.li15_tree.medium._Bst_L701_InsertIntoABinarySearchTree;
 
 public class Bst_CeilInABinarySearchTree {
     public static void main(String[] args) {
