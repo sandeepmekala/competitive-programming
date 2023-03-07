@@ -15,15 +15,10 @@ public class L239_MonoDeque_SlidingWindowMaximum {
 		System.out.println(Arrays.toString(result));
 	}
 	
-	/*
-	 * Problem: https://leetcode.com/problems/sliding-window-maximum/
-	 * Idea: Use, monotonically decreasing queue. Maintain the nums in decreasing order in queue. 
-	 * Take the left most to take the max for that window.
-	 * Remove the left most if it goes out of window.
-	 * 
-	 * 
-	 * */
-
+	// Problem: https://leetcode.com/problems/sliding-window-maximum/
+	// Idea: Use, monotonically decreasing queue. Maintain the nums in decreasing order in queue. 
+	// Take the left most to take the max for that window.
+	// Remove the left most if it goes out of window.
 	public int[] maxSlidingWindow(int[] nums, int k) {
 		int n = nums.length;
 		int[] result = new int[n-k+1];

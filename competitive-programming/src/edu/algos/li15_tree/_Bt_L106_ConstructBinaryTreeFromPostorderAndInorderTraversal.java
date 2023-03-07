@@ -10,7 +10,7 @@ public class _Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
 	public static void main(String[] args) {
 		_Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal obj = new _Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal();
 		
-		Bt_L94_BinaryTreeInorderTraversal bt = new Bt_L94_BinaryTreeInorderTraversal();
+		_Bt_L94_BinaryTreeInorderTraversal bt = new _Bt_L94_BinaryTreeInorderTraversal();
 		TreeNode root = obj.buildTree(new int[] {9,3,15,20,7}, new int[] {9,15,7,20,3});
 		System.out.println(bt.inorderTraversal(root));
 	}

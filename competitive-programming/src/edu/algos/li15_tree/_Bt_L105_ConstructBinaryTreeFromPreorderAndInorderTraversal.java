@@ -11,7 +11,7 @@ public class _Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
 	public static void main(String[] args) {
 		_Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal obj = new _Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal();
 		
-		Bt_L94_BinaryTreeInorderTraversal bt = new Bt_L94_BinaryTreeInorderTraversal();
+		_Bt_L94_BinaryTreeInorderTraversal bt = new _Bt_L94_BinaryTreeInorderTraversal();
 		TreeNode root = obj.buildTree(new int[] {3,9,20,15,7}, new int[] {9,3,15,20,7});
 		//TreeNode root = obj.buildTree(new int[] {1,2}, new int[] {2,1});
 		System.out.println(bt.inorderTraversal(root));
