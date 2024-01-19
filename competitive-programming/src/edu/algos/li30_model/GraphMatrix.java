@@ -1,4 +1,4 @@
-package edu.algos.li00_model;
+package edu.algos.li30_model;
 
 public class GraphMatrix {
 	public int V;

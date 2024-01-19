@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.GraphAdjLst;
 
 public class _A01_BreadthFirstSearch {
 

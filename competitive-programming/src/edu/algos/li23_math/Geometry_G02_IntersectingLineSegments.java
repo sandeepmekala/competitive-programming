@@ -1,6 +1,6 @@
 package edu.algos.li23_math;
 
-import edu.algos.li00_model.Point;
+import edu.algos.li30_model.Point;
 
 class Geometry_G02_IntersectingLineSegments {
 

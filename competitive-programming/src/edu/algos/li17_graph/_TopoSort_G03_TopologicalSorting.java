@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.GraphAdjLst;
 
 public class _TopoSort_G03_TopologicalSorting {
 

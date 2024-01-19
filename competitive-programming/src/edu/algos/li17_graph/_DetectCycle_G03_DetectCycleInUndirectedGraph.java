@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li00_model.Edge;
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.Edge;
+import edu.algos.li30_model.GraphAdjLst;
 
 public class _DetectCycle_G03_DetectCycleInUndirectedGraph {
 

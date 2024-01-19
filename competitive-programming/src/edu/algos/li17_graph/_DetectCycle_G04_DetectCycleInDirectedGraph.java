@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.GraphAdjLst;
 
 class _DetectCycle_G04_DetectCycleInDirectedGraph {
 	public static void main(String args[]) {

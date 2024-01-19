@@ -1,6 +1,6 @@
 package edu.algos.li15_tree;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_L100_SameTree {
     public static void main(String[] args) {

@@ -2,7 +2,7 @@ package edu.algos.li25_greedy;
 
 import java.util.PriorityQueue;
 
-import edu.algos.li00_model.HuffmanNode;
+import edu.algos.li30_model.HuffmanNode;
 
 public class HuffmanCoding {
 	public static void main(String[] args) {

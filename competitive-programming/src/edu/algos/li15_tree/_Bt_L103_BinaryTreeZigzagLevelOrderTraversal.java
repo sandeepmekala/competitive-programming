@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 
 public class _Bt_L103_BinaryTreeZigzagLevelOrderTraversal {

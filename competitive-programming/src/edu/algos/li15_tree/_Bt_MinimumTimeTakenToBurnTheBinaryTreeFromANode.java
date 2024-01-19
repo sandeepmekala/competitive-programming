@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode {
     public static void main(String[] args) {

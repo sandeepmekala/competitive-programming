@@ -3,7 +3,7 @@ package edu.algos.li19_backtracking;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.GraphAdjLst;
 
 public class _G03_MColoring {
     public static void main(String[] args) {

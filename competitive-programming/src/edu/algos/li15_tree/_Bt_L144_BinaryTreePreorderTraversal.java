@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_L144_BinaryTreePreorderTraversal {
     public static void main(String[] args) {

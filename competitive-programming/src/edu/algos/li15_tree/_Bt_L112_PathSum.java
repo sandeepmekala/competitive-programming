@@ -2,7 +2,7 @@ package edu.algos.li15_tree;
 
 import java.util.ArrayList;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_L112_PathSum {
 

@@ -2,7 +2,7 @@ package edu.algos.li15_tree;
 
 import java.util.Stack;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 class _Bst_L173_BinarySearchTreeIterator {
 

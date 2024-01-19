@@ -2,7 +2,7 @@ package edu.algos.li17_graph;
 
 import java.util.HashSet;
 
-import edu.algos.li00_model.GraphAdjLst;
+import edu.algos.li30_model.GraphAdjLst;
 
 public class _Dfs_G01_LargestConnectedComponents {
 

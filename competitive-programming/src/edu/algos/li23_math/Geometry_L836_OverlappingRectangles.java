@@ -1,6 +1,6 @@
 package edu.algos.li23_math;
 
-import edu.algos.li00_model.Point;
+import edu.algos.li30_model.Point;
 
 public class Geometry_L836_OverlappingRectangles {
 

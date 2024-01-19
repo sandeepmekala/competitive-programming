@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import edu.algos.li00_model.Interval;
+import edu.algos.li30_model.Interval;
 
 public class _L252_MeetingRooms {
 

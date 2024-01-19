@@ -2,7 +2,7 @@ package edu.algos.li20_dp;
 
 import java.util.Arrays;
 
-import edu.algos.li00_model.Job;
+import edu.algos.li30_model.Job;
 
 public class _Lis_L1235_MaximumProfitInJobScheduling {
 

@@ -1,6 +1,6 @@
 package edu.algos.li16_trie;
 
-import edu.algos.li00_model.TrieNode;
+import edu.algos.li30_model.TrieNode;
 
 public class _L1698_NumberOfDistinctSubstringsInAString {
     public static void main(String[] args) {

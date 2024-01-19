@@ -3,7 +3,7 @@ package edu.algos.li21_design;
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.algos.li00_model.Pair;
+import edu.algos.li30_model.Pair;
 
 public class DesignHashmap {
 

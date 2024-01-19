@@ -3,7 +3,7 @@ package edu.algos.li15_tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_662_MaximumWidthOfBinaryTree {
     public static void main(String[] args) {

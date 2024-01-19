@@ -74,8 +74,8 @@ public class _Dfs_L200_NumberOfIslands {
 }
 
 class Pair {
-    int first;
-    int second;
+    int row;
+    int col;
     public Pair(int first, int second) {
         this.row = first;
         this.col = second;

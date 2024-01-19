@@ -3,7 +3,7 @@ package edu.algos.li15_tree;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bt_L545_BoundaryOfBinaryTree {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package edu.algos.li15_tree;
 
-import edu.algos.li00_model.TreeNode;
+import edu.algos.li30_model.TreeNode;
 
 public class _Bst_A01_CeilInABinarySearchTree {
     public static void main(String[] args) {

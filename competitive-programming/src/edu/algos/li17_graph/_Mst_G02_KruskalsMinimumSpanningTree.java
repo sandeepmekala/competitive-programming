@@ -3,7 +3,7 @@ package edu.algos.li17_graph;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import edu.algos.li00_model.Edge;
+import edu.algos.li30_model.Edge;
 
 public class _Mst_G02_KruskalsMinimumSpanningTree {
 	

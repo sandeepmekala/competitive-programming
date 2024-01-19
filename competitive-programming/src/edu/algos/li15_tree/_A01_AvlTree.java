@@ -1,6 +1,6 @@
 package edu.algos.li15_tree;
 
-import edu.algos.li00_model.AvlNode;
+import edu.algos.li30_model.AvlNode;
 
 public class _A01_AvlTree {
 
