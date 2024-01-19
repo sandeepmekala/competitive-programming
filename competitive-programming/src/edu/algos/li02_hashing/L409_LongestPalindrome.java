@@ -1,4 +1,4 @@
-package edu.algos.li04_hashing;
+package edu.algos.li02_hashing;
 
 import java.util.HashSet;
 import java.util.Set;
