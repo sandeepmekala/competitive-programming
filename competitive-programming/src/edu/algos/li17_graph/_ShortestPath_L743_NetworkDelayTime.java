@@ -22,9 +22,8 @@ public class _ShortestPath_L743_NetworkDelayTime {
     // Idea: We need to find the shartest path to each vertex. Max of all these is the result.
 	public int networkDelayTime(int[][] times, int n, int k) {
         HashMap<Integer, ArrayList<int[]>> adjlist = new HashMap<>();
-        for(int i=1; i<=n; i++){
+        for(int i=1; i<=n; i++)
             adjlist.put(i, new ArrayList<>());
-        }
         for(int[] edge: times){
             int s = edge[0], d = edge[1], t = edge[2];
             adjlist.get(s).add(new int[]{t, d});
@@ -35,30 +34,28 @@ public class _ShortestPath_L743_NetworkDelayTime {
         dist[k] = 0;
         
         HashSet<Integer> visited = new HashSet<>();
-        PriorityQueue<int[]> q = new PriorityQueue<>((a, b)->{
-            return a[0]-b[0];
-        });
+        PriorityQueue<int[]> q = new PriorityQueue<>((a, b) -> a[0]-b[0]);
         q.add(new int[]{0, k});
-        int time = 0;
+        int maxTime = 0;
         while(!q.isEmpty()){
-            int[] current = q.remove();
-            int src = current[1], st = current[0];
-            if(visited.contains(src))
+            int[] curr = q.remove();
+            int node = curr[1], time = curr[0];
+            if(visited.contains(node))
                 continue;    
 
-            visited.add(src);
-            time = Math.max(time, st);
-            for(int[] neigh: adjlist.get(src)){
-                int dst = neigh[1], sTodt = neigh[0];
-                if(!visited.contains(dst)){
-                    if(st+sTodt < dist[dst]){
-                        dist[dst] = st+sTodt;
-                        q.add(new int[]{dist[dst], dst});
+            visited.add(node);
+            maxTime = Math.max(maxTime, time);
+            for(int[] neigh: adjlist.get(node)){
+                int neighNode = neigh[1], edgeTime = neigh[0];
+                if(!visited.contains(neighNode)){
+                    if(time+edgeTime < dist[neighNode]){
+                        dist[neighNode] = time+edgeTime;
+                        q.add(new int[]{dist[neighNode], neighNode});
                     }
                 }
             }
         }
         
-        return visited.size() == n ? time: -1;
+        return visited.size() == n ? maxTime: -1;
     }
 }

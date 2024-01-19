@@ -11,6 +11,8 @@ public class _Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
 
     // Problem: https://leetcode.com/problems/minimum-falling-path-sum/
     // Idea: Same as triangle problem, but there can be multiple source. Hence, we need to start recursion from each column and take max of all the col maxes.
+    // Time: O(m*n)
+    // Space: O(m*n)
     public int minFallingPathSum(int[][] matrix) {
         int m=matrix.length, n=matrix[0].length;
 

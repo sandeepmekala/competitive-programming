@@ -8,11 +8,14 @@ public class _Strings_Lcs_L1092_ShortestCommonSupersequence {
     }
 
     // Problem: https://leetcode.com/problems/shortest-common-supersequence/
-    // Idea: If we put to strings together, it forms a supersequence. 
+    // Idea: If we put two strings together, it forms a supersequence. 
     // Common guys can be counted once to minumize the count. Common guys can found with lcs.
     // The super sequence can be found the same way of lcs using while loop.
-    public String shortestCommonSupersequence(String text1, String text2) {
+    // Time: O(m*n)
+    // Space: O(m*n)
+	public String shortestCommonSupersequence(String text1, String text2) {
         int m=text1.length(), n=text2.length();
+
 		int lcs[][] = new int[m+1][n+1];
 		for(int i=1; i<=m; i++) {
 			for(int j=1; j<=n; j++) {

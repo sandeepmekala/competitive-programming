@@ -13,6 +13,8 @@ public class _Strings_Lcs_L516_LongestPolindromicSubsequence {
 	}
 	// Problem: https://leetcode.com/problems/longest-palindromic-subsequence/	
 	// Idea: We can reuse lcs logic. You can reverse s and find lcs of s and reverse(s). This is longest polindrome.
+	// Time: O(m*n)
+    // Space: O(m*n)
 	public int longestPalindromeSubseq(String s) {
 		String t = new StringBuffer(s).reverse().toString();
 		return longestCommonSubsequence(s, t);

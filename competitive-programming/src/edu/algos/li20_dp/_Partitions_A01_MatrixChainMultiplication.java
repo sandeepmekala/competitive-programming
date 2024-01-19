@@ -37,7 +37,7 @@ public class _Partitions_A01_MatrixChainMultiplication {
 		for(int l=1; l<n; l++) {
 			for(int i=1; i<n-l; i++) {
 				int j = i+l;
-				System.out.println(i+" : "+j);
+				
 				ops[i][j] = Integer.MAX_VALUE;
 				for(int k=i; k<j; k++) {
 					int count = ops[i][k]+ops[k+1][j]+dimensions[i-1]*dimensions[k]*dimensions[j];
@@ -54,8 +54,9 @@ public class _Partitions_A01_MatrixChainMultiplication {
 		int n = dimensions.length;
 		int[][] mem = new int[n][n];
 		for(int i=n-1; i>0; i--) {
-			for(int j=i+1; j<n; j++) {
-				System.out.println(i+" : "+j);
+			for(int j=0; j<n; j++) {
+				if(i>=j) continue;
+				
 				mem[i][j] = Integer.MAX_VALUE;
 				for(int k=i; k<j; k++) {
 					int count = mem[i][k]+mem[k+1][j]+dimensions[i-1]*dimensions[k]*dimensions[j];

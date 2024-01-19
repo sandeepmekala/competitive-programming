@@ -15,7 +15,9 @@ public class _L17_LetterCombinationsOfAPhoneNumber {
     // Problem: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
     // Idea: Run the recursion for each digit index
     // Get the digit of index and run a loop on length of digit possible chars str.
-	public List<String> letterCombinations(String digits) {
+	// Time: O(k^n)
+	// Space: O(1)
+    public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<String>();
         Map<String, String> map = new HashMap<String, String>();
         map.put("2", "abc");

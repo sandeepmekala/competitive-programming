@@ -13,7 +13,7 @@ public class _Subsequence_L518_CoinChangeII {
 	
 	/* 
 	 * Problem: https://leetcode.com/problems/coin-change-ii/
-	 * Idea: same knapsack problem.
+	 * Idea: Same knapsack problem.
 	 * if total becomes 0, return 1 so that the combination is counted in total
 	 * if total<0 or index<0, then return 0 so that this combination is not counted
 	 * 
@@ -25,17 +25,18 @@ public class _Subsequence_L518_CoinChangeII {
 	 * 	2	1	1	2	2	3
 	 * 	3	1	1	2	3	4
 	 * */
-	public int change(int amount, int[] coins) {
+	// Time: O(n*tatal)
+    // Space: O(n*tatal)
+	public int change(int total, int[] coins) {
 		int n = coins.length;
-		int[][] comb = new int[n][amount+1];
+		int[][] comb = new int[n][total+1];
 		for(int i=0; i<n; i++) {
-			for(int j=0; j<=amount; j++) {
+			for(int j=0; j<=total; j++) {
 				if(j == 0) {
 					comb[i][j] = 1;
 				}else if(i == 0) {
-					if(j%coins[i] == 0) {
+					if(j%coins[i] == 0) 
 						comb[i][j] = 1;
-					}
 				}else {
 					int notPick = comb[i-1][j];
 					int pick = 0;
@@ -46,7 +47,7 @@ public class _Subsequence_L518_CoinChangeII {
 			}
 		}
 		
-		return comb[n-1][amount];
+		return comb[n-1][total];
 	}
 	
 	public int change(int[] coins, int ind, int total) {
@@ -57,9 +58,9 @@ public class _Subsequence_L518_CoinChangeII {
 		}
 		int notPick = change(coins, ind-1, total);
 		int pick = 0;
-		if(coins[ind] <= total) {
+		if(coins[ind] <= total) 
 			pick = change(coins, ind, total-coins[ind]);
-		}
+		
 		return notPick + pick;
 	}
 

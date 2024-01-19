@@ -20,14 +20,14 @@ public class _Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     // Idea: First element on preorder will be root of BST. This divids both inorder and pre order arrays in to 2 halfs.
     // Recursively build left and right subtreesby passing half elements list for each recursive calls.
-    // TODO
+    // time: O(n)
+    // space: O(n)
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
-        Map<Integer, Integer> inIndMap = new HashMap<>();
-        for(int i=0; i<inorder.length; i++){
-            inIndMap.put(inorder[i], i);
-        }
+        Map<Integer, Integer> inoIndMap = new HashMap<>();
+        for(int i=0; i<inorder.length; i++)
+            inoIndMap.put(inorder[i], i);
 
-        return buildTree(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1, inIndMap);
+        return buildTree(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1, inoIndMap);
     }
     
     private TreeNode buildTree(int[] preorder, int ps, int pe, int[] inorder, int is, int ie,

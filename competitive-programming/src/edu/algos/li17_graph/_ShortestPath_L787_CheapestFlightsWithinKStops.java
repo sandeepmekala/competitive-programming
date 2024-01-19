@@ -22,21 +22,21 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
     // Idea: The idea if running it for only k steps is hard to be implemented in Dikstra. 
     // It is easy to be implemented using Bellman Ford as bellman ford runs for n-1 steps. 
     // We need to run bellman ford layer by layer by relaxing each layer eages in each step. Hence, we use a temp dist array to store the relaxed distances for that layer and will be used as input to next layer relaxation.
-    // There will be k+1 edges between source and dest for k stops. Hence, we need to run bellmanford for k+1 time to relation k+1 edges.
+    // There will be k+1 edges between source and dest for k stops. Hence, we need to run bellmanford for k+1 time to relax k+1 edges.
 	public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         int INF = Integer.MAX_VALUE;
         int[] dist = new int[n];
         
         Arrays.fill(dist, INF);
         dist[src] = 0;
-        for(int i=0; i<=k; i++){       // for k stop, we need to relax verices, k+1 times. as theare k+1 edges till dest.
+        for(int i=0; i<=k; i++){       // for k stop, we need to relax verices, k+1 times as theare k+1 edges till dest.
             int[] temp = Arrays.copyOf(dist, n);
             for(int[] edge: flights){
                 int s = edge[0], d = edge[1], w = edge[2];
-                if(dist[s] == INF){
+                if(dist[s] == INF)
                     continue;
-                }
-                if(temp[d] > dist[s]+w){
+                
+                if(dist[s]+w < temp[d]){
                     temp[d] = dist[s]+w;
                 }
             }
@@ -60,7 +60,7 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
         }
         
         Queue<Tuple> q = new LinkedList<>(); 
-        q.add(new Tuple(0, src, 0));
+        q.add(new Tuple(0, src, 0));    // {k, airport, cost}
 
         int[] dist = new int[n]; 
         for(int i = 0;i<n;i++) 
@@ -69,12 +69,13 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
         dist[src] = 0; 
         while(!q.isEmpty()) {
             Tuple curr = q.remove(); 
-            int stops = curr.stops, station = curr.station, cost = curr.cost; 
+            int stops = curr.stops, station = curr.airport, cost = curr.cost; 
             
             // We stop the process as soon as the limit for the stops reaches.
             if(stops > k) continue; 
+            
             for(Pair it: adj.get(station)) {
-                int neigh = it.station; 
+                int neigh = it.airport; 
                 int edgeWeight = it.cost; 
                 
                 // We only update the queue if the new calculated dist is
@@ -90,18 +91,18 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
     }
 }
 class Pair{
-    int station;
+    int airport;
     int cost;
     public Pair(int node,int cost){
-        this.station = node;
+        this.airport = node;
         this.cost = cost;
     }
 }
 class Tuple {
-    int stops, station, cost; 
-    Tuple(int first, int second, int third) {
-        this.stops = first; 
-        this.station = second;
-        this.cost = third; 
+    int stops, airport, cost; 
+    Tuple(int stops, int airport, int cost) {
+        this.stops = stops; 
+        this.airport = airport;
+        this.cost = cost; 
     }
 }

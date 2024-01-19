@@ -9,7 +9,6 @@ public class _ShortedPath_L778_SwimInRisingWater {
 		
 		int[][] grid = new int[][]{{0,2},{1,3}};
 		System.out.println(obj.swimInWater(grid));
-		
 	}
 	
     // Problem: https://leetcode.com/problems/swim-in-rising-water/
@@ -20,7 +19,7 @@ public class _ShortedPath_L778_SwimInRisingWater {
         
         boolean[][] visited = new boolean[m][n];
         PriorityQueue<int[]> q = new PriorityQueue<>((a, b)->a[0] - b[0]);
-        q.add(new int[]{grid[0][0], 0, 0});     // max, i, j
+        q.add(new int[]{grid[0][0], 0, 0});     // {max, i, j}
         visited[0][0] = true;
         while(!q.isEmpty()){
             int[] curr = q.remove();
@@ -29,8 +28,8 @@ public class _ShortedPath_L778_SwimInRisingWater {
                 return max;
                 
             int[][] directions = new int[][]{{1,0}, {-1,0},  {0,1}, {0,-1}};
-            for(int[] direction: directions){
-                int nrow = row+direction[0], ncol = col+direction[1];
+            for(int[] dir: directions){
+                int nrow = row+dir[0], ncol = col+dir[1];
                 if(isSafe(grid, nrow, ncol, visited)){
                     visited[nrow][ncol] = true;
                     q.add(new int[]{
@@ -44,8 +43,7 @@ public class _ShortedPath_L778_SwimInRisingWater {
     }
     
     private boolean isSafe(int[][] grid, int i, int j, boolean[][] visited){
-        int m = grid.length, n = grid[0].length;
-        return i>=0 && i<m && j>=0 && j<n && !visited[i][j];
+        return i>=0 && i<grid.length && j>=0 && j<grid[0].length && !visited[i][j];
     }
 
 }

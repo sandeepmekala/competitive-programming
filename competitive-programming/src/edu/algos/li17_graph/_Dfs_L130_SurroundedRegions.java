@@ -22,8 +22,8 @@ public class _Dfs_L130_SurroundedRegions {
     }
 
     // Problem: https://leetcode.com/problems/surrounded-regions/
-    // Idea: Just do dfs from all border cells which contains O and change all O to T
-    // Then replace all the O->X and T->O
+    // Idea: Just do dfs from all border cells which contains O and mark them as visited
+    // Then replace all the O->X which are not visited
     public char[][] solve(char board[][]) {
         int m = board.length, n = board[0].length;
 
@@ -56,15 +56,19 @@ public class _Dfs_L130_SurroundedRegions {
         
         visited[row][col] = 1; 
         
-        int delrow[] = {-1, 0, +1, 0};
-        int delcol[] = {0, 1, 0, -1}; 
+        int drow[] = {-1, 0, +1, 0};
+        int dcol[] = {0, 1, 0, -1}; 
         for(int i=0; i<4; i++) {
-            int nrow = row + delrow[i];
-            int ncol = col + delcol[i]; 
-            if (nrow >= 0 && nrow < m && ncol >= 0 && ncol < n
-                    && visited[nrow][ncol] == 0 && board[nrow][ncol] == 'O') {
+            int nrow = row + drow[i];
+            int ncol = col + dcol[i];
+            if (isSafe(visited, board, m, n, nrow, ncol)) {
                 dfs(nrow, ncol, visited, board);
             }
         }
+    }
+
+    private boolean isSafe(int[][] visited, char[][] board, int m, int n, int nrow, int ncol) {
+        return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n
+                && visited[nrow][ncol] == 0 && board[nrow][ncol] == 'O';
     }
 }

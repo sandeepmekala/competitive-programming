@@ -70,21 +70,23 @@ public class _Bt_L94_BinaryTreeInorderTraversal {
 
     // Idea: Use stack to replace recursion. Store all the elements in stack until left becomes null.
     // Once left become null, exploration of left complete. Take root from stack and add it to list and move current to right of root.
+    // time: O(n)
+    // space: O(n)
     public List<Integer> inorderIterative(TreeNode root) {
 		if(root == null) 
 			return new ArrayList<>();
 		
         List<Integer> inorder = new ArrayList<>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
-		TreeNode current = root;
-		while(current != null || !stack.isEmpty()){
-            if(current != null){
-                stack.push(current);
-                current = current.left;
+		TreeNode curr = root;
+		while(curr != null || !stack.isEmpty()){
+            if(curr != null){
+                stack.push(curr);
+                curr = curr.left;
             }else{
-                current = stack.pop();
-                inorder.add(current.val);
-                current = current.right;
+                curr = stack.pop();
+                inorder.add(curr.val);
+                curr = curr.right;
             }
         }
 
@@ -95,25 +97,27 @@ public class _Bt_L94_BinaryTreeInorderTraversal {
     // When current left is becomes null, it uses this link to go up again.
     // Once it goes up it find the precessor right most again. But this time precessor right most will be current.
     // In this case, reset predecessor right link to null and exploration of current is complete, move to current.right.
-	public List<Integer> morrisInorder(TreeNode root) {
+	// time: O(n)
+    // space: O(1)
+    public List<Integer> morrisInorder(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();
-		TreeNode current = root;
-		while(current != null) {
-			if(current.left == null) {
-                inorder.add(current.val);
-				current = current.right;
+		TreeNode curr = root;
+		while(curr != null) {
+			if(curr.left == null) {
+                inorder.add(curr.val);
+				curr = curr.right;
 			}else {
-				TreeNode prev = current.left;
-				while(prev.right != null && prev.right != current) { 
+				TreeNode prev = curr.left;
+				while(prev.right != null && prev.right != curr) { 
 					prev = prev.right;
 				}
 				if(prev.right == null) {
-					prev.right = current;
-					current = current.left;
+					prev.right = curr;
+					curr = curr.left;
 				}else {
 					prev.right = null;
-					inorder.add(current.val);
-					current = current.right;
+					inorder.add(curr.val);
+					curr = curr.right;
 				}
 			}
 		}

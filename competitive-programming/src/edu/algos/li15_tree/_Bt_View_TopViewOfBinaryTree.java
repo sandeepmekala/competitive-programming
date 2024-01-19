@@ -23,6 +23,8 @@ public class _Bt_View_TopViewOfBinaryTree {
 
     // Problem: https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1
     // Idea: Use column number logic. Do col-1 when you are left and col+1 when going right.
+    // time: O(n)
+    // space: O(1)
     public List<Integer> topView(TreeNode root){
         Map<Integer, Integer> map = new TreeMap<>();
         Queue<Pair> q = new LinkedList<>();
@@ -32,10 +34,13 @@ public class _Bt_View_TopViewOfBinaryTree {
             TreeNode node = pair.node;
             int col = pair.col;
 
-            if(!map.containsKey(col)) map.put(col, node.val);
+            if(!map.containsKey(col)) 
+                map.put(col, node.val);
 
-            if(node.left !=  null) q.add(new Pair(node.left, col-1));
-            if(node.right !=  null) q.add(new Pair(node.right, col+1));
+            if(node.left !=  null) 
+                q.add(new Pair(node.left, col-1));
+            if(node.right !=  null) 
+                q.add(new Pair(node.right, col+1));
         }
         List<Integer> ans = new ArrayList<>();
         for(Integer val: map.values()){

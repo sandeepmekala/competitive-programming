@@ -23,8 +23,10 @@ public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
     }
 
     // Problem: https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
-    // Idea: Map each node to 2d plane row col coordinates. Store row, cols in queue while doing bfs.
+    // Idea: Map each node to 2d plane row, col coordinates. Store row, cols in queue while doing bfs.
     // Group all the cols and respect rows in TreeMaps.
+    // time: O(n)
+    // space: O(n)
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
         Queue<Tuple> q = new LinkedList<>();
@@ -34,18 +36,22 @@ public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
             TreeNode node = tuple.node;
             int row = tuple.row, col = tuple.col;
             
-            if(!map.containsKey(col)) map.put(col, new TreeMap<>());
-            if(!map.get(col).containsKey(row)) map.get(col).put(row, new PriorityQueue<Integer>());
+            if(!map.containsKey(col)) 
+                map.put(col, new TreeMap<>());
+            if(!map.get(col).containsKey(row)) 
+                map.get(col).put(row, new PriorityQueue<Integer>());
             map.get(col).get(row).add(node.val);
 
-            if(node.left != null) q.add(new Tuple(node.left, row+1, col-1));
-            if(node.right != null) q.add(new Tuple(node.right, row+1, col+1));
+            if(node.left != null) 
+                q.add(new Tuple(node.left, row+1, col-1));
+            if(node.right != null) 
+                q.add(new Tuple(node.right, row+1, col+1));
         }
 
         List<List<Integer>> ans = new ArrayList<>();
-        for(TreeMap<Integer, PriorityQueue<Integer>> columns: map.values()){
+        for(TreeMap<Integer, PriorityQueue<Integer>> cols: map.values()){
             ans.add(new ArrayList<>());
-            for(PriorityQueue<Integer> nodes: columns.values()){
+            for(PriorityQueue<Integer> nodes: cols.values()){
                 while(!nodes.isEmpty()){
                     ans.get(ans.size()-1).add(nodes.remove());
                 }

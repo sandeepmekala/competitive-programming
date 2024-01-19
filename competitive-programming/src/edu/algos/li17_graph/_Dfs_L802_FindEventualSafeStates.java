@@ -20,7 +20,8 @@ public class _Dfs_L802_FindEventualSafeStates {
     // Idea: All the node which are in cycle and which are leading to cycle are not safe nodes. 
     public List<Integer> eventualSafeNodes(int[][] graph) {
         int n = graph.length;
-        int[] visited = new int[n]; // to avoud duplicate exploration
+
+        int[] visited = new int[n]; // to aviod duplicate exploration
         int[] pathVis = new int[n]; // to detect cycles
         int[] isSafe = new int[n];  // to mark safe
         List<Integer> safeNodes = new ArrayList<>();
@@ -53,32 +54,32 @@ public class _Dfs_L802_FindEventualSafeStates {
         return false;
     }
 
-    //  Initially the terminal nodes are those who have outdegree 0 
+    // Initially the terminal nodes are those who have outdegree 0 
     // but after reversal the terminal nodes becomes those which have indegree 0 
-    // so we can apply Kahn's algo to find all the nodes connected to it  which have linear dependency on the terminal node or is on the path which leads to terminal node 
+    // so we can apply Kahn's algo to find all the nodes connected to it which have linear dependency on the terminal node or is on the path which leads to terminal node 
     // so if the nodes is a part of a cycle or points to a cycle , that path cannot lead to terminal node as each node in that  path will have cyclic dependency
     // 
     // topo sort 
-    public List<Integer> eventualSafeNodes(int V, List<List<Integer>> adj) {
+    public List<Integer> eventualSafeNodes(int n, List<List<Integer>> adj) {
         List<List<Integer>> adjRev = new ArrayList<>();
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < n; i++) {
             adjRev.add(new ArrayList<>());
         }
-        int indegree[] = new int[V];
-        for (int i = 0; i < V; i++) {
-            for (int it : adj.get(i)) {
-                adjRev.get(it).add(i);
-                indegree[i]++;
+        int indegree[] = new int[n];
+        for (int src = 0; src < n; src++) {
+            for (int dst : adj.get(src)) {
+                adjRev.get(dst).add(src);
+                indegree[src]++;
             }
         }
         Queue<Integer> q = new LinkedList<>();
-        List<Integer> safeNodes = new ArrayList<>();
-        for (int i = 0; i < V; i++) {
+        for (int i = 0; i < n; i++) {
             if (indegree[i] == 0) {
                 q.add(i);
             }
         }
-
+        
+        List<Integer> safeNodes = new ArrayList<>();
         while (!q.isEmpty()) {
             int node = q.remove();
             safeNodes.add(node);

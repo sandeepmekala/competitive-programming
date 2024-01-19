@@ -21,38 +21,38 @@ public class _G01_RatMaze {
 	// Problem: https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
 	public void solveMaze(int maze[][]) {
 		int n = maze.length;
-		int sol[][] = new int[n][n];
+		int vis[][] = new int[n][n];
 
-		if (solveMaze(maze, 0, 0, sol)) 
-			print(sol);
+		if (solveMaze(maze, 0, 0, vis)) 
+			print(vis);
 		else
 			System.out.print("Solution doesn't exist");
 	}
 
-	boolean solveMaze(int maze[][], int i, int j, int vis[][]) {
+	// Time: O(4^n*n)
+	// Space: O(n*n)
+	boolean solveMaze(int maze[][], int i, int j, int visited[][]) {
 		int n = maze.length;
-		if (i == n - 1 && j == n - 1) {
-			vis[i][j] = 1;
+		if (i == n - 1 && j == n - 1) 
 			return true;
-		}
 
 		int[][] directions = new int[][]{{0,-1}, {-1,0}, {0,1}, {1,0}};
-		for(int[] direction: directions){
-			int row = i+direction[0], col = j+direction[1]; 
-			if (isSafe(maze, row, col, vis)) {
-				vis[row][col] = 1;
-				if (solveMaze(maze, row, col, vis))
+		for(int[] dir: directions){
+			int ni = i+dir[0], nj = j+dir[1]; 
+			if (isSafe(maze, ni, nj, visited)) {
+				visited[ni][nj] = 1;
+				if (solveMaze(maze, ni, nj, visited))
 					return true;
-				vis[row][col] = 0; 	// backtrack
+				visited[ni][nj] = 0; 	// backtrack
 			}
 		}
 		
 		return false;
 	}
 
-	private boolean isSafe(int[][] maze, int i, int j, int[][] sol) {
+	private boolean isSafe(int[][] maze, int ni, int nj, int[][] vis) {
 		int n = maze.length;
-		return i >= 0 && i < n && j >= 0 && j < n && maze[i][j] == 1 && sol[i][j] == 0;
+		return ni >= 0 && ni < n && nj >= 0 && nj < n && maze[ni][nj] == 1 && vis[ni][nj] == 0;
 	}
 
 	void print(int sol[][]) {

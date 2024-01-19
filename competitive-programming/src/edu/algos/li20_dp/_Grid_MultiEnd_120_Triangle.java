@@ -22,6 +22,8 @@ public class _Grid_MultiEnd_120_Triangle {
 
     // Problem: https://leetcode.com/problems/triangle/
     // Idea: As the target is anything in last row, we can't start recursion from end. Hence, we start recursions from fixed start point.
+    // Time: O(m*n)
+    // Space: O(m*n)
     public int minimumTotal(List<List<Integer>> triangle, int i, int j, int m) {   
         if(i==m-1)
             return triangle.get(i).get(j);

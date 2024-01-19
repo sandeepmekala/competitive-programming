@@ -20,8 +20,10 @@ public class _Bt_662_MaximumWidthOfBinaryTree {
     }
 
     // Problem: https://leetcode.com/problems/maximum-width-of-binary-tree/
-    // Idea: Index each node in bt similar like segment tree with 2*i+1, 2*I+2.
+    // Idea: Index each node in bt similar like segment tree with 2*i+1, 2*i+2.
     // width is diff of last node and first node indices in each level. Take max of it.
+    // time: O(n)
+    // space: O(1)
     public int widthOfBinaryTree(TreeNode root) {
         if(root == null) 
             return 0;
@@ -34,9 +36,9 @@ public class _Bt_662_MaximumWidthOfBinaryTree {
             int first = 0, last = 0;
             int min = q.peek().index;
             for(int i=0; i<size; i++){
-                Tuple pair = q.remove();
-                TreeNode node = pair.node;
-                int index = pair.index-min;
+                Tuple tuple = q.remove();
+                TreeNode node = tuple.node;
+                int index = tuple.index-min;
 
                 if(i==0) first = index;
                 if(i==size-1) last = index;

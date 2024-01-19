@@ -14,6 +14,8 @@ public class _Subsequence_A04_CountPartitionsWithGivenDifference {
     // totalSum - d = 2*s2
     // s2 = (totalSum-d)/2
     // The question boils down to finding number of subsets with s2
+    // Time: O(n*tar)
+    // Space: O(n*tar)
     public int countPartitions(int nums[], int d) {
         int totalSum = 0;
         for (int num : nums)
@@ -38,11 +40,10 @@ public class _Subsequence_A04_CountPartitionsWithGivenDifference {
             sum[0][nums[0]] = 1; // 1 case -pick
         for (int i = 1; i < n; i++) {
             for (int j = 0; j <= target; j++) {
+                int notPick = sum[i - 1][j];
                 int pick = 0;
                 if (j - nums[i] >= 0)
                     pick = sum[i - 1][j - nums[i]];
-
-                int notPick = sum[i - 1][j];
 
                 sum[i][j] = pick + notPick;
             }

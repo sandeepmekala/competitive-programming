@@ -16,6 +16,8 @@ public class _Stocks_L121_BestTimeToBuyAndSellStock {
 	 * 		0	0	4	4	5	5
 	 * 
 	 * */
+	// Time: O(n)
+    // Space: O(1)
 	public int maxProfit(int[] prices) {
         int minPrice = prices[0], n = prices.length;
         int profit = 0;

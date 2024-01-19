@@ -17,6 +17,8 @@ public class _PickOrNotPick_L90_SubsetsII {
 	// Problem: https://leetcode.com/problems/subsets-ii/
 	// Idea: Similar like subsets. [1,2,2] gets gets generate by the first recursion.
 	// But the while loop before second recursion make sure [1,2,2] doesn't get generated again.
+	// time: O(2^n)
+    // space: O(n)
 	public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         Arrays.sort(nums);

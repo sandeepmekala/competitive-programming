@@ -21,7 +21,8 @@ public class _Strings_Lcs_A05_LongestCommonSubstring {
 	 * 		d	0	0	0	0	3	0	0
 	 * 		f	0	0	0	0	0	0	1
 	 * */
-	// time: O(m*n)
+	// Time: O(m*n)
+    // Space: O(m*n)
 	private static int longestCommonSubstring(String str1, String str2, int m, int n) {
 		int[][] mem = new int[m+1][n+1];
 		int max = 0;

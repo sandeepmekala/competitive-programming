@@ -21,11 +21,15 @@ public class _Bt_PrintRootToNodePathInBinaryTree {
 	}
 	
 	// Problem: https://www.interviewbit.com/problems/path-to-given-node/
+	// time: O(n)
+    // space: O(1)
 	public List<Integer> path(TreeNode root, int data){
 		ArrayList<Integer> list = new ArrayList<>();
-		if(!path(root, 5, list)) return null;
+		if(!path(root, 5, list)) 
+			return null;
 		return list;
 	}
+
 	private boolean path(TreeNode root, int data, ArrayList<Integer> path){
 		if(root == null)
 			return false;

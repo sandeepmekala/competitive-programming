@@ -12,6 +12,8 @@ public class _Strings_Lcs_A06_MinimumInsertionsOrDeletionsToConvertStringAToStri
     // #deletions = m-lcs(s1, s2);
     // #insertions = n-lcs(s1, s2);
     // total = deletion + insertion
+    // Time: O(m*n)
+    // Space: O(m*n)
     public int canYouMake(String word1, String word2){
         int m = word1.length(), n = word2.length();
         return (m+n)-2*longestCommonSubsequence(word1, word2);

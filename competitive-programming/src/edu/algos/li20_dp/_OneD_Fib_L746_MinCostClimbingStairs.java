@@ -21,6 +21,8 @@ public class _OneD_Fib_L746_MinCostClimbingStairs {
 	 * c	10	15	20	
 	 * 		0	0	10	15	
 	 * */
+	// Time: O(n)
+	// Space: O(n)
 	public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         int[] table = new int[n+1];

@@ -33,8 +33,8 @@ public class _Bfs_L661_ImageSmoother {
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
                 int sum=0, count=0;
-                for(int[] direction: directions){
-                    int ni = i+direction[0], nj = j+direction[1];
+                for(int[] dir: directions){
+                    int ni = i+dir[0], nj = j+dir[1];
                     if(ni>=0 && ni<m && nj>=0 && nj<n){
                         sum += img[ni][nj];
                         count ++;

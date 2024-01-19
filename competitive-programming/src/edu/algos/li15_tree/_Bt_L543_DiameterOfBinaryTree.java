@@ -23,6 +23,8 @@ public class _Bt_L543_DiameterOfBinaryTree {
     // And also, max diameter can be found anywhere in the tree. This also need to be bubbled up. 
     // If we bubble this max, it gets complex as we need to max of curr root, max came from left and right. 
     // To simplify this we use global max variable.
+    // time: O(n)
+    // space: O(1)
     public int diameterOfBinaryTree(TreeNode root) {
         if(root == null)
             return 0;
@@ -37,11 +39,11 @@ public class _Bt_L543_DiameterOfBinaryTree {
 		if(root == null) 
 			return 0;
 		
-		int leftHt = height(root.left, diameter);
-		int rightHt = height(root.right, diameter);
+		int lHeight = height(root.left, diameter);
+		int rHeight = height(root.right, diameter);
 		
-		diameter[0] = Math.max(diameter[0], leftHt+rightHt);
+		diameter[0] = Math.max(diameter[0], lHeight+rHeight);
 
-		return 1 + Math.max(leftHt, rightHt);
+		return 1 + Math.max(lHeight, rHeight);
     }
 }

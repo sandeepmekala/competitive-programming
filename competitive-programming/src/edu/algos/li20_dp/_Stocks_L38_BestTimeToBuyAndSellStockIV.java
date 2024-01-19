@@ -13,7 +13,9 @@ public class _Stocks_L38_BestTimeToBuyAndSellStockIV {
     // At max k transactions
     // Idea: Same as stocksIII problem, there is additional dimention of cap is added.
     // Once sell counted as transaction complete. Hence, cap can be reduced for sale transaction.
-    public int maxProfit(int k, int[] prices) {
+    // Time: O(n*2*k)
+    // Space: O(n*2*k)
+	public int maxProfit(int k, int[] prices) {
 		int n = prices.length;
 
 		int[][][] profits = new int[n+1][2][k+1];

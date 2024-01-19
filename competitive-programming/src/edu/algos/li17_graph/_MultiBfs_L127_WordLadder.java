@@ -26,9 +26,9 @@ public class _MultiBfs_L127_WordLadder {
 		for (String word : wordList) {
 			for (int i = 0; i < word.length(); i++) {
 				String pattern = word.substring(0, i) + "*" + word.substring(i + 1);
-				if (!patToWord.containsKey(pattern)) {
+				if (!patToWord.containsKey(pattern)) 
 					patToWord.put(pattern, new ArrayList<String>());
-				}
+				
 				patToWord.get(pattern).add(word);
 			}
 		}

@@ -47,8 +47,8 @@ public class _TopoSort_L269_AlienDictionary {
 			}
 		}
 		StringBuffer sb = new StringBuffer();
-		for(Character chr: lexOrder) {
-			sb.insert(0, chr);
+		for(Character ch: lexOrder) {
+			sb.insert(0, ch);
 		}
 		return sb.toString();
 	}

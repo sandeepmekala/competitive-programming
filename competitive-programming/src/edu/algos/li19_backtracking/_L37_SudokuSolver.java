@@ -20,6 +20,8 @@ public class _L37_SudokuSolver {
     }
 
     // Problem: https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1#
+    // Time: O(9^n*n)
+	// Space: O(n^2)
     public void solveSudoku(char[][] board) {
         solve(board);
     }

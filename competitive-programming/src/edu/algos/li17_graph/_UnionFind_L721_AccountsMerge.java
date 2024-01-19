@@ -39,20 +39,21 @@ public class _UnionFind_L721_AccountsMerge {
             }
         }
 
-        List<TreeSet<String>> mergeMails =  new ArrayList<>();
+        List<TreeSet<String>> mergedMails =  new ArrayList<>();
         for(int i=0; i<n; i++) 
-            mergeMails.add(new TreeSet<>());
+            mergedMails.add(new TreeSet<>());
         for(String mail: mailToNodeMap.keySet()){
             int parentNode = uf.find(mailToNodeMap.get(mail));
-            mergeMails.get(parentNode).add(mail);
+            mergedMails.get(parentNode).add(mail);
         }
+
         List<List<String>> ans =  new ArrayList<>();
         for(int i=0; i<n; i++){
-            if(mergeMails.get(i).size() == 0) 
+            if(mergedMails.get(i).size() == 0) 
                 continue;
             ArrayList<String> temp = new ArrayList<>();
             temp.add(accounts.get(i).get(0));
-            temp.addAll(mergeMails.get(i));
+            temp.addAll(mergedMails.get(i));
             ans.add(temp);
         }
 

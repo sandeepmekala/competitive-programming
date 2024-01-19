@@ -1,18 +1,17 @@
 package edu.algos.li20_dp;
 
 public class _Subsequence_A04_CuttingRod {
-
 	public static void main(String[] args) {
 		_Subsequence_A04_CuttingRod obj = new _Subsequence_A04_CuttingRod();
 		int[] lens = new int[]{1,2,3,4};
 		int[] profits = new int[] {2,5,7,8};
-		int length = 5;
-		System.out.println(obj.cuttingRod(lens, profits, 3, length));
-		System.out.println(obj.cuttingRod2(lens, profits, 3, length));
+		int length = 5, n = lens.length;
+		System.out.println(obj.cuttingRod(lens, profits, n-1, length));
+		System.out.println(obj.cuttingRod2(lens, profits, n-1, length));
 	}
 
 	/* Problem: Maximize the profit by cutting rods to specific length rods.
-	 * Idea: same as knapsack.
+	 * Idea: Same as knapsack.
 	 *
 	 * 	T[i][j] = max{	
 	 * 		T[i-1][j]
@@ -28,6 +27,8 @@ public class _Subsequence_A04_CuttingRod {
 	 *	8	4 	0	2	3	4	10	12
 	 * 
 	 * */
+	// Time: O(n*length)
+    // Space: O(n*length)
 	public int cuttingRod(int[] lens, int[] profits, int n, int length) {
 		int[][] mem = new int[n+1][length+1];
 		for(int i=0; i<=n; i++) {
@@ -46,17 +47,16 @@ public class _Subsequence_A04_CuttingRod {
 		return mem[n][length];
 	}
 
-	private int cuttingRod2(int[] lens, int[] profits, int i, int length) {
-		if(i == 0) {
-			if(length % lens[i] == 0){
+	private int cuttingRod2(int[] lens, int[] profits, int ind, int length) {
+		if(ind == 0) {
+			if(length % lens[ind] == 0)
 				return (length / lens[0])*profits[0];
-			}
 			return (int) -1e9;
 		}else {
-			int notPick = cuttingRod(lens, profits, i-1, length);
+			int notPick = 0 + cuttingRod(lens, profits, ind-1, length);
 			int pick = Integer.MIN_VALUE;
-			if(lens[i] <= length)
-				pick = profits[i]+cuttingRod(lens, profits, i, length-lens[i]);
+			if(lens[ind] <= length)
+				pick = profits[ind]+cuttingRod(lens, profits, ind, length-lens[ind]);
 
 			return Math.max(notPick, pick);
 		}

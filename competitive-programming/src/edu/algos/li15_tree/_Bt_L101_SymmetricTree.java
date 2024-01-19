@@ -16,11 +16,12 @@ public class _Bt_L101_SymmetricTree {
 		System.out.println(obj.isSymmetric(root));
 	}
 
-	/*
-	 * Problem: https://leetcode.com/problems/symmetric-tree/
-	 * Idea: We have to use two params denoting left and rught sub trees which symmetric clones.
-	 * Recursively, pass corresponding symmetric roots.
-	 * */
+	
+	// Problem: https://leetcode.com/problems/symmetric-tree/
+	// Idea: We have to use two params denoting left and right sub trees which symmetric clones.
+	// Recursively, pass corresponding symmetric roots.
+	// time: O(n)
+    // space: O(1)
 	public boolean isSymmetric(TreeNode root) {
 		return isSymmetric(root.left, root.right);
 	}

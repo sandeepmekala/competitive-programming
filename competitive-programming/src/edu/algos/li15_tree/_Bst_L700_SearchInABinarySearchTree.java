@@ -21,7 +21,9 @@ public class _Bst_L700_SearchInABinarySearchTree {
 
     // Problem: https://leetcode.com/problems/search-in-a-binary-search-tree/ 
     // Idea: If val < root, search in left subtree else search in right subtree.
-    public TreeNode searchBST(TreeNode  root, int val){
+    // time: O(logn)
+    // space: O(1)
+	public TreeNode searchBST(TreeNode  root, int val){
 		if(root == null || root.val == val)
 			return root;
 		

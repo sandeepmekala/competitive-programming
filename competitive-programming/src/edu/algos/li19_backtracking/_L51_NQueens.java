@@ -13,10 +13,10 @@ public class _L51_NQueens {
 	// Problem: Place N queens on a board so that they don't attach each other
 	// Idea: For each row, recursively check if col gives solution. Else,
 	// increment col. If none of the cols give solution, increment row.
-	// Time complexity: O(4^n) as we start by placing 4 queens in each row and col
+	// Time: O(n^n) as we start by placing 4 queens in each row and col
 	// 0. Each recursion checks for different col. It will be tree with 4 children
 	// and col depth.
-	// Space complexity: O(n^2)
+	// Space: O(n^2)
 	public List<List<String>> solveNQueens(int n) {
 		List<List<String>> result = new ArrayList<>();
 		int board[][] = new int[n][n];
@@ -27,9 +27,8 @@ public class _L51_NQueens {
 
 	private void solveNQueens(int board[][], int col, List<List<String>> result) {
 		int n = board.length;
-		if (col == n) {
+		if (col == n)
 			saveResult(board, result);
-		}
 
 		for (int row = 0; row < n; row++) {
 			if (isSafe(board, row, col)) {
@@ -59,7 +58,7 @@ public class _L51_NQueens {
 	}
 
 	// Can be optimized using hashing
-	// left: n size array hash
+	// left: n size array hash with entrie for each row
 	// lower left diagonal: index = row+col | 2*n-1 size array hash
 	// upper left diagonal: index = (n-1)-(row-col) | 2*n-1 size array hash
 	boolean isSafe(int board[][], int row, int col) {

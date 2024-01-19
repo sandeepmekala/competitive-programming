@@ -17,26 +17,26 @@ public class _Bfs_L1971_FindIfPathExistsInGraph {
 	
 	// Problem: https://leetcode.com/problems/find-if-path-exists-in-graph/
 	// Idea: Use bfs
-	public boolean validPath(int n, int[][] edges, int source, int destination) {
-		if(source == destination) 
+	public boolean validPath(int n, int[][] edges, int src, int dest) {
+		if(src == dest) 
 			return true;
 		
-		Queue<Integer> queue = new LinkedList<Integer>();
+		Queue<Integer> q = new LinkedList<Integer>();
 		Set<Integer> visited = new HashSet<Integer>();
-		queue.add(source);
-		visited.add(source);
-		while(!queue.isEmpty()) {
-			int curr = queue.remove();
-			if(curr == destination) 
+		q.add(src);
+		visited.add(src);
+		while(!q.isEmpty()) {
+			int curr = q.remove();
+			if(curr == dest) 
 				return true;
 			for(int[] edge: edges) {
 				if(edge[0] == curr && !visited.contains(edge[1])){
 					visited.add(edge[1]);
-					queue.add(edge[1]);
+					q.add(edge[1]);
 				}					
 				if(edge[1] == curr && !visited.contains(edge[0])){
 					visited.add(edge[0]);
-					queue.add(edge[0]);
+					q.add(edge[0]);
 				}
 			}		
 			

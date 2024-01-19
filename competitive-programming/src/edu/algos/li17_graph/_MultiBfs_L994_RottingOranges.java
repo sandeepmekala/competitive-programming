@@ -23,6 +23,7 @@ public class _MultiBfs_L994_RottingOranges {
     // Run this algo until there no more fresh oranges, or there no rotten orange can reach remaining fresh one's.
 	public int orangesRotting(int[][] grid) {
         int m = grid.length, n = grid[0].length;
+
         int fresh = 0;
         Queue<int[]> queue = new LinkedList<>();
         for(int i=0; i<m; i++){
@@ -39,13 +40,13 @@ public class _MultiBfs_L994_RottingOranges {
             int size = queue.size();
             int[][] directions = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
             for(int i=0; i<size; i++){
-                int[] rottenOr = queue.remove();
-                for(int[] direction: directions) {
-                	int row = rottenOr[0]+direction[0];
-                	int col = rottenOr[1]+direction[1];
-                	if(isSafe(grid, row, col)){
-                        queue.add(new int[] {row, col});
-                        grid[row][col] = 2;
+                int[] curr = queue.remove();
+                for(int[] dir: directions) {
+                	int nrow = curr[0]+dir[0];
+                	int ncol = curr[1]+dir[1];
+                	if(isSafe(grid, nrow, ncol)){
+                        queue.add(new int[] {nrow, ncol});
+                        grid[nrow][ncol] = 2;
                         fresh--;
                     }
                 }

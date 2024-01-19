@@ -19,15 +19,16 @@ public class _Bt_L110_BalancedBinaryTree {
 	
 	// Problem: https://leetcode.com/problems/balanced-binary-tree/
 	// Idea: Check is height is balanced for the root node and check if left and right sub trees are balanced recursively.
-	// O(n) 
+	// time: O(n)
+    // space: O(1)
 	public boolean isBalanced(TreeNode root) {
         return height(root) != -1;
     }
 
 	private int height(TreeNode root) {
-		if(root == null) {
+		if(root == null) 
 			return 0;
-		}
+		
 		int leftHt = height(root.left);
 		int rightHt = height(root.right);
 		

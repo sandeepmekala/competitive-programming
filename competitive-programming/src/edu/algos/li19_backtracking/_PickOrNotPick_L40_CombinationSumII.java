@@ -15,27 +15,28 @@ public class _PickOrNotPick_L40_CombinationSumII {
 
     // Problem: https://leetcode.com/problems/combination-sum-ii/
     // Idea: Similar like unique subsets problem. 
-	public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+	// time: O(2^n)
+    // space: O(n)
+    public List<List<Integer>> combinationSum2(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();
-        Arrays.sort(candidates);
-        combinationSum2(candidates, target, 0, new ArrayList<Integer>(), result);
+        Arrays.sort(nums);
+        combinationSum2(nums, 0, target, new ArrayList<Integer>(), result);
         return result;
     }
     
-    private void combinationSum2(int[] candidates, int target, int ind, List<Integer> list, List<List<Integer>> result){
-        if(ind == candidates.length){
-            if(target == 0){
+    private void combinationSum2(int[] nums, int ind, int target, List<Integer> list, List<List<Integer>> result){
+        if(ind == nums.length){
+            if(target == 0)
                 result.add(new ArrayList<Integer>(list));
-            }
             return;
         }
         
-        list.add(candidates[ind]);
-        combinationSum2(candidates, target-candidates[ind], ind+1, list, result);
+        list.add(nums[ind]);
+        combinationSum2(nums, ind+1, target-nums[ind], list, result);
         list.remove(list.size()-1);
-        while(ind+1 < candidates.length && candidates[ind] == candidates[ind+1]){
+        while(ind+1 < nums.length && nums[ind] == nums[ind+1]){
             ind++;
         }
-        combinationSum2(candidates, target, ind+1, list, result);
+        combinationSum2(nums, ind+1, target, list, result);
     }
 }

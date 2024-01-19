@@ -41,11 +41,11 @@ public class _MultiBfs_L542_01Matrix {
             Node node = q.remove();
             int row = node.first, col = node.second, steps = node.third;
             dist[row][col] = steps;
+
             for (int i = 0; i < 4; i++) {
                 int nrow = row + dr[i];
                 int ncol = col + dc[i];
-                if (nrow >= 0 && nrow < m && ncol >= 0 && ncol < n
-                        && visited[nrow][ncol] == 0) {
+                if (isSafe(m, n, visited, nrow, ncol)) {
                     visited[nrow][ncol] = 1;
                     q.add(new Node(nrow, ncol, steps + 1));
                 }
@@ -53,6 +53,11 @@ public class _MultiBfs_L542_01Matrix {
         }
 
         return dist;
+    }
+
+    private boolean isSafe(int m, int n, int[][] visited, int nrow, int ncol) {
+        return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n
+                && visited[nrow][ncol] == 0;
     }
 }
 

@@ -21,6 +21,8 @@ public class _Stocks_L714_BestTimeToBuyAndSellStockWithTransactionFee {
 	 * buy 	0 0
 	 * sell 0
 	 */
+	// Time: O(n*2)
+    // Space: O(n*2)
 	public int maxProfit(int[] prices, int fee) {
 		int n = prices.length;
 
@@ -43,17 +45,17 @@ public class _Stocks_L714_BestTimeToBuyAndSellStockWithTransactionFee {
 		return profits[0][1];
 	}
 
-	public int maxProfit(int[] prices, int fee, int i, int isBuy) {
+	public int maxProfit(int[] prices, int fee, int ind, int isBuy) {
 		int n = prices.length;
-		if (i == n)
+		if (ind == n)
 			return 0; // selling once market close gives 0 price
 		if (isBuy == 1) {
-			int buy = -prices[i] + maxProfit(prices, fee, i + 1, 0);
-			int notBuy = 0 + maxProfit(prices, fee, i + 1, 1);
+			int buy = -prices[ind] + maxProfit(prices, fee, ind + 1, 0);
+			int notBuy = 0 + maxProfit(prices, fee, ind + 1, 1);
 			return Math.max(buy, notBuy);
 		} else {
-			int sell = prices[i] - fee + maxProfit(prices, fee, i + 1, 1);
-			int notSell = 0 + maxProfit(prices, fee, i + 1, 0);
+			int sell = prices[ind] - fee + maxProfit(prices, fee, ind + 1, 1);
+			int notSell = 0 + maxProfit(prices, fee, ind + 1, 0);
 			return Math.max(sell, notSell);
 		}
 	}

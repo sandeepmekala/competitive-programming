@@ -13,9 +13,7 @@ public class _Subsequence_L416_PartitionEqualSubsetSum {
 	/*	Problem: https://leetcode.com/problems/partition-equal-subset-sum/
 	 *	Idea: Reuse the count subsets log
 	// s1 + s2 = totalSum
-    // s1 + tota2 - s2 = d
-    // totalSum - d = 2*s2
-    // s2 = (totalSum-d)/2
+    // s2 = (totalSum)/2
 	 * 
 	 * i/j	0	1	2	3	4
 	 * 1	t	t	f	f	f
@@ -23,6 +21,8 @@ public class _Subsequence_L416_PartitionEqualSubsetSum {
 	 * 5	t	t	t	t	t
 	 * 
 	 * */
+	// Time: O(n*tar)
+    // Space: O(n*tar)
 	public boolean canPartition(int[] nums) {
         int n = nums.length;
         int totalSum = 0;
@@ -42,9 +42,8 @@ public class _Subsequence_L416_PartitionEqualSubsetSum {
 				if(tar == 0) {
 					sum[ind][tar] = true;
 				}else if(ind == 0) {
-					if(tar == nums[ind]) {
+					if(tar == nums[ind]) 
 						sum[ind][tar] = true;
-					}
 				}else {
 					boolean notTaken = sum[ind-1][tar];
 					boolean taken = false;

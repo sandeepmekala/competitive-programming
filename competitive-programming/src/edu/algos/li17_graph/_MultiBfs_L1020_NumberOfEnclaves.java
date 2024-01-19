@@ -26,47 +26,50 @@ public class _MultiBfs_L1020_NumberOfEnclaves {
         for(int i = 0;i<m;i++) {
             for(int j = 0;j<n;j++) {
                 if(i == 0 || j == 0 || i == m-1 || j == n-1) {
-                    if(grid[i][j] == 1) {
-                        q.add(new Pair(i, j)); 
+                    if(grid[i][j] == 1 && visited[i][j] == 0) {
                         visited[i][j] = 1; 
+                        q.add(new Pair(i, j)); 
                     }
                 }
             }
         }
         
-        int delrow[] = {-1, 0, +1, 0};
-        int delcol[] = {0, +1, +0, -1}; 
+        int drow[] = {-1, 0, +1, 0};
+        int dcol[] = {0, +1, +0, -1}; 
         while(!q.isEmpty()) {
-            int row = q.peek().first; 
-            int col = q.peek().second; 
-            q.remove(); 
+            Pair curr = q.remove(); 
+            int row = curr.row; 
+            int col = curr.col; 
             
             for(int i = 0;i<4;i++) {
-                int nrow = row + delrow[i];
-                int ncol = col + delcol[i]; 
-                if(nrow >=0 && nrow <m && ncol >=0 && ncol < n 
-                        && visited[nrow][ncol] == 0 && grid[nrow][ncol] == 1) {
-                    q.add(new Pair(nrow, ncol));
+                int nrow = row + drow[i];
+                int ncol = col + dcol[i]; 
+                if(isSafe(grid, m, n, visited, nrow, ncol)) {
                     visited[nrow][ncol] = 1; 
+                    q.add(new Pair(nrow, ncol));
                 }
             }
-            
         }
         int count = 0;
-        for(int i = 0;i<m;i++) {
-            for(int j = 0;j<n;j++) {
-                if(grid[i][j] == 1 & visited[i][j] == 0) 
+        for(int i=0; i<m; i++) {
+            for(int j=0;j<n;j++) {
+                if(grid[i][j] == 1 && visited[i][j] == 0) 
                     count++; 
             }
         }
         return count;         
     }
+
+    private boolean isSafe(int[][] grid, int m, int n, int[][] visited, int nrow, int ncol) {
+        return nrow >=0 && nrow <m && ncol >=0 && ncol < n 
+                && visited[nrow][ncol] == 0 && grid[nrow][ncol] == 1;
+    }
 }
 class Pair {
-    int first;
-    int second; 
+    int row;
+    int col; 
     public Pair(int first, int second) {
-        this.first = first; 
-        this.second = second; 
+        this.row = first; 
+        this.col = second; 
     }
 }

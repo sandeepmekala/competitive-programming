@@ -16,9 +16,9 @@ public class _Kadanes_L152_MaximumProductOfSubArray {
 		int locMaxProd = nums[0];
 		int locMinProd = nums[0];
 		for(int i=1; i<nums.length; i++) {
-			int temp = locMaxProd;
+			int oldMax = locMaxProd;
 			locMaxProd = Math.max(nums[i], Math.max(locMaxProd*nums[i], locMinProd*nums[i]));
-			locMinProd = Math.min(nums[i], Math.min(temp*nums[i], locMinProd*nums[i]));
+			locMinProd = Math.min(nums[i], Math.min(oldMax*nums[i], locMinProd*nums[i]));
 			
 			if(locMaxProd > globalMaxProd)
 				globalMaxProd = locMaxProd;

@@ -39,14 +39,14 @@ public class _DetectCycle_G03_DetectCycleInUndirectedGraph {
 		q.add(0);
 		visited.add(0);
 		while (!q.isEmpty()) {
-			int current = q.remove();
-			for (int neigh : adj.get(current)) {
-				if (visited.contains(neigh) && neigh != current) 
-					return true;
+			int curr = q.remove();
+			for (int neigh : adj.get(curr)) {
 				if(!visited.contains(neigh)) {
-					visited.add(current);
+					visited.add(curr);
 					q.add(neigh);
-				}
+				}else if (neigh != curr){	// if visited and not curr
+					return true;
+				} 
 			}
 		}
 		return false;
@@ -64,11 +64,11 @@ public class _DetectCycle_G03_DetectCycleInUndirectedGraph {
 		return false;
 	}
 
-	private boolean dfs(int node, int parent, int vis[], ArrayList<ArrayList<Integer>> adj) {
-		vis[node] = 1;
-		for (int neigh : adj.get(node)) {
-			if (vis[neigh] == 0) {
-				if (dfs(neigh, node, vis, adj) == true)
+	private boolean dfs(int node, int parent, int visited[], ArrayList<ArrayList<Integer>> adj) {
+		visited[node] = 1;
+		for(int neigh : adj.get(node)) {
+			if (visited[neigh] == 0) {
+				if (dfs(neigh, node, visited, adj) == true)
 					return true;
 			}else if (neigh != parent)
 				return true;

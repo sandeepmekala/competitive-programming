@@ -21,13 +21,14 @@ public class _Bst_L98_ValidateBinarySearchTree {
     // Problem: https://leetcode.com/problems/validate-binary-search-tree/
     // Idea: Pass min and max to all the recursive calls so that all child nodes should be in that range.
     // Because, immediate child might be in order but grand childs might not be in order.
+    // time: O(n)
+    // space: O(1)
     public boolean isValidBST(TreeNode root) {
         return isBst(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
     private boolean isBst(TreeNode root, long min, long max){
-        if(root == null){
+        if(root == null)
             return true;
-        }
 
         return (root.val > min && root.val < max) && isBst(root.left, min, root.val) && isBst(root.right, root.val, max);
     }

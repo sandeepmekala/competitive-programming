@@ -21,21 +21,23 @@ public class _OneD_Fib_L198_HouseRobber {
 	 *	}
 	 * 
 	 * */
+	// Time: O(n)
+	// Space: O(n)
 	public int rob(int[] profit) {
 		int n = profit.length;
-        int dp[]=new int[n];
-    	Arrays.fill(dp,-1);
+        int rob[]=new int[n];
+    	Arrays.fill(rob,-1);
 
-		dp[0]= profit[0];
+		rob[0]= profit[0];
 		for(int i=1 ;i<n; i++){
+			int nonPick = 0+rob[i-1];
 			int pick = Integer.MIN_VALUE;
 			if(i>1)
-				pick = profit[i] + dp[i-2];
-			int nonPick = 0+dp[i-1];
+				pick = profit[i] + rob[i-2];
 			
-			dp[i]= Math.max(pick, nonPick);
+			rob[i]= Math.max(pick, nonPick);
 		}
-		return dp[n-1];
+		return rob[n-1];
     }
 
 	public int rob(int n,int[] profit){

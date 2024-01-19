@@ -17,9 +17,9 @@ public class _OneD_Fib_L213_HouseRobberII {
 	 *  Idea: We can't rob both first and last houses. Hence we slip array in to 2 parts. 
 	 *  One including the first element and another one including last element. 
 	 *  Run normal House Robber algo on both arrays and take max.
-	 * 
-	 * 
 	 * */
+	// Time: O(n)
+	// Space: O(n)
 	public int rob(int[] nums) {
         int n = nums.length;
         if(n == 1)

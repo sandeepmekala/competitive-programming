@@ -28,15 +28,18 @@ public class _Grid_L62_UniquePaths {
 	 * Hence, ans will be (m+n-2)C(m-1) or (m+n-2)C(n-1)
 	 * 
 	 * */
+	// time: O(m*n)
+    // space: O(m*n)
 	public int uniquePaths(int m, int n) {
 		int[][] ways = new int[m][n];
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
-				if(i == 0 || j == 0) {
+				if(i == 0 && j == 0) {
 					ways[i][j] = 1;							//base case
 				}else {
-					int up = ways[i-1][j];
-					int left = ways[i][j-1];
+					int up = 0, left = 0;
+                    if(i>0) up = ways[i-1][j];
+					if(j>0) left = ways[i][j-1];
 					ways[i][j] = up+left;
 				}
 			}

@@ -15,23 +15,25 @@ public class _PickOrNotPick_G01_SubsetSums {
     }
 
     // Problem: https://practice.geeksforgeeks.org/problems/subset-sums2234/1
-    public ArrayList<Integer> subsetSums(ArrayList<Integer> arr, int n) {
+    // time: O(2^n)
+    // space: O(1)
+    public ArrayList<Integer> subsetSums(ArrayList<Integer> nums, int n) {
         ArrayList<Integer> sumSubset = new ArrayList<>();
-        subsetSums(0, 0, arr, n, sumSubset);
+        subsetSums(nums, 0, 0, sumSubset);
         Collections.sort(sumSubset);
         return sumSubset;
     }
 
-    public void subsetSums(int ind, int sum, ArrayList<Integer> arr, int n, ArrayList<Integer> sumSubset) {
-        if (ind == n) {
+    public void subsetSums(ArrayList<Integer> nums, int ind, int sum, ArrayList<Integer> sumSubset) {
+        if (ind == nums.size()) {
             sumSubset.add(sum);
             return;
         }
     
         // pick the element
-        subsetSums(ind + 1, sum + arr.get(ind), arr, n, sumSubset);
+        subsetSums(nums, ind + 1, sum + nums.get(ind), sumSubset);
     
         // Do-not pick the element
-        subsetSums(ind + 1, sum, arr, n, sumSubset);
+        subsetSums(nums, ind + 1, sum, sumSubset);
     }
 }

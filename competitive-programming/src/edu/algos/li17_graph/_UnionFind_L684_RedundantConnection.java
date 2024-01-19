@@ -16,43 +16,42 @@ public class _UnionFind_L684_RedundantConnection {
     // Idea: Duplicate edge creates a cycle in the graph. Use Union Find to find the cycle. 
 	public int[] findRedundantConnection(int[][] edges) {
         int n = edges.length+1;
-        int[] parents = new int[n];
-        int[] ranks = new int[n];
+        int[] parent = new int[n];
+        int[] rank = new int[n];
         
         for(int i=1; i<n; i++){
-            parents[i] = i;
-            ranks[i] = 0;
+            parent[i] = i;
+            rank[i] = 0;
         }
         
         for(int[] edge: edges){
-            int srcParent = find(parents, edge[0]);
-            int dstParent = find(parents, edge[1]);
+            int srcParent = find(parent, edge[0]);
+            int dstParent = find(parent, edge[1]);
             if(srcParent == dstParent){
                 return edge;
             }else{
-                union(parents, ranks, srcParent, dstParent);
+                unionByRank(parent, rank, srcParent, dstParent);
             }
         }
         return new int[]{};
     }
     
     private int find(int[] parents, int current){
-        int parent = parents[current];
-        if(parent == current){
-            return parent;
+        if(parents[current] == current){
+            return parents[current];
         }
-        parents[current] = find(parents, parent);
+        parents[current] = find(parents, parents[current]);
         return parents[current];
     }
     
-    private void union(int[] parents, int[] ranks, int src, int dst){
+    private void unionByRank(int[] parents, int[] ranks, int src, int dst){
         if(ranks[src] > ranks[dst]){
             parents[dst] = src;
         }else if(ranks[dst] > ranks[src]){
             parents[src] = dst;
         }else{
             parents[dst] = src;
-            ranks[src] = ranks[src] + ranks[dst];
+            ranks[src] = ranks[src] + 1;
         }
     }
 

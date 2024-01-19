@@ -13,25 +13,30 @@ public class _Subsequence_L2035_PartitionArrayIntoTwoArraysToMinimizeSumDifferen
     }
 
     // Problem: https://leetcode.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/
-    // Idea: Similar logic of subset sum to k. Target will be total sum. In sums array last row, all the posibile sum values starting from 0 to total sum result is stored. 
+    // Idea: Similar logic of subset sum to k. Target will be total sum. 
+    // In sums array last row, all the posibile sum values starting from 0 to total sum result is stored. 
     // Use that to find abs min diff sums and min.
+    // Time: O(n*tar)
+    // Space: O(n*tar)
     public int minimumDifference(int[] nums) {
         int target = 0, n = nums.length;
-        for(int num: nums) target += num;
+        for(int num: nums) 
+            target += num;
 
         boolean[][] sum = new boolean[n][target+1];
-		for(int i=0; i<n; i++) {
-			for(int j=0; j<=target; j++) {
-				if(j == 0) {
-					sum[i][j] = true;
-				}else if(i == 0) {
-					if(j == nums[i]) {
-						sum[i][j] = true;
-					}
-				}else if(nums[i] > j) {
-					sum[i][j] = sum[i-1][j];
+		for(int ind=0; ind<n; ind++) {
+			for(int tar=0; tar<=target; tar++) {
+				if(tar == 0) {
+					sum[ind][tar] = true;
+				}else if(ind == 0) {
+					if(tar == nums[ind]) 
+						sum[ind][tar] = true;
 				}else {
-					sum[i][j] = sum[i-1][j] || sum[i-1][j-nums[i]];
+					boolean notTaken = sum[ind-1][tar];
+					boolean taken = false;
+					if(nums[ind]<=tar)
+						taken = sum[ind-1][tar-nums[ind]];
+					sum[ind][tar] = notTaken || taken;
 				}
 			}
 		}
@@ -47,7 +52,6 @@ public class _Subsequence_L2035_PartitionArrayIntoTwoArraysToMinimizeSumDifferen
     }
 
     // for negative numbers use map
-    // TODO
     public int minimumDifference2(int[] nums) {
         int target = 0, n = nums.length;
         for(int num: nums) target += num;

@@ -14,13 +14,15 @@ class _Bst_L173_BinarySearchTreeIterator {
     // Idea: The first processed element would be left most. 
     // Hence, push all the elements to stack until the left most so that left most is available on top of the stack.
     // While process left most, it won't have any further lefts. Hence, the next processed will be left most in it right child. Push all the elements till left most in its right child.
+    // time: O(logn)
+    // space: O(logn)
     Stack<TreeNode> stack = new Stack<TreeNode>();
     public _Bst_L173_BinarySearchTreeIterator(TreeNode root) {
         TreeNode curr = root;
         while(curr != null){
             stack.push(curr);
             curr = curr.left;
-        }
+        } 
     }
     
     public int next() {

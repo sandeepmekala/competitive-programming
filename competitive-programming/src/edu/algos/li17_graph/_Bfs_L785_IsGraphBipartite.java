@@ -19,11 +19,12 @@ public class _Bfs_L785_IsGraphBipartite {
     // If neigh color is already assigned, check if it same as node to return false.
     public boolean isBipartite(int[][] graph) {
         int n = graph.length;
-        int[] color = new int[n];
-        Arrays.fill(color, -1);
+
+        int[] colors = new int[n];
+        Arrays.fill(colors, -1);
         for(int src=0; src<n; src++){
-            if(color[src] == -1){
-                if(bfs(graph, src, color) == false){
+            if(colors[src] == -1){
+                if(bfs(graph, src, colors) == false){
                     return false;
                 }
             }
@@ -52,25 +53,25 @@ public class _Bfs_L785_IsGraphBipartite {
 
     public boolean isBipartiteDfs(int[][] graph) {
         int n = graph.length;
-        int[] color = new int[n];
-        Arrays.fill(color, -1);
+        int[] colors = new int[n];
+        Arrays.fill(colors, -1);
         for(int src=0; src<n; src++){
-            if(color[src] == -1){
-                if(dfs(graph, src, 0,  color) == false)
+            if(colors[src] == -1){
+                if(dfs(graph, src, 0,  colors) == false)
                     return false;
             }
         }
         return true;
     }
 
-    private boolean dfs(int[][] graph, int node, int col, int[] color) {
-        color[node] = col;
+    private boolean dfs(int[][] graph, int node, int col, int[] colors) {
+        colors[node] = col;
         for(int neigh: graph[node]){
-            if(color[neigh] == -1){
-                if(dfs(graph, neigh, 1-col,  color) == false){
+            if(colors[neigh] == -1){
+                if(dfs(graph, neigh, 1-col,  colors) == false){
                     return false;
                 }
-            }else if(color[neigh] == color[node]){
+            }else if(colors[neigh] == colors[node]){
                 return false;
             }
         }

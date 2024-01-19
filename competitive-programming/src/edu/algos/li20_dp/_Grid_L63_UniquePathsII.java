@@ -17,6 +17,8 @@ public class _Grid_L63_UniquePathsII {
 	 * Companies: Amazon
      * Idea: Same as unique paths. If the cell has obstacle, just assign its ways as 0 so that for subsequent cells that path won't be considered.
 	 * */
+    // Time: O(m*n)
+    // Space: O(m*n)
 	public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int m = obstacleGrid.length, n = obstacleGrid[0].length;
         

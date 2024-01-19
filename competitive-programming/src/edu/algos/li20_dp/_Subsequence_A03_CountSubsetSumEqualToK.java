@@ -15,6 +15,8 @@ public class _Subsequence_A03_CountSubsetSumEqualToK {
 	}
 	
     // Problem: https://bit.ly/3B5JBkU
+    // Time: O(n*tar)
+    // Space: O(n*tar)
 	public int findWays(int nums[], int target) {
         int n = nums.length;
         int[][] sum = new int[n][target + 1];
@@ -25,15 +27,14 @@ public class _Subsequence_A03_CountSubsetSumEqualToK {
 
         if (nums[0] != 0 && nums[0] <= target)
             sum[0][nums[0]] = 1; // 1 case -pick
-        for (int i = 1; i < n; i++) {
-            for (int j = 0; j <= target; j++) {
+        for (int ind = 1; ind < n; ind++) {
+            for (int tar = 0; tar <= target; tar++) {
+                int notPick = sum[ind - 1][tar];
                 int pick = 0;
-                if (j - nums[i] >= 0)
-                    pick = sum[i - 1][j - nums[i]];
+                if (tar - nums[ind] >= 0)
+                    pick = sum[ind - 1][tar - nums[ind]];
 
-                int notPick = sum[i - 1][j];
-
-                sum[i][j] = pick + notPick;
+                sum[ind][tar] = pick + notPick;
             }
         }
         return sum[n - 1][target];

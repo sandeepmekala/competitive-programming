@@ -19,18 +19,19 @@ public class _Bst_L701_InsertIntoABinarySearchTree {
 
     // Problem: https://leetcode.com/problems/insert-into-a-binary-search-tree/ 
 	// Idea: If val < root, insert in left subtree else insert in right subtree.
-    public TreeNode insertIntoBST(TreeNode  root, int val){
-		if(root == null){
+    // time: O(logn)
+    // space: O(1)
+	public TreeNode insertIntoBST(TreeNode  root, int val){
+		if(root == null)
 			return new TreeNode(val);
-		}else{
-			if(val < root.val){
-				root.left = insertIntoBST(root.left, val);
-			}else{
-				root.right = insertIntoBST(root.right, val);
-			}
 
-            return root;
+		if(val < root.val){
+			root.left = insertIntoBST(root.left, val);
+		}else{
+			root.right = insertIntoBST(root.right, val);
 		}
+
+		return root;
 	}
 
 	public TreeNode insertIntoBSTIterative(TreeNode  root, int val){

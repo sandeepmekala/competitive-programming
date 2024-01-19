@@ -17,6 +17,8 @@ public class _L22_GenerateParentheses {
     // pass the parenthesys string to recursion by adding "(" or ")" depending on the condition
     // Add "(" if open < n
     // Add ")" if close < open
+    // Time: O(
+	// Space: O(1)
 	public List<String> generateParenthesis(int n) {
         List<String> list = new ArrayList<>();
         generateParenthesis(list, "", n, 0, 0);

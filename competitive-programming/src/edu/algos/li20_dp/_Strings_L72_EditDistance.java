@@ -18,8 +18,11 @@ public class _Strings_L72_EditDistance {
 	// Idea: Similar like other algos match char by char
 	// If chars at i, j are matching, check T[i-1][j-1]
 	// Else there are 3 posibilities to be taken care and we need to take min of those
+	// Time: O(m*n)
+    // Space: O(m*n)
 	public int minDistance(String word1, String word2) {
 		int m = word1.length(), n = word2.length();
+
 		int[][] mem = new int[m+1][n+1]; 		// one extra index is needed for empty string
 		for(int i=0; i<=m; i++) {
 			for(int j=0; j<=n; j++) {

@@ -24,6 +24,8 @@ public class _Bt_L199_BinaryTreeRightSideView {
     // Problem: https://leetcode.com/problems/binary-tree-right-side-view/
     // Idea: Apply inorder with right first. Pass level as arg to function. 
     // At each level if size of result is equal to level add that element. Once an element already added at right side, there won't be any element gets added left side as result list size would have increased.
+    // time: O(n)
+    // space: O(1)
     public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<Integer>();
         preorder(root, 0, result);
@@ -31,7 +33,8 @@ public class _Bt_L199_BinaryTreeRightSideView {
     }
     
     private void preorder(TreeNode root, int level, List<Integer> result){
-        if(root == null) return;
+        if(root == null) 
+            return;
         
         if(result.size() == level)
             result.add(root.val);

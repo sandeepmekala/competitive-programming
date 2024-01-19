@@ -1,7 +1,6 @@
 package edu.algos.li17_graph;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.PriorityQueue;
@@ -19,10 +18,11 @@ public class _Mst_L1584_MinCostToConnectAllPoints {
     // Find MST cost in this graph
 	public int minCostConnectPoints(int[][] points) {
         int n = points.length;
+
         HashMap<Integer, ArrayList<int[]>> adj = new HashMap<>();
         for(int i=0; i<n; i++)
             adj.put(i, new ArrayList<>());
-        for(int i=0; i<n; i++){     // cal dist for [i,j] and [j,i]
+        for(int i=0; i<n; i++){     // calculate dist for [i,j] and [j,i]
             int x1 = points[i][0], y1 = points[i][1]; 
             for(int j=i+1; j<n; j++){
                 int x2 = points[j][0], y2 = points[j][1]; 

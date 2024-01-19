@@ -12,7 +12,9 @@ public class _Strings_Lcs_L1312_MinimumInsertionStepsToMakeAStringPalindrome {
     // Idea: We can reuse longest polindrome subseq.
     // String already has a longest polindrome. We should keep that intact and insert char around it to make the whole string as polindrome.
     // Hence, the number of insertions that we need to do is number of chars not part of longest polindrome.
-    public int minInsertions(String s) {
+    // Time: O(m*n)
+    // Space: O(m*n)
+	public int minInsertions(String s) {
         int n = s.length();
         return n-longestPalindromeSubseq(s);
     }

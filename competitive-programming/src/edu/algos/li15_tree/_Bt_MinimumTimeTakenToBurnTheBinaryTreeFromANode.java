@@ -11,11 +11,14 @@ import edu.algos.li00_model.TreeNode;
 
 public class _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode {
     public static void main(String[] args) {
-        _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode obj = new _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode();
+        //_Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode obj = new _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode();
 
     }
 
-    public int distanceK(TreeNode root, TreeNode target, int k) {
+    // Problem: https://www.geeksforgeeks.org/minimum-time-to-burn-a-tree-starting-from-a-leaf-node/
+    // time: O(n)
+    // space: O(1)
+    public int burn(TreeNode root, TreeNode target) {
         Map<TreeNode, TreeNode> parent = new HashMap<>();
         markParent(root, parent);
 

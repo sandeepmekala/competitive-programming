@@ -20,10 +20,14 @@ public class _Bt_L545_BoundaryOfBinaryTree {
     // Problem: https://leetcode.com/problems/boundary-of-binary-tree/
     // https://www.lintcode.com/problem/878 
     // Idea: Traverse left path to get left boundry and do inorder and pick up only leaves, then dp right traversal and get right boundry.
+    // time: O(n)
+    // space: O(1)
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> boundry = new ArrayList<>();
-        if(root == null) return boundry;
-        if(!isLeaf(root)) boundry.add(root.val);
+        if(root == null) 
+            return boundry;
+        if(!isLeaf(root)) 
+            boundry.add(root.val);
 
         addLeftBoundry(root, boundry);
         addLeaves(root, boundry);
@@ -35,9 +39,13 @@ public class _Bt_L545_BoundaryOfBinaryTree {
     private void addLeftBoundry(TreeNode root, List<Integer> boundry) {
         TreeNode curr = root.left;
         while(curr != null){
-            if(!isLeaf(curr)) boundry.add(curr.val);
-            if(curr.left !=  null) curr = curr.left;
-            else curr = curr.right;
+            if(!isLeaf(curr)) 
+                boundry.add(curr.val);
+
+            if(curr.left !=  null) 
+                curr = curr.left;
+            else 
+                curr = curr.right;
         }
     }
 
@@ -45,9 +53,13 @@ public class _Bt_L545_BoundaryOfBinaryTree {
         TreeNode curr = root.right;
         List<Integer> s = new ArrayList<>();
         while(curr != null){
-            if(!isLeaf(curr)) s.add(0, curr.val);
-            if(curr.right !=  null) curr = curr.right;
-            else curr = curr.left;
+            if(!isLeaf(curr)) 
+                s.add(0, curr.val);
+
+            if(curr.right !=  null) 
+                curr = curr.right;
+            else 
+                curr = curr.left;
         }
 
         boundry.addAll(s);
@@ -59,8 +71,10 @@ public class _Bt_L545_BoundaryOfBinaryTree {
             return;
         }
 
-        if(root.left != null) addLeaves(root.left, boundry);
-        if(root.right != null) addLeaves(root.right, boundry);
+        if(root.left != null) 
+            addLeaves(root.left, boundry);
+        if(root.right != null) 
+            addLeaves(root.right, boundry);
     }
 
     private boolean isLeaf(TreeNode root){

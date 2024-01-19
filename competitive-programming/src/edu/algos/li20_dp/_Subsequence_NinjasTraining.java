@@ -42,7 +42,6 @@ public class _Subsequence_NinjasTraining {
                 int activity = points[ind][task] + ninjaTraining(ind - 1, task, points, dp);
                 maxi = Math.max(maxi, activity);
             }
-
         }
 
         return dp[ind][last] = maxi;

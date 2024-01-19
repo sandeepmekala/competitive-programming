@@ -18,12 +18,13 @@ public class _Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     // Idea: Lst element on postorder will be root of BST. This divids both inorder and pre order arrays in to 2 halfs.
     // Recursively build left and right subtreesby passing half elements list for each recursive calls.
+    // time: O(n)
+    // space: O(n)
     // TODO
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
         Map<Integer, Integer> inIndMap = new HashMap<>();
-        for(int i=0; i<inorder.length; i++){
+        for(int i=0; i<inorder.length; i++)
             inIndMap.put(inorder[i], i);
-        }
 
         return buildTree(inorder, 0, inorder.length-1, postorder, 0, postorder.length-1, inIndMap);
     }

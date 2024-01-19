@@ -27,12 +27,12 @@ public class _UnionFind_L827_MakingALargeIsland {
 
                 int dr[] = { -1, 0, 1, 0};
                 int dc[] = {0, -1, 0, 1};
-                for (int ind = 0; ind < 4; ind++) {
-                    int newr = row + dr[ind];
-                    int newc = col + dc[ind];
-                    if (isValid(newr, newc, n) && grid[newr][newc] == 1) {
+                for (int i = 0; i < 4; i++) {
+                    int nrow = row + dr[i];
+                    int ncol = col + dc[i];
+                    if (isValid(nrow, ncol, n) && grid[nrow][ncol] == 1) {
                         int nodeNo = row * n + col;
-                        int adjNodeNo = newr * n + newc;
+                        int adjNodeNo = nrow * n + ncol;
                         ds.unionBySize(nodeNo, adjNodeNo);
                     }
                 }

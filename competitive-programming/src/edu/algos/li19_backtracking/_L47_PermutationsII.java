@@ -17,6 +17,8 @@ public class _L47_PermutationsII {
     // Problem: https://leetcode.com/problems/permutations-ii/
     // Idea: Fix each position once swap each element to that position to generat permutations.
     // Skip duplicate numbers using set. Alternatively, you can sort nums also.
+    // Time: O(n!)
+	// Space: O(1)
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         //Arrays.sort(nums);
@@ -24,18 +26,18 @@ public class _L47_PermutationsII {
         return result;
     }
  
-    public void permute(int[] nums, int index, List<List<Integer>> result) {
-        if (index == nums.length - 1) {
+    public void permute(int[] nums, int ind, List<List<Integer>> result) {
+        if (ind == nums.length - 1) {
             result.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
             return;
         }
         HashSet<Integer> distinct = new HashSet<>();
-        for (int i = index; i <= nums.length - 1; i++) {
+        for (int i = ind; i <= nums.length - 1; i++) {
             //if(i>index && nums[i] == nums[i-1]) continue;
             if (distinct.add(nums[i])) {
-                swap(nums, index, i);
-                permute(nums, index + 1, result);
-                swap(nums, index, i);
+                swap(nums, ind, i);
+                permute(nums, ind + 1, result);
+                swap(nums, ind, i);
             }
         }
     }

@@ -20,9 +20,8 @@ public class _TopoSort_L210_CourseScheduleII {
     // Idea: Find any reverse of Topological order.
 	public int[] findOrder(int numCourses, int[][] prerequisites) {
         HashMap<Integer, List<Integer>> adjList = new HashMap<>();
-        for(int i=0; i<numCourses; i++){
+        for(int i=0; i<numCourses; i++)
             adjList.put(i, new ArrayList<Integer>());
-        }
         for(int[] prer: prerequisites){
             adjList.get(prer[0]).add(prer[1]);
         }

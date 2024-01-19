@@ -20,6 +20,8 @@ public class _Stocks_L122_BestTimeToBuyAndSellStockII {
 	 * buy 	0 0
 	 * sell 0
 	 */
+	// Time: O(n*2)
+    // Space: O(n*2)
 	public int maxProfit(int[] prices) {
 		int n = prices.length;
 

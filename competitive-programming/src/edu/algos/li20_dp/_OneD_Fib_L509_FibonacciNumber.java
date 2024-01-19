@@ -5,10 +5,10 @@ public class _OneD_Fib_L509_FibonacciNumber {
 	public static void main(String[] args) {
 		_OneD_Fib_L509_FibonacciNumber obj = new _OneD_Fib_L509_FibonacciNumber();
 
-		System.out.println(obj.fibBottomUp(25));
 		
-		int[] mem = new int[26];
 		System.out.println(obj.fib(25));
+		System.out.println(obj.fib2(25));
+		System.out.println(obj.fib3(25));
 	}
 
 	// Problem: https://leetcode.com/problems/fibonacci-number/
@@ -25,7 +25,7 @@ public class _OneD_Fib_L509_FibonacciNumber {
         return prev1;
     }
 
-	private int fibBottomUp(int n) {
+	private int fib3(int n) {
 
 		int nums[] = new int[n+1];
 		nums[0] = 0;
@@ -37,15 +37,10 @@ public class _OneD_Fib_L509_FibonacciNumber {
 		return nums[n];
 	}
 	
-	private int fibTopDown(int[] solutions, int n) {
-
-		if (solutions[n] == 0) {
-			if (n == 0 || n == 1) {
-				solutions[n] = 1;
-			} else {
-				solutions[n] = fibTopDown(solutions, n - 1) + fibTopDown(solutions, n - 2);
-			}
-		}
-		return solutions[n];
+	public int fib2(int n) {
+		if (n == 0 || n == 1) 
+			return n;
+			
+		return fib3(n - 1) + fib3(n - 2);
 	}
 }

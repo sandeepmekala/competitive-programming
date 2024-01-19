@@ -26,12 +26,13 @@ public class _Bt_L863_AllNodesDistanceKInBinaryTree {
         root.left.right.right = new TreeNode(4);
 
         System.out.println(obj.distanceK(root, root.left, 2));
-
     }
 
     // Problem: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
     // Idea: Create links to parent to treverse back to parents using a map. 
     // Traverse in 2 direction by counting the level until k. When level becomes k, nodes will be in q.
+    // time: O(n)
+    // space: O(1)
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         Map<TreeNode, TreeNode> parent = new HashMap<>();
         markParent(root, parent);
@@ -42,10 +43,10 @@ public class _Bt_L863_AllNodesDistanceKInBinaryTree {
         visited.add(target);
         int level = 0;
         while(!q.isEmpty()){
-            if(level == k) break;
+            if(level == k) 
+                break;
             
             int size = q.size();
-            level++;
             for(int i=0; i<size; i++){
                 TreeNode node = q.remove();
                 if(node.left != null && !visited.contains(node.left)){
@@ -61,6 +62,7 @@ public class _Bt_L863_AllNodesDistanceKInBinaryTree {
                     q.add(parent.get(node));
                 }
             }
+            level++;
         }
 
         List<Integer> ans = new ArrayList<>();

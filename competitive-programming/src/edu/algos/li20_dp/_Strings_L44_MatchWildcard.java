@@ -31,6 +31,8 @@ public class _Strings_L44_MatchWildcard {
 	 * 	z	6	F	F	F	F	T	T
 	 * 
 	 * */
+	// Time: O(m*n)
+    // Space: O(m*n)
 	public boolean isMatch(String s, String p) {
 		int n = s.length(), m=p.length();
 

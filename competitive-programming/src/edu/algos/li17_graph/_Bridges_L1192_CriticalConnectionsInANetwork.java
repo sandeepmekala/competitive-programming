@@ -1,4 +1,4 @@
-package edu.algos.li17_graph.hard;
+package edu.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;

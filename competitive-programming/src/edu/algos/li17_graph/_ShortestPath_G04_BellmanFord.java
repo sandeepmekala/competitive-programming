@@ -41,7 +41,7 @@ public class _ShortestPath_G04_BellmanFord {
 			for (Edge edge : edges) {
 				int src = edge.src;
 				int dest = edge.dest;
-				if (dist[dest] > dist[src] + edge.weight) {
+				if (dist[src] + edge.weight < dist[dest]) {
 					dist[dest] = dist[src] + edge.weight;
 					parent[dest] = src;
 				}

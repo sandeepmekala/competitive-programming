@@ -18,10 +18,9 @@ public class _ShortestPath_G03_Dijkstras {
 				adj.get(i).add(edge);
 			}
 		}	
-		
             
-            int dist[] = shortedpath.dijkstra(adj, 2);
-            System.out.println(Arrays.toString(dist));
+		int dist[] = shortedpath.dijkstra(adj, 2);
+		System.out.println(Arrays.toString(dist));
 	}
 
 	// Idea: Same as prims algo except that instead of just check the edge weight we track cumulative sum from root
@@ -40,8 +39,9 @@ public class _ShortestPath_G03_Dijkstras {
 		dist[src] = 0;
 		pq.add(new int[]{0, src});	//{dist, node}
 		while(!pq.isEmpty()){
-			int[] top = pq.remove();
-			int dis = top[0], node = top[1];
+			int[] curr = pq.remove();
+			int dis = curr[0], node = curr[1];
+			
 			for (int neigh[]: adj.get(node)) {
 				int neighNode = neigh[0], edgeWeight = neigh[1];
 				if (dis + edgeWeight < dist[neighNode]) {	// visited is not needed as anyway this condition won't satisfy for already visited nodes

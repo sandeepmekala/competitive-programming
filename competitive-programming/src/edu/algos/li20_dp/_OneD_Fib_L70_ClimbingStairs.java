@@ -11,7 +11,8 @@ public class _OneD_Fib_L70_ClimbingStairs {
 	// Problem: https://leetcode.com/problems/climbing-stairs/
 	// Idea: The nth stair you can reach from n-1 or n-2 stair. 
 	// So take the number of ways to reach n-1 and n-2 stairs. This recursively goes till base case for n-1 and n-2 cases.
-	// time: O(n)
+	// Time: O(n)
+	// Space: O(n)
 	public int climbStairs(int n) {
 		int numberOfWays[] = new int[n + 1];
 		numberOfWays[0] = 1; // we need only last two numbers in array. So, we can save some space by using two variables instead of array

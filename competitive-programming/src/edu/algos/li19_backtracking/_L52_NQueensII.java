@@ -10,7 +10,7 @@ public class _L52_NQueensII {
 	// Problem: https://leetcode.com/problems/n-queens-ii/ 
 	// Idea: For each row, recursively check if col gives solution. Else,
 	// increment col. If none of the cols give solution, increment row.
-	// Time complexity: O(4^n) as we start by placing 4 queens in each row and col
+	// Time complexity: O(n^n) as we start by placing 4 queens in each row and col
 	// 0. Each recursion checks for different col. It will be tree with 4 children
 	// and col depth.
 	// Space complexity: O(n^2)
@@ -22,9 +22,8 @@ public class _L52_NQueensII {
 
 	private int totalNQueens(int board[][], int col) {
 		int n = board.length;
-		if (col == n) {
+		if (col == n) 
 			return 1;
-		}
 
 		int count = 0;
 		for (int row = 0; row < n; row++) {

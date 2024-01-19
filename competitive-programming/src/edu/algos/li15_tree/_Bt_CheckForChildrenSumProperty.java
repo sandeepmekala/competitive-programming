@@ -8,6 +8,8 @@ public class _Bt_CheckForChildrenSumProperty {
     
     }
 
+    // time: O(n)
+    // space: O(1)
     static void changeTree(TreeNode root) {
         if (root == null)
             return;

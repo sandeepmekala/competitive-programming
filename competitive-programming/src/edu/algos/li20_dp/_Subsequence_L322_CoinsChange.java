@@ -7,10 +7,10 @@ public class _Subsequence_L322_CoinsChange {
 		_Subsequence_L322_CoinsChange obj = new _Subsequence_L322_CoinsChange();
 		
 		int[] coins = new int[]{5,1,6,8};
-		int total = 11;
+		int total = 11, n = coins.length;
 		System.out.println(obj.coinChange(coins, total));
 		
-		System.out.println(obj.coinChange(coins, 3, total));
+		System.out.println(obj.coinChange2(coins, n-1, total));
 	}
 
 	/*
@@ -32,6 +32,8 @@ public class _Subsequence_L322_CoinsChange {
 	 * 8	0	1	2	3	4	1	2	2	1	2	2	2  
 	 * 
 	 */
+	// Time: O(n*tatal)
+    // Space: O(n*tatal)
 	public int coinChange(int[] coins, int total) {
 		int n = coins.length;
 		int[][] sum = new int[n][total+1];
@@ -46,9 +48,9 @@ public class _Subsequence_L322_CoinsChange {
 				} else {
 					int notPick = 0 + sum[i-1][j];
 					int pick = Integer.MAX_VALUE;		//mem[i]...  means we can select same coin again
-					if(coins[i] <= j) {
+					if(coins[i] <= j) 
 						pick = 1 + sum[i][j-coins[i]];
-					}
+					
 					sum[i][j] = Math.min(notPick, pick);		
 				}	
 			}
@@ -60,18 +62,18 @@ public class _Subsequence_L322_CoinsChange {
 		return sum[n-1][total];
 	}
 	
-	private int coinChange(int[] coins, int i, int total) {
-		if(i == 0) {
-			if(total%coins[i] == 0) 
-				return total/coins[i];
+	private int coinChange2(int[] coins, int ind, int total) {
+		if(ind == 0) {
+			if(total % coins[ind] == 0) 
+				return total/coins[ind];
 			else 
 				return (int)1e9;
 		}
-		int notPick = 0 + coinChange(coins, i-1, total);
+		int notPick = 0 + coinChange2(coins, ind-1, total);
 		int pick = Integer.MAX_VALUE;
-		if(coins[i] <= total) {
-			pick = 1 + coinChange(coins, i, total-coins[i]);;
-		}
+		if(coins[ind] <= total) 
+			pick = 1 + coinChange2(coins, ind, total-coins[ind]);;
+		
 		return Math.min(notPick, pick);
 	}
 }

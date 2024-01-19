@@ -14,11 +14,11 @@ public class _MultiBfs_L126_WordLadderII {
         _MultiBfs_L126_WordLadderII obj = new _MultiBfs_L126_WordLadderII();
 
         String startWord = "der", targetWord = "dfs";
-        List<String> wordList = Arrays.asList(new String[]{"des",
+        List<String> wordList = Arrays.asList("des",
         "der",
         "dfr",
         "dgt",
-        "dfs"});
+        "dfs");
 
         List<List<String>> ans = obj.findLadders(startWord, targetWord, wordList);
         System.out.println(ans);
@@ -28,8 +28,8 @@ public class _MultiBfs_L126_WordLadderII {
             List<String> wordList) {
         Set<String> set = new HashSet<String>(wordList);
 
-        Queue<ArrayList<String>> q = new LinkedList<>();
-        q.add(new ArrayList<>(Arrays.asList(beginWord)));
+        Queue<List<String>> q = new LinkedList<>();
+        q.add(Arrays.asList(beginWord));
         set.remove(beginWord);
 
         List<List<String>> ans = new ArrayList<>();
@@ -37,7 +37,7 @@ public class _MultiBfs_L126_WordLadderII {
             int size = q.size();
             ArrayList<String> usedWords = new ArrayList<>();
             for(int k=0; k<size; k++){
-                ArrayList<String> list = q.remove();
+                List<String> list = q.remove();
                 String word = list.get(list.size() - 1);
                 if (word.equals(endWord)) 
                     ans.add(list);

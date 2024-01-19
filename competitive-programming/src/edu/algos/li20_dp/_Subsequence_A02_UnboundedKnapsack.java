@@ -4,60 +4,59 @@ import java.util.Arrays;
 
 public class _Subsequence_A02_UnboundedKnapsack {
     public static void main(String args[]) {
+        _Subsequence_A02_UnboundedKnapsack obj = new _Subsequence_A02_UnboundedKnapsack();
 
         int wt[] = { 2, 4, 6 };
         int val[] = { 5, 11, 13 };
-        int W = 10;
+        int weight = 10, n = wt.length;
 
-        int n = wt.length;
-
-        System.out.println(unboundedKnapsack(n, W, val, wt));
+        System.out.println(obj.unboundedKnapsack(n, weight, val, wt));
+        System.out.println(obj.unboundedKnapsack2(n, weight, val, wt));
     }
 
     // Problem: https://bit.ly/3IvPdXS
-    static int unboundedKnapsack(int n, int W, int[] val, int[] wt) {
-        int[][] dp = new int[n][W + 1];
-        for (int row[] : dp)
-            Arrays.fill(row, -1);
-        return unboundedKnapsack(wt, val, n - 1, W, dp);
-    }
-
-    static int unboundedKnapsack(int[] wt, int[] val, int ind, int W, int[][] dp) {
-        if (ind == 0) {
-            return ((int) (W / wt[0])) * val[0];
-        }
-
-        if (dp[ind][W] != -1)
-            return dp[ind][W];
-
-        int notTaken = 0 + unboundedKnapsack(wt, val, ind - 1, W, dp);
-
-        int taken = Integer.MIN_VALUE;
-        if (wt[ind] <= W)
-            taken = val[ind] + unboundedKnapsack(wt, val, ind, W - wt[ind], dp);
-
-        return dp[ind][W] = Math.max(notTaken, taken);
-    }
-
-    static int unboundedKnapsack2(int n, int W, int[] val,int[] wt) {
-        int[][] dp = new int[n][W+1];
+    // Time: O(n*Wmax)
+    // Space: O(n*Wmax)
+    public int unboundedKnapsack(int n, int weight, int[] val,int[] wt) {
+        int[][] value = new int[n][weight+1];
         
         //Base Condition
-        for(int i=wt[0]; i<=W; i++){
-            dp[0][i] = ((int) i/wt[0]) * val[0];
-        }
+        for(int i=wt[0]; i<=weight; i++)
+            value[0][i] = ((int) i/wt[0]) * val[0];
         
         for(int ind =1; ind<n; ind++){
-            for(int cap=0; cap<=W; cap++){
-                int notTaken = 0 + dp[ind-1][cap];
+            for(int cap=0; cap<=weight; cap++){
+                int notTaken = 0 + value[ind-1][cap];
                 int taken = Integer.MIN_VALUE;
                 if(wt[ind] <= cap)
-                    taken = val[ind] + dp[ind][cap - wt[ind]];
+                    taken = val[ind] + value[ind][cap - wt[ind]];
                     
-                dp[ind][cap] = Math.max(notTaken, taken);
+                value[ind][cap] = Math.max(notTaken, taken);
             }
         }
         
-        return dp[n-1][W];
+        return value[n-1][weight];
+    }
+
+    public int unboundedKnapsack2(int n, int W, int[] val, int[] wt) {
+        int[][] value = new int[n][W + 1];
+        for (int row[] : value)
+            Arrays.fill(row, -1);
+        return unboundedKnapsack2(wt, val, n - 1, W, value);
+    }
+
+    private int unboundedKnapsack2(int[] wt, int[] val, int ind, int weight, int[][] value) {
+        if (ind == 0) 
+            return ((int) (weight / wt[0])) * val[0];
+
+        if (value[ind][weight] != -1)
+            return value[ind][weight];
+
+        int notTaken = 0 + unboundedKnapsack2(wt, val, ind - 1, weight, value);
+        int taken = Integer.MIN_VALUE;
+        if (wt[ind] <= weight)
+            taken = val[ind] + unboundedKnapsack2(wt, val, ind, weight - wt[ind], value);
+
+        return value[ind][weight] = Math.max(notTaken, taken);
     }
 }

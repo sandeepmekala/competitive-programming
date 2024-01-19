@@ -25,6 +25,8 @@ public class _Bt_L103_BinaryTreeZigzagLevelOrderTraversal {
 
     // Problem: https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
     // Idea: Similar, to levelorder traversal. Just use a flag to denote whether to insert element in list from left to right or right to left.
+    // time: O(n)
+    // space: O(n)
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
         if(root == null)
@@ -37,14 +39,14 @@ public class _Bt_L103_BinaryTreeZigzagLevelOrderTraversal {
             int size = queue.size();
             List<Integer> level = new ArrayList<Integer>(size);
 			for(int i=0; i<size; i++) {
-				TreeNode current = queue.remove();
-                if(leftToRight) level.add(current.val);
-                else level.add(0, current.val);
+				TreeNode curr = queue.remove();
+                if(leftToRight) level.add(curr.val);
+                else level.add(0, curr.val);
 
-                if(current.left != null)
-                    queue.add(current.left);    
-                if(current.right != null)
-                    queue.add(current.right);
+                if(curr.left != null)
+                    queue.add(curr.left);    
+                if(curr.right != null)
+                    queue.add(curr.right);
 			}
             leftToRight = !leftToRight;
             result.add(level);    

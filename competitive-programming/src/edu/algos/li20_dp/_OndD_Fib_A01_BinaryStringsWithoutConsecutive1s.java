@@ -27,6 +27,8 @@ public class _OndD_Fib_A01_BinaryStringsWithoutConsecutive1s {
 	 * i	0	1	2	3	4
 	 * 		1	2	3	5	8
 	 * */
+	// Time: O(n)
+	// Space: O(n)
 	private int count(int n) {
 		int[] mem = new int[n+1];
 		mem[0] = 1;

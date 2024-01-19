@@ -19,20 +19,23 @@ public class _UnionFind_L947_MostStonesRemovedWithSameRowOrColumn {
 
     public int removeStones(int[][] stones) {
         int n = stones.length;
+
         int maxRow = 0;
         int maxCol = 0;
         for (int i = 0; i < n; i++) {
             maxRow = Math.max(maxRow, stones[i][0]);
             maxCol = Math.max(maxCol, stones[i][1]);
         }
+
         ds.makeSet(maxRow + maxCol + 1);
         Set<Integer> stoneNodes = new HashSet<>();
         for (int i = 0; i < n; i++) {
-            int nodeRow = stones[i][0];
-            int nodeCol = stones[i][1] + maxRow + 1;
-            ds.unionByRank(nodeRow, nodeCol);
-            stoneNodes.add(nodeRow);
-            stoneNodes.add(nodeCol);        // these are the nodes in uf where stones are there.
+            int row = stones[i][0];
+            int col = stones[i][1] + maxRow + 1;
+            
+            ds.unionByRank(row, col);
+            stoneNodes.add(row);
+            stoneNodes.add(col);        // these are the nodes in uf where stones are there.
         }
 
         int count = 0;

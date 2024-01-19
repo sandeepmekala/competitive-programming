@@ -26,6 +26,8 @@ public class _Grid_64_MinimumPathSum {
 	 * 	2	9	9	9	12
 	 * 
 	 * */
+	// time: O(m*n)
+    // space: O(m*n)
 	int INF = Integer.MAX_VALUE;
 	public int minPathSum(int[][] grid) {
 		int m=grid.length, n=grid[0].length;

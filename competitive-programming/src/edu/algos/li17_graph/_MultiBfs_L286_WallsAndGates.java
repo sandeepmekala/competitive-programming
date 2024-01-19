@@ -33,32 +33,34 @@ public class _MultiBfs_L286_WallsAndGates {
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (rooms[i][j] == 0) {
-                    q.add(new int[] { i, j });
                     visited[i][j] = true;
+                    q.add(new int[] {i, j, 0});
                 }
             }
         }
-        int dist = 0;
         while (!q.isEmpty()) {
             int size = q.size();
             for (int k = 0; k < size; k++) {
                 int[] room = q.remove();
-                int row = room[0], col = room[1];
+                int row = room[0], col = room[1], dist = room[2];
                 rooms[row][col] = dist;
-                int[][] directions = new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
-                for (int[] dr : directions) {
-                    int nrow = row + dr[0];
-                    int ncol = col + dr[1];
-                    if (nrow >= 0 && nrow < m && ncol >= 0 && ncol < n 
-                            && rooms[nrow][ncol] != -1 && !visited[nrow][ncol]) {
-                        visited[nrow][ncol] = true;
-                        q.add(new int[] { nrow, ncol });
-                    }
 
+                int[][] directions = new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+                for (int[] dir : directions) {
+                    int nrow = row + dir[0];
+                    int ncol = col + dir[1];
+                    if (isSafe(rooms, m, n, visited, nrow, ncol)) {
+                        visited[nrow][ncol] = true;
+                        q.add(new int[] { nrow, ncol,  dist+1});
+                    }
                 }
             }
-            dist++;
         }
+    }
+
+    private boolean isSafe(int[][] rooms, int m, int n, boolean[][] visited, int nrow, int ncol) {
+        return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n 
+                && rooms[nrow][ncol] != -1 && !visited[nrow][ncol];
     }
 
 }

@@ -12,9 +12,11 @@ public class _L131_PalindromePartitioning {
 	}
 
     // Problem: https://leetcode.com/problems/palindrome-partitioning/
-    // Idea: Pass index as a pointer in str. Starts with 0. 
-    // Run a loop i, starts with index and find a polindrome. And call the recursion to find subsequent polindromes with index as i+1.
-	public List<List<String>> partition(String s) {
+    // Idea: Pass ind as a pointer in str. Starts with 0. 
+    // Run a loop i, starts with ind and find a polindrome. And call the recursion to find subsequent polindromes with index as i+1.
+	// Time: O(n^n)
+	// Space: O(n)
+    public List<List<String>> partition(String s) {
         List<List<String>> result = new ArrayList<>();
         partition(s, 0, new ArrayList<String>(), result);
         return result;
@@ -37,9 +39,8 @@ public class _L131_PalindromePartitioning {
     
     private boolean isPolindrome(String s, int l, int r){
         while(l<r){
-            if(s.charAt(l++) != s.charAt(r--)){
+            if(s.charAt(l++) != s.charAt(r--))
                 return false;
-            }
         }
         return true;
     }

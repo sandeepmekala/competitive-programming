@@ -30,8 +30,11 @@ public class _G03_MColoring {
         return graphColoring(adj, 0, colors, m);
     }
 
+    // Time: O(m^n)
+	// Space: O(n)
     private boolean graphColoring(HashMap<Integer, ArrayList<Integer>> adj, int node, int[] colors, int m){
-        if(node == adj.size()) return true;
+        if(node == adj.size()) 
+            return true;
 
         for(int i=1; i<=m; i++){
             if(isSafe(adj, node, colors, i)){
@@ -46,7 +49,8 @@ public class _G03_MColoring {
 
     private boolean isSafe(HashMap<Integer, ArrayList<Integer>> adj, int node, int[] colors, int col) {
         for(int neigh: adj.get(node)){
-            if(colors[neigh] == col) return false;
+            if(colors[neigh] == col) 
+                return false;
         }
         return true;
     }

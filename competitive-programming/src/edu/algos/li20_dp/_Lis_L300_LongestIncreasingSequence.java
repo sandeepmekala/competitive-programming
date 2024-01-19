@@ -35,6 +35,8 @@ public class _Lis_L300_LongestIncreasingSequence {
 	// Lis can be printed if we track the parent array if the cur lis gets updated.
 	// We can use binary search to create a new increasing temp array by inserting and overriding the elements in temp array to reduce the time complexity. 
 	// But that adds O(n) space. With this approach, we can't derive the the lis string.
+	// Time: O(n^2)
+    // Space: O(n)
 	public int lengthOfLIS(int[] nums) {
         int max = 0, n = nums.length;
         if(n == 1)
@@ -45,7 +47,7 @@ public class _Lis_L300_LongestIncreasingSequence {
 		
 		for(int i=1; i<n; i++) {
 			for(int j=0; j<i; j++) {
-				if(nums[j] < nums[i]) {
+				if(nums[i] > nums[j]) {
 					lis[i] = Math.max(lis[i], 1 + lis[j]);
 				}
 			}

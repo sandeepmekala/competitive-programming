@@ -34,6 +34,8 @@ public class _Strings_L5_LongestPolindromicSubstring {
 	 *
 	 * CHECK
 	 * */
+	// Time: O(n*n)
+    // Space: O(n*n)
 	public String longestPalindrome(String s) {
 		int n = s.length();
 		boolean[][] mem = new boolean[n][n];

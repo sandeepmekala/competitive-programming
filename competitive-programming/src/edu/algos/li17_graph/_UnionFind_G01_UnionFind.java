@@ -22,9 +22,9 @@ public class _UnionFind_G01_UnionFind {
 
 	// Path Compression: If the path is long like linked list, when it find the parent of lowest leaf node, it sets the same as parent to all the above parent nodes while recursion exit
     public int find(int node) {
-        if (node == parent.get(node)) {
+        if (node == parent.get(node)) 
             return node;
-        }
+        
         int par = find(parent.get(node));
         parent.set(node, par);
         return parent.get(node);
@@ -38,14 +38,15 @@ public class _UnionFind_G01_UnionFind {
         int srcParent = find(src);
         int destParent = find(dest);
         if (srcParent == destParent) return;
+
         if (rank.get(srcParent) < rank.get(destParent)) {
             parent.set(srcParent, destParent);
         } else if (rank.get(destParent) < rank.get(srcParent)) {
             parent.set(destParent, srcParent);
         } else {
             parent.set(destParent, srcParent);
-            int rankU = rank.get(srcParent);
-            rank.set(srcParent, rankU + 1);
+            int rankPar = rank.get(srcParent);
+            rank.set(srcParent, rankPar + 1);
         }
     }
 
@@ -53,6 +54,7 @@ public class _UnionFind_G01_UnionFind {
         int srcParent = find(src);
         int destParent = find(dest);
         if (srcParent == destParent) return;
+        
         if (size.get(srcParent) < size.get(destParent)) {
             parent.set(srcParent, destParent);
             size.set(destParent, size.get(destParent) + size.get(srcParent));

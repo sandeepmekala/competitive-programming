@@ -32,6 +32,8 @@ public class _Bfs_L133_CloneGraph {
         HashMap<Node, Node> map = new HashMap<Node, Node>();
         Queue<Node> queue = new LinkedList<Node>();
         queue.add(node);
+        Node newRoot = new Node(node.val);
+        map.put(node, newRoot);
         while(!queue.isEmpty()){    // bfs
             Node current = queue.remove();
             if(!map.containsKey(current)){      // acts as visited

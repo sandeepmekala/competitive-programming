@@ -25,6 +25,8 @@ public class _Bt_L145_BinaryTreePostorderTraversal {
 
     // Problem: https://leetcode.com/problems/binary-tree-postorder-traversal/
     // l-r-rt
+	// time: O(n)
+    // space: O(1)
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         postorderTraversal(root, list);
@@ -39,6 +41,8 @@ public class _Bt_L145_BinaryTreePostorderTraversal {
 		list.add(root.val);
     }
 
+	// time: O(n)
+    // space: O(1)
     public List<Integer> postorderIterativeTwoStacks(TreeNode root) {
 		if(root == null) 
 			return new ArrayList<>();
@@ -48,10 +52,13 @@ public class _Bt_L145_BinaryTreePostorderTraversal {
 		Stack<TreeNode> stack2 = new Stack<TreeNode>();
 		stack1.push(root);
 		while(!stack1.isEmpty()) {
-			TreeNode current = stack1.pop();
-			stack2.push(current);
-			if(current.left != null) stack1.push(current.left);
-			if(current.right != null) stack1.push(current.right);
+			TreeNode curr = stack1.pop();
+			stack2.push(curr);
+
+			if(curr.left != null) 
+				stack1.push(curr.left);
+			if(curr.right != null) 
+				stack1.push(curr.right);
 		}
 		
 		while(!stack2.isEmpty()) {
@@ -62,17 +69,18 @@ public class _Bt_L145_BinaryTreePostorderTraversal {
         return postorder;
 	}
 
+	// Similar, like inorder
 	public List<Integer> postorderIterativeOneStack(TreeNode root) {
 		if(root == null) 
 			return new ArrayList<Integer>();
 		
         List<Integer> postorder = new ArrayList<Integer>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
-		TreeNode current = root;
-		while(!stack.isEmpty() || current != null) {
-			if(current != null) {
-				stack.push(current);
-				current = current.left;
+		TreeNode curr = root;
+		while(!stack.isEmpty() || curr != null) {
+			if(curr != null) {
+				stack.push(curr);
+				curr = curr.left;
 			}else{
 				TreeNode right = stack.peek().right;
 				if(right == null) {
@@ -83,11 +91,9 @@ public class _Bt_L145_BinaryTreePostorderTraversal {
 						postorder.add(right.val);
 					}
 				}else {
-					current = right;
+					curr = right;
 				}
 			}
-			
-            
 		}
 
         return postorder;

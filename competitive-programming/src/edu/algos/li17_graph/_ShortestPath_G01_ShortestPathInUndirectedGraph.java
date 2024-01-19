@@ -33,14 +33,14 @@ public class _ShortestPath_G01_ShortestPathInUndirectedGraph {
 		queue.add(new int[]{src, 0});
 		visited.add(src);
 		while(!queue.isEmpty()) {
-			int[] current = queue.remove();
-			if(current[0] == dest) 
-				return current[1];
+			int[] curr = queue.remove();
+			if(curr[0] == dest) 
+				return curr[1];
 			
-			for(int neigh: g.adj.get(current[0])) {
+			for(int neigh: g.adj.get(curr[0])) {
 				if(!visited.contains(neigh)) {
 					visited.add(neigh);
-					queue.add(new int[]{neigh, current[1]+1});
+					queue.add(new int[]{neigh, curr[1]+1});
 				}
 			}
 		}

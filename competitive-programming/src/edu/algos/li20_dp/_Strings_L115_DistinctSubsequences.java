@@ -14,9 +14,12 @@ public class _Strings_L115_DistinctSubsequences {
 
 	// Problem: https://leetcode.com/problems/distinct-subsequences/
 	// Idea: If char at i, j matching, check T[i-1][j-1] and T[i-1][j]
-	// Else check T[i-1][j]
+	// 		 Else check T[i-1][j]
+	// Time: O(m*n)
+    // Space: O(m*n)
 	public int numDistinct(String s, String t) {
 		int m = s.length(), n = t.length();
+
 		int[][] ways = new int[m+1][n+1];
 		for(int i=0; i<=m; i++)
 			ways[i][0] = 1;

@@ -22,26 +22,30 @@ public class _ShortestPath_L1631_PathWithMinimumEffort {
             Arrays.fill(dist[i], Integer.MAX_VALUE);
 
         dist[0][0] = 0;
-        pq.add(new int[]{0, 0, 0}); // {dist, row, col}
+        pq.add(new int[]{0, 0, 0}); // {effort, row, col}
         while(!pq.isEmpty()){
-            int[] top = pq.remove();
-            int effort = top[0], row = top[1], col = top[2];
+            int[] curr = pq.remove();
+            int effort = curr[0], row = curr[1], col = curr[2];
             if(row == m-1 && col == n-1)
                 return effort;
 
             int[][] directions = new int[][]{{0,-1}, {-1, 0}, {0, 1}, {1, 0}};
-            for(int direction[]: directions){
-                int nrow = row+direction[0], ncol = col+direction[1];
-                if(nrow>=0 && nrow<m && ncol>=0 && ncol<n){
-                    int newEffort = Math.max(effort, Math.abs(heights[nrow][ncol] - heights[row][col]));
-                    if(newEffort < dist[nrow][ncol]){
-                        dist[nrow][ncol] = newEffort;
-                        pq.add(new int[]{newEffort, nrow,ncol});
+            for(int dir[]: directions){
+                int nrow = row+dir[0], ncol = col+dir[1];
+                if(isSafe(m, n, nrow, ncol)){
+                    int neffort = Math.max(effort, Math.abs(heights[nrow][ncol] - heights[row][col]));
+                    if(neffort < dist[nrow][ncol]){
+                        dist[nrow][ncol] = neffort;
+                        pq.add(new int[]{neffort, nrow,ncol});
                     }
                 }
             }
         }
 
         return 0;
+    }
+
+    private boolean isSafe(int m, int n, int nrow, int ncol) {
+        return nrow>=0 && nrow<m && ncol>=0 && ncol<n;
     }
 }

@@ -12,6 +12,8 @@ public class _Subsequence_L494_TargetSum {
     // s1 -(s2) = target
     // totalSum - s2 - s2 = target;
     // s2 = (totalSum - target)/2
+    // Time: O(n*tar)
+    // Space: O(n*tar)
     public int findTargetSumWays(int[] nums, int target) {
         return countPartitions(nums, target);
     }
@@ -40,11 +42,10 @@ public class _Subsequence_L494_TargetSum {
             sum[0][nums[0]] = 1; // 1 case -pick
         for (int i = 1; i < n; i++) {
             for (int j = 0; j <= target; j++) {
+                int notPick = sum[i - 1][j];
                 int pick = 0;
                 if (j - nums[i] >= 0)
                     pick = sum[i - 1][j - nums[i]];
-
-                int notPick = sum[i - 1][j];
 
                 sum[i][j] = pick + notPick;
             }

@@ -13,9 +13,9 @@ public class _L46_Permutations {
 	}
 
 	// Problem: https://leetcode.com/problems/permutations/
-	// Idea: Fix each position once swap each element to that position to generat permutations.
-	// Time complexity: O(n^n)
-	// Space complexity: O(1)
+	// Idea: Fix each position once swap each element to that position to generat permutations starting with that element.
+	// Time: O(n!)
+	// Space: O(1)
 	public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
         permute(nums, 0, result);

@@ -14,7 +14,9 @@ public class _Stocks_L123_BestTimeToBuyAndSellStockIII {
     // Idea: Same as stocksII problem, there is additional dimention of cap is added.
     // Once sell counted as transaction complete. Hence, cap can be reduced for sale transaction.
     // The same can be solved using transaction numbers 0,1,2,3 -> 1buy, 1sell, 2buy, 2sell
-    public int maxProfit(int[] prices) {
+    // Time: O(n*2*2)
+    // Space: O(n*2*2)
+	public int maxProfit(int[] prices) {
 		int n = prices.length;
 
 		int[][][] profits = new int[n+1][2][3];
@@ -38,17 +40,17 @@ public class _Stocks_L123_BestTimeToBuyAndSellStockIII {
 		return profits[0][1][2];
 	}
 
-	public int maxProfit(int[] prices, int i, int isBuy, int cap) {
+	public int maxProfit(int[] prices, int ind, int isBuy, int cap) {
 		int n = prices.length;
-		if (i == n || cap == 0)
+		if (ind == n || cap == 0)
 			return 0;           // selling once market close and when you are out of transaction, gives sell 0 price
 		if (isBuy == 1) {
-			int buy = -prices[i] + maxProfit(prices, i + 1, 0, cap);
-			int notBuy = 0 + maxProfit(prices, i + 1, 1, cap);
+			int buy = -prices[ind] + maxProfit(prices, ind + 1, 0, cap);
+			int notBuy = 0 + maxProfit(prices, ind + 1, 1, cap);
 			return Math.max(buy, notBuy);
 		} else {
-			int sell = prices[i] + maxProfit(prices, i + 1, 1, cap-1);
-			int notSell = 0 + maxProfit(prices, i + 1, 0, cap);
+			int sell = prices[ind] + maxProfit(prices, ind + 1, 1, cap-1);
+			int notSell = 0 + maxProfit(prices, ind + 1, 0, cap);
 			return Math.max(sell, notSell);
 		}
 	}

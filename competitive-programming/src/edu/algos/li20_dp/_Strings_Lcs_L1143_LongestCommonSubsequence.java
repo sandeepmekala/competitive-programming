@@ -18,12 +18,14 @@ public class _Strings_Lcs_L1143_LongestCommonSubsequence {
 	 * 
 	 * */
 	// Problem: https://leetcode.com/problems/longest-common-subsequence/
-	// Idea: if char match, add 1 and check for the rest of the substrings excluding that char
+	// Idea: If char match, add 1 and check for the rest of the substrings excluding that char
 	// else, take the max of exclusion of the char1 in str1 and exclusion of char2 in str2
 	// m and n defines the state
-	// time: O(m*n) where m=len(str1) amd n=len(str2);
+	// Time: O(m*n)
+    // Space: O(m*n)
 	public int longestCommonSubsequence(String text1, String text2) {
 		int m=text1.length(), n=text2.length();
+
 		int lcs[][] = new int[m+1][n+1];
 		for(int i=1; i<=m; i++) {
 			for(int j=1; j<=n; j++) {
@@ -56,11 +58,11 @@ public class _Strings_Lcs_L1143_LongestCommonSubsequence {
 		StringBuffer sb = new StringBuffer();
 		sb.setLength(len);
 
-		int i=m, j=n, index = len-1;
+		int i=m, j=n, ind=len-1;
 		while(i>0 && j>0){
 			if(text1.charAt(i-1) == text2.charAt(j-1)){
-				sb.insert(index, text1.charAt(i-1));
-				index--;
+				sb.insert(ind, text1.charAt(i-1));
+				ind--;
 				i--;
 				j--;
 			}else if(lcs[i-1][j] > lcs[i][j-1]){

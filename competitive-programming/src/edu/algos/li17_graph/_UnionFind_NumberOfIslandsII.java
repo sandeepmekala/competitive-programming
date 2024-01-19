@@ -21,8 +21,11 @@ public class _UnionFind_NumberOfIslandsII {
         System.out.println("");
     }
 
+    // Problem: https://leetcode.com/problems/number-of-islands-ii/
+    // https://www.lintcode.com/problem/434/
     public List<Integer> numOfIslands(int m, int n, int[][] operators) {
         uf.makeSet(m * n);
+
         int[][] visited = new int[m][n];
         int count = 0;
         List<Integer> ans = new ArrayList<>();
@@ -30,20 +33,21 @@ public class _UnionFind_NumberOfIslandsII {
         for (int i = 0; i < len ; i++) {
             int row = operators[i][0], col = operators[i][1];
             if (visited[row][col] == 1) {
-                ans.add(count);
+                ans.add(count); 
                 continue;
             }
+
             visited[row][col] = 1;
             count++;
             int dr[] = { -1, 0, 1, 0};
             int dc[] = {0, 1, 0, -1};
             for (int ind = 0; ind < 4; ind++) {
-                int adjr = row + dr[ind];
-                int adjc = col + dc[ind];
-                if (isValid(adjr, adjc, m, n)) {
-                    if (visited[adjr][adjc] == 1) {     // check if it is island
+                int nrow = row + dr[ind];
+                int ncol = col + dc[ind];
+                if (isSafe(nrow, ncol, m, n)) {
+                    if (visited[nrow][ncol] == 1) {     // check if it is island
                         int nodeNo = row * n + col;
-                        int adjNodeNo = adjr * n + adjc;
+                        int adjNodeNo = nrow * n + ncol;
                         if (uf.find(nodeNo) != uf.find(adjNodeNo)) {
                             count--;
                             uf.unionByRank(nodeNo, adjNodeNo);
@@ -56,7 +60,7 @@ public class _UnionFind_NumberOfIslandsII {
         return ans;
     }
 
-    private boolean isValid(int adjr, int adjc, int n, int m) {
-        return adjr >= 0 && adjr < n && adjc >= 0 && adjc < m;
+    private boolean isSafe(int nrow, int ncol, int m, int n) {
+        return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n;
     }
 }
