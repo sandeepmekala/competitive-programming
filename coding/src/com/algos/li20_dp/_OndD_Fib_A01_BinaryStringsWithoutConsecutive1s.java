@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _OndD_Fib_A01_BinaryStringsWithoutConsecutive1s {
 

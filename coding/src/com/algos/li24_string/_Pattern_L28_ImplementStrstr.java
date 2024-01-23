@@ -1,4 +1,4 @@
-package edu.algos.li24_string;
+package  com.algos.li24_string;
 
 public class _Pattern_L28_ImplementStrstr {
 

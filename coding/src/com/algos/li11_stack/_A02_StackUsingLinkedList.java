@@ -1,6 +1,6 @@
-package edu.algos.li11_stack;
+package  com.algos.li11_stack;
 
-import edu.algos.li30_model.ListNode;
+import  com.algos.li30_model.ListNode;
 
 public class _A02_StackUsingLinkedList {
 

@@ -1,4 +1,4 @@
-package edu.algos.li30_model;
+package  com.algos.li30_model;
 
 public class Subset {
 	public int val;

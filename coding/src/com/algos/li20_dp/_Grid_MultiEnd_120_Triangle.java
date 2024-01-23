@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 import java.util.ArrayList;
 import java.util.Arrays;

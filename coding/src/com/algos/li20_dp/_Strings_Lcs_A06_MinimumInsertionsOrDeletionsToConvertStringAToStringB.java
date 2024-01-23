@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _Strings_Lcs_A06_MinimumInsertionsOrDeletionsToConvertStringAToStringB {
     public static void main(String[] args) {

@@ -1,11 +1,11 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import edu.algos.li30_model.TreeNode;
+import  com.algos.li30_model.TreeNode;
 
 
 public class _Bt_L102_BinaryTreeLevelOrderTraversal {

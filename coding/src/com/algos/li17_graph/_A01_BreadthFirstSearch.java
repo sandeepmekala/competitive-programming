@@ -1,11 +1,11 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _A01_BreadthFirstSearch {
 

@@ -1,4 +1,4 @@
-package edu.java.java8.li02.functionalInterface;
+package com.java.java8.li02.functionalInterface;
 
 import java.util.Comparator;
 import java.util.Optional;
@@ -112,7 +112,7 @@ public class FunctionInterface implements sayable {
 		// Built-in Functional Interfaces ----------------------------------
 	}
 
-	class Person {
+	static class Person {
 		private String firstName;
 		private String lastName;
 
@@ -122,7 +122,7 @@ public class FunctionInterface implements sayable {
 		Person(String firstName) {
 			this.firstName = firstName;
 		}
-		Person(String firstName, String lastName) {
+		public  Person(String firstName, String lastName) {
 			this.firstName = firstName;
 			this.lastName = lastName;
 		}

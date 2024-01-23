@@ -1,6 +1,6 @@
-package edu.algos.li23_math;
+package  com.algos.li23_math;
 
-import edu.algos.li30_model.Point;
+import  com.algos.li30_model.Point;
 
 public class Geometry_G00_GeometricUtil {
 	// Problem: https://www.geeksforgeeks.org/orientation-3-ordered-points/

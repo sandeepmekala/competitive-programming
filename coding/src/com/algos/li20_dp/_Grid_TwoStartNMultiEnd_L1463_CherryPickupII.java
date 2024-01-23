@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _Grid_TwoStartNMultiEnd_L1463_CherryPickupII {
     public static void main(String args[]){

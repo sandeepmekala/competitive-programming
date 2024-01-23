@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _Strings_Lcs_L1092_ShortestCommonSupersequence {
     public static void main(String[] args) {

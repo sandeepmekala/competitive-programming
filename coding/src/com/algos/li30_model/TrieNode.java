@@ -1,4 +1,4 @@
-package edu.algos.li30_model;
+package  com.algos.li30_model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

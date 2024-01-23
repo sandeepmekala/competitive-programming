@@ -1,9 +1,9 @@
-package edu.algos.li03_interval;
+package  com.algos.li03_interval;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import edu.algos.li30_model.Interval;
+import  com.algos.li30_model.Interval;
 
 public class _G01_NMeetingsInOneRoom {
     public static void main(String args[]) {

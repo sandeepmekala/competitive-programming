@@ -1,4 +1,4 @@
-package edu.algos.li04_slidingwindow;
+package  com.algos.li04_slidingwindow;
 
 public class L209_MinimumSizeSubarraySum {
 

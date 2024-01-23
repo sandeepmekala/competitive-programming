@@ -1,4 +1,4 @@
-package edu.algos.li03_interval;
+package  com.algos.li03_interval;
 
 import java.util.Arrays;
 

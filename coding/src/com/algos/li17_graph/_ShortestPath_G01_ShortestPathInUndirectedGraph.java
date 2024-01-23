@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _ShortestPath_G01_ShortestPathInUndirectedGraph {
 

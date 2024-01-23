@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _TopoSort_G03_TopologicalSorting {
 

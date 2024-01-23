@@ -1,8 +1,8 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.Arrays;
 
-import edu.algos.li30_model.GraphMatrix;
+import  com.algos.li30_model.GraphMatrix;
 
 public class _AllPairShartedPath_G01_FloydWarshall {
 

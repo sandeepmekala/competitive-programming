@@ -1,4 +1,4 @@
-package edu.algos.li30_model;
+package  com.algos.li30_model;
 
 public class Edge implements Comparable<Edge>{
 	public int src;

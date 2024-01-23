@@ -1,8 +1,8 @@
-package edu.algos.li14_linkedlist;
+package  com.algos.li14_linkedlist;
 
 import java.util.HashMap;
 
-import edu.algos.li30_model.Node;
+import  com.algos.li30_model.Node;
 
 public class _L138_CopyListWithRandomPointer {
 

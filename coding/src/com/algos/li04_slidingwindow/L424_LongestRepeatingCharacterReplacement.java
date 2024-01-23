@@ -1,4 +1,4 @@
-package edu.algos.li04_slidingwindow;
+package  com.algos.li04_slidingwindow;
 
 import java.util.Collections;
 import java.util.HashMap;

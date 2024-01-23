@@ -1,4 +1,4 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import edu.algos.li00_model.TreeNode;
+import  com.algos.li30_model.TreeNode;
 
 public class _Bt_View_TopViewOfBinaryTree {
     public static void main(String[] args) {
@@ -27,10 +27,10 @@ public class _Bt_View_TopViewOfBinaryTree {
     // space: O(1)
     public List<Integer> topView(TreeNode root){
         Map<Integer, Integer> map = new TreeMap<>();
-        Queue<Pair> q = new LinkedList<>();
-        q.add(new Pair(root, 0));
+        Queue<Pair5> q = new LinkedList<>();
+        q.add(new Pair5(root, 0));
         while(!q.isEmpty()){
-            Pair pair = q.remove();
+            Pair5 pair = q.remove();
             TreeNode node = pair.node;
             int col = pair.col;
 
@@ -38,9 +38,9 @@ public class _Bt_View_TopViewOfBinaryTree {
                 map.put(col, node.val);
 
             if(node.left !=  null) 
-                q.add(new Pair(node.left, col-1));
+                q.add(new Pair5(node.left, col-1));
             if(node.right !=  null) 
-                q.add(new Pair(node.right, col+1));
+                q.add(new Pair5(node.right, col+1));
         }
         List<Integer> ans = new ArrayList<>();
         for(Integer val: map.values()){
@@ -49,10 +49,10 @@ public class _Bt_View_TopViewOfBinaryTree {
         return ans;
     }
 }
-class Pair{
+class Pair5{
     TreeNode node;
     int col;
-    public Pair(TreeNode node, int col) {
+    public Pair5(TreeNode node, int col) {
         this.node = node;
         this.col = col;
     }

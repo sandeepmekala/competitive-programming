@@ -1,4 +1,4 @@
-package edu.java.java8.li03.methodReference;
+package com.java.java8.li03.methodReference;
 
 interface Sayable {
     void say();

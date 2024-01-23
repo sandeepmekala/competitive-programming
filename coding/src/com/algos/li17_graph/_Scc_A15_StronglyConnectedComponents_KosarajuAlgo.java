@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _Scc_A15_StronglyConnectedComponents_KosarajuAlgo {
 

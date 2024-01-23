@@ -1,4 +1,4 @@
-package edu.algos.li24_string;
+package  com.algos.li24_string;
 
 public class L168_ExcelSheetColumnTitle {
 

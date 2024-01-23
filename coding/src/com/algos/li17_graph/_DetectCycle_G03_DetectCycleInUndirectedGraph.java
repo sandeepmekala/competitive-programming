@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,8 +6,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import edu.algos.li30_model.Edge;
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.Edge;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _DetectCycle_G03_DetectCycleInUndirectedGraph {
 

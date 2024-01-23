@@ -1,4 +1,4 @@
-package edu.algos.li02_hashing;
+package  com.algos.li02_hashing;
 
 public class A01_LargestSubarrayWithZeroSum {
     public static void main(String[] args) {

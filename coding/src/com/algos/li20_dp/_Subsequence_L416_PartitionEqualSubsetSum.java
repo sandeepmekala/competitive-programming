@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _Subsequence_L416_PartitionEqualSubsetSum {
 

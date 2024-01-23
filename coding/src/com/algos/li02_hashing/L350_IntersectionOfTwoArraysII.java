@@ -1,4 +1,4 @@
-package edu.algos.li02_hashing;
+package  com.algos.li02_hashing;
 
 import java.util.ArrayList;
 import java.util.Arrays;

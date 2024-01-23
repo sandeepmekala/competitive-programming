@@ -1,4 +1,4 @@
-package edu.algos.li07_divandcon;
+package  com.algos.li07_divandcon;
 
 import java.util.ArrayList;
 

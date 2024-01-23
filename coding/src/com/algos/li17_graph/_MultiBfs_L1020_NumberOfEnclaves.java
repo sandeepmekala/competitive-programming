@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -21,14 +21,14 @@ public class _MultiBfs_L1020_NumberOfEnclaves {
     public int numEnclaves(int[][] grid) {
         int m = grid.length, n = grid[0].length; 
 
-        Queue<Pair> q = new LinkedList<Pair>();
+        Queue<Pair3> q = new LinkedList<Pair3>();
         int visited[][] = new int[m][n];
         for(int i = 0;i<m;i++) {
             for(int j = 0;j<n;j++) {
                 if(i == 0 || j == 0 || i == m-1 || j == n-1) {
                     if(grid[i][j] == 1 && visited[i][j] == 0) {
                         visited[i][j] = 1; 
-                        q.add(new Pair(i, j)); 
+                        q.add(new Pair3(i, j)); 
                     }
                 }
             }
@@ -37,7 +37,7 @@ public class _MultiBfs_L1020_NumberOfEnclaves {
         int drow[] = {-1, 0, +1, 0};
         int dcol[] = {0, +1, +0, -1}; 
         while(!q.isEmpty()) {
-            Pair curr = q.remove(); 
+            Pair3 curr = q.remove(); 
             int row = curr.row; 
             int col = curr.col; 
             
@@ -46,7 +46,7 @@ public class _MultiBfs_L1020_NumberOfEnclaves {
                 int ncol = col + dcol[i]; 
                 if(isSafe(grid, m, n, visited, nrow, ncol)) {
                     visited[nrow][ncol] = 1; 
-                    q.add(new Pair(nrow, ncol));
+                    q.add(new Pair3(nrow, ncol));
                 }
             }
         }
@@ -65,10 +65,10 @@ public class _MultiBfs_L1020_NumberOfEnclaves {
                 && visited[nrow][ncol] == 0 && grid[nrow][ncol] == 1;
     }
 }
-class Pair {
+class Pair3 {
     int row;
     int col; 
-    public Pair(int first, int second) {
+    public Pair3(int first, int second) {
         this.row = first; 
         this.col = second; 
     }

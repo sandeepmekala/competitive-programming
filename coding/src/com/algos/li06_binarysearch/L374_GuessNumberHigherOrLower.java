@@ -1,4 +1,4 @@
-package edu.algos.li06_binarysearch;
+package  com.algos.li06_binarysearch;
 
 public class L374_GuessNumberHigherOrLower {
 

@@ -1,4 +1,4 @@
-package edu.algos.li19_backtracking;
+package  com.algos.li19_backtracking;
 
 public class _L79_WordSearch {
 

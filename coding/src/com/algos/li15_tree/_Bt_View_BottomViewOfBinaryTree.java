@@ -1,4 +1,4 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import edu.algos.li30_model.TreeNode;
+import  com.algos.li30_model.TreeNode;
 
 public class _Bt_View_BottomViewOfBinaryTree {
     public static void main(String[] args) {

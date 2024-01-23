@@ -1,9 +1,9 @@
-package edu.algos.li11_stack;
+package  com.algos.li11_stack;
 
 import java.util.Stack;
 
-import edu.algos.li14_linkedlist._G01_SingleLinkedList;
-import edu.algos.li30_model.ListNode;
+import  com.algos.li14_linkedlist._G01_SingleLinkedList;
+import  com.algos.li30_model.ListNode;
 
 public class _A04_ReverseLinkedListUsingStack {
 

@@ -1,9 +1,9 @@
-package edu.algos.li21_design;
+package  com.algos.li21_design;
 
 import java.util.LinkedList;
 import java.util.List;
 
-import edu.algos.li30_model.Pair;
+import  com.algos.li30_model.Pair;
 
 public class DesignHashmap {
 

@@ -1,4 +1,4 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import edu.algos.li00_model.TreeNode;
+import  com.algos.li30_model.TreeNode;
 
 public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
     public static void main(String[] args) {
@@ -29,10 +29,10 @@ public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
     // space: O(n)
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
-        Queue<Tuple> q = new LinkedList<>();
-        q.add(new Tuple(root, 0, 0));
+        Queue<Tuple2> q = new LinkedList<>();
+        q.add(new Tuple2(root, 0, 0));
         while(!q.isEmpty()){
-            Tuple tuple = q.remove();
+            Tuple2 tuple = q.remove();
             TreeNode node = tuple.node;
             int row = tuple.row, col = tuple.col;
             
@@ -43,9 +43,9 @@ public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
             map.get(col).get(row).add(node.val);
 
             if(node.left != null) 
-                q.add(new Tuple(node.left, row+1, col-1));
+                q.add(new Tuple2(node.left, row+1, col-1));
             if(node.right != null) 
-                q.add(new Tuple(node.right, row+1, col+1));
+                q.add(new Tuple2(node.right, row+1, col+1));
         }
 
         List<List<Integer>> ans = new ArrayList<>();
@@ -62,11 +62,11 @@ public class _Bt_L987_VerticalOrderTraversalOfABinaryTree {
     }
 }
 
-class Tuple{
+class Tuple2{
     public TreeNode node;
     public int row;
     public int col;
-    public Tuple(TreeNode node, int row, int col) {
+    public Tuple2(TreeNode node, int row, int col) {
         this.node = node;
         this.row = row;
         this.col = col;

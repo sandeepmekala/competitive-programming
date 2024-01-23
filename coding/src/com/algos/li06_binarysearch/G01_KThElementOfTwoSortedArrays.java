@@ -1,4 +1,4 @@
-package edu.algos.li06_binarysearch;
+package  com.algos.li06_binarysearch;
 
 public class G01_KThElementOfTwoSortedArrays {
     public static void main(String args[]) {

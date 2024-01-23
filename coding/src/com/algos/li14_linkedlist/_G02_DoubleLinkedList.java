@@ -1,6 +1,6 @@
-package edu.algos.li14_linkedlist;
+package com.algos.li14_linkedlist;
 
-import edu.algos.li30_model.ListNode;
+import com.algos.li30_model.ListNode;
 
 public class _G02_DoubleLinkedList {
 	private ListNode head;

@@ -1,4 +1,4 @@
-package edu.algos.li23_math;
+package  com.algos.li23_math;
 
 public class L9_PalindromeNumber {
 

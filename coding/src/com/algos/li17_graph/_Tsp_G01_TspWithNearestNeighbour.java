@@ -1,10 +1,10 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import edu.algos.li30_model.GraphMatrix;
+import  com.algos.li30_model.GraphMatrix;
 
 public class _Tsp_G01_TspWithNearestNeighbour {
 

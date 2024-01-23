@@ -1,8 +1,8 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.HashSet;
 
-import edu.algos.li30_model.GraphAdjLst;
+import  com.algos.li30_model.GraphAdjLst;
 
 public class _Dfs_L323_NumberOfConnectedComponentsInAnUndirectedGraph {
 

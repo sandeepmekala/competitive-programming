@@ -1,4 +1,4 @@
-package edu.algos.li25_greedy;
+package  com.algos.li25_greedy;
 
 import java.util.HashSet;
 

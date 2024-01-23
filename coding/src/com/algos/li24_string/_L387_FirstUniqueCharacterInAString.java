@@ -1,4 +1,4 @@
-package edu.algos.li24_string;
+package  com.algos.li24_string;
 import java.util.LinkedHashMap;
 import java.util.Map;
 

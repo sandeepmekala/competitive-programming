@@ -1,4 +1,4 @@
-package edu.algos.li11_stack;
+package  com.algos.li11_stack;
 
 import java.util.Stack;
 

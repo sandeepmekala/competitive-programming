@@ -1,6 +1,6 @@
-package edu.algos.li16_trie;
+package  com.algos.li16_trie;
 
-import edu.algos.li00_model.TrieNode;
+import  com.algos.li30_model.TrieNode;
 
 public class _L421_MaximumXorOfTwoNumbersInAnArray {
     public static void main(String[] args) {
@@ -14,7 +14,7 @@ public class _L421_MaximumXorOfTwoNumbersInAnArray {
     // Idea: Build a trie of all numbers bit from MSB to LSB.
     // For number x, trie to find the oposite bit at every position to maximize the xor. If not possible, go with what ever is possible at that level.
     public int findMaximumXOR(int[] nums) {
-        Trie trie = new Trie();
+        Trie2 trie = new Trie2();
         for(int num: nums){
             trie.insert(num);
         }
@@ -27,9 +27,9 @@ public class _L421_MaximumXorOfTwoNumbersInAnArray {
     }
 }
 
-class Trie{
+class Trie2{
     TrieNode root;
-    Trie(){
+    Trie2(){
         root = new TrieNode();
     }
 

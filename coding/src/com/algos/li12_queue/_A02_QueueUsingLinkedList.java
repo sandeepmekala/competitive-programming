@@ -1,6 +1,6 @@
-package edu.algos.li12_queue;
+package  com.algos.li12_queue;
 
-import edu.algos.li30_model.ListNode;
+import  com.algos.li30_model.ListNode;
 
 public class _A02_QueueUsingLinkedList {
 

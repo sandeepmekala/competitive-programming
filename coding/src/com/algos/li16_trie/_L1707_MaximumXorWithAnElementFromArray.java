@@ -1,10 +1,10 @@
-package edu.algos.li16_trie;
+package  com.algos.li16_trie;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import edu.algos.li30_model.TrieNode;
+import  com.algos.li30_model.TrieNode;
 
 public class _L1707_MaximumXorWithAnElementFromArray {
     public static void main(String args[]){

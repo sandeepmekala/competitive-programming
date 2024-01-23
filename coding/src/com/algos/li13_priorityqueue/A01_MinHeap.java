@@ -1,4 +1,4 @@
-package edu.algos.li13_priorityqueue;
+package  com.algos.li13_priorityqueue;
 
 public class A01_MinHeap {
 

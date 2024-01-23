@@ -1,4 +1,4 @@
-package edu.algos.li23_math;
+package  com.algos.li23_math;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
 import java.util.Arrays;
 

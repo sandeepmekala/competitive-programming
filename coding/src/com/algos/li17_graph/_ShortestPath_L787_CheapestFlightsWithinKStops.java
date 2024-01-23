@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,13 +50,13 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
     // The same can be solved using Dijkstra's algorithm also by prioratizing the k over dist
     // This will boils down to applying simple BFS.
     public int CheapestFLight(int n,int flights[][],int src,int dst,int k) {
-        ArrayList<ArrayList<Pair>> adj = new ArrayList<>(); 
+        ArrayList<ArrayList<Pair4>> adj = new ArrayList<>(); 
         for(int i = 0;i<n;i++) 
             adj.add(new ArrayList<>()); 
         
         int m = flights.length; 
         for(int i=0; i<m; i++) {
-            adj.get(flights[i][0]).add(new Pair(flights[i][1], flights[i][2])); 
+            adj.get(flights[i][0]).add(new Pair4(flights[i][1], flights[i][2])); 
         }
         
         Queue<Tuple> q = new LinkedList<>(); 
@@ -74,7 +74,7 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
             // We stop the process as soon as the limit for the stops reaches.
             if(stops > k) continue; 
             
-            for(Pair it: adj.get(station)) {
+            for(Pair4 it: adj.get(station)) {
                 int neigh = it.airport; 
                 int edgeWeight = it.cost; 
                 
@@ -90,10 +90,10 @@ public class _ShortestPath_L787_CheapestFlightsWithinKStops {
         return dist[dst]; 
     }
 }
-class Pair{
+class Pair4{
     int airport;
     int cost;
-    public Pair(int node,int cost){
+    public Pair4(int node,int cost){
         this.airport = node;
         this.cost = cost;
     }

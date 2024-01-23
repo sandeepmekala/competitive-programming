@@ -1,4 +1,4 @@
-package edu.algos.li22_bit;
+package  com.algos.li22_bit;
 
 public class A02_NumbersRepeating3TimesAndOneOddOne {
 	public static void main(String[] args) {

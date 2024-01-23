@@ -1,4 +1,4 @@
-package edu.algos.li20_dp;
+package  com.algos.li20_dp;
 
 public class _Squares_L1139_Largest1BorderedSquare {
 	public static void main(String[] args) {

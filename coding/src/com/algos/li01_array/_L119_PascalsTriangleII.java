@@ -1,4 +1,4 @@
-package edu.algos.li01_array;
+package  com.algos.li01_array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

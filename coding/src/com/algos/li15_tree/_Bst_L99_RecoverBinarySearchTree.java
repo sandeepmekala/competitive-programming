@@ -1,6 +1,6 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
-import edu.algos.li30_model.TreeNode;
+import  com.algos.li30_model.TreeNode;
 
 public class _Bst_L99_RecoverBinarySearchTree {
     public static void main(String[] args) {

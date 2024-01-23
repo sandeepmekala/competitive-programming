@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 public class _UnionFind_L1319_NumberOfOperationsToMakeNetworkConnected {
 

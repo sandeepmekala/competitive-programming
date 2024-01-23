@@ -1,4 +1,4 @@
-package edu.algos.li06_binarysearch;
+package  com.algos.li06_binarysearch;
 
 import java.util.ArrayList;
 import java.util.Arrays;

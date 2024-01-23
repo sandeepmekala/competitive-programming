@@ -1,4 +1,4 @@
-package edu.algos.li22_bit;
+package  com.algos.li22_bit;
 
 public class L7_ReverseInteger {
 

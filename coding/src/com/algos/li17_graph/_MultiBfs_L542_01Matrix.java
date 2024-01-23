@@ -1,4 +1,4 @@
-package edu.algos.li17_graph;
+package  com.algos.li17_graph;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -25,11 +25,11 @@ public class _MultiBfs_L542_01Matrix {
         int[][] visited = new int[m][n];
         int[][] dist = new int[m][n];
         
-        Queue<Node> q = new LinkedList<Node>();
+        Queue<Node2> q = new LinkedList<Node2>();
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 if (mat[i][j] == 0) {
-                    q.add(new Node(i, j, 0));
+                    q.add(new Node2(i, j, 0));
                     visited[i][j] = 1;
                 }
             }
@@ -38,7 +38,7 @@ public class _MultiBfs_L542_01Matrix {
         int dr[] = { -1, 0, +1, 0 };
         int dc[] = { 0, +1, 0, -1 };
         while (!q.isEmpty()) {
-            Node node = q.remove();
+            Node2 node = q.remove();
             int row = node.first, col = node.second, steps = node.third;
             dist[row][col] = steps;
 
@@ -47,7 +47,7 @@ public class _MultiBfs_L542_01Matrix {
                 int ncol = col + dc[i];
                 if (isSafe(m, n, visited, nrow, ncol)) {
                     visited[nrow][ncol] = 1;
-                    q.add(new Node(nrow, ncol, steps + 1));
+                    q.add(new Node2(nrow, ncol, steps + 1));
                 }
             }
         }
@@ -61,12 +61,12 @@ public class _MultiBfs_L542_01Matrix {
     }
 }
 
-class Node {
+class Node2 {
     int first;
     int second;
     int third;
 
-    Node(int _first, int _second, int _third) {
+    Node2(int _first, int _second, int _third) {
         this.first = _first;
         this.second = _second;
         this.third = _third;

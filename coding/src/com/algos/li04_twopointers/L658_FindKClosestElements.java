@@ -1,4 +1,4 @@
-package edu.algos.li04_twopointers;
+package  com.algos.li04_twopointers;
 
 import java.util.ArrayList;
 import java.util.List;

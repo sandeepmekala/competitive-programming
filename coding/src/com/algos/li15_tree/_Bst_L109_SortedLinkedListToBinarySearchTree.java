@@ -1,7 +1,7 @@
-package edu.algos.li15_tree;
+package  com.algos.li15_tree;
 
-import edu.algos.li14_linkedlist._G01_SingleLinkedList;
-import edu.algos.li30_model.TreeNode;
+import  com.algos.li14_linkedlist._G01_SingleLinkedList;
+import  com.algos.li30_model.TreeNode;
 
 public class _Bst_L109_SortedLinkedListToBinarySearchTree {
 

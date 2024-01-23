@@ -1,4 +1,4 @@
-package edu.algos.li25_sort;
+package  com.algos.li25_sort;
 
 import java.util.Arrays;
 import java.util.Random;

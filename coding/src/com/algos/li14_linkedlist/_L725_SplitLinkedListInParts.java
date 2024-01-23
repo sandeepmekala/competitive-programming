@@ -1,8 +1,8 @@
-package edu.algos.li14_linkedlist;
+package  com.algos.li14_linkedlist;
 
 import java.util.Arrays;
 
-import edu.algos.li30_model.ListNode;
+import  com.algos.li30_model.ListNode;
 
 public class _L725_SplitLinkedListInParts {
 

@@ -1,4 +1,4 @@
-package edu.algos.li04_twopointers;
+package  com.algos.li04_twopointers;
 
 public class L42_TrappingRainWater {
 

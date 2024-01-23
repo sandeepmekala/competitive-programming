@@ -1,4 +1,4 @@
-package edu.algos.li25_greedy;
+package  com.algos.li25_greedy;
 
 public class L55_JumpGame {
 

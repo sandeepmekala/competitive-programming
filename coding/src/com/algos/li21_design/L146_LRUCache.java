@@ -1,4 +1,4 @@
-package edu.algos.li21_design;
+package  com.algos.li21_design;
 
 import java.util.HashMap;
 import java.util.Map;

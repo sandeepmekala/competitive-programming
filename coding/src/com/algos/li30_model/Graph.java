@@ -1,5 +1,5 @@
-package edu.algos.li30_model;
-//package edu.algos.model;
+package  com.algos.li30_model;
+//package  com.algos.model;
 //
 //import java.util.ArrayList;
 //import java.util.HashSet;
