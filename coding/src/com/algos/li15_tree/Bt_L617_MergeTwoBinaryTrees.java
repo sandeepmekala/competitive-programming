@@ -7,7 +7,7 @@ public class Bt_L617_MergeTwoBinaryTrees {
 	public static void main(String[] args) {
 		Bt_L617_MergeTwoBinaryTrees obj = new Bt_L617_MergeTwoBinaryTrees();
 		
-		_Bst_L701_InsertIntoABinarySearchTree bst1 = new _Bst_L701_InsertIntoABinarySearchTree();
+		Bst_L701_InsertIntoABinarySearchTree bst1 = new Bst_L701_InsertIntoABinarySearchTree();
 		TreeNode root1 = bst1.insertIntoBST(null, 10);
 		bst1.insertIntoBST(root1, 2);
 		bst1.insertIntoBST(root1, 4);
@@ -16,7 +16,7 @@ public class Bt_L617_MergeTwoBinaryTrees {
 		bst1.insertIntoBST(root1, 15);
 		bst1.insertIntoBST(root1, 3);
 		
-		_Bst_L701_InsertIntoABinarySearchTree bst2 = new _Bst_L701_InsertIntoABinarySearchTree();
+		Bst_L701_InsertIntoABinarySearchTree bst2 = new Bst_L701_InsertIntoABinarySearchTree();
 		TreeNode root2 = bst2.insertIntoBST(null, 10);
 		bst2.insertIntoBST(root2, 2);
 		bst2.insertIntoBST(root2, 4);
