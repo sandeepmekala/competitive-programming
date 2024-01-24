@@ -1,6 +1,6 @@
 package  com.algos.li15_tree;
 
-import  com.algos.li14_linkedlist._G01_SingleLinkedList;
+import  com.algos.li14_linkedlist.G01_SingleLinkedList;
 import  com.algos.li30_model.TreeNode;
 
 public class _Bst_L109_SortedLinkedListToBinarySearchTree {
@@ -8,7 +8,7 @@ public class _Bst_L109_SortedLinkedListToBinarySearchTree {
 	public static void main(String[] args) {
 		_Bst_L109_SortedLinkedListToBinarySearchTree obj = new _Bst_L109_SortedLinkedListToBinarySearchTree();
 
-		_G01_SingleLinkedList list = new _G01_SingleLinkedList();
+		G01_SingleLinkedList list = new G01_SingleLinkedList();
 		_Bst_L701_InsertIntoABinarySearchTree bst = new _Bst_L701_InsertIntoABinarySearchTree();
 
 		list.insertAtBegining(7);
@@ -35,7 +35,7 @@ public class _Bst_L109_SortedLinkedListToBinarySearchTree {
 	 * We have to pass n. This helps us in building the tree in recursive way by splitting the elements in halfs.
 	 * 
 	 * */
-	public TreeNode sortedListToBst(_G01_SingleLinkedList list, int n) {
+	public TreeNode sortedListToBst(G01_SingleLinkedList list, int n) {
 		if (n <= 0)
 			return null;
 
