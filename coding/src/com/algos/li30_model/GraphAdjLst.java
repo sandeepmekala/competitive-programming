@@ -10,16 +10,16 @@ public class GraphAdjLst {
 		adj = new HashMap<>();
 	}
 
-	public void addEdge(int v, int w) {
+	public void addEdge(int u, int v) {
+		if(!adj.containsKey(u)) {
+			adj.put(u, new ArrayList<Integer>());
+		}
+		
 		if(!adj.containsKey(v)) {
 			adj.put(v, new ArrayList<Integer>());
 		}
 		
-		if(!adj.containsKey(w)) {
-			adj.put(w, new ArrayList<Integer>());
-		}
-		
-		adj.get(v).add(w);
+		adj.get(u).add(v);
 	}
 
 
