@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L1290_ConvertBinaryNumberInALinkedListToInteger {
@@ -9,9 +8,9 @@ public class L1290_ConvertBinaryNumberInALinkedListToInteger {
 		L1290_ConvertBinaryNumberInALinkedListToInteger obj = new L1290_ConvertBinaryNumberInALinkedListToInteger();
 		
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(0);
-		list.insertAtEnd(1);
-		list.insertAtEnd(1);	// 3
+		list.insertAfterEnd(0);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(1);	// 3
 		
 		System.out.println(obj.getDecimalValue(list.head));
 	}

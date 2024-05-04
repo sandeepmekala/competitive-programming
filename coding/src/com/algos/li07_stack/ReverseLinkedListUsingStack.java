@@ -2,7 +2,7 @@ package  com.algos.li07_stack;
 
 import java.util.Stack;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
+import com.algos.li09_linkedlist.revised.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class ReverseLinkedListUsingStack {
@@ -11,9 +11,9 @@ public class ReverseLinkedListUsingStack {
 		ReverseLinkedListUsingStack obj = new ReverseLinkedListUsingStack();
 		SingleLinkedList sll = new SingleLinkedList();
 		
-		sll.insertAtEnd(10);
-		sll.insertAtEnd(20);
-		sll.insertAtEnd(30);
+		sll.insertAfterEnd(10);
+		sll.insertAfterEnd(20);
+		sll.insertAfterEnd(30);
 		sll.print();
 		obj.reverseLinkedListUsingStack(sll);
 		System.out.println();

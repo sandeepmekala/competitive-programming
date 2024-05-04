@@ -2,7 +2,6 @@ package  com.algos.li09_linkedlist.revised;
 
 import java.util.HashMap;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.Node;
 
 public class L138_CopyListWithRandomPointer {
@@ -10,11 +9,11 @@ public class L138_CopyListWithRandomPointer {
 	public static void main(String[] args) {
 
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(1);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
-		list.insertAtEnd(4);
-		list.insertAtEnd(5);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(4);
+		list.insertAfterEnd(5);
 		
 	}
 

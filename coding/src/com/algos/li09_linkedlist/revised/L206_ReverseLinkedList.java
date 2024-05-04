@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L206_ReverseLinkedList {
@@ -8,13 +7,13 @@ public class L206_ReverseLinkedList {
 	public static void main(String[] args) {
 		L206_ReverseLinkedList obj = new L206_ReverseLinkedList();
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(1);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
 		list.print();
 		
-		ListNode head = obj.reverseList(list.head);
-		list.head = head;
+		list.head = obj.reverseList(list.head);
+		// list.head = obj.reverseRec(list.head);
 		System.out.println();
 		list.print();
 
@@ -34,5 +33,17 @@ public class L206_ReverseLinkedList {
 		
         return prev;
     }
+
+	public ListNode reverseRec(ListNode node){
+		if(node == null || node.next == null)
+			return node;
+		
+		ListNode newHead = reverseRec(node.next);
+		ListNode next = node.next;
+		next.next = node;
+		node.next = null;
+
+		return newHead;
+	}
 
 }

@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L83_RemoveDuplicatesFromSortedList {
@@ -9,11 +8,11 @@ public class L83_RemoveDuplicatesFromSortedList {
 		L83_RemoveDuplicatesFromSortedList obj = new L83_RemoveDuplicatesFromSortedList();
 		
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(2);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
-		list.insertAtEnd(3);
-		list.insertAtEnd(4);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(4);
 		
 		list.head = obj.deleteDuplicates(list.head);
 		list.print();

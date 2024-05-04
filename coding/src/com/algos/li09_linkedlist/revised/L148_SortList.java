@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L148_SortList {
@@ -9,12 +8,12 @@ public class L148_SortList {
 	public static void main(String[] args) {
 		L148_SortList obj = new L148_SortList();
 
-		sll.insertAtEnd(7);
-		sll.insertAtEnd(10);
-		sll.insertAtEnd(5);
-		sll.insertAtEnd(20);
-		sll.insertAtEnd(3);
-		sll.insertAtEnd(2);
+		sll.insertAfterEnd(7);
+		sll.insertAfterEnd(10);
+		sll.insertAfterEnd(5);
+		sll.insertAfterEnd(20);
+		sll.insertAfterEnd(3);
+		sll.insertAfterEnd(2);
 		
 		ListNode newHead = obj.sortList(sll.head);
 		sll.head = newHead;

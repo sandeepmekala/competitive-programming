@@ -2,7 +2,6 @@ package  com.algos.li09_linkedlist.revised;
 
 import java.util.Arrays;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L725_SplitLinkedListInParts {
@@ -11,16 +10,16 @@ public class L725_SplitLinkedListInParts {
 		L725_SplitLinkedListInParts obj = new L725_SplitLinkedListInParts();
 
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(1);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
-		list.insertAtEnd(4);
-		list.insertAtEnd(5);
-		list.insertAtEnd(6);
-		list.insertAtEnd(7);
-		list.insertAtEnd(8);
-		list.insertAtEnd(9);
-		list.insertAtEnd(10);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(4);
+		list.insertAfterEnd(5);
+		list.insertAfterEnd(6);
+		list.insertAfterEnd(7);
+		list.insertAfterEnd(8);
+		list.insertAfterEnd(9);
+		list.insertAfterEnd(10);
 		
 		ListNode[] result = obj.splitListToParts(list.head, 3);
 		System.out.println(Arrays.toString(result));

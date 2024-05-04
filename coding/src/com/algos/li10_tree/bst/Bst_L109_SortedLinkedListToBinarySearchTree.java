@@ -1,6 +1,6 @@
 package  com.algos.li10_tree.bst;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
+import com.algos.li09_linkedlist.revised.SingleLinkedList;
 import com.algos.li10_tree.bst.revised.L701_InsertIntoABinarySearchTree;
 import  com.algos.li30_model.TreeNode;
 
@@ -12,13 +12,13 @@ public class Bst_L109_SortedLinkedListToBinarySearchTree {
 		SingleLinkedList list = new SingleLinkedList();
 		L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
 
-		list.insertAtBegining(7);
-		list.insertAtBegining(6);
-		list.insertAtBegining(5);
-		list.insertAtBegining(4);
-		list.insertAtBegining(3);
-		list.insertAtBegining(2);
-		list.insertAtBegining(1);
+		list.insertBeforeHead(7);
+		list.insertBeforeHead(6);
+		list.insertBeforeHead(5);
+		list.insertBeforeHead(4);
+		list.insertBeforeHead(3);
+		list.insertBeforeHead(2);
+		list.insertBeforeHead(1);
 
 		System.out.println("Given Linked List ");
 		list.print();

@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L143_ReorderList {
@@ -8,10 +7,10 @@ public class L143_ReorderList {
 	public static void main(String[] args) {
 		L143_ReorderList obj = new L143_ReorderList();
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(1);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
-		list.insertAtEnd(4);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(4);
 		
 		list.print();
 		obj.reorderList(list.head);

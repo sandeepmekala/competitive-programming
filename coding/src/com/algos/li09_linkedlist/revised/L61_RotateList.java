@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L61_RotateList {
@@ -10,11 +9,11 @@ public class L61_RotateList {
 		
 		int k = 2;
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtEnd(1);
-		list.insertAtEnd(2);
-		list.insertAtEnd(3);
-		list.insertAtEnd(4);
-		list.insertAtEnd(5);
+		list.insertAfterEnd(1);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(3);
+		list.insertAfterEnd(4);
+		list.insertAfterEnd(5);
 		
 		list.head = obj.rotateRight(list.head, k);
 		list.print();

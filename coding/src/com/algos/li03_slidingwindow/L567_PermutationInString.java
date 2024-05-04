@@ -22,8 +22,8 @@ public class L567_PermutationInString {
 		if(m > n) 
 			return false;
 		
-		HashMap<Character, Integer> s1map = new HashMap<Character, Integer>();
-		HashMap<Character, Integer> s2map = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> s1map = new HashMap<>();
+		HashMap<Character, Integer> s2map = new HashMap<>();
 		for(int i=0; i<m; i++) {
 			s1map.put(s1.charAt(i), s1map.getOrDefault(s1.charAt(i), 0)+1);
             s2map.put(s2.charAt(i), s2map.getOrDefault(s2.charAt(i), 0)+1);

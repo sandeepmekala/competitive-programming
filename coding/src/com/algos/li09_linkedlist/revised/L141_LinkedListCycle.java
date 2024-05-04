@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L141_LinkedListCycle {
@@ -8,10 +7,10 @@ public class L141_LinkedListCycle {
 	public static void main(String[] args) {
 		L141_LinkedListCycle obj = new L141_LinkedListCycle();
 		SingleLinkedList list = new SingleLinkedList();
-		list.insertAtBegining(3);
-		list.insertAtEnd(2);
-		list.insertAtEnd(0);
-		list.insertAtEnd(-4);
+		list.insertBeforeHead(3);
+		list.insertAfterEnd(2);
+		list.insertAfterEnd(0);
+		list.insertAfterEnd(-4);
 		list.head.next.next.next.next = list.head.next;
 		System.out.println(obj.hasCycle(list.head));
 	}

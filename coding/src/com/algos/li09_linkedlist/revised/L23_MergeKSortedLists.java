@@ -1,6 +1,5 @@
 package  com.algos.li09_linkedlist.revised;
 
-import com.algos.li09_linkedlist.SingleLinkedList;
 import  com.algos.li30_model.ListNode;
 
 public class L23_MergeKSortedLists {
@@ -10,20 +9,20 @@ public class L23_MergeKSortedLists {
 		
 		ListNode[] lists = new ListNode[3];
 		SingleLinkedList l1 = new SingleLinkedList();
-		l1.insertAtEnd(1);
-		l1.insertAtEnd(4);
-		l1.insertAtEnd(5);
+		l1.insertAfterEnd(1);
+		l1.insertAfterEnd(4);
+		l1.insertAfterEnd(5);
 		lists[0] = l1.head;
 		
 		SingleLinkedList l2 = new SingleLinkedList();
-		l2.insertAtEnd(1);
-		l2.insertAtEnd(3);
-		l2.insertAtEnd(4);
+		l2.insertAfterEnd(1);
+		l2.insertAfterEnd(3);
+		l2.insertAfterEnd(4);
 		lists[1] = l2.head;
 		
 		SingleLinkedList l3 = new SingleLinkedList();
-		l3.insertAtEnd(2);
-		l3.insertAtEnd(6);
+		l3.insertAfterEnd(2);
+		l3.insertAfterEnd(6);
 		lists[2] = l3.head;
 		
 		ListNode merged = obj.mergeKLists(lists);

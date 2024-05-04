@@ -5,7 +5,16 @@ import  com.algos.li30_model.ListNode;
 public class L234_PalindromeLinkedList {
 
 	public static void main(String[] args) {
-		
+        L234_PalindromeLinkedList obj = new L234_PalindromeLinkedList();
+
+        SingleLinkedList list = new SingleLinkedList();
+        list.insertAfterEnd(1);
+        list.insertAfterEnd(2);
+        list.insertAfterEnd(3);
+        list.insertAfterEnd(2);
+        list.insertAfterEnd(1);
+
+        System.out.println(obj.isPalindrome(list.head));
 	}
 	
     // Problem: https://leetcode.com/problems/palindrome-linked-list/
@@ -26,11 +35,12 @@ public class L234_PalindromeLinkedList {
         return true;
     }
     
-    // Incase odd elements in list, while splitting left half will have one extra element. Incase you want one extra element in right half use dummy node or start fast from head.next.
-    // Similar, incase of even nodes. slow will point to second mid. To make it point it to first mid, use dummy node or start fast from head.next.
+    // Incase even len list, we need to stop slow ptr at first middle node
+    // In that case, fast ptr will stop at second last node. Hence fast.next.next != null.
+    // Incase odd len list, fast ptr will stop at last node. Hence fast.next != null.
     private ListNode split(ListNode head){
-        ListNode slow = head, fast = head.next;
-        while(fast != null && fast.next != null){
+        ListNode slow = head, fast = head;
+        while(fast.next != null && fast.next.next != null){
             slow = slow.next;
             fast = fast.next.next;
         }
