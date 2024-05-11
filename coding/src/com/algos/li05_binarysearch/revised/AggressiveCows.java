@@ -12,6 +12,8 @@ public class AggressiveCows {
         System.out.println(obj.placeCows(nums, cows));
     }
 
+    // Problem: https://www.spoj.com/problems/AGGRCOW/
+    // Idea: BS range 1 to max distance between stalls
     public int placeCows(int[] nums, int cows){
         int n = nums.length;
         Arrays.sort(nums);
@@ -20,7 +22,7 @@ public class AggressiveCows {
         int res = -1;
         while (low <= high) {
             int mid = (low + high) >> 1;
-            if (isPossible(nums, n, cows, mid)) {
+            if (canWePlace(nums, n, cows, mid)) {
                 res = mid;
                 low = mid + 1;
             } else {
@@ -31,7 +33,7 @@ public class AggressiveCows {
         return res;
     }
 
-    private boolean isPossible(int a[], int n, int cows, int minDist) {
+    private boolean canWePlace(int a[], int n, int cows, int minDist) {
         int cntCows = 1;
         int lastPlacedCow = a[0];
         for (int i = 1; i < n; i++) {

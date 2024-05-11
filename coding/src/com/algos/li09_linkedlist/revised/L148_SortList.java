@@ -23,6 +23,7 @@ public class L148_SortList {
 
 	// Problem: https://leetcode.com/problems/sort-list/
 	// Idea: Use merge sort, ll split techniques
+	// Time: O((n+n/2)logn), Space: O(1)
 	public ListNode sortList(ListNode node){
 		if(node == null || node.next == null) 
 			return node;
@@ -30,42 +31,37 @@ public class L148_SortList {
 		ListNode head1 = node;
 		ListNode head2 = split(node);
 		
-		ListNode nhead1 = sortList(head1);
-		ListNode nhead2 = sortList(head2);
-		ListNode nhead = merge(nhead1, nhead2);
-		return nhead;
+		head1 = sortList(head1);
+		head2 = sortList(head2);		
+		return merge(head1, head2);
 	}
 
 	private ListNode merge(ListNode head1, ListNode head2) {
 		ListNode start = new ListNode(-1);
 		ListNode curr = start;
-		while(head1 != null && head2 != null) {
-			if(head1.val < head2.val) {
-				curr.next = head1;
-				head1 = head1.next;
+		ListNode curr1 = head1;
+		ListNode curr2 = head2;
+		while(curr1 != null && curr2 != null) {
+			if(curr1.val < curr2.val) {
+				curr.next = curr1;
+				curr1 = curr1.next;
 			}else {
-				curr.next = head2;
-				head2 = head2.next;
+				curr.next = curr2;
+				curr2 = curr2.next;
 			}
 			curr = curr.next;
 		}
-		while(head1 != null) {
-			curr.next = head1;
-			curr = curr.next;
-			head1 = head1.next;
-		}
-		while(head2 != null) {
-			curr.next = head2;
-			curr = curr.next;
-			head2 = head2.next;
-		}
+		if(curr1 != null) 
+			curr.next = curr1;
+		if(curr2 != null) 
+			curr.next = curr2;
 
 		return start.next;
 	}
 	
 	private ListNode split(ListNode head) {
 		ListNode slow = head;
-		ListNode fast = head.next;
+		ListNode fast = head.next;	// This will make slow stop at first middle in case even length
 		while(fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;

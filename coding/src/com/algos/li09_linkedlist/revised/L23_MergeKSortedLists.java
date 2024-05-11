@@ -1,5 +1,8 @@
 package  com.algos.li09_linkedlist.revised;
 
+import java.util.List;
+import java.util.PriorityQueue;
+
 import  com.algos.li30_model.ListNode;
 
 public class L23_MergeKSortedLists {
@@ -35,53 +38,32 @@ public class L23_MergeKSortedLists {
 	// Idea: Use merge of 2 list technique. Divide the lists in n/2 groups and merge them.
 	// Swap lists with merged list for next iteration.
 	// Continue the same until only one list remains
+	// Time: O(klogk + knlogk), Space: O(1)
 	public ListNode mergeKLists(ListNode[] lists) {
-        if(lists.length == 0)
-            return null;
-        if(lists.length == 1)
-            return lists[0];
-        
-        while(lists.length > 1){
-            int n = lists.length;
-            ListNode[] merged = new ListNode[(int)Math.ceil(n/2.0)];
-            for(int i=0; i<n; i=i+2){
-                ListNode l1 = lists[i];
-                if(i+1<n){
-                    ListNode l2 = lists[i+1];
-                    l1 = merge(l1, l2);
-                }
-                merged[i/2] = l1;
-            }
-            lists = merged;
-        }
-        
-        return lists[0];
-    }
-    
-    private ListNode merge(ListNode head1, ListNode head2) {
-		ListNode start = new ListNode(-1);
-		ListNode temp = start;
-		while(head1 != null && head2 != null) {
-			if(head1.val < head2.val) {
-				temp.next = head1;
-				head1 = head1.next;
-			}else {
-				temp.next = head2;
-				head2 = head2.next;
-			}
-			temp = temp.next;
-		}
-		while(head1 != null) {
-			temp.next = head1;
-			temp = temp.next;
-			head1 = head1.next;
-		}
-		while(head2 != null) {
-			temp.next = head2;
-			temp = temp.next;
-			head2 = head2.next;
-		}
-		return start.next;
+        PriorityQueue<Pair> pq = new PriorityQueue<>((p1, p2) -> p1.val - p2.val);
+        for(ListNode node: lists)
+            if(node != null) 
+				pq.add(new Pair(node.val, node));
 		
+		ListNode dummy = new ListNode(-1);
+		ListNode curr = dummy;
+		while(!pq.isEmpty()){
+			Pair top = pq.poll();
+			curr.next = top.node;
+			curr = curr.next;
+			if(top.node.next != null)
+				pq.add(new Pair(top.node.next.val, top.node.next));
+			
+		}
+        return dummy.next;
+    }
+}
+
+class Pair{
+	int val;
+	ListNode node;
+	Pair(int num, ListNode node){
+		this.val = num;
+		this.node = node;
 	}
 }

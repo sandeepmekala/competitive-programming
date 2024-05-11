@@ -21,7 +21,10 @@ public class L138_CopyListWithRandomPointer {
     // Idea: Use map to store the mapping between node and its copy
     // In first pass create copies of each node and and store
     // In second pass, get the copy of each node and adjust its next and ran pointers.
-    // You can solve it inplace. You need to insert copy nodes next to their original nodes. Then change random pointers. Then break the link between old and new nodes.
+    // You can solve it inplace by following 3 steps below:
+    //      You need to insert copy nodes next to their original nodes. 
+    //      Then change random ptrs. 
+    //      Then change next ptrs.
     public Node copyRandomList(Node head) {
         HashMap<Node, Node> map = new HashMap<Node, Node>();
         

@@ -1,4 +1,4 @@
-package  com.algos.li05_binarysearch;
+package  com.algos.li05_binarysearch.revised;
 
 public class L704_BinarySearch {
 
@@ -11,17 +11,19 @@ public class L704_BinarySearch {
 		System.out.println(bs.search(arr, 0, n-1, x));
 	}
 
-	// Idea: divide the array in half every time based on if mid element is greater or smaller
+	// Problem: https://leetcode.com/problems/binary-search/
+	// Idea: Divide the array in half every time based on if mid element is greater or smaller
+	// Time: O(logn)
 	public int search(int[] nums, int target) {
-        int left=0, right=nums.length-1;
-        while(left<=right){
-            int mid = left + (right-left)/2;
+        int low=0, high=nums.length-1;
+        while(low<=high){
+            int mid = low + (high-low)/2;
             if(target == nums[mid]){
                 return mid;
             }else if(target > nums[mid]){
-                left = mid+1;
+                low = mid+1;
             }else{
-                right = mid-1;
+                high = mid-1;
             }
         }
 
@@ -29,7 +31,6 @@ public class L704_BinarySearch {
     }
 
 	private int search(int[] nums, int left, int right, int target) {
-		
 		if (left <= right) {
 			// find mid
 			int mid = (left + right) / 2;

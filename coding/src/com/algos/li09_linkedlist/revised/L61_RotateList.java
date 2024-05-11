@@ -35,9 +35,8 @@ public class L61_RotateList {
         
         k = k%n;
         curr = head;
-        for(int i=1; i<n-k; i++){
+        for(int i=1; i<n-k; i++)
             curr = curr.next;
-        }
         
         head = curr.next;
         curr.next = null;

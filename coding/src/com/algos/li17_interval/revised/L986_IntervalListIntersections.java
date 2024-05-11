@@ -21,6 +21,7 @@ public class L986_IntervalListIntersections {
     // Idea: Use two pointers and check if two intervals from lists overlaps using criss crossing.
     // Take the max of starts and min of ends to find the intersection interval
     // Move the ptr whose interval is ending first because longer interval might intersect with subsequence intervals.
+    // T
     public int[][] intervalIntersection(int[][] first, int[][] second) {
         int m = first.length, n = second.length;
 

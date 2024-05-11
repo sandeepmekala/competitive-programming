@@ -22,7 +22,7 @@ public class L33_SearchInRotatedSortedArray {
                     high = mid - 1; 
                 else
                     low = mid + 1; 
-            } else { 
+            } else {                        // right sorted
                 if (nums[mid] <= target && target <= nums[high])
                     low = mid + 1;
                 else

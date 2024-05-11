@@ -1,4 +1,4 @@
-package  com.algos.li05_binarysearch;
+package  com.algos.li05_binarysearch.revised;
 
 public class L875_KokoEatingBananas {
 
@@ -16,23 +16,22 @@ public class L875_KokoEatingBananas {
 	// Idea: In the worst case each pile can be eaten once. So maximum possible k is max(piles).
 	// So do BS for range k=1 and k=max(piles) and reduce k as much as possible.
 	public int minEatingSpeed(int[] piles, int h) {
-		int left = 1, right = Integer.MIN_VALUE, res = -1;
-		for(int pile: piles) {
-			right = Math.max(right, pile);
-		}
+		int low = 1, high = Integer.MIN_VALUE, ans = -1;
+		for(int pile: piles) 
+			high = Math.max(high, pile);
 		
-		while(left<=right) {
-			int mid = (left+right)/2;
-			int hr = getHours(piles, mid);
-			if(hr <= h) {
-				res = mid;
-				right = mid-1;
+		while(low<=high) {
+			int mid = (low+high)/2;
+			int hours = getHours(piles, mid);
+			if(hours <= h) {
+				ans = mid;
+				high = mid-1;
 			}else {
-				left = mid+1;
+				low = mid+1;
 			}
 		}
 		
-		return res;
+		return ans;
 	}
 
 	private int getHours(int[] piles, int mid) {
