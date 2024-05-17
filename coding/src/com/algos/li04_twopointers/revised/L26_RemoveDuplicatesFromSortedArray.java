@@ -12,13 +12,13 @@ public class L26_RemoveDuplicatesFromSortedArray {
     // Problem: https://leetcode.com/problems/remove-duplicates-from-sorted-array/
     // Idea: Use two pointers. One ptr finds distinct number and other one holds the place to insert the distinct num.
 	public int removeDuplicates(int[] nums) {
-        int j=0;
-        for(int i=1; i<nums.length; i++){
-            if(nums[i] != nums[j]){
-                nums[++j] = nums[i];                
+        int l=0;
+        for(int r=1; r<nums.length; r++){
+            if(nums[r] != nums[l]){
+                nums[++l] = nums[r];                
             }
         } 
-        return j+1;
+        return l+1;
     }
 
 }

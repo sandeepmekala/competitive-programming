@@ -1,4 +1,4 @@
-package  com.algos.li03_slidingwindow;
+package  com.algos.li01_array;
 
 public class Kadanes_L152_MaximumProductOfSubArray_Kadanes {
 

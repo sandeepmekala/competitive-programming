@@ -1,4 +1,4 @@
-package com.algos.li03_slidingwindow.revise;
+package com.algos.li03_slidingwindow.revised;
 
 public class L1248_CountNumberofNiceSubarrays {
     

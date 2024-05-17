@@ -12,6 +12,8 @@ public class L189_RotateArray {
         System.out.println(Arrays.toString(nums));
     }
 
+    // Problem: https://leetcode.com/problems/rotate-array/
+    // Idea: Reverse the array, then reverse the first k elements and then reverse the remaining elements.
     public void rotate(int[] nums, int k) {
         int n = nums.length;
         k = k % n;

@@ -1,4 +1,4 @@
-package  com.algos.li01_array;
+package  com.algos.li01_array.revised;
 
 public class L268_MissingNumber {
 

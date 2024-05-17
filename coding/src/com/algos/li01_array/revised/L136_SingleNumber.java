@@ -1,4 +1,4 @@
-package  com.algos.li19_bit.revised;
+package  com.algos.li01_array.revised;
 
 public class L136_SingleNumber {
 

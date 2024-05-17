@@ -1,4 +1,4 @@
-package  com.algos.li04_twopointers.revised;
+package  com.algos.li01_array.revised;
 
 import java.util.Arrays;
 

@@ -12,19 +12,28 @@ public class L169_MajorityElement {
     // Problem: https://leetcode.com/problems/majority-element/
     // Idea: Moore's Voting algorithm
     public int majorityElement(int[] nums) {
-        int major = -1, cnt = 0;
+        int num1 = -1, cnt = 0;
         for(int num: nums){
-            if(num == major){
+            if(num == num1){
                 cnt++;
             } else if(cnt == 0){
-                major = num;
-                cnt++;
+                num1 = num;
+                cnt = 1;
             } else{
                 cnt--;
             }
         }
 
-        return major;
-    }    
+        // no need to check for majority element as problem guarantees 
+        // that majority element always exists
+        int cnt1 = 0;
+        for(int num: nums){
+            if(num == num1)
+                cnt1++;
+        }
+        if(cnt1 > nums.length/2)
+            return num1;
+        return -1;
+    }
     
 }
