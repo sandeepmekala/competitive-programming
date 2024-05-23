@@ -18,7 +18,7 @@ public class Bt_L100_SameTree {
 
     // Problem: https://leetcode.com/problems/same-tree/ 
     // Idea: Root values should be same and left and right sub trees should be same trees.
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public boolean isSameTree(TreeNode root1, TreeNode root2) {
 		if(root1 == null || root2 == null)

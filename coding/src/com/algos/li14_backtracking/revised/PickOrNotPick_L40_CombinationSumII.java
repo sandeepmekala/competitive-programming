@@ -15,7 +15,7 @@ public class PickOrNotPick_L40_CombinationSumII {
 
     // Problem: https://leetcode.com/problems/combination-sum-ii/
     // Idea: Similar like unique subsets problem. 
-	// time: O(2^n)
+	// Time: O(2^n)
     // space: O(n)
     public List<List<Integer>> combinationSum2(int[] nums, int target) {
         List<List<Integer>> result = new ArrayList<>();

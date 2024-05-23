@@ -14,35 +14,30 @@ public class L15_ThreeSum {
 	// Problem: https://leetcode.com/problems/3sum/
 	// Idea: Sort the nums to eleminate the duplicates
 	public List<List<Integer>> threeSum(int[] nums) {
-		List<List<Integer>> result = new ArrayList<List<Integer>>();
-		if (nums.length < 3) 
-			return result;
+		int n = nums.length;
+		List<List<Integer>> ans = new ArrayList<>();
+		if (n < 3) 
+			return ans;
 			
 		Arrays.sort(nums);
-		for (int i = 0; i <= nums.length - 3; i++) {
-			if (i > 0 && nums[i] == nums[i - 1]) 
-				continue;
+		for (int i = 0; i <= n - 3; i++) {
+			if (i > 0 && nums[i] == nums[i - 1]) continue;
 			
-			int left = i + 1, right = nums.length - 1;
-			while (left < right) {
-				int threeSum = nums[i] + nums[left] + nums[right];
-				if (threeSum == 0) {
-					ArrayList<Integer> list = new ArrayList<Integer>();
-					list.add(nums[i]);
-					list.add(nums[left]);
-					list.add(nums[right]);
-					result.add(list);
-					
-					left++;
-					while(left < right && nums[left] == nums[left-1]) left++;
-				} else if (nums[i] + nums[left] + nums[right] > 0) {
-					right--;
+			int l = i + 1, r = n - 1;
+			while (l < r) {
+				int sum = nums[i] + nums[l] + nums[r];
+				if (sum == 0) {
+					ans.add(Arrays.asList(nums[i], nums[l], nums[r]));
+					l++;
+					while(l < r && nums[l] == nums[l-1]) l++;
+				} else if (sum > 0) {
+					r--;
 				} else {
-					left++;
+					l++;
 				}
 			}
 		}
 
-		return result;
+		return ans;
 	}
 }

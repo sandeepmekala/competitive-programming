@@ -14,16 +14,14 @@ public class Partitions_L312_BurstBalloons {
 		System.out.println(obj.maxCoins2(nums));
 	}
 
-	/*
-	 * Problem: https://leetcode.com/problems/burst-balloons/
-	 * Idea: We take each position and try to burst the balloons on its left and
-	 * right before bursting it.
-	 * left sub problem and right sub problems become independent of we include the
-	 * current element also in its sub array.
-	 * Once left and right sub problems are solved, we are left with bursting last
-	 * balloonand last supporting balloons at i-1 and j+1 positions
-	 * 
-	 */
+	//  Problem: https://leetcode.com/problems/burst-balloons/
+	//  Idea: We take each position and try to burst the balloons on its left and
+	//  right before bursting it.
+	//  left sub problem and right sub problems become independent of we include the
+	//  current element also in its sub array.
+	//  Once left and right sub problems are solved, we are left with bursting last
+	//  balloonand last supporting balloons at i-1 and j+1 positions
+	//  
 	public int maxCoins(int[] nums) {
 		int n = nums.length;
 		List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
@@ -33,7 +31,7 @@ public class Partitions_L312_BurstBalloons {
 		int[][] coins = new int[n + 2][n + 2];
 		for(int i=n; i>=1; i--){
 			for(int j=i; j<=n; j++){
-				if(i>j) continue;
+				if(i > j) continue;
 
 				int max = Integer.MIN_VALUE;
 				for (int k = i; k <= j; k++) {

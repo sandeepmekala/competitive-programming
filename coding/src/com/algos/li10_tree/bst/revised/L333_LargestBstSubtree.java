@@ -21,7 +21,7 @@ public class L333_LargestBstSubtree {
     // Problem: https://leetcode.com/problems/largest-bst-subtree/
 	// https://www.lintcode.com/problem/910/
     // Idea: Use a data structure int[]{size, min, max}
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	private int MAX = Integer.MAX_VALUE, MIN = Integer.MIN_VALUE;
 	public int maxSumBST(TreeNode root) {

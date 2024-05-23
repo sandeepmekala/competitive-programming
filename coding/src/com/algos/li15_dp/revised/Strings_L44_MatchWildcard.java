@@ -10,27 +10,26 @@ public class Strings_L44_MatchWildcard {
 		System.out.println(obj.isMatch(s, p, n, m));
 	}
 
-	/* Problem: https://leetcode.com/problems/wildcard-matching/
-	 * Idea: Match char by char.
-	 * 		* zero or more chars
-	 * 		? any one char
-	 * 
-	 * T[i][j] = {
-	 * 		T[i-1][j-1]				if str[i] == pat[j] || pat[j] == '?'
-	 * 		T[i][j-1] || T[i-1][j]	if pat[j] == '*'
-	 * }
-	 * 
-	 * 			""	x 	?	y	*	z
-	 * 		i\j	0	1	2	3	4	5
-	 * 	""	0	T	F	F	F	F	F
-	 * 	x	1	F	T	F	F	F	F
-	 * 	a	2	F	F	T	F	F	F	
-	 * 	y	3	F	F	F	T	T	F	
-	 * 	l	4	F	F	F	F	T	F	
-	 * 	m	5	F	F	F	F	T	F	
-	 * 	z	6	F	F	F	F	T	T
-	 * 
-	 * */
+	// Problem: https://leetcode.com/problems/wildcard-matching/
+	//  Idea: Match char by char.
+	//  		* zero or more chars
+	//  		? any one char
+	//  
+	//  T[i][j] = {
+	//  		T[i-1][j-1]				if str[i] == pat[j] || pat[j] == '?'
+	//  		T[i][j-1] || T[i-1][j]	if pat[j] == '*'
+	//  }
+	//  
+	//  			""	x 	?	y	*	z
+	//  		i\j	0	1	2	3	4	5
+	//  	""	0	T	F	F	F	F	F
+	//  	x	1	F	T	F	F	F	F
+	//  	a	2	F	F	T	F	F	F	
+	//  	y	3	F	F	F	T	T	F	
+	//  	l	4	F	F	F	F	T	F	
+	//  	m	5	F	F	F	F	T	F	
+	//  	z	6	F	F	F	F	T	T
+	//  
 	// Time: O(m*n)
     // Space: O(m*n)
 	public boolean isMatch(String s, String p) {

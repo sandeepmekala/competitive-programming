@@ -22,7 +22,7 @@ public class Bt_L545_BoundaryOfBinaryTree {
     // Problem: https://leetcode.com/problems/boundary-of-binary-tree/
     // https://www.lintcode.com/problem/878 
     // Idea: Traverse left path to get left boundry and do inorder and pick up only leaves, then do right traversal and get right boundry.
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> boundry = new ArrayList<>();

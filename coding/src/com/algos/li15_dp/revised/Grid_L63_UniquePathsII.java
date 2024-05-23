@@ -43,14 +43,13 @@ public class Grid_L63_UniquePathsII {
 
     public int uniquePathsWithObstacles(int i, int j, int[][] obstacleGrid) {
         if(i == 0 && j == 0)
-            return 1;
-		if(i < 0 || j < 0)
-            return 0;  
+            return 1; 
         if(obstacleGrid[i][j] == 1)
             return 0;
 
-		int up = uniquePathsWithObstacles(i-1, j, obstacleGrid);
-		int left = uniquePathsWithObstacles(i, j-1, obstacleGrid);
+        int up = 0, left = 0;
+		if(i>0) up = uniquePathsWithObstacles(i-1, j, obstacleGrid);
+		if(j>0) left = uniquePathsWithObstacles(i, j-1, obstacleGrid);
 		return up+left;
 	}
 

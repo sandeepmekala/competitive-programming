@@ -23,6 +23,9 @@ public class Bfs {
 		obj.bfs(g, 0);
 	}
 
+	public void bfs2(GraphAdjLst g, int src) {
+		
+	}
 	// Time: O(V + E)
 	// Space: O(V)
 	public void bfs(GraphAdjLst g, int src) {

@@ -11,15 +11,14 @@ public class Stocks_L122_BestTimeToBuyAndSellStockII {
 		System.out.println(obj.maxProfit(prices, 0, 1));
 	}
 
-	/*
-	 * Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
-	 * Unlimited transaction but one at a time.
-	 * Idea: As we have to remember whether we bought previously or not we need to pass extra parameter to recursion.
-	 * If we are buying it will contribute -ve to profit as profit = sell - buy. Hence add -ve price if buying.
-	 * i/j 	7 1 5 3 6 4
-	 * buy 	0 0
-	 * sell 0
-	 */
+	//  Problem: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+	//  Unlimited transaction but one at a time.
+	//  Idea: As we have to remember whether we bought previously or not we need to pass extra parameter to recursion.
+	//  If we are buying it will contribute -ve to profit as profit = sell - buy. Hence add -ve price if buying.
+	//  i/j 	7 1 5 3 6 4
+	//  buy 	0 0
+	//  sell 0
+	// 
 	// Time: O(n*2)
     // Space: O(n*2)
 	public int maxProfit(int[] prices) {

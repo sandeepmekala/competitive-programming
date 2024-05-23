@@ -17,9 +17,9 @@ public class Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
         int m=matrix.length, n=matrix[0].length;
 
         int[][] cost = new int[m][n];
-        for(int j=0; j<n; j++){     
+        for(int j=0; j<n; j++)
             cost[0][j] = matrix[0][j];  // i=0
-        }
+        
         for(int i=1; i<m; i++){
             for(int j=0; j<n; j++){
                 int l = matrix[i][j] + cost[i-1][j];
@@ -31,9 +31,9 @@ public class Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
         }
 
         int min = (int)1e9;
-        for(int j=0; j<n; j++){
+        for(int j=0; j<n; j++)
             min = Math.min(min, cost[n-1][j]);
-        }
+
         return min;
     }
 
@@ -42,6 +42,7 @@ public class Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
         for(int j=0; j<matrix[0].length; j++){
             min = Math.min(min, minFallingPathSum(matrix, m-1, j));
         }
+
         return min;
     }
 

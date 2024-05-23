@@ -34,7 +34,7 @@ public class Bt_L617_MergeTwoBinaryTrees {
 	 * Problem: https://leetcode.com/problems/merge-two-binary-trees/
 	 * Idea: Traverse both the lists at the same time.
 	 * */
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public TreeNode mergeTrees(TreeNode root1, TreeNode root2) {
         if(root1 == null && root2 == null) 

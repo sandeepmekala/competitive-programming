@@ -14,7 +14,7 @@ public class PickOrNotPick_L39_CombinationSum {
 
 	// Problem: https://leetcode.com/problems/combination-sum/
 	// Idea: Similar like subset problem. But we have to track sum with subsets to compare with target.
-	// time: O(2^n)
+	// Time: O(2^n)
     // space: O(n)
 	public List<List<Integer>> combinationSum(int[] nums, int target) {
 		List<List<Integer>> result = new ArrayList<>();

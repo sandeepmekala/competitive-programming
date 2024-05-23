@@ -26,7 +26,7 @@ public class Bst_L113_PathSumII {
 	 * Companies: Amazon
      * Idea: Backtracking algo. Add the node to list when node processing started, remove while exiting.
 	 * */
-    // time: O(n)
+    // Time: O(n)
     // space: O(n)
 	public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
         List<List<Integer>> result = new ArrayList<>();

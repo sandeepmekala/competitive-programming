@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class Subsequence_NinjasTraining {
     public static void main(String args[]) {
+        Subsequence_NinjasTraining obj = new Subsequence_NinjasTraining();
 
         int[][] points = {{10,40,70},
                           {20,50,80},
@@ -11,11 +12,11 @@ public class Subsequence_NinjasTraining {
            
 
         int n = points.length;
-        System.out.println(ninjaTraining(n, points));
+        System.out.println(obj.ninjaTraining(n, points));
     }
 
     // Problem: https://bit.ly/3F4yl8z
-    static int ninjaTraining(int n, int[][] points) {
+    public int ninjaTraining(int n, int[][] points) {
         int dp[][] = new int[n][4];
         for (int[] row: dp)
             Arrays.fill(row, -1);
@@ -28,7 +29,7 @@ public class Subsequence_NinjasTraining {
             int max = 0;
             for (int i = 0; i <= 2; i++) {
                 if (i != last)
-                max = Math.max(max, points[0][i]);
+                    max = Math.max(max, points[0][i]);
             }
             return dp[ind][last] = max;
         }
@@ -37,9 +38,9 @@ public class Subsequence_NinjasTraining {
             return dp[ind][last];
 
         int max = 0;
-        for (int task = 0; task <= 2; task++) {
-            if (task != last) {
-                int pnts = points[ind][task] + ninjaTraining(ind - 1, task, points, dp);
+        for (int i = 0; i <= 2; i++) {
+            if (i != last) {
+                int pnts = points[ind][i] + ninjaTraining(ind - 1, i, points, dp);
                 max = Math.max(max, pnts);
             }
         }

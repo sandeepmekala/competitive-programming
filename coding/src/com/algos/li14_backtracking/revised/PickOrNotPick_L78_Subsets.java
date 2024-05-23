@@ -14,7 +14,7 @@ public class PickOrNotPick_L78_Subsets {
 
 	// Problem: https://leetcode.com/problems/subsets/
 	// Idea: Pass the solution list. Recursively call the same function with and without each element in solution list.
-	// time: O(2^n)
+	// Time: O(2^n)
     // space: O(n)
 	public List<List<Integer>> subsets(int[] nums) {
 		List<List<Integer>> result = new ArrayList<>();

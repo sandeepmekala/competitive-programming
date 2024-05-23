@@ -29,7 +29,7 @@ public class _Bst_L653_TwoSumIvInputIsABst {
 	 * Alternative: You can implement the same using BST iterator by implementing next and before.
 	 * Next and before will be traversing on sorted nums, use two pointed logic to find matching nums.
 	 * */
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public boolean findTarget(TreeNode root, int k) {
         HashSet<Integer> set = new HashSet<>();

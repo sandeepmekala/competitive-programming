@@ -12,6 +12,7 @@ public class Partitions_Front_L131_PalindromePartitioningII {
 	}
 
 	//Problem: https://leetcode.com/problems/palindrome-partitioning-ii/
+	// Idea: Partition at every index and check if the partition is palindrome.
 	public int minCut(String str) {
 		int n = str.length();
 		int[] dp = new int[n + 1];

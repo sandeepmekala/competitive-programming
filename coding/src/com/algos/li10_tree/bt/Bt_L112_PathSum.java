@@ -22,7 +22,7 @@ public class Bt_L112_PathSum {
 	/*
 	 * Problem: https://leetcode.com/problems/path-sum/
 	 * Idea: Subtract root value from target sum until it becomes 0 at leave node.
-	 * time: O(n)
+	 * Time: O(n)
      * space: O(1)
 	* */
 	public boolean hasPathSum(TreeNode root, int targetSum) {

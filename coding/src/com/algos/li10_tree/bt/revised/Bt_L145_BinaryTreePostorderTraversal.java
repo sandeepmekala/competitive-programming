@@ -25,7 +25,7 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 
     // Problem: https://leetcode.com/problems/binary-tree-postorder-traversal/
     // l-r-rt
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
@@ -41,7 +41,7 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 		list.add(root.val);
     }
 
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
     public List<Integer> postorderIterativeTwoStacks(TreeNode root) {
 		if(root == null) 

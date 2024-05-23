@@ -1,9 +1,9 @@
 package  com.algos.li01_array.revised;
 
-public class Kadanes_L53_MaximumSubarray {
+public class L53_MaximumSubarray {
 
 	public static void main(String[] args) {
-		Kadanes_L53_MaximumSubarray obj = new Kadanes_L53_MaximumSubarray();
+		L53_MaximumSubarray obj = new L53_MaximumSubarray();
 		
 		System.out.println(obj.maxSubArray(new int[] { 1, -3, 2, 1, -1 }));
 		// System.out.println(obj.maxSubArray(new int[] { 1 }));
@@ -13,8 +13,8 @@ public class Kadanes_L53_MaximumSubarray {
 	// Problem: https://leetcode.com/problems/maximum-subarray/
 	// Idea: Continuously add numbers, if sum goes above global sum, update global sum.
 	// If sum goes negative, reset it to 0.
-	// time: O(n)
-    // space: O(1)
+	// Time: O(n)
+    // Space: O(1)
 	public int maxSubArray(int[] nums) {
 		int maxSum = Integer.MIN_VALUE;
 		int sum = 0;

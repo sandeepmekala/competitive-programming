@@ -31,7 +31,7 @@ public class Bt_L863_AllNodesDistanceKInBinaryTree {
     // Problem: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
     // Idea: Create links to parent to treverse back to parents using a map. 
     // Traverse in 2 direction by counting the level until k. When level becomes k, nodes will be in q.
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public List<Integer> distanceK(TreeNode root, TreeNode target, int k) {
         Map<TreeNode, TreeNode> parent = new HashMap<>();

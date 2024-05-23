@@ -15,7 +15,7 @@ public class L99_RecoverBinarySearchTree {
     }
 
     // Proble: https://leetcode.com/problems/recover-binary-search-tree/
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     TreeNode prev=new TreeNode(Integer.MIN_VALUE), first, middle, last;
     public void recoverTree(TreeNode root) {

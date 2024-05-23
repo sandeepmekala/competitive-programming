@@ -16,7 +16,7 @@ public class Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode {
     }
 
     // Problem: https://www.geeksforgeeks.org/minimum-time-to-burn-a-tree-starting-from-a-leaf-node/
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public int burn(TreeNode root, TreeNode target) {
         Map<TreeNode, TreeNode> parent = new HashMap<>();

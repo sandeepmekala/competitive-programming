@@ -20,7 +20,7 @@ public class L450_DeleteNodeInABST {
 
     // Problem: https://leetcode.com/problems/delete-node-in-a-bst/
     // Idea:Do binary search. Once root is found, there are 4 cases you need to handle for deletion.
-    // time: O(logn)
+    // Time: O(logn)
     // space: O(1)
     public TreeNode deleteNode(TreeNode root, int data) {
         if (root == null)

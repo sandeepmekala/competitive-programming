@@ -70,7 +70,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
 
     // Idea: Use stack to replace recursion. Store all the elements in stack until left becomes null.
     // Once left become null, exploration of left complete. Take root from stack and add it to list and move curr to right of root.
-    // time: O(n)
+    // Time: O(n)
     // space: O(n)
     public List<Integer> inorderIterative(TreeNode root) {
 		if(root == null) 
@@ -97,7 +97,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
     // When current left is becomes null, it uses this link to go up again.
     // Once it goes up it find the precessor right most again. But this time precessor right most will be current.
     // In this case, reset predecessor right link to null and exploration of current is complete, move to current.right.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
     public List<Integer> morrisInorder(TreeNode root) {
         List<Integer> inorder = new ArrayList<>();

@@ -21,7 +21,7 @@ public class L285_InorderSuccessorInBst {
     // Problem: https://leetcode.com/problems/inorder-successor-in-bst/
     // https://www.lintcode.com/problem/448/
     // Idea: Similar like ceil in binary search. Track succ and continueosly update succ if you fine better succ.
-    // time: O(logn)
+    // Time: O(logn)
     // space: O(1)
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
         TreeNode curr = root, succ = null;

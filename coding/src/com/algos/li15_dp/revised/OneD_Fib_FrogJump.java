@@ -2,9 +2,9 @@ package  com.algos.li15_dp.revised;
 
 import java.util.Arrays;
 
-public class OneD_Subseq_FrogJump {
+public class OneD_Fib_FrogJump {
     public static void main(String args[]) {
-        OneD_Subseq_FrogJump obj = new OneD_Subseq_FrogJump();
+        OneD_Fib_FrogJump obj = new OneD_Fib_FrogJump();
         int height[] = { 30, 10, 60, 10, 60, 50 };
         int n = height.length;
         int dp[] = new int[n];

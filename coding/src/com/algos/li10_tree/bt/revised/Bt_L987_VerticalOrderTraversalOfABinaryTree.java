@@ -25,7 +25,7 @@ public class Bt_L987_VerticalOrderTraversalOfABinaryTree {
     // Problem: https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
     // Idea: Map each node to 2d plane row, col coordinates. Store row, cols in queue while doing bfs.
     // Group all the cols and respect rows in TreeMaps.
-    // time: O(n)
+    // Time: O(n)
     // space: O(n)
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();

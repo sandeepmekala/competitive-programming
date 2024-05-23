@@ -1,6 +1,6 @@
 package  com.algos.li02_hashing;
 
-public class Hashtable {
+public class Basics {
 
 	public static void main(String[] args) {
 		// TODO:	

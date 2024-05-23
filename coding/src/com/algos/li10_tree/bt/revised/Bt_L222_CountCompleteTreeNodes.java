@@ -19,7 +19,7 @@ public class Bt_L222_CountCompleteTreeNodes {
     // Problem: https://leetcode.com/problems/count-complete-tree-nodes/
     // Idea: If you are standing at a root, if the left and right subtrees have same height, then no of nodes 2^h-1.
     // Else we have to recursively count in left and right subtrees + 1
-    // time: O(logn)
+    // Time: O(logn)
     // space: O(1)
     public int countNodes(TreeNode root) {
         if(root == null) 

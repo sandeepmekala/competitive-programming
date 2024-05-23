@@ -2,6 +2,7 @@ package  com.algos.li17_interval.revised;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class L56_MergeIntervals {
 
@@ -25,7 +26,7 @@ public class L56_MergeIntervals {
 	public int[][] merge(int[][] interval){
         Arrays.sort(interval, (i1, i2) -> i1[0] - i2[0]);
         
-        ArrayList<int[]> ans = new ArrayList<int[]>();
+        List<int[]> ans = new ArrayList<>();
         int[] merged = interval[0];
         for(int i=1; i<interval.length; i++){
             if(interval[i][0] <= merged[1]){

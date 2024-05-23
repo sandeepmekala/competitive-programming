@@ -19,7 +19,7 @@ public class Bt_L226_InvertBinaryTree {
 	
 	// Problem: https://leetcode.com/problems/invert-binary-tree/
 	// Idea: Recursively invert left and right sub treens and assign left to right and right left ptr's.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public TreeNode invertTree(TreeNode root) {
 		if(root ==  null) 

@@ -1,6 +1,7 @@
 package  com.algos.li02_hashing.revised;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class L128_LongestConsecutiveSequence {
 
@@ -12,10 +13,9 @@ public class L128_LongestConsecutiveSequence {
 	// Problem: https://leetcode.com/problems/longest-consecutive-sequence/
 	// Idea: Use HashSet to check if num-1 exist in the set.
 	public int longestConsecutive(int[] nums) {
-		var set = new HashSet<Integer>();
-		for (int num : nums) {
+		Set<Integer> set = new HashSet<>();
+		for (int num : nums) 
 			set.add(num);
-		}
 
 		int max = 0;
 		for (int num : nums) {

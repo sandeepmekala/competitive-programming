@@ -16,16 +16,15 @@ public class Grid_64_MinimumPathSum {
 		System.out.println(obj.minPathSum(grid, m-1, n-1));
 	}
 
-	/*
-	 * Problem: https://leetcode.com/problems/minimum-path-sum/
-	 * Idea: Use DP as the sum to current position can be defined as sum to previous positions and cost to travel to current position
-	 * 
-	 * i\j	0	1	2	3	
-	 * 	0	1	4	9	17
-	 * 	1	5	6	7	14
-	 * 	2	9	9	9	12
-	 * 
-	 * */
+	//  Problem: https://leetcode.com/problems/minimum-path-sum/
+	//  Idea: Use DP as the sum to current position can be defined as sum to previous positions and cost to travel to current position
+	//  
+	//  i\j	0	1	2	3	
+	//  	0	1	4	9	17
+	//  	1	5	6	7	14
+	//  	2	9	9	9	12
+	//  
+	//
 	// Time: O(m*n)
     // Space: O(m*n)
 	int INF = Integer.MAX_VALUE;
@@ -50,12 +49,12 @@ public class Grid_64_MinimumPathSum {
 
 	public int minPathSum(int[][] grid, int i, int j) {
 		if(i==0 && j==0)
-			return grid[i][j];
-		if(i<0 || j<0)
-			return Integer.MAX_VALUE;
+			return grid[i][j];	
 
-		int up = minPathSum(grid, i-1, j);
-		int left = minPathSum(grid, i, j-1);
+		int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
+		if(i>0) up = minPathSum(grid, i-1, j);
+		if(j>0) left = minPathSum(grid, i, j-1);
+
 		return grid[i][j]+Math.min(up, left);
 	}
 

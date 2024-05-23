@@ -41,7 +41,7 @@ public class Bt_L144_BinaryTreePreorderTraversal {
 
     // Use stack to compensate for recursion
     // Push right, left to stack as we need to explore left first.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public List<Integer> preorderIterative(TreeNode root) {
 		if(root == null) 

@@ -20,7 +20,7 @@ public class Bt_L236_LowestCommonAncestorOfABinaryTree {
     // Problem: https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
     // Idea: Find num1 and num2. If found return its root else return null.  
     // At LCA root, you will recieve not null responses from its left and right. Return that root as LCA. 
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if(root == null || root.val == p.val || root.val == q.val) 

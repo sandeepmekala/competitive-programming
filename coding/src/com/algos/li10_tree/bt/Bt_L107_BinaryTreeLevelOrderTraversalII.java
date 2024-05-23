@@ -26,7 +26,7 @@ public class Bt_L107_BinaryTreeLevelOrderTraversalII {
     // Idea: Need 2 queues if you want to print level by level.
     // Instead of using the 2nd queue, rely on 1st queue size and process the queue element until its size. Keep insert elements into same queue.
     // We have to insert the level list at the begin of linked list as want them in reverse order.
-    // time: O(n)
+    // Time: O(n)
     // space: O(n)
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         LinkedList<List<Integer>> result = new LinkedList<List<Integer>>();

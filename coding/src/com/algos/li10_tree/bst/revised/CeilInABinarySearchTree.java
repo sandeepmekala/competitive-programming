@@ -21,7 +21,7 @@ public class CeilInABinarySearchTree {
     // Idea: when root val is larger, that could be one possible ceil value.
     // Assign it to ceild and try to minumize the ceil value by going left.
     // Floor of a num is also similar logic. 
-    // time: O(logn)
+    // Time: O(logn)
     // space: O(1)
     public int findCeil(TreeNode root, int key){
         int ceil = -1;

@@ -16,7 +16,7 @@ public class PickOrNotPick_SubsetSums {
     }
 
     // Problem: https://practice.geeksforgeeks.org/problems/subset-sums2234/1
-    // time: O(2^n)
+    // Time: O(2^n)
     // space: O(1)
     public List<Integer> subsetSums(List<Integer> nums, int n) {
         ArrayList<Integer> sumSubset = new ArrayList<>();

@@ -8,7 +8,7 @@ public class Lis_L300_LongestIncreasingSequence {
 		Lis_L300_LongestIncreasingSequence obj = new Lis_L300_LongestIncreasingSequence();
 		int[] nums = new int[] { 2, -1, 4, 3, 5, -1, 3, 2 };
 		System.out.println(obj.lengthOfLIS(nums));
-		System.out.println(obj.lengthOfLIS2(nums, 0, -1)); // goes left to right
+		System.out.println(obj.lengthOfLis2(nums, 0, -1)); // goes left to right
 
 
 	}
@@ -18,7 +18,7 @@ public class Lis_L300_LongestIncreasingSequence {
 	// Current element lis is the max of all the previous elements lis plus 1
 	// O(n^2) as it takes another loop to find the max for current element
 	// Lis can be printed if we track the parent array if the cur lis gets updated.
-	// We can use binary search to create a new increasing temp array by inserting and overriding the elements in temp array to reduce the time complexity. 
+	// Alternative: We can use binary search to create a new increasing temp array by inserting and overriding the elements in temp array to reduce the time complexity. 
 	// But that adds O(n) space. With this approach, we can't derive the the lis string.
 	// Time: O(n^2)
     // Space: O(n)
@@ -48,15 +48,15 @@ public class Lis_L300_LongestIncreasingSequence {
 
 	// The same can be written in interative way where ind = n-1 -> 0, prev = ind-1 -> -1. prev can't be greater then ind.
 	// There is a better way of implementing it with same O(n^2) time as below.
-	public int lengthOfLIS2(int[] nums, int ind, int prev) {
+	public int lengthOfLis2(int[] nums, int ind, int prev) {
 		int n = nums.length;
 		if(ind == n)
 			return 0;
 
-		int notPick = 0 + lengthOfLIS2(nums, ind+1, prev);
+		int notPick = 0 + lengthOfLis2(nums, ind+1, prev);
 		int pick = 0;
 		if(prev == -1 || nums[ind] > nums[prev]){
-			pick = 1 + lengthOfLIS2(nums, ind+1, ind);
+			pick = 1 + lengthOfLis2(nums, ind+1, ind);
 		}
 		return Math.max(pick, notPick);
 	}

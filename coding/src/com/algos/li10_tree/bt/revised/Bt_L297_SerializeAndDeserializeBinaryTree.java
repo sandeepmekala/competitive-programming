@@ -28,7 +28,7 @@ public class Bt_L297_SerializeAndDeserializeBinaryTree {
 	// Idea: For encoding, load the elements in preorder traversal into list 
 	// For decoding, go in preorder. Always remove first element from list to build root node of preorder.
 	// Recursively pass the same list which removes the first elements from the list to build respective preoder nodes.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public String serialize(TreeNode root) {
 		ArrayList<String> serialized = new ArrayList<String>();

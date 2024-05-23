@@ -21,7 +21,7 @@ public class Bt_PrintRootToNodePathInBinaryTree {
 	}
 	
 	// Problem: https://www.interviewbit.com/problems/path-to-given-node/
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public List<Integer> path(TreeNode root, int data){
 		ArrayList<Integer> list = new ArrayList<>();

@@ -22,7 +22,7 @@ public class Bt_662_MaximumWidthOfBinaryTree {
     // Problem: https://leetcode.com/problems/maximum-width-of-binary-tree/
     // Idea: Index each node in bt similar like segment tree with 2*i+1, 2*i+2.
     // width is diff of last node and first node indices in each level. Take max of it.
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     public int widthOfBinaryTree(TreeNode root) {
         if(root == null) 

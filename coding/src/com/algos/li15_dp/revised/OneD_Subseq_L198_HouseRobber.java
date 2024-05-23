@@ -9,6 +9,7 @@ public class OneD_Subseq_L198_HouseRobber {
 		
 		int[] nums = new int[] {2,7,9,3,1};
 		System.out.println(obj.rob(nums));
+		System.out.println(obj.rob2(nums));
 	}
 	
 	
@@ -38,7 +39,7 @@ public class OneD_Subseq_L198_HouseRobber {
 		return rob[n-1];
     }
 
-	public int robRec(int[] profit){
+	public int rob2(int[] profit){
 		int n = profit.length;
 		int dp[]=new int[n];
 		Arrays.fill(dp,-1);
@@ -46,13 +47,14 @@ public class OneD_Subseq_L198_HouseRobber {
 	}
 
 	private int rob(int ind, int[] profit, int[] dp){
-		if(ind<0)  return 0;
 		if(ind==0) return profit[ind];
 
 		if(dp[ind]!=-1) return dp[ind];
 
-		int pick= profit[ind]+ rob(ind-2, profit, dp);
 		int nonPick = 0 + rob(ind-1, profit, dp);
+		int pick= profit[ind];
+		if(ind>1)
+			pick += rob(ind-2, profit, dp);
 		
 		return dp[ind]=Math.max(pick, nonPick);
 	}

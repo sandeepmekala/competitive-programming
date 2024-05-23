@@ -19,10 +19,9 @@ public class L18_FourSum {
     // Idea: Sort the nums to eleminate the duplicates
 	public List<List<Integer>> fourSum(int[] nums, int target) {
         int n = nums.length;
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-		if (nums.length < 4) {
-            return result;
-		}
+        List<List<Integer>> ans = new ArrayList<>();
+		if (nums.length < 4) 
+            return ans;
 
         Arrays.sort(nums);
         for (int i = 0; i <= n-4; i++) {
@@ -36,29 +35,23 @@ public class L18_FourSum {
                 //if((long) nums[j] + nums[n-2] + nums[n-1] < target - nums[i]) continue;
                 
                 int twoSumTarget = target - (nums[i] + nums[j]);
-                int left = j + 1, right = n - 1;
-                while (left < right) {
-                    int twoSum = nums[left] + nums[right];
+                int l = j + 1, r = n - 1;
+                while (l < r) {
+                    int twoSum = nums[l] + nums[r];
                     if (twoSum == twoSumTarget) {
-                        ArrayList<Integer> list = new ArrayList<Integer>();
-                        list.add(nums[i]);
-                        list.add(nums[j]);
-                        list.add(nums[left]);
-                        list.add(nums[right]);
-                        result.add(list);
-
-                        left++;
-                        while(left < right && nums[left] == nums[left-1]) left++;
+                        ans.add(Arrays.asList(nums[i], nums[j], nums[l], nums[r]));
+                        l++;
+                        while(l < r && nums[l] == nums[l-1]) l++;
                     } else if (twoSum > twoSumTarget) {
-                        right--;
+                        r--;
                     } else {
-                        left++;
+                        l++;
                     }
                 }
             }
         }
 
-		return result;
+		return ans;
     }
 
 }

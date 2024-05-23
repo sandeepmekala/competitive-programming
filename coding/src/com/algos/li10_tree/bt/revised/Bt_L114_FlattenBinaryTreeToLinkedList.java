@@ -25,7 +25,7 @@ public class Bt_L114_FlattenBinaryTreeToLinkedList {
 	 * Use a global prev variable to track the last explored node in postorder traversal and assign it to right of current node.Then update the current as next previous for next iteration.
 	 *  
 	 * */
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	TreeNode prev = null;
     public void flatten(TreeNode root) {
@@ -42,7 +42,7 @@ public class Bt_L114_FlattenBinaryTreeToLinkedList {
 	
 	// Idea:You can use Morris traversal to implement the same in interative mannar.
 	// Instead of assigning prev.right to curr, assign it to curr.right and then update curr.right to left and left to null.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public void flatten2(TreeNode root) {
 		TreeNode curr = root;

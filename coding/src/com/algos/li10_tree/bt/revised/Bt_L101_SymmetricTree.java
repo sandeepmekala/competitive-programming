@@ -20,7 +20,7 @@ public class Bt_L101_SymmetricTree {
 	// Problem: https://leetcode.com/problems/symmetric-tree/
 	// Idea: We have to use two params denoting left and right sub trees which symmetric clones.
 	// Recursively, pass corresponding symmetric roots.
-	// time: O(n)
+	// Time: O(n)
     // space: O(1)
 	public boolean isSymmetric(TreeNode root) {
 		return isSymmetric(root.left, root.right);

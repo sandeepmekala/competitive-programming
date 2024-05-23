@@ -10,38 +10,37 @@ public class Subsequence_L518_CoinChangeII {
 		System.out.println(obj.change(coins, 2, total));
 	}
 	
-	/* 
-	 * Problem: https://leetcode.com/problems/coin-change-ii/
-	 * Idea: Same knapsack problem.
-	 * if total becomes 0, return 1 so that the combination is counted in total
-	 * if total<0 or index<0, then return 0 so that this combination is not counted
-	 * 
-	 * T[i][j] = T[i-1][j] + T[i][j-coins[i]]
-	 *
-	 * 
-	 * 	c/t	0	1	2	3	4
-	 *	1	1	1	1	1	1
-	 * 	2	1	1	2	2	3
-	 * 	3	1	1	2	3	4
-	 * */
+	//  Problem: https://leetcode.com/problems/coin-change-ii/
+	//  Idea: Same knapsack problem.
+	//  if total becomes 0, return 1 so that the combination is counted in total
+	//  if total<0 or index<0, then return 0 so that this combination is not counted
+	//  
+	//  T[i][j] = T[i-1][j] + T[i][j-coins[i]]
+	// 
+	//  
+	//  	c/t	0	1	2	3	4
+	// 	1	1	1	1	1	1
+	//  	2	1	1	2	2	3
+	//  	3	1	1	2	3	4
+	//
 	// Time: O(n*tatal)
     // Space: O(n*tatal)
 	public int change(int total, int[] coins) {
 		int n = coins.length;
 		int[][] comb = new int[n][total+1];
-		for(int i=0; i<n; i++) {
-			for(int j=0; j<=total; j++) {
-				if(j == 0) {
-					comb[i][j] = 1;
-				}else if(i == 0) {
-					if(j%coins[i] == 0) 
-						comb[i][j] = 1;
+		for(int ind=0; ind<n; ind++) {
+			for(int tot=0; tot<=total; tot++) {
+				if(tot == 0) {
+					comb[ind][tot] = 1;
+				}else if(ind == 0) {
+					if(tot%coins[ind] == 0) 
+						comb[ind][tot] = 1;
 				}else {
-					int notPick = comb[i-1][j];
+					int notPick = comb[ind-1][tot];
 					int pick = 0;
-					if(coins[i] <= j)
-						pick = comb[i][j-coins[i]];
-					comb[i][j] = notPick+pick;
+					if(coins[ind] <= tot)
+						pick = comb[ind][tot-coins[ind]];
+					comb[ind][tot] = notPick+pick;
 				}
 			}
 		}
@@ -49,16 +48,16 @@ public class Subsequence_L518_CoinChangeII {
 		return comb[n-1][total];
 	}
 	
-	public int change(int[] coins, int ind, int total) {
+	public int change(int[] coins, int ind, int tot) {
 		if(ind == 0) {
-			if(total % coins[0] == 0)
+			if(tot % coins[0] == 0)
 				return 1;
 			return 0;
 		}
-		int notPick = change(coins, ind-1, total);
+		int notPick = change(coins, ind-1, tot);
 		int pick = 0;
-		if(coins[ind] <= total) 
-			pick = change(coins, ind, total-coins[ind]);
+		if(coins[ind] <= tot) 
+			pick = change(coins, ind, tot-coins[ind]);
 		
 		return notPick + pick;
 	}

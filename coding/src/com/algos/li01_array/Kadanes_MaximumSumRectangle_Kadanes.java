@@ -22,7 +22,7 @@ public class Kadanes_MaximumSumRectangle_Kadanes {
 	 * 
 	 * 
 	 * */
-	// time: O(col*col*row)
+	// Time: O(col*col*row)
 	// space: O(row)
 	private int[] maxSum(int[][] matrix, int m, int n) {
 		int maxSum = Integer.MIN_VALUE;

@@ -24,7 +24,7 @@ public class L230_KthSmallestElementinBst {
     // Problem: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
     // Idea: Traverse the BST using iterative inorder and return when count == k.
     // You can use morris traversal to reduce the space.
-    // time: O(logn)
+    // Time: O(logn)
     // space: O(logn)
 	public int kthSmallest(TreeNode root, int k) {
         Stack<TreeNode> stack = new Stack<TreeNode>();

@@ -45,7 +45,7 @@ public class Partitions_1547_MinimumCostToCutAStick {
 
         return costs[1][c];
     }
-
+    
     public int minCost2(int n, int[] cuts) {
         int c = cuts.length;
         int[] cutsTemp = new int[c+2];

@@ -18,12 +18,12 @@ public class CountInversions {
 		if(low >= high){
 			return 0;
 		}
-		int mid = (low+high)/2, count = 0;
-		count += mergeSortAndCount(nums, low, mid);
-		count += mergeSortAndCount(nums, mid+1, high);
-		count += merge(nums, low, mid, high);
+		int mid = (low+high)/2, cnt = 0;
+		cnt += mergeSortAndCount(nums, low, mid);
+		cnt += mergeSortAndCount(nums, mid+1, high);
+		cnt += merge(nums, low, mid, high);
 
-		return count;
+		return cnt;
 	}
 	private int merge(int nums[], int low, int mid, int high){
 		int left = low;
@@ -34,7 +34,7 @@ public class CountInversions {
 		while(left <= mid && right <= high){
 			if(nums[left] <= nums[right]){
 				temp.add(nums[left++]);
-			}else{
+			}else{							// a[i] > a[j]
 				temp.add(nums[right++]);
 
 				count += mid-left+1;		// inversion count

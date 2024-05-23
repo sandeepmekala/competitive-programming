@@ -9,7 +9,7 @@ public class Bt_CheckForChildrenSumProperty {
     }
 
     // Problem: 
-    // time: O(n)
+    // Time: O(n)
     // space: O(1)
     static void changeTree(TreeNode root) {
         if (root == null)

@@ -1,5 +1,7 @@
 package  com.algos.li01_array.revised;
 
+import java.util.Arrays;
+
 public class Matrix_L48_RotateImage {
 
 	public static void main(String[] args) {
@@ -16,46 +18,39 @@ public class Matrix_L48_RotateImage {
 	}
 
 	// Problem: https://leetcode.com/problems/rotate-image/
-	// Idea: Swap element by element for left col and top row. Repeate the same for other 2 rows and cols.
-    // Need si, ei, sj and ej to track the start and end of the matrix
-    // You can also solve it by doing transpose of matrix
-	public void rotate(int[][] matrix) {
-        int si = 0, sj = 0, ei = matrix.length-1, ej = matrix.length-1; 
-        while(si<ei && sj<ej){
-            //left->top
-            for(int j=sj,i=ei; j<ej; j++,i--){
-                int temp = matrix[si][j];
-                matrix[si][j] = matrix[i][sj];
-                matrix[i][sj] = temp;
+	// Idea: Transpose the matrix and then reverse each row.
+	public void rotate(int[][] matrix){
+        int m = matrix.length, n = matrix[0].length;
+
+        //transpose
+        for(int i=0; i<m; i++){
+            for(int j=i+1; j<n; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
             }
-            
-            //bottom->left
-            for(int i=ei,j=ej; i>si; i--,j--){
-                int temp = matrix[i][sj];
-                matrix[i][sj] = matrix[ei][j];
-                matrix[ei][j] = temp;
-            }
-            
-            //right->bottom
-            for(int j=ej,i=si; j>sj; j--,i++){
-                int temp = matrix[ei][j];
-                matrix[ei][j] = matrix[i][ej];
-                matrix[i][ej] = temp;
-            }
-            
-            si++;
-            ei--;
-            sj++;
-            ej--;
+        }
+
+        //reverse rows
+        for(int i=0; i<m; i++){
+            reverse(matrix[i]);
+        }
+    }
+
+    private void reverse(int[] nums){
+        int l = 0, r = nums.length-1;
+        while(l < r){
+            int temp = nums[l];
+            nums[l] = nums[r];
+            nums[r] = temp;
+            l++; r--;
         }
     }
 
 	private void print(int[][] matrix) {
 		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix[i].length; j++) {
-				System.out.print(matrix[i][j] + " ");
-			}
-			System.out.println();
+			System.out.println(Arrays.toString(matrix[i]));
 		}
+        System.out.println();
 	}
 }
