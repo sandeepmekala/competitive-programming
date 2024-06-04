@@ -1,5 +1,8 @@
 package  com.algos.core.li07_stack.revised;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 import javax.script.ScriptException;
@@ -17,11 +20,11 @@ public class L150_EvaluateReversePolishNotation {
 	// EvalutatePrefix is also similar, we have to traverse from right to left of the string
 	// For EvalutatePrefix, we have to change the order of operands, first poped one is op1 and second poped one will be op2
 	public int evalRPN(String[] tokens) {
+		Set<String> operators = new HashSet<>(Arrays.asList("+", "-", "*", "/"));
+
 		Stack<Integer> stack = new Stack<>();	
-		for(int i=0; i<tokens.length; i++){
-			String ch = tokens[i];
-			
-			if(!ch.equals("+") && !ch.equals("*") && !ch.equals("-") && !ch.equals("/"))  { 
+		for(String ch: tokens){
+			if(!operators.contains(ch)) { 
 				stack.push(Integer.parseInt(ch));
 			}else{
 				int op2 = stack.pop();	

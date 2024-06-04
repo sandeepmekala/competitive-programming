@@ -9,7 +9,7 @@ public class L56_MergeIntervals {
 	public static void main(String[] args) {
 		L56_MergeIntervals obj = new L56_MergeIntervals();
 		
-		int[][] intervals = new int[][] {{6,8},{1,9},{2,4},{4,7}};
+		int[][] intervals = new int[][] {{6,8},{2,4},{4,7}};
 		int[][] distinctIntervals = obj.merge(intervals);
 		for(int i=0; i<distinctIntervals.length; i++) {
 			System.out.println(Arrays.toString(distinctIntervals[i]));
@@ -18,6 +18,7 @@ public class L56_MergeIntervals {
 	}
 
     // Problem: https://leetcode.com/problems/merge-intervals/
+    // Points overlap
     // Idea: Sort intervals based on start in asc order. Compare adjacent intervals. Track the previous interval.
     // There are 2 cases to handle
     // Case 1: No overlapping. Add the previous interval to result and assign the current interval to previous.
@@ -29,7 +30,7 @@ public class L56_MergeIntervals {
         List<int[]> ans = new ArrayList<>();
         int[] merged = interval[0];
         for(int i=1; i<interval.length; i++){
-            if(interval[i][0] <= merged[1]){
+            if(merged[1] >= interval[i][0]){
             	merged[1] = Math.max(merged[1], interval[i][1]);
             }else{
                 ans.add(merged); 

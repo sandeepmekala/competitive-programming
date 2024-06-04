@@ -27,9 +27,7 @@ public class L128_LongestConsecutiveSequence {
 				count++;
 				num++;
 			}
-			if (count > max) {
-				max = count;
-			}
+			max = Math.max(max, count);
 		}
 		return max;
 	}

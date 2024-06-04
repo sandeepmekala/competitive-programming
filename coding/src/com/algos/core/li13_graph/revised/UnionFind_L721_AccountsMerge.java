@@ -25,6 +25,10 @@ public class UnionFind_L721_AccountsMerge {
 
     // Problem: https://leetcode.com/problems/accounts-merge/
     // Idea: Use Union find to build unions of accounts. Then merge the lists.
+    // Assume list index as node to each entry provided in the list.
+    // Assign each mail to its parent node. If mail is already present in map, then union the parent nodes.
+    // Create an empty treeset for each node. Add all mails to their parent node's treeset. This merges the mails.
+    // Create final list of merged accounts ignoring empty treesets nodes.
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         int n = accounts.size();
 

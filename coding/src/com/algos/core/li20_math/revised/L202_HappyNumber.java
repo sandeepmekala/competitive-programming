@@ -19,6 +19,7 @@ public class L202_HappyNumber {
             fast = getSumOfSquares(getSumOfSquares(fast));
             if(fast == 1) return true;
         }while(slow != fast);
+        
         return false;
     }
     

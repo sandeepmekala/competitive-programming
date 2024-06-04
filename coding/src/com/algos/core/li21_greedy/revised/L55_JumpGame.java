@@ -16,7 +16,8 @@ public class L55_JumpGame {
 
         int longest = 0;
         for(int i=0; i<n; i++){
-            if(i > longest) return false;
+            if(i > longest) 
+                return false;
             longest = Math.max(longest, i+nums[i]);
         }
         

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
-import java.util.Stack;
 
 import  com.algos.core.li30_model.TreeNode;
 
@@ -29,24 +28,24 @@ public class Bt_L103_BinaryTreeZigzagLevelOrderTraversal {
     // Time: O(n)
     // space: O(n)
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         if(root == null)
             return result;
             
         boolean leftToRight = true;
-        Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
-		queue.add(root);
-		while(!queue.isEmpty()) {
-            int size = queue.size();
-            List<Integer> level = new ArrayList<Integer>(size);
+        Queue<TreeNode> q = new ArrayDeque<>();
+		q.add(root);
+		while(!q.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = q.size();        
 			for(int i=0; i<size; i++) {
-				TreeNode curr = queue.remove();
+				TreeNode curr = q.remove();
                 level.add(curr.val);
 
                 if(curr.left != null)
-                    queue.add(curr.left);    
+                    q.add(curr.left);    
                 if(curr.right != null)
-                    queue.add(curr.right);
+                    q.add(curr.right);
 			}
             if(!leftToRight)
                Collections.reverse(level);

@@ -1,10 +1,10 @@
-package  com.algos.core.li13_graph.revised;
+package com.algos.core.li13_graph.revised;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import  com.algos.core.li30_model.Edge;
+import com.algos.core.li30_model.Edge;
 
 public class ShortestPath_BellmanFord {
 
@@ -24,9 +24,12 @@ public class ShortestPath_BellmanFord {
 		System.out.println(Arrays.toString(obj.shartedPath(n, edges, 0)));
 	}
 
-	// Idea: Loop n-1 times and relax all edges dest dist. In worst case the graph can be linear and in each iteration we might relax only one edge. Hence, n-1 times relaxation needed.
+	// Idea: Loop n-1 times and relax all edges. In worst case the graph
+	// can be linear and in each iteration we might relax only one edge. Hence, n-1
+	// times relaxation needed.
 	// Works with negative edges also unlike Dijkstra
-	// With one more additional iteration can detect negative weight cycle. You will see dist array getting updated.
+	// With one more additional iteration can detect negative weight cycle. You will
+	// see dist array getting updated.
 	// Time = O(V*E)
 	// Space = O(V)
 	public int[] shartedPath(int n, List<Edge> edges, int src) {
@@ -42,7 +45,7 @@ public class ShortestPath_BellmanFord {
 			for (Edge edge : edges) {
 				int u = edge.src;
 				int v = edge.dest;
-				if(dist[u] == Integer.MAX_VALUE)
+				if (dist[u] == Integer.MAX_VALUE)
 					continue;
 
 				if (dist[u] + edge.weight < dist[v]) {
@@ -51,7 +54,7 @@ public class ShortestPath_BellmanFord {
 				}
 			}
 		}
-		
+
 		return dist;
 	}
 }

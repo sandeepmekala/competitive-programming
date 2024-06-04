@@ -9,23 +9,23 @@ public class PrefixSum_L560_SubarraySumEqualsK {
     }
 
     // Problem: https://leetcode.com/problems/subarray-sum-equals-k/
-    // Concept: Prefix Sum
-    // Same concept can be used for finding the number of subarrays with sum equal to given XoR 
-    // y ^ k = XR
-    // y = XR ^ k
+    // Idea: Use a map to store prefix sum and its frequency
+    // Time: O(n), Space: O(n)
     public int subarraySum(int[] nums, int k) {
-        var map = new HashMap<Integer, Integer>();
-        map.put(0, 1);
+        var map = new HashMap<Integer, Integer>();  // sum -> count
+        map.put(0, 1);      // if first k elements sum to k, then count = 1
 
-        int prefixSum = 0, count = 0;
+        int sum = 0, cnt = 0;
         for (int num : nums) {
-            prefixSum += num;
-            if (map.containsKey(prefixSum - k)) {
-                count += map.get(prefixSum - k);
+            sum += num;
+            int rem = sum - k;
+            if (map.containsKey(rem)) {
+                cnt += map.get(rem);
             }
-            map.put(prefixSum, map.getOrDefault(prefixSum, 0) + 1);
+            map.putIfAbsent(sum, 0);
+            map.put(sum, map.get(sum) + 1);
         }
 
-        return count;
+        return cnt;
     }
 }

@@ -1,9 +1,5 @@
 package  com.algos.core.li03_slidingwindow.revised;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-
 public class L424_LongestRepeatingCharacterReplacement {
 
 	public static void main(String[] args) {
@@ -14,26 +10,27 @@ public class L424_LongestRepeatingCharacterReplacement {
 	}
 
 	// Problem: https://leetcode.com/problems/longest-repeating-character-replacement/
-	// Idea: In a substring we will try to replace all characters except the max frequency character
+	// Replace k chars to get longest repeating char substring
+	// Idea: In a substring we will try to replace all characters except the max frequency chars.
+	// maxFreq is the max frequency of any character in the window
+	// (r-l+1) - maxFreq is the number of characters we need to replace
+	// Ideally maxFreq need to reduced after every window shrink. But there is no point in reducing maxFreq.
+	// Becuase increased maxFreq will give us better maxLen. Reducing will not help. Hence, we are not reducing maxFreq.
 	public int characterReplacement(String s, int k) {
 		int[] map = new int[26];
 		int l=0, r=0, maxLen = 0, maxFreq=0, n = s.length();
 		while(r<n) {
 			map[s.charAt(r) - 'A']++;
-			maxFreq = Math.max(maxFreq, map[s.charAt(r) - 'A']);	//window length
-			int len = r-l+1;
-			if(len-maxFreq > k) {
-				map[s.charAt(l) - 'A']--;
+			maxFreq = Math.max(maxFreq, map[s.charAt(r) - 'A']);
+			if((r-l+1)-maxFreq > k) {
+				map[s.charAt(l) - 'A']--;		// not updating maxFreq
 				l++;
 			}
 
-			len = r-l+1;
-			if(len-maxFreq <= k) 
-				maxLen = Math.max(maxLen, len);
-			
+			if((r-l+1)-maxFreq <= k) 
+				maxLen = Math.max(maxLen, r-l+1);
 			r++;
 		}
-		
 		return maxLen;
 	}
 }

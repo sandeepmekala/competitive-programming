@@ -27,7 +27,7 @@ public class L230_KthSmallestElementinBst {
     // Time: O(logn)
     // space: O(logn)
 	public int kthSmallest(TreeNode root, int k) {
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
         int count = 0;
         while(curr != null || !stack.isEmpty()){

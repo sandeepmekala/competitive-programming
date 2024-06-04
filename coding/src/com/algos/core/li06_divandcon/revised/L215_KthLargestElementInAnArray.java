@@ -14,33 +14,34 @@ public class L215_KthLargestElementInAnArray {
 
 	// Problem: https://leetcode.com/problems/kth-largest-element-in-an-array/
 	// Idea: Apply quick select algo. Use partition algo to find a pivot index, use binary search on n-k to push the index towards n-k.
+	// Time: O(n*logn)
 	public int findKthLargest(int[] nums, int k) {
 		int n = nums.length;
 		int low = 0, high = n-1;
 		while(true) {
-			int pivotIndex = partition(nums, low, high);
-			if(pivotIndex == n-k) {
-				return nums[pivotIndex];
-			}else if(pivotIndex < n-k) {
-				low = pivotIndex+1;
+			int pivotInd = partition(nums, low, high);
+			if(pivotInd == n-k) {
+				return nums[pivotInd];
+			}else if(pivotInd < n-k) {
+				low = pivotInd+1;
 			}else {
-				high = pivotIndex-1;
+				high = pivotInd-1;
 			}
 		}
 	}
 	
-	// low is pivot
+	// high is pivot
 	private int partition(int[] nums, int low, int high) {
+        int pivotInd = low;
 		int pivot = nums[high];
-        int pivotIndx = low;
         for (int i = low; i < high; i++) {
             if (nums[i] < pivot) {
-                swap(nums, i, pivotIndx);
-                pivotIndx++;
+                swap(nums, i, pivotInd);
+                pivotInd++;
             }
         }
-        swap(nums, pivotIndx, high);
-        return pivotIndx;
+        swap(nums, pivotInd, high);
+        return pivotInd;
 	}
 
 	private void swap(int[] nums, int i, int j) {

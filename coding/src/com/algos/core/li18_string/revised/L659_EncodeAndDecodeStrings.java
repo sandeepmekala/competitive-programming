@@ -30,7 +30,7 @@ public class L659_EncodeAndDecodeStrings {
     }
 
     public List<String> decode(String str) {
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         int i=0;
         while(i<str.length()){
             int delInd = str.indexOf('#', i);

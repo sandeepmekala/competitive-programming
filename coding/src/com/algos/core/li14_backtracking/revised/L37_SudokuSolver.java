@@ -19,7 +19,7 @@ public class L37_SudokuSolver {
         System.out.println();
     }
 
-    // Problem: https://practice.geeksforgeeks.org/problems/m-coloring-problem-1587115620/1#
+    // Problem: https://leetcode.com/problems/sudoku-solver/description/
     // Time: O(9^n*n)
 	// Space: O(n^2)
     public void solveSudoku(char[][] board) {

@@ -12,7 +12,6 @@ public class Matrix_L48_RotateImage {
 		{7,8,9}
 		};
 
-		obj.print(matrix);
 		obj.rotate(matrix);
 		obj.print(matrix);
 	}
@@ -22,7 +21,7 @@ public class Matrix_L48_RotateImage {
 	public void rotate(int[][] matrix){
         int m = matrix.length, n = matrix[0].length;
 
-        //transpose
+        // transpose
         for(int i=0; i<m; i++){
             for(int j=i+1; j<n; j++){
                 int temp = matrix[i][j];
@@ -31,7 +30,7 @@ public class Matrix_L48_RotateImage {
             }
         }
 
-        //reverse rows
+        // reverse rows
         for(int i=0; i<m; i++){
             reverse(matrix[i]);
         }

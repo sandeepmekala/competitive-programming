@@ -10,16 +10,12 @@ public class L190_ReverseBits {
 	}
 
     // Problem: https://leetcode.com/problems/reverse-bits/
-    // Idea: Loop 32 bits from lsb, keep track of a res variable
-    // Right shift res and do or with 1 if num has 1 at position i.
+    // Idea: Take lsb of n and |(or) it with res and shift res to right. Repeat this for 32 times.
 	public int reverseBits(int n) {
         int res = 0;
         for(int i=0; i<32; i++){
             res = res << 1; 
-            if(((n>>i)&1) == 1){
-                res = res | 1;
-            }
-            
+            res = res | ((n>>i)&1);
         }
         return res;
     }

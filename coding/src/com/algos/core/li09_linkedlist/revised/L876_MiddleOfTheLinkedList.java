@@ -6,6 +6,7 @@ public class L876_MiddleOfTheLinkedList {
 
 	public static void main(String[] args) {
 		L876_MiddleOfTheLinkedList obj = new L876_MiddleOfTheLinkedList();
+		
 		SingleLinkedList list = new SingleLinkedList();
 		list.insertAfterEnd(1);
 		list.insertAfterEnd(2);

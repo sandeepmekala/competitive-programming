@@ -19,27 +19,22 @@ public class Bt_L572_SubtreeOfAnotherTree {
 	}
 
 	// Problem: https://leetcode.com/problems/subtree-of-another-tree
-	// Idea: You have to use isSameTree function. Check in both subtrees if root value are matching.
-	// If root values are matching, check if they are same trees from that roots.
-	// Even if roots match, same tree might not give true. Hence, need to check in both subtrees.
+	// Idea: For each node check if same tree. If not check both in left and right subtrees.
+	// Same tree will return quickly if roots are not matching. If roots are matching, then only it will continue.
 	public boolean isSubtree(TreeNode root, TreeNode subRoot) {
         if(root == null)
             return false;
         
-        if(root.val == subRoot.val){
-            return isSameTree(root, subRoot) || isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
-        }else {
-            return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
-        }
+        if(isSameTree(root, subRoot))
+            return true;
+            
+		return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
     
-    private boolean isSameTree(TreeNode root1, TreeNode root2) {
-		if(root1 == null && root2 == null) {
-			return true;
-		}else if(root1 == null || root2 == null){
-            return false;
-        }else{
-            return (root1.val ==  root2.val) && isSameTree(root1.left, root2.left) && isSameTree(root1.right, root2.right);
-        }
+    public boolean isSameTree(TreeNode root1, TreeNode root2) {
+		if(root1 == null || root2 == null)
+			return root1 == root2;
+		
+        return (root1.val == root2.val) && isSameTree(root1.left, root2.left) && isSameTree(root1.right, root2.right);
 	}
 }

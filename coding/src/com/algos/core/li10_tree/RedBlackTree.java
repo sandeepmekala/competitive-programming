@@ -1,4 +1,4 @@
-package  com.algos.core.li10_tree;
+package  com.algos.core.li10_tree.other;
 
 public class RedBlackTree {
 

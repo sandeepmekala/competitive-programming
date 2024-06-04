@@ -12,10 +12,10 @@ public class Pattern_KmpSearchingAlgorithm {
 		kmps.kmpSearch(input, pattern);
 	}
 
-	// Idea: We construct longest proper prefix which is also suffixes for the pattern so that we don't search already searched prefixes.
-	// This lps contains the indexes to fallback if there is a miss match.
-	// These indexes are basically the length of the longest proper prefix which is already compared.
-	// O(n+m) = O(n)
+	//Idea: We construct longest proper prefix which is also suffixes for the pattern so that we don't match already matched prefixes.
+	//This lps contains the indexes to fallback if there is a miss match.
+	//These indexes are basically the length of the longest proper prefix which is already compared.
+	//O(n+m) = O(n)
 	public void kmpSearch(String str, String pattern) {
 		int n = str.length(), m = pattern.length();
 		int[] lps = new int[m];
@@ -44,15 +44,11 @@ public class Pattern_KmpSearchingAlgorithm {
 		
 	}
 
-	/*
-	 * 	Idea: Build lps array to store the next index we should jump incase missmatch with input string.
-	 * 	Start with j=0, i=1
-	 * 	If, pat[i] and pat[j] match, store lps[i] = j+1. This means, till j it matched, in case of missmatch it should fallback to j+1 index. Increase i,j
-	 *	In case missmatch, we already stored the next ind of pattern with last matched j. Switch j to that.(lps[j-1])
-	 *	
-	 *	Time complexity: O(m)
-	 *
-	 * */
+	// Idea: Build lps array to store the next index we should jump incase missmatch with input string.
+	// Start with j=0, i=1
+	// If, pat[i] and pat[j] match, store lps[i] = j+1. This means, till j it matched, in case of missmatch it should fallback to j+1 index. Increase i,j
+	// In case missmatch, we already stored the next ind of pattern with last matched j. Switch j to that.(lps[j-1])
+	// Time: O(m)
 	private void constructLps(int[] lps, String pattern, int m) {
 		int j = 0, i=1;
 		lps[0] = 0;

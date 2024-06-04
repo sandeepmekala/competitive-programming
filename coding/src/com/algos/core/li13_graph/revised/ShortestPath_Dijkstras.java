@@ -11,7 +11,10 @@ public class ShortestPath_Dijkstras {
 	public static void main(String[] args) {
 		ShortestPath_Dijkstras shortedpath = new ShortestPath_Dijkstras();
 		
-		int[][][] adj = new int[][][]{{{1, 1}, {2, 6}}, {{2, 3}, {0, 1}}, {{1, 3}, {0, 6}}};
+		int[][][] adj = new int[][][]{
+			{{1, 1}, {2, 6}}, 
+			{{2, 3}, {0, 1}}, 
+			{{1, 3}, {0, 6}}};
             
 		int dist[] = shortedpath.dijkstra(adj, 2);
 		System.out.println(Arrays.toString(dist));
@@ -30,7 +33,7 @@ public class ShortestPath_Dijkstras {
 		Arrays.fill(dist, Integer.MAX_VALUE);
 
 		dist[src] = 0;
-		pq.add(new int[]{0, src});	//{dist, node}
+		pq.add(new int[]{0, src});						// {dist, node}
 		while(!pq.isEmpty()){
 			int[] curr = pq.remove();
 			int dis = curr[0], node = curr[1];

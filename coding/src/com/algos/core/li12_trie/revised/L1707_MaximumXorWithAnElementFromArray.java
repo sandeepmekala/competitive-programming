@@ -17,21 +17,24 @@ public class L1707_MaximumXorWithAnElementFromArray {
         System.out.println(Arrays.toString(ans));
     }
 
+    // Problem: https://leetcode.com/problems/maximum-xor-with-an-element-from-array/description/
+    // Idea: Insert all number in trie from msb to lsb (31-0). Insert only the numbers which are less then the query mi.
+    // For each query, find the max xor by traversing the trie.
+    // max  can be maximized by selecting the bit which is different from the query bit.
     public int[] maximizeXor(int[] nums, int[][] queries) {
-        int n=nums.length, m=queries.length;
+        int n = nums.length, m = queries.length;
         Arrays.sort(nums);
         List<Query> offlineQueries = new ArrayList<>();
         for(int i=0; i<queries.length; i++){
-            int q[] = queries[i];
-            offlineQueries.add(new Query(i, q[0], q[1]));
+            offlineQueries.add(new Query(i, queries[i][0], queries[i][1])); 
         }
-        offlineQueries.sort((q1, q2) -> q1.ai-q2.ai);
+        offlineQueries.sort((q1, q2) -> q1.mi-q2.mi);
 
-        Trie trie = new Trie();
+        Trie2 trie = new Trie2();
         int[] ans = new int[m];
         int ind = 0;
         for(Query q: offlineQueries){
-            while(ind<n && nums[ind] <= q.ai){
+            while(ind<n && nums[ind] <= q.mi){
                 trie.insert(nums[ind]);
                 ind++;
             }
@@ -47,34 +50,31 @@ public class L1707_MaximumXorWithAnElementFromArray {
 class Query{
     int index;
     int xi;
-    int ai;
+    int mi;
     Query(int index, int xi, int ai){
         this.index = index;
         this.xi = xi; 
-        this.ai = ai; 
+        this.mi = ai; 
     }
 }
-class Trie{
+class Trie2{
     TrieNode root;
-    Trie(){
+    Trie2(){
         root = new TrieNode();
     }
 
     public void insert(int num) {
         TrieNode curr = root;
         for(int i=31; i>=0; i--){
-            int bit = (num>>i)&1;
-            if(!curr.map.containsKey(bit)){
-                curr.map.put(bit, new TrieNode());
-            }
-
+            int bit = (num>>i) & 1;
+            curr.map.putIfAbsent(bit, new TrieNode());
             curr = curr.map.get(bit);
         }
     }
 
     public int findMax(int num){
-        TrieNode curr = root;
         int max = 0;
+        TrieNode curr = root;
         for(int i=31; i>=0; i--){
             int bit = (num>>i) & 1;
             if(curr.map.containsKey(1-bit)){
@@ -84,6 +84,7 @@ class Trie{
                 curr = curr.map.get(bit);
             }
         }
+
         return max;
     }
 }

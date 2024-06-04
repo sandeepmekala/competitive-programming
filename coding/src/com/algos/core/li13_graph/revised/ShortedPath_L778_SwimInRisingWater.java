@@ -1,13 +1,16 @@
 package  com.algos.core.li13_graph.revised;
 
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class ShortedPath_L778_SwimInRisingWater {
 
 	public static void main(String[] args) {
 		ShortedPath_L778_SwimInRisingWater obj = new ShortedPath_L778_SwimInRisingWater();
 		
-		int[][] grid = new int[][]{{0,2},{1,3}};
+		int[][] grid = {
+            {0,2},
+            {1,3}};
 		System.out.println(obj.swimInWater(grid));
 	}
 	
@@ -18,22 +21,22 @@ public class ShortedPath_L778_SwimInRisingWater {
         int m = grid.length, n = grid[0].length;
         
         int[][] vis = new int[m][n];
-        PriorityQueue<int[]> q = new PriorityQueue<>((a, b)->a[0] - b[0]);
-        q.add(new int[]{grid[0][0], 0, 0});     // {time/max-height, r, c}
+        Queue<int[]> q = new PriorityQueue<>((a, b)->a[0] - b[0]);
+        q.add(new int[]{grid[0][0], 0, 0});     // {time or max-height, r, c}
         vis[0][0] = 1;
         while(!q.isEmpty()){
             int[] curr = q.remove();
-            int max = curr[0], row = curr[1], col = curr[2];
-            if(row == m-1 && col == n-1)
+            int max = curr[0], i = curr[1], j = curr[2];
+            if(i == m-1 && j == n-1)
                 return max;
                 
             int[][] dirs = new int[][]{{1,0}, {-1,0},  {0,1}, {0,-1}};
             for(int[] dir: dirs){
-                int nrow = row+dir[0], ncol = col+dir[1];
-                if(isSafe(grid, nrow, ncol, vis)){
-                    vis[nrow][ncol] = 1;            // just to avoid adding same cell again
+                int ni = i+dir[0], nj = j+dir[1];
+                if(isSafe(grid, ni, nj, vis)){
+                    vis[ni][nj] = 1;            // just to avoid adding same cell again
                     q.add(new int[]{
-                        Math.max(max, grid[nrow][ncol]), nrow, ncol
+                        Math.max(max, grid[ni][nj]), ni, nj
                     });
                 }
             }
@@ -43,7 +46,8 @@ public class ShortedPath_L778_SwimInRisingWater {
     }
     
     private boolean isSafe(int[][] grid, int i, int j, int[][] visited){
-        return i>=0 && i<grid.length && j>=0 && j<grid[0].length && visited[i][j]==0;
+        return i>=0 && i<grid.length && j>=0 && j<grid[0].length && 
+            visited[i][j]==0;
     }
 
 }

@@ -33,7 +33,7 @@ public class L131_PalindromePartitioning {
                 polindromes.add(s.substring(ind,i+1));
                 partition(s, i+1, polindromes, result);
                 polindromes.remove(polindromes.size()-1);
-            }
+            }   
         }
     }
     

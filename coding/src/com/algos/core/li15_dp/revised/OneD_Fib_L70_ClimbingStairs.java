@@ -14,29 +14,27 @@ public class OneD_Fib_L70_ClimbingStairs {
 	// Time: O(n)
 	// Space: O(n)
 	public int climbStairs(int n) {
-		int numberOfWays[] = new int[n + 1];
-		numberOfWays[0] = 1; // we need only last two numbers in array. So, we can save some space by using two variables instead of array
-		numberOfWays[1] = 1;
+		int dp[] = new int[n + 1];
+		dp[0] = dp[1] = 1;
 		for (int i = 2; i <= n; i++) {
-			numberOfWays[i] = numberOfWays[i - 1] + numberOfWays[i - 2];
+			dp[i] = dp[i - 1] + dp[i - 2];
 		}
-		return numberOfWays[n];
+		return dp[n];
 	}
 
 	private int stairchasesXBottomUp(int n, int x[]) {
-		int numberOfWays[] = new int[n + 1];
-		numberOfWays[0] = 1; // we need only last two numbers in array. So, we can save some space by using
-								// two varibles instead of array
-
+		int dp[] = new int[n + 1];
+		dp[0] = 1; 
 		for (int i = 1; i <= n; i++) {
 			int total = 0;
 			for (int j = 0; j < x.length; j++) {
 				if (i - x[j] >= 0) {
-					total += numberOfWays[i - x[j]];
+					total += dp[i - x[j]];
 				}
 			}
-			numberOfWays[i] = total;
+			dp[i] = total;
 		}
-		return numberOfWays[n];
+		
+		return dp[n];
 	}
 }

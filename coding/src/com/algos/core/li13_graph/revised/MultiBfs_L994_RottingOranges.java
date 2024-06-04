@@ -17,6 +17,7 @@ public class MultiBfs_L994_RottingOranges {
 	}
 
 	// Problem: https://leetcode.com/problems/rotting-oranges/
+    // 1 -> fresh, 2 -> rotten, 0 -> empty
     // Idea: We have to multi source bfs and increase time for every level.
     // We need to count the fresh nodes and load all the roatten oranges to queue
     // In every step, for every orange in queue, check in its 4 direction, if you find a rotten orange make it rotten, reduce the fresh counter and load the rotten one to queue.
@@ -33,8 +34,8 @@ public class MultiBfs_L994_RottingOranges {
                 if(grid[i][j] == 1)
                     fresh++;
                 if(grid[i][j] == 2){
-                    q.add(new int[] {i,j,0}); // x,y,mins
-                    vis[i][j] = 2;      // we will use 2 for visited/rottened
+                    q.add(new int[] {i,j,0});   // x,y,mins
+                    vis[i][j] = 2;              // we will use 2 for visited/rottened
                 }
             }
         }
@@ -50,8 +51,8 @@ public class MultiBfs_L994_RottingOranges {
                 int nrow = row + dir[0];
                 int ncol = col + dir[1];
                 if (isSafe(grid, nrow, ncol, vis)) {
-                    q.add(new int[] { nrow, ncol, mins + 1 });
                     vis[nrow][ncol] = 2;
+                    q.add(new int[] { nrow, ncol, mins + 1 });  // pushing mins to q so that we don't need to do level wise traversal
                     fresh--;
                 }
             }

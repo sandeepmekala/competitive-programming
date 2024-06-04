@@ -11,6 +11,7 @@ public class L50_PowOfX {
 	}
 
     // Problem: https://leetcode.com/problems/powx-n/
+    // x^n
     // Idea: 2^4 = 2^(4/2) * 2^(4/2)
     // 2^5 = 2^(5/2) * 2^(5/2) * 2^1
     // 2^0 = 1

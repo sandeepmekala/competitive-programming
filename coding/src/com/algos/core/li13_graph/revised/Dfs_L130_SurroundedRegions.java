@@ -5,7 +5,7 @@ public class Dfs_L130_SurroundedRegions {
 	public static void main(String[] args) {
         Dfs_L130_SurroundedRegions obj = new Dfs_L130_SurroundedRegions();
 
-        char mat[][] = {
+        char[][] mat = {
         {'X', 'X', 'X', 'X'}, 
         {'X', 'O', 'X', 'X'}, 
         {'X', 'O', 'O', 'X'}, 
@@ -32,7 +32,7 @@ public class Dfs_L130_SurroundedRegions {
             for(int j = 0 ; j<n;j++) {
                 if(i == 0 || j == 0 || i == m-1 || j == n-1) 
                     if(vis[i][j] == 0 && board[i][j] == 'O') 
-                        dfs(i, j, vis, board); 
+                        dfs(board, i, j, vis); 
             }
         }
         
@@ -46,20 +46,19 @@ public class Dfs_L130_SurroundedRegions {
         return board;
     }
 
-    private void dfs(int row, int col,int vis[][], char board[][]) {
-        if (!isSafe(vis, board, row, col)) 
-            return;     
-
-        vis[row][col] = 1; 
-        dfs(row+1, col, vis, board);
-        dfs(row-1, col, vis, board);
-        dfs(row, col+1, vis, board);
-        dfs(row, col-1, vis, board);
+    private void dfs(char[][] board, int i, int j, int[][] vis) {
+        vis[i][j] = 1; 
+        int[][] dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        for (int[] dir : dirs) {
+            int ni = i + dir[0], nj = j + dir[1];
+            if (isSafe(board, ni, nj, vis))
+                dfs(board, ni, nj, vis);
+        }
     }
 
-    private boolean isSafe(int[][] vis, char[][] board, int nrow, int ncol) {
+    private boolean isSafe(char[][] board, int ni, int nj, int[][] vis) {
         int m = board.length, n = board[0].length;
-        return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n
-                && vis[nrow][ncol] == 0 && board[nrow][ncol] == 'O';
+        return ni >= 0 && ni < m && nj >= 0 && nj < n
+                && vis[ni][nj] == 0 && board[ni][nj] == 'O';
     }
 }

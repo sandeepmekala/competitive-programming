@@ -9,8 +9,7 @@ public class L3_LongestSubstringWithoutRepeatingCharacters {
 	}
 	
 	// Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
-	// Idea: Use 2 pointers. Once you find a repeating char on the right side, remove all the old chars from list until the repeating item.
-	// Incase you don't want to remove j ptr char's one by one. You can store the index i with each repeating char in map so that, j can be jumped to that.
+	// Idea: Use 2 pointers. You can store the index i+1 with each repeating char in map so that, j can be jumped to that.
 	public int lengthOfLongestSubstring(String s) {
 		int[] set = new int[256];
 
@@ -18,12 +17,10 @@ public class L3_LongestSubstringWithoutRepeatingCharacters {
 		while(r<n) {
 			char ch = s.charAt(r);
 			//update l pointer until the char is not in set
-			while(set[ch] != 0) {
-				set[ch] = 0;
-				ch = s.charAt(l);
-				l++;
+			if(set[ch] != 0) {
+				l = Math.max(l, set[ch]);		// abba case
 			}
-			set[ch] = 1;
+			set[ch] = r+1;						// store the index to which l should jump
 
 			maxLen = Math.max(maxLen, r-l+1);
 			r++;

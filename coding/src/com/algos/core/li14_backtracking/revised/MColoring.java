@@ -1,38 +1,40 @@
 package  com.algos.core.li14_backtracking.revised;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import  com.algos.core.li30_model.GraphAdjLst;
+import java.util.List;
 
 public class MColoring {
     public static void main(String[] args) {
         MColoring obj = new MColoring();
 
-        GraphAdjLst g = new GraphAdjLst();
-		g.addEdge(0, 1);
-		g.addEdge(0, 2);
-		g.addEdge(0, 3);
-		g.addEdge(1, 0);
-        g.addEdge(1, 2);
-        g.addEdge(1, 3);
-		g.addEdge(2, 0);
-        g.addEdge(2, 1);
-		g.addEdge(3, 0);
-        g.addEdge(3, 1);
+        List<List<Integer>> adj = new ArrayList<>();
+		for (int i = 0; i < 4; i++) 
+			adj.add(new ArrayList<>());
+            
+        adj.get(0).add(1);
+        adj.get(0).add(2);
+        adj.get(0).add(3);
+        adj.get(1).add(0);
+        adj.get(1).add(2);
+        adj.get(1).add(3);
+        adj.get(2).add(0);
+        adj.get(2).add(1);
+        adj.get(3).add(0);
+        adj.get(3).add(1);
+
 
         int m=3;
-        System.out.println(obj.graphColoring(g.adj, m));
+        System.out.println(obj.graphColoring(adj, m));
     }
 
-    public boolean graphColoring(HashMap<Integer, ArrayList<Integer>> adj, int m){
+    public boolean graphColoring(List<List<Integer>> adj, int m){
         int[] colors = new int[adj.size()];
         return coloring(adj, 0, colors, m);
     }
 
     // Time: O(m^n)
 	// Space: O(n)
-    private boolean coloring(HashMap<Integer, ArrayList<Integer>> adj, int node, int[] colors, int m){
+    private boolean coloring(List<List<Integer>> adj, int node, int[] colors, int m){
         if(node == adj.size()) 
             return true;
 
@@ -47,11 +49,12 @@ public class MColoring {
         return false;
     }
 
-    private boolean isSafe(HashMap<Integer, ArrayList<Integer>> adj, int node, int[] colors, int col) {
+    private boolean isSafe(List<List<Integer>> adj, int node, int[] colors, int col) {
         for(int neigh: adj.get(node)){
             if(colors[neigh] == col) 
                 return false;
         }
+        
         return true;
     }
 }

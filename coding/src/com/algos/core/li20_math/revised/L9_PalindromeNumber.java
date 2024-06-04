@@ -8,10 +8,8 @@ public class L9_PalindromeNumber {
 		System.out.println(obj.isPalindrome(121));
 	}
 	
-	/*
-	 * Problem: https://leetcode.com/problems/palindrome-number/
-     * Idea: Calculate reverse number by take rem each time and compare num and rev num.
-	 * */
+	// Problem: https://leetcode.com/problems/palindrome-number/
+    // Idea: Calculate reverse number by take rem each time and compare num and rev num.
 	public boolean isPalindrome(int x) {
         if(x < 0) return false;
         

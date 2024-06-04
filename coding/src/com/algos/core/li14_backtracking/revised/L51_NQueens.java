@@ -10,12 +10,12 @@ public class L51_NQueens {
 		System.out.println(nqueen.solveNQueens(4));
 	}
 
-	// Problem: Place N queens on a board so that they don't attach each other
+	// Problem: https://leetcode.com/problems/n-queens/
 	// Idea: For each row, recursively check if col gives solution. Else,
-	// increment col. If none of the cols give solution, increment row.
-	// Time: O(n^n) as we start by placing 4 queens in each row and col
-	// 0. Each recursion checks for different col. It will be tree with 4 children
-	// and col depth.
+	// Increment col. If none of the cols give solution, increment row.
+	// Time: O(n^n) as we start by placing 4 queens in each row and col 0. 
+	// Each recursion checks for different col. It will be tree with 4 children
+	// Tree depth is col's
 	// Space: O(n^2)
 	public List<List<String>> solveNQueens(int n) {
 		List<List<String>> result = new ArrayList<>();
@@ -57,11 +57,11 @@ public class L51_NQueens {
 		result.add(list);
 	}
 
-	// Can be optimized using hashing
-	// left: n size array hash with entrie for each row
-	// lower left diagonal: index = row+col | 2*n-1 size array hash
-	// upper left diagonal: index = (n-1)-(row-col) | 2*n-1 size array hash
-	boolean isSafe(int board[][], int row, int col) {
+	// This checks can be optimized to O(1) using hashing
+	// Left: n size array hash with entries for each row
+	// Top left diagonal: index = (n-1)-(row-col), 2*n-1 size array hash
+	// Bottom left diagonal: index = row+col, 2*n-1 size array hash
+	boolean isSafe(int[][] board, int row, int col) {
 		int i, j, n = board.length;
 
 		// left side
@@ -69,7 +69,7 @@ public class L51_NQueens {
 			if (board[row][i] == 1)
 				return false;
 
-		// upper-left diagonal
+		// top-left diagonal
 		for (i = row, j = col; i >= 0 && j >= 0; i--, j--)
 			if (board[i][j] == 1)
 				return false;

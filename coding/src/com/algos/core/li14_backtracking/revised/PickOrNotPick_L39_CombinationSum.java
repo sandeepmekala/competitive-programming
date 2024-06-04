@@ -18,7 +18,7 @@ public class PickOrNotPick_L39_CombinationSum {
     // space: O(n)
 	public List<List<Integer>> combinationSum(int[] nums, int target) {
 		List<List<Integer>> result = new ArrayList<>();
-		combinationSum(nums, 0, target, new ArrayList<Integer>(), result);
+		combinationSum(nums, 0, target, new ArrayList<>(), result);
 		return result;
 	}
 
@@ -26,7 +26,7 @@ public class PickOrNotPick_L39_CombinationSum {
 			List<List<Integer>> result) {
 		if (ind == nums.length){
 			if (target == 0) 
-				result.add(new ArrayList<Integer>(list));
+				result.add(new ArrayList<>(list));
 			return;	
 		} 
 

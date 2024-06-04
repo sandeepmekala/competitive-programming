@@ -1,9 +1,9 @@
 package  com.algos.core.li13_graph;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class DetectCycle_L261_GraphValidTree {
 
@@ -15,34 +15,32 @@ public class DetectCycle_L261_GraphValidTree {
 		System.out.println(obj.validTree(n, edges));
 	}
 
-    // Problem: https://leetcode.com/problems/graph-valid-tree/
-    // https://www.lintcode.com/problem/178/
-    // Idea: 
+    // Problem: https://leetcode.ca/2016-08-17-261-Graph-Valid-Tree/
+    // Idea: Cycle detection in undirected graph. Use DFS to detect cycle.
 	public boolean validTree(int n, int[][] edges) {
         if(n == 0)
             return true;
 
-        HashMap<Integer, List<Integer>> adjlist = new HashMap<>();
-        for(int i=0; i<n; i++){
-            adjlist.put(i, new ArrayList<Integer>());
-        }
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < n; i++)
+            adj.add(new ArrayList<>());
         for(int[] edge: edges){
-            adjlist.get(edge[0]).add(edge[1]);
-            adjlist.get(edge[1]).add(edge[0]);
+            adj.get(edge[0]).add(edge[1]);
+            adj.get(edge[1]).add(edge[0]);
         }
 
-        HashSet<Integer> visited = new HashSet<>();
-        return dfs(adjlist, 0, -1, visited) && (visited.size() == n);
+        Set<Integer> vis = new HashSet<>();
+        return dfs(adj, 0, -1, vis) && (vis.size() == n);
     }
 
-    private boolean dfs(HashMap<Integer, List<Integer>> adjlist, int curr, int prev, HashSet<Integer> visited){
-        visited.add(curr);
-        for(int neigh: adjlist.get(curr)){
-            if(!visited.contains(neigh)){
-                if(dfs(adjlist, neigh, curr, visited) == false){
+    private boolean dfs(List<List<Integer>> adj, int curr, int prev, Set<Integer> vis){
+        vis.add(curr);
+        for(int nei: adj.get(curr)){
+            if(!vis.contains(nei)){
+                if(dfs(adj, nei, curr, vis) == false){
                     return false;
                 }
-            }else if(neigh != prev){
+            }else if(nei != prev){
                 return false;
             }
         }

@@ -38,7 +38,7 @@ public class Bt_PrintRootToNodePathInBinaryTree {
 		
 		if(path(root.left, data, path) || path(root.right, data, path)) 
 			return true;
-		
+
 		path.remove(path.size()-1);
 		return false;
 	}

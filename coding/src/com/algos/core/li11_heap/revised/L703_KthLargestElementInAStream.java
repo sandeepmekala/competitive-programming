@@ -1,7 +1,7 @@
 package  com.algos.core.li11_heap.revised;
 
-import java.util.Arrays;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class L703_KthLargestElementInAStream {
 
@@ -17,15 +17,14 @@ public class L703_KthLargestElementInAStream {
     // Problem: https://leetcode.com/problems/kth-largest-element-in-a-stream/
     // Idea: Keep k largest elements in min heap so that top of the pq is kth largest.
 	int k;
-    private PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
+    Queue<Integer> minHeap = new PriorityQueue<>();
     public L703_KthLargestElementInAStream(int k, int[] nums) {
         this.k = k;
         for(int num: nums) {
         	minHeap.add(num);
-        }
-
-        while(minHeap.size() > k) {
-        	minHeap.remove();
+            if(minHeap.size() > k) {
+                minHeap.remove();
+            }
         }
     }
     

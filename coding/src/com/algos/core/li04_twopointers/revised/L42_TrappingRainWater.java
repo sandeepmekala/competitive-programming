@@ -9,13 +9,10 @@ public class L42_TrappingRainWater {
 		System.out.println(obj.trap(height));
 	}
 	
-	/*
-	 * Problem: https://leetcode.com/problems/trapping-rain-water/
-	 * Idea: Track the maximum from left and right
-	 * if maxl is minimum, means the water that gets logged will be at max will be height of maxl. use maxl to find the current position water logging maxl-height[i]
-	 * similarly, update the water logging from the right if maxr is smaller then the maxl.
-	 *  
-	 * */
+	// Problem: https://leetcode.com/problems/trapping-rain-water/
+	// Idea: Track the maximum from left and right
+	// If maxl is minimum, means the water that gets logged will be at max will be height of maxl. Use maxl to find the current position water logging maxl-height[i]
+	// Similarly, update the water logging from the right if maxr is smaller then the maxl.
 	public int trap(int[] height) {
         int sum = 0, n = height.length, maxl = height[0], maxr = height[n-1];
         int l=1, r=n-2;

@@ -20,7 +20,7 @@ public class Dfs_L417_PacificAtlanticWaterFlow {
 	// Problem: https://leetcode.com/problems/pacific-atlantic-water-flow/
 	// Idea: Do dfs from 4 border row cells.
 	// We need to pass the prev cell heigh as arg to recursion to compare with current cell height.
-	// Mark all the reachable cells from pasific and atlantic oceans in respective boolean matrices.
+	// Mark all the reachable cells from pasific and atlantic oceans in respective vis matrices.
 	// Take the common cells from both the matrices in result as they can reach both the oceans.
 	public List<List<Integer>> pacificAtlantic(int[][] heights) {
 		int m = heights.length, n = heights[0].length;
@@ -28,35 +28,40 @@ public class Dfs_L417_PacificAtlanticWaterFlow {
 		boolean[][] avis = new boolean[m][n];
 		
 		for (int i = 0; i < m; i++) {
-			dfs(heights, i, 0, 0, pvis);	// we need to pass the prev cell heigh as arg to recursion to compare with current cell height
-			dfs(heights, i, n-1, 0, avis);
+			if(!pvis[i][0]) 
+			    dfs(heights, i, 0, pvis);	// we need to pass the prev cell heigh as arg to recursion to compare with current cell height
+			if(!avis[i][n-1]) 
+			    dfs(heights, i, n-1, avis);
 		}
 		
 		for (int j = 0; j < n; j++) {
-			dfs(heights, 0, j, 0, pvis);
-			dfs(heights, m-1, j, 0, avis);
+			if(!pvis[0][j]) 
+			    dfs(heights, 0, j, pvis);
+			if(!avis[m-1][j]) 
+			    dfs(heights, m-1, j, avis);
 		}
 
-		List<List<Integer>> result = new ArrayList<>();
+		List<List<Integer>> ans = new ArrayList<>();
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
 				if(pvis[i][j] && avis[i][j]) {
-					result.add(Arrays.asList(i,j));
+					ans.add(Arrays.asList(i,j));
 				}
 			}
 		}
-		return result;
+		return ans;
 	}
 
-	private void dfs(int[][] heights, int i, int j, int pheight, boolean[][] vis) {
-		if (!isSafe(heights, i, j, pheight, vis)) 
-			return;
-		
-		vis[i][j] = true;
-		dfs(heights, i + 1, j, heights[i][j], vis);
-		dfs(heights, i - 1, j, heights[i][j], vis);
-		dfs(heights, i, j + 1, heights[i][j], vis);
-		dfs(heights, i, j - 1, heights[i][j], vis);
+	private void dfs(int[][] heights, int row, int col, boolean[][] vis) {	
+		vis[row][col] = true;
+		int[][] dirs = new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        for (int[] dir : dirs) {
+            int nrow = row + dir[0];
+            int ncol = col + dir[1];
+			if (isSafe(heights, nrow, ncol, heights[row][col], vis)) {
+				dfs(heights, nrow, ncol, vis);
+			}
+		}
 	}
 
 	private boolean isSafe(int[][] heights, int i, int j, int prevHeight, boolean[][] visited) {

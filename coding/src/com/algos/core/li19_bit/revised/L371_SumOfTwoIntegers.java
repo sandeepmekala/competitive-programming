@@ -18,9 +18,10 @@ public class L371_SumOfTwoIntegers {
     public int getSum(int a, int b) {
         while (b != 0) {
             int carry = a & b;
-            a = a ^ b;
-            b = carry << 1;
+            a = a ^ b;          // sum
+            b = carry << 1;     // carry after shifting
         }
+        
         return a;
     }
 

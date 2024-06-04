@@ -53,6 +53,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
     //		  /
     //		5
     
+    // Recursive
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
         inorderTraversal(root, list);
@@ -69,7 +70,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
     }
 
     // Idea: Use stack to replace recursion. Store all the elements in stack until left becomes null.
-    // Once left become null, exploration of left complete. Take root from stack and add it to list and move curr to right of root.
+    // Once left become null, exploration of left is complete. Take root from stack and add it to list and move curr to right of root.
     // Time: O(n)
     // space: O(n)
     public List<Integer> inorderIterative(TreeNode root) {
@@ -77,7 +78,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
 			return new ArrayList<>();
 		
         List<Integer> inorder = new ArrayList<>();
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+		Stack<TreeNode> stack = new Stack<>();
 		TreeNode curr = root;
 		while(curr != null || !stack.isEmpty()){
             if(curr != null){
@@ -95,7 +96,7 @@ public class Bt_L94_BinaryTreeInorderTraversal {
 	
     // Idea: While going top down, build a link between from current predecessor right most element to current.
     // When current left is becomes null, it uses this link to go up again.
-    // Once it goes up it find the precessor right most again. But this time precessor right most will be current.
+    // Once it goes up, it finds the precessor right most again. But this time precessor right most will be current.
     // In this case, reset predecessor right link to null and exploration of current is complete, move to current.right.
 	// Time: O(n)
     // space: O(1)

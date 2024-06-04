@@ -1,7 +1,5 @@
 package  com.algos.core.li15_dp.revised;
 
-import java.util.Arrays;
-
 public class Subsequence_NinjasTraining {
     public static void main(String args[]) {
         Subsequence_NinjasTraining obj = new Subsequence_NinjasTraining();
@@ -12,43 +10,34 @@ public class Subsequence_NinjasTraining {
            
 
         int n = points.length;
+        // if I perform 3 on nth day, what is the max points I can get from 0 to n-1 days
+        System.out.println(obj.ninjaTraining(n - 1, 3, points)); 
         System.out.println(obj.ninjaTraining(n, points));
     }
 
     // Problem: https://bit.ly/3F4yl8z
-    public int ninjaTraining(int n, int[][] points) {
-        int dp[][] = new int[n][4];
-        for (int[] row: dp)
-            Arrays.fill(row, -1);
-
-        return ninjaTraining(n - 1, 3, points, dp);
-    }
-    
-    static int ninjaTraining(int ind, int last, int[][] points, int[][] dp) {
+    public int ninjaTraining(int ind, int last, int[][] points) {
         if (ind == 0) {
             int max = 0;
             for (int i = 0; i <= 2; i++) {
                 if (i != last)
                     max = Math.max(max, points[0][i]);
             }
-            return dp[ind][last] = max;
+            return max;
         }
-        
-        if (dp[ind][last] != -1) 
-            return dp[ind][last];
 
         int max = 0;
         for (int i = 0; i <= 2; i++) {
             if (i != last) {
-                int pnts = points[ind][i] + ninjaTraining(ind - 1, i, points, dp);
+                int pnts = points[ind][i] + ninjaTraining(ind - 1, i, points);
                 max = Math.max(max, pnts);
             }
         }
 
-        return dp[ind][last] = max;
+        return max;
     }
     
-    public int ninjaTraining2(int n, int[][] points) {
+    public int ninjaTraining(int n, int[][] points) {
         int[][] dp = new int[n][4];
         dp[0][0] = Math.max(points[0][1], points[0][2]);
         dp[0][1] = Math.max(points[0][0], points[0][2]);

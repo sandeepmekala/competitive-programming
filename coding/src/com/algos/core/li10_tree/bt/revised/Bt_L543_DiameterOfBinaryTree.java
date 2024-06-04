@@ -30,20 +30,21 @@ public class Bt_L543_DiameterOfBinaryTree {
             return 0;
         
         int[] diameter = new int[1];
-        height(root, diameter);
+        depth(root, diameter);
         return diameter[0];
     }
 
-    //height
-    private int height(TreeNode root, int[] diameter) {
+    // we returning to parent it adds 1 for the edge it connected to parent. 
+    // Parent should just take max of left and right heights
+    private int depth(TreeNode root, int[] diameter) {
 		if(root == null) 
 			return 0;
 		
-		int lHeight = height(root.left, diameter);
-		int rHeight = height(root.right, diameter);
+		int leftDepth = depth(root.left, diameter);
+		int rightDepth = depth(root.right, diameter);
 		
-		diameter[0] = Math.max(diameter[0], lHeight+rHeight);
+		diameter[0] = Math.max(diameter[0], leftDepth+rightDepth);
 
-		return 1 + Math.max(lHeight, rHeight);
+		return 1 + Math.max(leftDepth, rightDepth);
     }
 }

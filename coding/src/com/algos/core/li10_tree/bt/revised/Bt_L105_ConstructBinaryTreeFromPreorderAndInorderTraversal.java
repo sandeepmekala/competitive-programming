@@ -18,8 +18,8 @@ public class Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
 	}
 	
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-    // Idea: First element on preorder will be root of BT. This divids both inorder and pre order arrays in to 2 halfs.
-    // Recursively build left and right subtreesby passing half elements list for each recursive calls.
+    // Idea: First element on preorder will be root of BT. This divids both inorder and pre order arrays in to 2 halfs based on index in inorder.
+    // Recursively build left and right subtrees by passing half elements list for each recursive calls.
     // Time: O(n)
     // space: O(n)
 	public TreeNode buildTree(int[] preorder, int[] inorder) {
@@ -36,10 +36,11 @@ public class Bt_L105_ConstructBinaryTreeFromPreorderAndInorderTraversal {
             return null;
         
         TreeNode root = new TreeNode(preorder[pst]);
-        int inRootInd = inIndMap.get(root.val);
-        int numsLeft = inRootInd-is;
-        root.left = buildTree(preorder, pst+1, pst+numsLeft, inorder, is, inRootInd-1, inIndMap); // first element in preorder is skipped and mid element in inorder is skipped
-        root.right = buildTree(preorder, pst+numsLeft+1, ped, inorder, inRootInd+1, ie, inIndMap);
+        int rootIndInInorder = inIndMap.get(root.val);
+        int numsLeft = rootIndInInorder-is;
+        root.left = buildTree(preorder, pst+1, pst+numsLeft, inorder, is, rootIndInInorder-1, inIndMap); // first element in preorder is skipped and mid element in inorder is skipped
+        root.right = buildTree(preorder, pst+numsLeft+1, ped, inorder, rootIndInInorder+1, ie, inIndMap);
+        
         return root;
 	}
 }

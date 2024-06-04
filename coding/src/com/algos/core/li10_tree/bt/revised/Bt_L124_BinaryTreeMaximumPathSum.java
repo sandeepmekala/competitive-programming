@@ -18,7 +18,7 @@ public class Bt_L124_BinaryTreeMaximumPathSum {
 
     // Problem: https://leetcode.com/problems/binary-tree-maximum-path-sum/
     // Idea: Idea is similar to finding max diameter. 
-    // In paths, we can ignore the negative some paths by taking max with 0 to skip negative path sums.
+    // In paths, we can ignore the negative sum paths by taking max with 0 to skip negative path sums.
     public int maxPathSum(TreeNode root) {
         int[] maxPathSum = new int[]{Integer.MIN_VALUE};
         maxPathSum(root, maxPathSum);

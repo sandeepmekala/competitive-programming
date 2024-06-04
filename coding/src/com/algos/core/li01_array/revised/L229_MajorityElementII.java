@@ -16,7 +16,7 @@ public class L229_MajorityElementII {
     // Idea: Use Moore's Voting algorithm
 	public List<Integer> majorityElement(int[] nums) {
         int el1 = Integer.MIN_VALUE, el2 = Integer.MIN_VALUE;
-        int cnt1 = 0, cnt2 = 0, n=nums.length;
+        int cnt1 = 0, cnt2 = 0, n = nums.length;
         for(int num: nums){
         	if(num == el1){
                 cnt1++;

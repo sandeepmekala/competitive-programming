@@ -10,7 +10,8 @@ public class L774_MinimizeMaxDistancetoGasStation {
     }
     
     // Problem: https://leetcode.ca/2018-01-12-774-Minimize-Max-Distance-to-Gas-Station/
-    // Idea: We need to apply BS on the range (0, max distance between two stations) and find the minimum distance such that we can add k stations.
+    // Add k new gas stations. Minimize the max distance betweek stations.
+    // Idea: We need to apply BS on the range (0, max distance between two stations) 
     // Time: O(nlogn)
     public double minmaxGasDist(int[] stations, int k) {
         int n = stations.length;
@@ -23,11 +24,11 @@ public class L774_MinimizeMaxDistancetoGasStation {
         while(high - low > 1e-6){
             double mid = (low + high)/2.0;
             int cnt = noOfStationsRequired(stations, mid);
-            if(cnt > k){
-                low = mid;
-            }else{
+            if(cnt <= k){
                 ans = mid;
                 high = mid;
+            }else{
+                low = mid;
             }
         }
 
@@ -35,8 +36,9 @@ public class L774_MinimizeMaxDistancetoGasStation {
     }
     
     private int noOfStationsRequired(int[] stations, double dist) {
+        int n = stations.length;
         int cnt = 0;
-        for(int i=0; i<stations.length-1; i++){
+        for(int i=0; i<n-1; i++){
             cnt += Math.ceil((stations[i+1] - stations[i])/dist) - 1;
         }
         return cnt;

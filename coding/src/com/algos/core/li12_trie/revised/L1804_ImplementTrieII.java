@@ -17,9 +17,8 @@ public class L1804_ImplementTrieII {
         System.out.println(obj.countWordsEqualTo("apple"));
     }
 
-    // Problem: https://leetcode.com/problems/implement-trie-ii-prefix-tree/
-    // https://zhenchaogan.gitbook.io/leetcode-solution/leetcode-1804-implement-trie-ii-prefix-tree
-    // Idea: Have to count variable at each Trie Node to track words and prefixes.
+    // Problem: https://leetcode.ca/2020-11-07-1804-Implement-Trie-II-(Prefix-Tree)/
+    // Idea: Have a countEndWith and countPrefix variables at each Trie Node to track words and prefixes.
     TrieNode root;
     L1804_ImplementTrieII(){
         root = new TrieNode();
@@ -28,10 +27,7 @@ public class L1804_ImplementTrieII {
     public void insert(String word) {
 		TrieNode curr = root;
         for(Character ch : word.toCharArray()){
-            if(!curr.map.containsKey(ch)){
-                TrieNode newNode = new TrieNode();
-                curr.map.put(ch, newNode);
-            }
+            curr.map.putIfAbsent(ch, new TrieNode());
             curr = curr.map.get(ch);
             curr.countPrefix += 1;
         }

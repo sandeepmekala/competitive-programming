@@ -30,8 +30,8 @@ public class L146_LRUCache {
 	public int get(int key) {
 		if (cache.containsKey(key)) {
 			Node node = cache.get(key);
-			remove(node);		// removes from map and dll
-			insert(node);		// inserts to map and dll
+			remove(node);				// removes from map and dll
+			insert(node);				// inserts to map and dll
 			return node.value;
 		} else {
 			return -1;

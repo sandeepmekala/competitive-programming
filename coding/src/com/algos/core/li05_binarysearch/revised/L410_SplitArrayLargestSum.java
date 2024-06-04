@@ -1,53 +1,60 @@
 package  com.algos.core.li05_binarysearch.revised;
 
+import java.util.Collections;
+import java.util.List;
+
 public class L410_SplitArrayLargestSum {
-    public static void main(String args[]) {
-        L410_SplitArrayLargestSum obj = new L410_SplitArrayLargestSum();
 
-        int[] nums = new int[]{7,2,5,10,8};
-        int students = 2;
-        System.out.println(obj.splitArray(nums, students));
-    }
+	public static void main(String[] args) {
+		L410_SplitArrayLargestSum obj = new L410_SplitArrayLargestSum();
+		
+		int[] nums = new int[] {25, 46, 28, 49, 24};
+		System.out.println(obj.findPages(nums, 4));
+	}
 
-    // Problem: https://leetcode.com/problems/split-array-largest-sum/
-    // Idea: Binary search on the range of pages 
-    // Same as Allocation of minimum number of pages problem
-    public int splitArray(int[] nums, int k) {
-        if (k > nums.length)
+	// Problem: https://leetcode.com/problems/split-array-largest-sum/
+    // Minimize the max pages allocated to k students
+    // Minimize the max sum of array after splitting array into k parts
+    // Idea: Apply BS on range max and sum. 
+    public int findPages(int[] nums, int m) {
+        int n = nums.length;
+        // book allocation impossible
+        if (m > n)
             return -1;
 
-        int low = nums[0];
-        int high = 0;
-        for (int i = 0; i < nums.length; i++) {
-            low = Math.min(low, nums[i]);
-            high = high + nums[i];
+        int max = Integer.MIN_VALUE, sum = 0;
+        for(int num: nums){
+            max = Math.max(max, num);
+            sum += num;
         }
-        int res = -1;
+        
+        int low = max, high = sum, ans = sum;
         while (low <= high) {
-            int mid = (low + high) >> 1;
-            if (isPossible(nums, mid, k)) {
-                res = mid;
+            int mid = (low + high) / 2;
+            int students = countStudents(nums, mid);
+            if (students <= m) {
+                ans = mid;
                 high = mid - 1;
             } else {
                 low = mid + 1;
             }
         }
-        return res;
+        return ans;
     }
 
-    boolean isPossible(int[] nums, int maxAllocation, int noOfStuds) {
-        int allocateStuds = 1;
-        int sumAllocated = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (sumAllocated + nums[i] > maxAllocation) {
-                allocateStuds++;
-                sumAllocated = nums[i];
-                if (sumAllocated > maxAllocation)
-                    return false;
+    public static int countStudents(int[] nums, int pages) {
+        int n = nums.length;
+        int students = 1;
+        long pagesStudent = 0;
+        for (int i = 0; i < n; i++) {
+            if (pagesStudent + nums[i] <= pages) {
+                pagesStudent += nums[i];
             } else {
-                sumAllocated += nums[i];
+                students++;
+                pagesStudent = nums[i];
             }
         }
-        return allocateStuds <= noOfStuds;
+
+        return students;
     }
 }

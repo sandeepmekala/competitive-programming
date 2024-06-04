@@ -12,10 +12,6 @@ public class OneD_Subseq_L213_HouseRobberII {
 		System.out.println(obj.rob(nums));
 	}
 	
-	/*
-	 *	
-	 
-	 * */
 	// Problem: https://leetcode.com/problems/house-robber-ii/
 	// Idea: We can't rob both first and last houses. Hence we slip array in to 2 parts. 
 	// One including the first element and another one including last element. 

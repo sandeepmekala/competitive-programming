@@ -18,12 +18,11 @@ public class L143_ReorderList {
 		list.print();
 	}
 	
-	/* Problem: https://leetcode.com/problems/reorder-list/
-	 * Idea: Split the list, reverse the second list and merge.
-	 * */
+	// Problem: https://leetcode.com/problems/reorder-list/
+	// Idea: Split the list, reverse the second list and merge.
 	public void reorderList(ListNode head1) {
         if(head1.next == null || head1.next.next == null)
-            return ;
+            return;
         
         ListNode head2 = split(head1);
         head2 = reverse(head2);
@@ -48,13 +47,12 @@ public class L143_ReorderList {
             prev = curr;
             curr = next;
         }
-        head2 = prev;
-        return head2;
+        return prev;
     }
 
     private ListNode split(ListNode head1) {
         ListNode slow = head1;
-        ListNode fast = head1.next;     // As we 
+        ListNode fast = head1.next;         // delay slow by one step
         while(fast != null && fast.next != null){
             slow = slow.next;
             fast = fast.next.next;

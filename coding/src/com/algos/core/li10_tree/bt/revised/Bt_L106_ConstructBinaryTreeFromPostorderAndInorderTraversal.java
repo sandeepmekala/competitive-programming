@@ -8,7 +8,8 @@ import  com.algos.core.li30_model.TreeNode;
 
 public class Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
 	public static void main(String[] args) {
-		Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal obj = new Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal();
+		Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal obj = 
+            new Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal();
 		
 		Bt_L94_BinaryTreeInorderTraversal bt = new Bt_L94_BinaryTreeInorderTraversal();
 		TreeNode root = obj.buildTree(new int[] {9,3,15,20,7}, new int[] {9,15,7,20,3});
@@ -16,11 +17,10 @@ public class Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
 	}
 	
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-    // Idea: Lst element on postorder will be root of BST. This divids both inorder and pre order arrays in to 2 halfs.
+    // Idea: Last element on postorder will be root of BST. This divides both inorder and post order arrays in to 2 halfs.
     // Recursively build left and right subtreesby passing half elements list for each recursive calls.
     // Time: O(n)
     // space: O(n)
-    // TODO
 	public TreeNode buildTree(int[] inorder, int[] postorder) {
         Map<Integer, Integer> inIndMap = new HashMap<>();
         for(int i=0; i<inorder.length; i++)
@@ -35,10 +35,10 @@ public class Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
             return null;
         
         TreeNode root = new TreeNode(postorder[pe]);
-        int inRootInd = inIndMap.get(root.val);
-        int numsLeft = inRootInd-is;
-        root.left = buildTree(inorder, is, inRootInd-1, postorder, ps, ps+numsLeft-1, inIndMap); // first element in preorder is skipped and mid element in inorder is skipped
-        root.right = buildTree(inorder, inRootInd+1, ie, postorder, ps+numsLeft, pe-1, inIndMap);
+        int rootIndInInorder = inIndMap.get(root.val);
+        int numsLeft = rootIndInInorder-is;
+        root.left = buildTree(inorder, is, rootIndInInorder-1, postorder, ps, ps+numsLeft-1, inIndMap); // first element in preorder is skipped and mid element in inorder is skipped
+        root.right = buildTree(inorder, rootIndInInorder+1, ie, postorder, ps+numsLeft, pe-1, inIndMap);
         return root;
 	}
 }

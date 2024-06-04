@@ -15,7 +15,7 @@ public class L148_SortList {
 		sll.insertAfterEnd(3);
 		sll.insertAfterEnd(2);
 		
-		ListNode newHead = obj.sortList(sll.head);
+		ListNode newHead = obj.sortList(sll.head);		// 2 3 5 7 10 20
 		sll.head = newHead;
 		sll.print();
 		
@@ -42,7 +42,7 @@ public class L148_SortList {
 		ListNode curr1 = head1;
 		ListNode curr2 = head2;
 		while(curr1 != null && curr2 != null) {
-			if(curr1.val < curr2.val) {
+			if(curr1.val <= curr2.val) {
 				curr.next = curr1;
 				curr1 = curr1.next;
 			}else {
@@ -61,7 +61,7 @@ public class L148_SortList {
 	
 	private ListNode split(ListNode head) {
 		ListNode slow = head;
-		ListNode fast = head.next;	// This will make slow stop at first middle in case even length
+		ListNode fast = head.next.next;		// Skip one step for slow to stop it at first mid in case of even nodes
 		while(fast != null && fast.next != null) {
 			slow = slow.next;
 			fast = fast.next.next;

@@ -22,20 +22,20 @@ public class Bt_L110_BalancedBinaryTree {
 	// Time: O(n)
     // space: O(1)
 	public boolean isBalanced(TreeNode root) {
-        return height(root) != -1;
+        return depth(root) != -1;
     }
 
-	private int height(TreeNode root) {
+	private int depth(TreeNode root) {
 		if(root == null) 
 			return 0;
 		
-		int leftHt = height(root.left);
-		int rightHt = height(root.right);
+		int leftDepth = depth(root.left);
+		int rightDepth = depth(root.right);
 		
-		if(leftHt == -1 || rightHt  == -1) return -1;
-		if(Math.abs(leftHt - rightHt) > 1) return -1;
+		if(leftDepth == -1 || rightDepth  == -1) return -1;
+		if(Math.abs(leftDepth - rightDepth) > 1) return -1;
 
-		return 1 + Math.max(leftHt, rightHt);
+		return 1 + Math.max(leftDepth, rightDepth);
 	}
 
 }

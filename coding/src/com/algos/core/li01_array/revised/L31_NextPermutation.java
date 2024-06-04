@@ -8,7 +8,7 @@ public class L31_NextPermutation {
 		L31_NextPermutation obj = new L31_NextPermutation();
 		
 		//int[] nums = new int[] {1,2,3};
-        int[] nums = new int[] {2,3,1};
+        int[] nums = new int[] {2,3,1};     // [3, 1, 2]
 		obj.nextPermutation(nums);
 		System.out.println(Arrays.toString(nums));
 	}

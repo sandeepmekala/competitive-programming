@@ -28,28 +28,30 @@ public class DetectCycle_L207_CourseSchedule {
 		int[] vis = new int[n];
 		int[] pathVis = new int[n];
 		for (int i = 0; i < n; i++) {
-			if(vis[i] == 0){
+			if(vis[i] != 1){
 				if (dfs(adj, i, pathVis, vis) == false)
 					return false;
 			}
 		}
+		
 		return true;
 	}
 
-	private boolean dfs(List<List<Integer>> adj, int crs, int[] pathVis,
+	private boolean dfs(List<List<Integer>> adj, int prer, int[] pathVis,
 			int[] vis) {
-		vis[crs] = 1;
-		pathVis[crs] = 1;
-		for (int prer : adj.get(crs)) {
-			if (vis[prer] != 1) {
-				if (dfs(adj, prer, pathVis, vis) == false) 
+		vis[prer] = 1;
+		pathVis[prer] = 1;
+		for (int crs : adj.get(prer)) {
+			if (vis[crs] != 1) {
+				if (dfs(adj, crs, pathVis, vis) == false) 
 					return false;
-			}else if(pathVis[prer] == 1){
+			}else if(pathVis[crs] == 1){
 				return false;
 			}
 			
 		}
-		pathVis[crs] = 0;
+		pathVis[prer] = 0;
+		
 		return true;
 	}
 

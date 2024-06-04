@@ -18,6 +18,7 @@ public class L211_DesignAddAndSearchWordsDataStructure {
 	}
 	
     // Problem: https://leetcode.com/problems/design-add-and-search-words-data-structure/
+    // Search words with '.' as wildcard
     // Idea: Use Trie to store words
     // For seach if char is '.'. Then loop over all chars in current map and check if any recursion returns true. You need to skip one char from work fow '.'.
 	TrieNode root;
@@ -28,10 +29,7 @@ public class L211_DesignAddAndSearchWordsDataStructure {
 	public void addWord(String word) {
         TrieNode curr = root;
         for(char ch: word.toCharArray()){
-            if(!curr.map.containsKey(ch)){
-                TrieNode newNode = new TrieNode();
-                curr.map.put(ch, newNode);
-            }
+            curr.map.putIfAbsent(ch, new TrieNode());
             curr = curr.map.get(ch);
         }
         curr.endOfWord = true;
@@ -44,18 +42,17 @@ public class L211_DesignAddAndSearchWordsDataStructure {
     private boolean search(String word, int ind, TrieNode curr){
         for(int i=ind; i<word.length(); i++){
             char ch = word.charAt(i);
-            if(ch == '.'){
+            if(ch != '.'){
+                if(!curr.map.containsKey(ch))
+                    return false;
+                curr = curr.map.get(ch);
+            }else{                                      // if char is '.'
                 for(TrieNode child: curr.map.values()){
                     if(search(word, i+1, child)){       // i+1 as we need to skip one char from word.
                         return true;
                     }
                 }
                 return false;
-            }else{
-                if(!curr.map.containsKey(ch)){
-                    return false;
-                }
-                curr = curr.map.get(ch);
             }
         }
         return curr.endOfWord;

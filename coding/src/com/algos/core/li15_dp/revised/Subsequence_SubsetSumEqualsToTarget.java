@@ -6,58 +6,49 @@ public class Subsequence_SubsetSumEqualsToTarget {
     public static void main(String args[]) {
         Subsequence_SubsetSumEqualsToTarget obj = new Subsequence_SubsetSumEqualsToTarget();
 
-        int[] arr = { 1, 2, 3, 4 };
-        int k = 4;
-        int n = arr.length;
+        int[] nums = { 1, 2, 3, 4 };
+        int target = 4;
+        int n = nums.length;
 
-        System.out.println(obj.subsetSumToK(n, k, arr));
-        System.out.println(obj.subsetSumToK2(n, k, arr));
+        System.out.println(obj.subsetSumToK(nums, n - 1, target));
+        System.out.println(obj.subsetSumToK(nums, target));
     }
 
     // Problem: https://bit.ly/3ukNmRZ
     // Time: O(n*tar)
     // Space: O(n*tar)
-    public boolean subsetSumToK(int n, int target,int[] arr){
-        boolean dp[][]= new boolean[n][target+1];
+    public boolean subsetSumToK(int[] nums, int ind, int target) {
+        if (ind == 0)
+            return nums[0] == target || target == 0;
+
+        boolean notPick = subsetSumToK(nums, ind - 1, target);
+        boolean pick = false;
+        if (nums[ind] <= target)
+            pick = subsetSumToK(nums, ind - 1, target - nums[ind]);
+
+        return notPick || pick;
+    }
+
+    public boolean subsetSumToK(int[] nums, int target){
+        int n = nums.length;
+        boolean[][] dp = new boolean[n][target+1];
         for(int i=0; i<n; i++)
             dp[i][0] = true;
         
-        if(arr[0]<=target)
-            dp[0][arr[0]] = true;
+        if(nums[0]<=target)
+            dp[0][nums[0]] = true;
         for(int ind=1; ind<n; ind++){
             for(int tar=1; tar<=target; tar++){
                 boolean notTake = dp[ind-1][tar];
                 boolean take = false;
-                if(arr[ind]<=tar)
-                    take = dp[ind-1][tar-arr[ind]];
+                if(nums[ind]<=tar)
+                    take = dp[ind-1][tar-nums[ind]];
             
-                dp[ind][tar]= notTake||take;
+                dp[ind][tar] = notTake||take;
             }
         }
         
         return dp[n-1][target];
-    }
-
-    public boolean subsetSumToK2(int n, int target, int[] arr) {
-        int dp[][] = new int[n][target + 1];
-        for (int row[] : dp)
-            Arrays.fill(row, -1);
-        return subsetSumToK(n - 1, target, arr, dp);
-    }
-
-    private boolean subsetSumToK(int ind, int target, int[] arr, int[][] dp) {
-        if (ind == 0)
-            return arr[0] == target || target == 0;
-
-        if (dp[ind][target] != -1)
-            return dp[ind][target] == 0 ? false : true;
-
-        boolean notTake = subsetSumToK(ind - 1, target, arr, dp);
-        boolean take = false;
-        if (arr[ind] <= target)
-            take = subsetSumToK(ind - 1, target - arr[ind], arr, dp);
-        dp[ind][target] = notTake || take ? 1 : 0;
-        return notTake || take;
     }
     
 }

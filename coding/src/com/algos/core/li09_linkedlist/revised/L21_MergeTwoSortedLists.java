@@ -23,9 +23,9 @@ public class L21_MergeTwoSortedLists {
     // Problem: https://leetcode.com/problems/merge-two-sorted-lists/
     // Idea: Similar technique as mergin arrays.
     public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
-        ListNode start = new ListNode(-1);
+        ListNode dummy = new ListNode(-1);
 
-		ListNode curr = start;
+		ListNode curr = dummy;
 		ListNode curr1 = head1;
 		ListNode curr2 = head2;
 		while(curr1 != null && curr2 != null) {
@@ -43,6 +43,6 @@ public class L21_MergeTwoSortedLists {
 		if(curr2 != null) 
 			curr.next = curr2;
 		
-		return start.next;
+		return dummy.next;
     }
 }

@@ -27,6 +27,7 @@ public class Stocks_L121_BestTimeToBuyAndSellStock {
         	
         	min = Math.min(min, prices[i]);
         }
+		
         return profit;
     }
 

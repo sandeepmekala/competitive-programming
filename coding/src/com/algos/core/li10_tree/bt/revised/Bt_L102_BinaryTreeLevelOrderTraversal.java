@@ -23,30 +23,30 @@ public class Bt_L102_BinaryTreeLevelOrderTraversal {
     }
 
     // Problem: https://leetcode.com/problems/binary-tree-level-order-traversal/
-    // Idea: Rely on queue size and process the queue element until its size. Keep insert elements into same queue.
+    // Idea: Rely on queue size and process the queue elements until its size. Keep insert elements into same queue.
     // Time: O(n)
     // space: O(n)
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         if(root == null)
-            return result;
+            return ans;
             
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.add(root);
-		while(!queue.isEmpty()) {
-            List<Integer> level = new ArrayList<Integer>();
-            int size = queue.size();
+        Queue<TreeNode> q = new LinkedList<>();
+		q.add(root);
+		while(!q.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = q.size();                // Take to a variable as q size changes
 			for(int i=0; i<size; i++) {
-				TreeNode curr = queue.remove();
+				TreeNode curr = q.remove();
 				level.add(curr.val);
                 if(curr.left != null)
-                    queue.add(curr.left);    
+                    q.add(curr.left);    
                 if(curr.right != null)
-                    queue.add(curr.right);
+                    q.add(curr.right);
 			}
 
-            result.add(level);    
+            ans.add(level);    
 		}
-        return result;
+        return ans;
     }
 }

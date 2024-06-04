@@ -17,8 +17,8 @@ public class L252_MeetingRooms {
 		System.out.println(obj.canAttendMeetings(intervals));
 	}
 
-    // Problem: https://leetcode.com/problems/meeting-rooms/
-    // https://www.lintcode.com/problem/920/
+    // Problem: https://www.lintcode.com/problem/920/
+    // Check if the intervals overlap.
     // Idea: Sort intervals based on start in asc order.
     // Compare the adjacent intervals and see if they overlap. Track the previous interval in previous variable.
 	public boolean canAttendMeetings(List<Interval> intervals) {
@@ -30,11 +30,12 @@ public class L252_MeetingRooms {
         Interval prev = intervals.get(0);
         for(int i=1; i<intervals.size(); i++){
             Interval curr = intervals.get(i);
-            if(curr.start < prev.end)
+            if(prev.end > curr.start)
                 return false;
             
             prev = curr;
         }      
+
         return true;
     }
 }

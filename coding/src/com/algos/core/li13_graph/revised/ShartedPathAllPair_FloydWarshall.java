@@ -28,8 +28,8 @@ public class ShartedPathAllPair_FloydWarshall {
 	// Idea: Take a random vertex k and see if the path from i to j via k is shorter.
 	// If yes, update the dist[i][j] = dist[i][k]+dist[k][j]
 	// j need to be reached via k. Hence, update j's parent as k.
-	// It can detect negative weight cycles also. Once the algo ran, if the cost[i][i] goes negative, means algo would have gone through negative cycle and updated the cost[i][i] to negative. 
-	// Run a for loop 0 to n and check if any the diagonals id negative.
+	// It can detect negative weight cycles also. 
+	// Once the algo ran, if the cost[i][i] goes negative, means algo would have gone through negative cycle and updated the cost[i][i] to negative. 
 	// Time: O(V^3)
 	// Space: O(V^2)
 	private int[][] getShartestPaths(int[][] adj) {

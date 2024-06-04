@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class ShortestPath_L743_NetworkDelayTime {
 
@@ -34,23 +35,23 @@ public class ShortestPath_L743_NetworkDelayTime {
         dist[k] = 0;
         
         HashSet<Integer> vis = new HashSet<>();
-        PriorityQueue<int[]> q = new PriorityQueue<>((a, b) -> a[0]-b[0]);
+        Queue<int[]> q = new PriorityQueue<>((a, b) -> a[0]-b[0]);
         q.add(new int[]{0, k});
         int maxTime = 0;
         while(!q.isEmpty()){
             int[] curr = q.remove();
-            int node = curr[1], time = curr[0];
+            int time = curr[0], node = curr[1];
             if(vis.contains(node))
                 continue;    
 
             vis.add(node);
             maxTime = Math.max(maxTime, time);
-            for(int[] neigh: adj.get(node)){
-                int neighNode = neigh[1], edgeTime = neigh[0];
-                if(!vis.contains(neighNode)){
-                    if(time+edgeTime < dist[neighNode]){
-                        dist[neighNode] = time+edgeTime;
-                        q.add(new int[]{dist[neighNode], neighNode});
+            for(int[] nei: adj.get(node)){
+                int neiNode = nei[1], edgeTime = nei[0];
+                if(!vis.contains(neiNode)){
+                    if(time+edgeTime < dist[neiNode]){
+                        dist[neiNode] = time+edgeTime;
+                        q.add(new int[]{dist[neiNode], neiNode});
                     }
                 }
             }

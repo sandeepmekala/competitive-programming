@@ -1,46 +1,50 @@
 package  com.algos.core.li13_graph;
 
+import java.util.ArrayList;
 import java.util.HashSet;
-
-import  com.algos.core.li30_model.GraphAdjLst;
+import java.util.List;
 
 public class Dfs_G01_LargestConnectedComponents {
 
 	public static void main(String[] args) {
 		Dfs_G01_LargestConnectedComponents obj = new Dfs_G01_LargestConnectedComponents();
-		GraphAdjLst graph = new GraphAdjLst();
-		graph.addEdge(1, 2);
-		graph.addEdge(2, 1);
-		graph.addEdge(4, 6);
-		graph.addEdge(6, 4);
-		graph.addEdge(5, 6);
-		graph.addEdge(6, 5);
-		graph.addEdge(7, 6);
-		graph.addEdge(6, 7);
-		graph.addEdge(8, 6);
-		graph.addEdge(6, 8);
-		graph.addEdge(3, 3);
+
+		List<List<Integer>> adj = new ArrayList<>();
+		for (int i = 0; i < 9; i++) 
+			adj.add(new ArrayList<>());
 		
-		System.out.println(obj.largestConnectedComponents(graph));
+		adj.get(1).add(2);
+		adj.get(2).add(1);
+		adj.get(4).add(6);
+		adj.get(6).add(4);
+		adj.get(5).add(6);
+		adj.get(6).add(5);
+		adj.get(7).add(6);
+		adj.get(6).add(7);
+		adj.get(8).add(6);
+		adj.get(6).add(8);
+		adj.get(3).add(3);
+		
+		System.out.println(obj.largestConnectedComponents(adj));
 	}
 	
-	private int largestConnectedComponents(GraphAdjLst g) {
+	private int largestConnectedComponents(List<List<Integer>> adj) {
 		int max = 0;
-		HashSet<Integer> visited = new HashSet<Integer>();
-		for(int src: g.adj.keySet()) {
-			max = Math.max(max, dfs(g, src, visited));
+		HashSet<Integer> visited = new HashSet<>();
+		for(int src=0; src<adj.size(); src++) {
+			max = Math.max(max, dfs(adj, src, visited));
 		}
 		return max;
 	}
 
-	private int dfs(GraphAdjLst g, int src, HashSet<Integer> visited) {
+	private int dfs(List<List<Integer>> adj, int src, HashSet<Integer> visited) {
 		if(visited.contains(src)) 
 			return 0;
 		
 		visited.add(src);
 		int count = 1;
-		for(int child: g.adj.get(src)) {
-			count += dfs(g, child, visited);
+		for(int child: adj.get(src)) {
+			count += dfs(adj, child, visited);
 		}
 		return count;
 	}

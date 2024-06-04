@@ -2,6 +2,7 @@ package  com.algos.core.li11_heap.revised;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class L295_FindMedianFromDataStream {
 
@@ -19,22 +20,22 @@ public class L295_FindMedianFromDataStream {
     // Idea: Use 2 pq's. Store half elements in each q. If odd element, store one extra in q1.
     // q1 should be max queue and q2 should be min queue.
     // You can find the median from top of the q elements.
-	PriorityQueue<Integer> maxq;
-    PriorityQueue<Integer> minq;
+	Queue<Integer> maxq;
+    Queue<Integer> minq;
     public L295_FindMedianFromDataStream() {
-        maxq = new PriorityQueue<>(Collections.reverseOrder());  //q1
-        minq = new PriorityQueue<>();  // q2
+        maxq = new PriorityQueue<>(Collections.reverseOrder());     // q1
+        minq = new PriorityQueue<>();                               // q2
     }
     
     public void addNum(int num) {
         maxq.add(num);
-        if(maxq.size()-minq.size() > 1)    // move the element to right q if
+        if(maxq.size()-minq.size() > 1)         // 1,2 -> this moves 2 to q2
             minq.add(maxq.remove());
 
         if(maxq.size() > 0 && minq.size() > 0){     
-            if(maxq.peek()>minq.peek()){   //swap the elements to keep both q's elements in sync
-                minq.add(maxq.remove());
-                maxq.add(minq.remove());
+            if(maxq.peek() > minq.peek()){      // 1,2,3 -> q1 will have 1,3 and q2 will have 2
+                minq.add(maxq.remove());        // This will sync the q1 and q2
+                maxq.add(minq.remove());        // 3 -> q2 and 2 -> q1
             }            
         }
     }

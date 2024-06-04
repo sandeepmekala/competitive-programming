@@ -30,10 +30,9 @@ public class L49_GroupAnagrams {
                 sb.append(entry.getValue());
                 sb.append(":");
             }
-            String compKey = sb.toString();
-            if(!aggMap.containsKey(compKey))
-                aggMap.put(compKey, new ArrayList<String>());
             
+            String compKey = sb.toString();
+            aggMap.putIfAbsent(compKey, new ArrayList<>());            
             aggMap.get(compKey).add(str);
         }
         

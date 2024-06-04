@@ -23,15 +23,14 @@ public class L138_CopyListWithRandomPointer {
     // In second pass, get the copy of each node and adjust its next and ran pointers.
     // You can solve it inplace by following 3 steps below:
     //      You need to insert copy nodes next to their original nodes. 
-    //      Then change random ptrs. 
+    //      Then create random ptrs. 
     //      Then change next ptrs.
     public Node copyRandomList(Node head) {
-        HashMap<Node, Node> map = new HashMap<Node, Node>();
+        HashMap<Node, Node> map = new HashMap<>();
         
         Node curr = head;
         while(curr != null){
-            Node newNode = new Node(curr.val);
-            map.put(curr, newNode);
+            map.put(curr, new Node(curr.val));
             curr = curr.next;
         }
         

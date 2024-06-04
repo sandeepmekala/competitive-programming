@@ -2,6 +2,7 @@ package  com.algos.core.li10_tree.bt.revised;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import  com.algos.core.li30_model.TreeNode;
 
@@ -31,12 +32,12 @@ public class Bt_L297_SerializeAndDeserializeBinaryTree {
 	// Time: O(n)
     // space: O(1)
 	public String serialize(TreeNode root) {
-		ArrayList<String> serialized = new ArrayList<String>();
+		List<String> serialized = new ArrayList<>();
 		serialize(root, serialized);
 		return String.join(",", serialized);
 	}
 
-	private void serialize(TreeNode root, ArrayList<String> serialized) {
+	private void serialize(TreeNode root, List<String> serialized) {
 		if (root == null) {
 			serialized.add("#");
 			return;
@@ -47,12 +48,11 @@ public class Bt_L297_SerializeAndDeserializeBinaryTree {
 	}
 
 	public TreeNode deserialize(String data) {
-		ArrayList<String> serialized = new ArrayList<String>(Arrays.asList(data.split(",")));
-		TreeNode root = deserialize(serialized);
-		return root;
+		List<String> serialized = Arrays.asList(data.split(","));
+		return deserialize(serialized);
 	}
 
-	private TreeNode deserialize(ArrayList<String> serialized) {
+	private TreeNode deserialize(List<String> serialized) {
 		String val = serialized.remove(0);
 		if (val.equals("#")) 
 			return null;

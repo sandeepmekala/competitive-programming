@@ -62,6 +62,7 @@ public class Bt_L144_BinaryTreePreorderTraversal {
         return preorder;
 	}
 
+	// Morris Traversal
     public List<Integer> morrisPreorder(TreeNode root) {
         List<Integer> preorder = new ArrayList<>();
 		TreeNode curr = root;
@@ -71,12 +72,12 @@ public class Bt_L144_BinaryTreePreorderTraversal {
 				curr = curr.right;
 			}else {
 				TreeNode prev = curr.left;
-				while(prev.right != null && prev.right != curr) { 
+				while(prev.right != null && prev.right != curr) {
 					prev = prev.right;
 				}
 				if(prev.right == null) {
 					prev.right = curr;
-					preorder.add(curr.val);      // one line change from inorder. 
+					preorder.add(curr.val);      // after connecting this link, we can say that we have visited current node.
 					curr = curr.left;
 				}else {
 					prev.right = null;

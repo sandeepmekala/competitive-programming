@@ -20,9 +20,9 @@ public class PickOrNotPick_L90_SubsetsII {
 	// Time: O(2^n)
     // space: O(n)
 	public List<List<Integer>> subsetsWithDup(int[] nums) {
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         Arrays.sort(nums);
-        subsets(nums, 0, new ArrayList<Integer>(), result);
+        subsets(nums, 0, new ArrayList<>(), result);
         return result;
     }
     

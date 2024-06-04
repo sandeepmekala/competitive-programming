@@ -12,16 +12,17 @@ public class L1_TwoSum {
 	}
 	
     // Problem: https://leetcode.com/problems/two-sum/
-    // Idea: Use Map to put num and its index
+    // Idea: Use map to put num and its index
 	public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for(int i=0; i<nums.length; i++){
             int rem = target-nums[i];
-            if(map.containsKey(rem)){
+            if(map.containsKey(rem))
                 return new int[]{map.get(rem), i};
-            }
+            
             map.put(nums[i], i);                 
         }
+        
         return new int[]{};
     }
 

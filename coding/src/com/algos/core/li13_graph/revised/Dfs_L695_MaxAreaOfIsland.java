@@ -4,7 +4,11 @@ public class Dfs_L695_MaxAreaOfIsland {
 
     public static void main(String[] args) {
         Dfs_L695_MaxAreaOfIsland obj = new Dfs_L695_MaxAreaOfIsland();
-        int[][] grid = new int[][] { { 0, 1 }, { 1, 0 }, { 1, 1 }, { 1, 0 }, };
+        int[][] grid = new int[][] { 
+            { 0, 1 }, 
+            { 1, 0 }, 
+            { 1, 1 }, 
+            { 1, 0 }, };
         System.out.println(obj.maxAreaOfIsland(grid));
     }
 
@@ -30,16 +34,16 @@ public class Dfs_L695_MaxAreaOfIsland {
     }
     
     private int dfs(int[][] grid, int i, int j, int[][] vis){
-        if(!isSafe(grid, i, j, vis))
-            return 0;
-        
         vis[i][j] = 1;
-            
+        
         int area = 1;
-        area += dfs(grid, i-1, j, vis);
-        area += dfs(grid, i+1, j, vis);
-        area += dfs(grid, i, j-1, vis);
-        area += dfs(grid, i, j+1, vis);
+        int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        for (int[] dir : dirs) {
+            int ni = i + dir[0], nj = j + dir[1];
+            if (isSafe(grid, ni, nj, vis)){
+                area += dfs(grid, ni, nj, vis);
+            }
+        }
         return area;
     }
 

@@ -16,15 +16,4 @@ public class L268_MissingNumber {
 		}
 		return xor ^ i;
 	}
-
-	// Idea: sum of the nums from 1 -> n = n*(n+1)/2
-	public int missingNumber2(int[] nums) {
-		int n = nums.length;
-		int sum = 0;
-		for (int i = 0; i < n; i++) {
-			sum += nums[i];
-		}
-		int expectedSum = (n * (n + 1)) / 2;
-		return expectedSum - sum;
-	}
 }

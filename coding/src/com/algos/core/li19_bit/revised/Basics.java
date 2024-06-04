@@ -16,7 +16,10 @@ public class Basics {
 		obj.printBinaryRecursivelyWithRightShift(4);
 		System.out.println();
 		
-		System.out.println(Integer.toBinaryString(4));
+		// Get the rightmost set bit
+		int x = 100;
+		System.out.println(Integer.toBinaryString(x));	// 1100100
+		System.out.println(x&~(x-1));	// 4 -> 0000100
 	}
 	private void printBinaryIteratively(int n){
 		StringBuffer sb = new StringBuffer();

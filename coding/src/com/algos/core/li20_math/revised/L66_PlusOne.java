@@ -2,7 +2,6 @@ package  com.algos.core.li20_math.revised;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,7 +14,6 @@ public class L66_PlusOne {
 
 	// Problem: https://leetcode.com/problems/plus-one/
     // Idea: In 999 case carry could propagate from right to left. Hence, process right to left.
-    // 
 	public int[] plusOne(int[] digits) {
         List<Integer> list = new ArrayList<>();
         int carry = 1, n=digits.length;

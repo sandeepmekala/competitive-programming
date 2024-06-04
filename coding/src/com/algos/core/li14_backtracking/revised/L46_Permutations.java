@@ -27,7 +27,7 @@ public class L46_Permutations {
             result.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
             return; 
         }
-        for(int i=ind; i<=nums.length-1; i++){
+        for(int i=ind; i<nums.length; i++){
             swap(nums, ind, i);
             permute(nums, ind+1, result);
             swap(nums, ind, i);

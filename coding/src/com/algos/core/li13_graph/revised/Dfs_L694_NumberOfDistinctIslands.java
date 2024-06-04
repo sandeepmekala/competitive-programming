@@ -54,7 +54,7 @@ public class Dfs_L694_NumberOfDistinctIslands {
     private boolean isSafe(int[][] grid, int nrow, int ncol, int[][] vis) {
         int m = grid.length, n = grid[0].length;
         return nrow >= 0 && nrow < m && ncol >= 0 && ncol < n &&
-                vis[nrow][ncol] == 0 && grid[nrow][ncol] == 1;
+                vis[nrow][ncol] != 1 && grid[nrow][ncol] == 1;
     }
 
     private String toString(int r, int c) {

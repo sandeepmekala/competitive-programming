@@ -43,14 +43,16 @@ public class Dfs_L200_NumberOfIslands {
     }
     
     public void dfs(char[][] grid, int i, int j, int[][] vis){
-        if(!isSafe(grid, i, j, vis))
-            return;
-        
-        vis[i][j] = 1;       // using grid as visited
-        dfs(grid, i+1, j, vis);
-        dfs(grid, i-1, j, vis);
-        dfs(grid, i, j+1, vis);
-        dfs(grid, i, j-1, vis);
+        vis[i][j] = 1;
+
+        int[][] dirs = new int[][] { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        for (int[] dir : dirs) {
+            int ni = i + dir[0];
+            int nj = j + dir[1];
+			if (isSafe(grid, ni, nj, vis)) {
+				dfs(grid, ni, nj, vis);
+			}
+		}
     }
     
     private boolean isSafe(char[][] grid, int i, int j, int[][] vis){
@@ -80,11 +82,11 @@ public class Dfs_L200_NumberOfIslands {
     public void bfs(int i, int j, int[][] vis, char[][] grid) {
         int n = grid.length, m = grid[0].length;
 
-        Queue<Pair> q = new LinkedList<Pair>();
-        q.add(new Pair(i, j));
+        Queue<Pair10> q = new LinkedList<Pair10>();
+        q.add(new Pair10(i, j));
         vis[i][j] = 1;
         while (!q.isEmpty()) {
-            Pair curr = q.remove();
+            Pair10 curr = q.remove();
             int row = curr.row, col = curr.col;
 
             for (int drow = -1; drow <= 1; drow++) {
@@ -93,7 +95,7 @@ public class Dfs_L200_NumberOfIslands {
                     int ncol = col + dcol;
                     if (isSafe(vis, grid, nrow, ncol, n, m )) {
                         vis[nrow][ncol] = 1;
-                        q.add(new Pair(nrow, ncol));
+                        q.add(new Pair10(nrow, ncol));
                     }
                 }
             }

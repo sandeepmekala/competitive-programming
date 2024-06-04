@@ -10,10 +10,11 @@ public class Grid_64_MinimumPathSum {
 			{4,2,1,7},
 			{4,3,2,3}
 		};
-		System.out.println(obj.minPathSum(grid));
-
 		int m=grid.length, n=grid[0].length;
 		System.out.println(obj.minPathSum(grid, m-1, n-1));
+		
+		System.out.println(obj.minPathSum(grid));
+
 	}
 
 	//  Problem: https://leetcode.com/problems/minimum-path-sum/
@@ -28,10 +29,21 @@ public class Grid_64_MinimumPathSum {
 	// Time: O(m*n)
     // Space: O(m*n)
 	int INF = Integer.MAX_VALUE;
+	public int minPathSum(int[][] grid, int i, int j) {
+		if(i==0 && j==0)
+			return grid[i][j];	
+
+		int up = INF, left = INF;
+		if(i>0) up = minPathSum(grid, i-1, j);
+		if(j>0) left = minPathSum(grid, i, j-1);
+
+		return grid[i][j]+Math.min(up, left);
+	}
+
 	public int minPathSum(int[][] grid) {
 		int m=grid.length, n=grid[0].length;
 
-		int cost[][] = new int[m][n];
+		int[][] cost = new int[m][n];
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
 				if(i == 0 && j == 0) {
@@ -45,17 +57,6 @@ public class Grid_64_MinimumPathSum {
 			}
 		}
 		return cost[m-1][n-1];
-	}
-
-	public int minPathSum(int[][] grid, int i, int j) {
-		if(i==0 && j==0)
-			return grid[i][j];	
-
-		int up = Integer.MAX_VALUE, left = Integer.MAX_VALUE;
-		if(i>0) up = minPathSum(grid, i-1, j);
-		if(j>0) left = minPathSum(grid, i, j-1);
-
-		return grid[i][j]+Math.min(up, left);
 	}
 
 }

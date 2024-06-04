@@ -11,7 +11,15 @@ import  com.algos.core.li30_model.TreeNode;
 
 public class Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode {
     public static void main(String[] args) {
-        //_Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode obj = new _Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode();
+        Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode obj = new Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode();
+
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+
+        System.out.println(obj.burn(root, root.left));
 
     }
 
@@ -19,33 +27,31 @@ public class Bt_MinimumTimeTakenToBurnTheBinaryTreeFromANode {
     // Time: O(n)
     // space: O(1)
     public int burn(TreeNode root, TreeNode target) {
-        Map<TreeNode, TreeNode> parent = new HashMap<>();
-        markParent(root, parent);
+        Map<TreeNode, TreeNode> parents = new HashMap<>();
+        markParent(root, parents);
 
-        Set<TreeNode> visited = new HashSet<>();
+        Set<TreeNode> vis = new HashSet<>();
         Queue<TreeNode> q = new LinkedList<>();
         q.add(target);
-        visited.add(target);
+        vis.add(target);
         int level = 0;
         while(!q.isEmpty()){
             boolean burnt = false;
-            int size = q.size();
-            
-            for(int i=0; i<size; i++){
+            for(int i=0; i<q.size(); i++){
                 TreeNode node = q.remove();
-                if(node.left != null && !visited.contains(node.left)){
-                    visited.add(node.left);
+                if(node.left != null && !vis.contains(node.left)){
+                    vis.add(node.left);
                     q.add(node.left);
                     burnt = true;
                 }
-                if(node.right != null && !visited.contains(node.right)){
-                    visited.add(node.right);
+                if(node.right != null && !vis.contains(node.right)){
+                    vis.add(node.right);
                     q.add(node.right);
                     burnt = true;
                 }
-                if(parent.get(node) != null && !visited.contains(parent.get(node))){
-                    visited.add(parent.get(node));
-                    q.add(parent.get(node));
+                if(parents.get(node) != null && !vis.contains(parents.get(node))){
+                    vis.add(parents.get(node));
+                    q.add(parents.get(node));
                     burnt = true;
                 }
             }

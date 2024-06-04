@@ -19,31 +19,29 @@ public class L17_LetterCombinationsOfAPhoneNumber {
 	// Space: O(k*n)
     public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
-        Map<String, String> map = new HashMap<>();
-        map.put("2", "abc");
-        map.put("3", "def");
-        map.put("4", "ghi");
-        map.put("5", "jkl");
-        map.put("6", "mno");
-        map.put("7", "pqrs");
-        map.put("8", "tuv");
-        map.put("9", "wxyz");
-        
+        Map<Character, String> map = new HashMap<>();
+        map.put('2', "abc");
+        map.put('3', "def");
+        map.put('4', "ghi");
+        map.put('5', "jkl");
+        map.put('6', "mno");
+        map.put('7', "pqrs");
+        map.put('8', "tuv");
+        map.put('9', "wxyz");
+        if(digits.isEmpty())
+            return result;
         letterCombinations(digits, 0, "", map, result);
             
         return result;
     }
     
-    public void letterCombinations(String digits, int ind, String str, Map<String, String> map, List<String> result) {
-        if(digits.isEmpty())
-            return;
-        
+    public void letterCombinations(String digits, int ind, String str, Map<Character, String> map, List<String> result) {
         if(str.length() == digits.length()){
             result.add(str);
             return;
         }
-        String digit = String.valueOf(digits.charAt(ind));
-        String chars = map.get(digit);
+        
+        String chars = map.get(digits.charAt(ind));
         for(int i=0; i<chars.length(); i++){
            letterCombinations(digits, ind+1, str+chars.charAt(i), map, result);
         }

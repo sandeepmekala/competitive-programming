@@ -25,6 +25,20 @@ public class Subsequence_L518_CoinChangeII {
 	//
 	// Time: O(n*tatal)
     // Space: O(n*tatal)
+	public int change(int[] coins, int ind, int tot) {
+		if(ind == 0) {
+			if(tot % coins[0] == 0)
+				return 1;
+			return 0;
+		}
+		int notPick = change(coins, ind-1, tot);
+		int pick = 0;
+		if(coins[ind] <= tot) 
+			pick = change(coins, ind, tot-coins[ind]);
+		
+		return notPick + pick;
+	}
+
 	public int change(int total, int[] coins) {
 		int n = coins.length;
 		int[][] comb = new int[n][total+1];
@@ -46,20 +60,6 @@ public class Subsequence_L518_CoinChangeII {
 		}
 		
 		return comb[n-1][total];
-	}
-	
-	public int change(int[] coins, int ind, int tot) {
-		if(ind == 0) {
-			if(tot % coins[0] == 0)
-				return 1;
-			return 0;
-		}
-		int notPick = change(coins, ind-1, tot);
-		int pick = 0;
-		if(coins[ind] <= tot) 
-			pick = change(coins, ind, tot-coins[ind]);
-		
-		return notPick + pick;
 	}
 
 }

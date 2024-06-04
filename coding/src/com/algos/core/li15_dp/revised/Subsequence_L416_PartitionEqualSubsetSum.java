@@ -10,17 +10,16 @@ public class Subsequence_L416_PartitionEqualSubsetSum {
 		System.out.println(obj.canPartition(nums));
 	}
 
-	/*	Problem: https://leetcode.com/problems/partition-equal-subset-sum/
-	 *	Idea: Reuse the count subsets logic
+	// Problem: https://leetcode.com/problems/partition-equal-subset-sum/
+	// Idea: Subset Sum Equals to Target
 	// s1 + s2 = totalSum
     // s2 = (totalSum)/2    as s1=s2
-	 * 
-	 * i/j	0	1	2	3	4
-	 * 1	t	t	f	f	f
-	 * 2	t	t	t	t	t
-	 * 5	t	t	t	t	t
-	 * 
-	 * */
+	// 
+	// i/j	0	1	2	3	4
+	// 1	t	t	f	f	f
+	// 2	t	t	t	t	t
+	// 5	t	t	t	t	t
+	// 
 	// Time: O(n*tar)
     // Space: O(n*tar)
 	public boolean canPartition(int[] nums) {
@@ -36,24 +35,24 @@ public class Subsequence_L416_PartitionEqualSubsetSum {
     }
 
 	private boolean subsetSumToK(int[] nums, int n, int target) {
-		boolean[][] sum = new boolean[n][target+1];
+		boolean[][] dp = new boolean[n][target+1];
 		for(int ind=0; ind<n; ind++) {
 			for(int tar=0; tar<=target; tar++) {
 				if(tar == 0) {
-					sum[ind][tar] = true;
+					dp[ind][tar] = true;
 				}else if(ind == 0) {
 					if(tar == nums[ind]) 
-						sum[ind][tar] = true;
+						dp[ind][tar] = true;
 				}else {
-					boolean notPick = sum[ind-1][tar];
+					boolean notPick = dp[ind-1][tar];
 					boolean pick = false;
 					if(nums[ind]<=tar)
-						pick = sum[ind-1][tar-nums[ind]];
-					sum[ind][tar] = notPick || pick;
+						pick = dp[ind-1][tar-nums[ind]];
+					dp[ind][tar] = notPick || pick;
 				}
 			}
 		}
 		
-		return sum[n-1][target];
+		return dp[n-1][target];
 	}
 }

@@ -19,7 +19,8 @@ public class Bt_L104_MaximumDepthOfBinaryTree {
 	}
 
 	// Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
-	// Idea: 1+max(left, right) 
+	// Idea: Maximum depth is the number of nodes along the longest path to any leaf node.
+	// 1 + max(left, right) 
 	// Time: O(n)
     // space: O(1)
 	public int maxDepth(TreeNode root) {
