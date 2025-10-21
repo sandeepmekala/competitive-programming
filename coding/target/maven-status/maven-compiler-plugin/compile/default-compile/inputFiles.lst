@@ -9,6 +9,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li12_trie/revised/L1858_LongestWordWithAllPrefixes.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/Bt_L572_SubtreeOfAnotherTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Partitions_L312_BurstBalloons.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/01_basics/OddEven.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li19_bit/revised/L405_ConvertANumberToHexadecimal.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/models/Pair.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L152_MaximumProductOfSubArray.java
@@ -17,6 +18,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li03_slidingwindow/revised/L424_LongestRepeatingCharacterReplacement.java
 /Users/I322364/Git/competitive-programming/coding/src/com/java/generics/GenericsWithInheritance.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/revised/Bt_L199_BinaryTreeRightSideView.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/03_executors/InvokeAllExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/Bt_L107_BinaryTreeLevelOrderTraversalII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/revised/FindtheIntersectionOfTwoSortedArrays.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/revised/Bt_L114_FlattenBinaryTreeToLinkedList.java
@@ -39,6 +41,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/Bt_L129_SumRootToLeafNumbers.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L205_IsomorphicStrings.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L725_SplitLinkedListInParts.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/01_basics/BasicThreadWithRunnable.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li02_hashing/revised/L217_ContainsDuplicate.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li06_divandcon/FindMax.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/G01_MinimumCoins.java
@@ -81,6 +84,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/L1304_FindNUniqueIntegersSumUpToZero.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Dfs_L695_MaxAreaOfIsland.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li02_hashing/revised/L128_LongestConsecutiveSequence.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/04_locks/ReentrantLockExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Dfs_L417_PacificAtlanticWaterFlow.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Mst_PrimsMinimumSpanningTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/L179_LargestNumber.java
@@ -96,8 +100,8 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L551_StudentAttendanceRecordI.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L142_LinkedListCycleII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li03_slidingwindow/revised/L1358_NumberofSubstringsContainingAllThreeCharacters.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A014LongAccumulator.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_NinjasTraining.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/02_sync/SynchronizedExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/models/Tuple.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Dfs.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/L228_SummaryRanges.java
@@ -144,10 +148,11 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li07_stack/revised/InfixToPostfix.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/L581_ShortestUnsortedContinuousSubarray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/OneD_Fib_L509_FibonacciNumber.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A004Timeouts.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L659_EncodeAndDecodeStrings.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/SecondLargestElementInArray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/revised/L860_LemonadeChange.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/05_atomic/AtomicIntegerExample.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/03_executors/ExecutorBasics.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/L914_XOfAKindInADeckOfCards.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li12_trie/revised/L1707_MaximumXorWithAnElementFromArray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L171_ExcelSheetColumnNumber.java
@@ -184,6 +189,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L234_PalindromeLinkedList.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/revised/L921_MinimumAddtoMakeParenthesesValid.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li12_trie/revised/L212_WordSearchII.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/03_executors/ExecutorTimeouts.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L81_SearchinRotatedSortedArrayII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortestPath_ShortestPathInDirectedAcyclicGraph.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/Backtracking_L282_ExpressionAddOperators.java
@@ -202,7 +208,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/UnionFind_L305_NumberOfIslandsII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li07_stack/revised/L682_BaseballGame.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/L1480_RunningSumOf1dArray.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A011Semaphores.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Grid_MultiEnd_L120_Triangle.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L143_ReorderList.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/DetectCycle_L207_CourseSchedule.java
@@ -220,12 +225,10 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortestPath_L1091_ShortestPathInBinaryMatrix.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/UnionFind_L684_RedundantConnection.java
 /Users/I322364/Git/competitive-programming/coding/src/com/java/generics/GenericsWithMethod.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A012AtomicInteger.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/FlatteningOfALinkedList.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Partitions_1547_MinimumCostToCutAStick.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L34_FindFirstandLastPositionofElementinSortedArray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li11_heap/revised/L1046_LastStoneWeight.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A016WaitAndNotify.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L14_LongestCommonPrefix.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/Matrix_L48_RotateImage.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/Math_LargeIntegerSubtraction.java
@@ -235,7 +238,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/java/generics/GenericsExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Stocks_L121_BestTimeToBuyAndSellStock.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortestPath_L1631_PathWithMinimumEffort.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A006ScheduledExecutors.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L2_AddTwoNumbers.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li14_backtracking/revised/L37_SudokuSolver.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_L416_PartitionEqualSubsetSum.java
@@ -252,8 +254,8 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li17_interval/revised/L1094_CarPooling.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Lis_1048_LongestStringChain.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li07_stack/revised/Mono_L853_CarFleet.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/03_executors/ScheduledExecutorExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li02_hashing/L819_MostCommonWord.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A003CollableAndFuture.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/revised/Bt_662_MaximumWidthOfBinaryTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/L977_SquaresOfASortedArray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/revised/L18_FourSum.java
@@ -270,12 +272,14 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bst/revised/L700_SearchInABinarySearchTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L118_PascalsTriangle.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/Hashing_L362_DesignHitCounter.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/04_locks/SemaphoreExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/L844_BackspaceStringCompare.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/others/RedBlackTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li11_heap/revised/L621_TaskScheduler.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortedPath_L126_WordLadderII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/Tsp_G01_TspWithNearestNeighbour.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A009ReadWriteLock.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/02_sync/ProducerConsumer.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/05_atomic/LongAdderExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/models/GraphAdjLst.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/LeadersInAnArrayProblem.java
 /Users/I322364/Git/competitive-programming/coding/src/com/java/equals/ObjectEquals.java
@@ -291,7 +295,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/revised/L55_JumpGame.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Strings_Lcs_L1092_ShortestCommonSupersequence.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/DetectCycle_DetectCycleInUndirectedGraph.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A002Executors.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/revised/L258_AddDigits.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li07_stack/revised/L224_BasicCalculator.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Dfs_L130_SurroundedRegions.java
@@ -302,7 +305,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li14_backtracking/revised/MColoring.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/others/AvlTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L1283_FindtheSmallestDivisorGivenaThreshold.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/OddEven.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/04_locks/ReadWriteLockExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li14_backtracking/revised/L51_NQueens.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_CuttingRod.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/Stack_BalancedParenthesesWithStringsUniquePairing.java
@@ -311,7 +314,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/UnionFind_L827_MakingALargeIsland.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li03_slidingwindow/revised/L3_LongestSubstringWithoutRepeatingCharacters.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L4_MedianOf2SortedArrays.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/01_basics/A001BasicThreadWithRunnable.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_L494_TargetSum.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Grid_MultiStartNEnd_L931_MinimumFallingPathSum.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li02_hashing/revised/L1_TwoSum.java
@@ -322,7 +324,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/Matrix_L59_SpiralMatrixII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L69_SqrtOfX.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L83_RemoveDuplicatesFromSortedList.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A007Synchronized.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Partitions_MatrixChainMultiplication.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li07_stack/StackUsingLinkedList.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li16_design/revised/L460_LFUCache.java
@@ -385,6 +386,8 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bst/revised/L333_LargestBstSubtree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Strings_Lcs_L516_LongestPolindromicSubsequence.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li08_queue/revised/L232_ImplementQueueUsingStacks.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/04_locks/StampedLockExample.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/02_sync/WaitAndNotifyExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li19_bit/revised/L401_BinaryWatch.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/revised/Bt_PrintRootToNodePathInBinaryTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/basic/L628_MaximumProductOfThreeNumbers.java
@@ -422,6 +425,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/GameLoop_JumpGameWithCycleDetection.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L268_MissingNumber.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/Bfs.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/05_atomic/LongAccumulatorExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/revised/L678_ValidParenthesisString.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L237_DeleteNodeInALinkedList.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li03_slidingwindow/revised/L567_PermutationInString.java
@@ -444,7 +448,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L168_ExcelSheetColumnTitle.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_SubsetSumEqualsToTarget.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L203_RemoveLinkedListElements.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A015ConcurrentMap.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L229_MajorityElementII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/MultiBfs_L994_RottingOranges.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/revised/L326_PowerOfThree.java
@@ -465,7 +468,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L287_FindTheDuplicateNumber.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L53_MaximumSubarray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Subsequence_01Knapsack.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A005InvokeAll.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bst/revised/L230_KthSmallestElementinBst.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/models/Subset.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bst/revised/L701_InsertIntoABinarySearchTree.java
@@ -484,7 +486,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L680_ValidPalindromeII.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L5_LongestPalindromicSubstring.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L169_MajorityElement.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A010StampedLock.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L1539_KthMissingPositiveNumber.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/companies/google/String_EquationSyntaxValidator.java
 /Users/I322364/Git/competitive-programming/coding/src/com/java/equals/StringEquals.java
@@ -506,7 +507,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Lis_L368_LargestDivisibleSubset.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/revised/L9_PalindromeNumber.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li12_trie/revised/L1268_SearchSuggestionsSystem.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/ProducerConsumer.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortestPath_L743_NetworkDelayTime.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/DetectCycle_DetectCycleInDirectedGraph.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li19_bit/revised/L67_AddBinary.java
@@ -536,7 +536,6 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li09_linkedlist/revised/L141_LinkedListCycle.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/DetectCycle_L261_GraphValidTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/revised/ShortestJobFirstCPUScheduling.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A013LongAdder.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li14_backtracking/revised/L17_LetterCombinationsOfAPhoneNumber.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bst/revised/L235_LowestCommonAncestorOfABinarySearchTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li15_dp/revised/Lis_LongestBitonicSubsequence.java
@@ -546,12 +545,12 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L387_FirstUniqueCharacterInAString.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/AggressiveCows.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/revised/L875_KokoEatingBananas.java
-/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/A008ReentrantLock.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li10_tree/bt/revised/Bt_L101_SymmetricTree.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li19_bit/revised/L190_ReverseBits.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li04_twopointers/revised/L15_ThreeSum.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li03_slidingwindow/revised/L992_SubarrayswithKDifferentIntegers.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li21_greedy/L605_CanPlaceFlowers.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/06_collections/ConcurrentMapExample.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/Geometry_IntersectingLineSegments.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li01_array/revised/L1752_CheckifArrayIsSortedandRotated.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li05_binarysearch/SearchRange.java
@@ -567,6 +566,7 @@
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li14_backtracking/revised/PickOrNotPick_L78_Subsets.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li12_trie/revised/L421_MaximumXorOfTwoNumbersInAnArray.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li13_graph/revised/ShortedPath_L778_SwimInRisingWater.java
+/Users/I322364/Git/competitive-programming/coding/src/com/java/concurrency/03_executors/CallableAndFuture.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li20_math/revised/PrimaFactors.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/models/ListNode.java
 /Users/I322364/Git/competitive-programming/coding/src/com/algos/topics/li18_string/revised/L242_ValidAnagram.java
