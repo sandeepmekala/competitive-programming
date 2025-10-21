@@ -57,14 +57,14 @@ public class UnionFind_L827_MakingALargeIsland {
                 }
                 int sizeTotal = 0;
                 for (Integer parent : components) {
-                    sizeTotal += uf.size.get(parent);
+                    sizeTotal += uf.getSize(parent);
                 }
                 max = Math.max(max, sizeTotal + 1);
             }
         }
         for (int cellNo = 0; cellNo < n * n; cellNo++) {    // incase no 0's in array
             int parent = uf.find(cellNo);
-            max = Math.max(max, uf.size.get(parent));
+            max = Math.max(max, uf.getSize(parent));
         }
         return max;
     }

@@ -7,7 +7,7 @@ interface Sayable {
 // it can have object class methods as abstract methods. This won't violate it
 // property.
 @FunctionalInterface
-interface Convert<F, T> {
+interface StaticConverter<F, T> {
     T convert(F from);
 
     int hashCode();
@@ -22,7 +22,7 @@ public class StaticMethodReference {
         Sayable sayable = StaticMethodReference::saySomething;
         sayable.say();
 
-        Convert<String, Integer> converter2 = Integer::parseInt;
+        StaticConverter<String, Integer> converter2 = Integer::parseInt;
         Integer integer2 = converter2.convert("123");
         System.out.println(integer2);
     }

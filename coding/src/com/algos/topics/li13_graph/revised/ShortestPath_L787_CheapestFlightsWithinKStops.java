@@ -57,31 +57,31 @@ public class ShortestPath_L787_CheapestFlightsWithinKStops {
     // over dist.
     // This will boils down to applying simple BFS level wise.
     public int cheapestFLight(int n, int flights[][], int src, int dst, int k) {
-        ArrayList<ArrayList<Pair>> adj = new ArrayList<>();
+        ArrayList<ArrayList<FlightPair>> adj = new ArrayList<>();
         for (int i = 0; i < n; i++)
             adj.add(new ArrayList<>());
 
         int m = flights.length;
         for (int i = 0; i < m; i++) {
-            adj.get(flights[i][0]).add(new Pair(flights[i][1], flights[i][2]));
+            adj.get(flights[i][0]).add(new FlightPair(flights[i][1], flights[i][2]));
         }
 
-        Queue<Tuple> q = new LinkedList<>();
-        q.add(new Tuple(0, src, 0));    // {k, airport, cost}
+        Queue<FlightTuple> q = new LinkedList<>();
+        q.add(new FlightTuple(0, src, 0));    // {k, airport, cost}
 
         int[] dist = new int[n];
         Arrays.fill(dist, (int) (1e9));
 
         dist[src] = 0;
         while (!q.isEmpty()) {
-            Tuple curr = q.remove();
+            FlightTuple curr = q.remove();
             int stops = curr.stops, node = curr.node, cost = curr.cost;
 
             // We stop the process as soon as the limit for the stops reaches.
             if (stops > k)
                 continue;
 
-            for (Pair it : adj.get(node)) {
+            for (FlightPair it : adj.get(node)) {
                 int neigh = it.airport;
                 int edgeWeight = it.cost;
 
@@ -89,7 +89,7 @@ public class ShortestPath_L787_CheapestFlightsWithinKStops {
                 // less than the prev and the stops are also within limits
                 if (cost + edgeWeight < dist[neigh] && stops <= k) {
                     dist[neigh] = cost + edgeWeight;
-                    q.add(new Tuple(stops + 1, neigh, cost + edgeWeight));
+                    q.add(new FlightTuple(stops + 1, neigh, cost + edgeWeight));
                 }
             }
         }
@@ -99,20 +99,20 @@ public class ShortestPath_L787_CheapestFlightsWithinKStops {
     }
 }
 
-class Pair {
+class FlightPair {
     int airport;
     int cost;
 
-    public Pair(int node, int cost) {
+    public FlightPair(int node, int cost) {
         this.airport = node;
         this.cost = cost;
     }
 }
 
-class Tuple {
+class FlightTuple {
     int stops, node, cost;
 
-    Tuple(int stops, int airport, int cost) {
+    FlightTuple(int stops, int airport, int cost) {
         this.stops = stops;
         this.node = airport;
         this.cost = cost;

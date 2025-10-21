@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.topics.models.TreeNode;
 
 public class Bt_L987_VerticalOrderTraversalOfABinaryTree {
     public static void main(String[] args) {
@@ -29,10 +29,10 @@ public class Bt_L987_VerticalOrderTraversalOfABinaryTree {
     // space: O(n)
     public List<List<Integer>> verticalTraversal(TreeNode root) {
         TreeMap<Integer, TreeMap<Integer, PriorityQueue<Integer>>> map = new TreeMap<>();
-        Queue<Tuple> q = new LinkedList<>();
-        q.add(new Tuple(root, 0, 0));
+        Queue<VerticalTuple> q = new LinkedList<>();
+        q.add(new VerticalTuple(root, 0, 0));
         while(!q.isEmpty()){
-            Tuple curr = q.remove();
+            VerticalTuple curr = q.remove();
             TreeNode node = curr.node;
             int row = curr.row, col = curr.col;
 
@@ -43,9 +43,9 @@ public class Bt_L987_VerticalOrderTraversalOfABinaryTree {
             map.get(col).get(row).add(node.val);
 
             if(node.left != null)
-                q.add(new Tuple(node.left, row+1, col-1));
+                q.add(new VerticalTuple(node.left, row+1, col-1));
             if(node.right != null)
-                q.add(new Tuple(node.right, row+1, col+1));
+                q.add(new VerticalTuple(node.right, row+1, col+1));
         }
 
         List<List<Integer>> ans = new ArrayList<>();
@@ -62,11 +62,11 @@ public class Bt_L987_VerticalOrderTraversalOfABinaryTree {
     }
 }
 
-class Tuple{
+class VerticalTuple{
     public TreeNode node;
     public int row;
     public int col;
-    public Tuple(TreeNode node, int row, int col) {
+    public VerticalTuple(TreeNode node, int row, int col) {
         this.node = node;
         this.row = row;
         this.col = col;

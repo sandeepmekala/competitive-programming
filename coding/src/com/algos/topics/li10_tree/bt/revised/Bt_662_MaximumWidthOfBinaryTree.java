@@ -29,15 +29,15 @@ public class Bt_662_MaximumWidthOfBinaryTree {
             return 0;
 
         int ans = 0;
-        Queue<Tuple3> q = new LinkedList<>();
-        q.add(new Tuple3(root, 0));
+        Queue<Tuple> q = new LinkedList<>();
+        q.add(new Tuple(root, 0));
         while(!q.isEmpty()){
             int size = q.size();
             int first = -1, last = -1;
             int min = q.peek().index;
 
             for(int i=0; i<size; i++){
-                Tuple3 curr = q.remove();
+                Tuple curr = q.remove();
                 TreeNode node = curr.node;
                 int index = curr.index-min;
 
@@ -45,9 +45,9 @@ public class Bt_662_MaximumWidthOfBinaryTree {
                 if(i==size-1) last = index;
 
                 if(node.left != null)
-                    q.add(new Tuple3(node.left, 2*index+1));
+                    q.add(new Tuple(node.left, 2*index+1));
                 if(node.right != null)
-                    q.add(new Tuple3(node.right, 2*index+2));
+                    q.add(new Tuple(node.right, 2*index+2));
             }
 
             ans = Math.max(ans, last-first+1);

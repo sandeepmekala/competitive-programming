@@ -32,6 +32,12 @@ public class DetectCycle_DetectCycleInUndirectedGraph {
 		System.out.print("Is Cyclic:");
 		System.out.println(obj.isCyclicBfs(adj));
 
+		// Create a GraphAdjLst for union find test
+		GraphAdjLst g = new GraphAdjLst(3);
+		g.addUndirectedEdge(0, 1);
+		g.addUndirectedEdge(1, 2);
+		g.addUndirectedEdge(2, 0);
+
 		System.out.print("Is Cyclic by union find:");
 		System.out.println(obj.isCyclicByUnionFind(g));
 	}

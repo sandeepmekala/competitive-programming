@@ -73,4 +73,8 @@ public class UnionFind_UnionFind {
             size[srcPar] += size[destPar];
         }
     }
+
+    public int getSize(int node) {
+        return size[node];
+    }
 }

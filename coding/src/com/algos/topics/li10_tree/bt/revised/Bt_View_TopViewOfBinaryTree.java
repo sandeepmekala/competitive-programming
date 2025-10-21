@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.topics.models.TreeNode;
 
 public class Bt_View_TopViewOfBinaryTree {
     public static void main(String[] args) {
@@ -27,10 +27,10 @@ public class Bt_View_TopViewOfBinaryTree {
     // space: O(1)
     public List<Integer> topView(TreeNode root){
         Map<Integer, Integer> map = new TreeMap<>();
-        Queue<Tuple> q = new LinkedList<>();
-        q.add(new Tuple(root, 0));
+        Queue<TopViewTuple> q = new LinkedList<>();
+        q.add(new TopViewTuple(root, 0));
         while(!q.isEmpty()){
-            Tuple curr = q.remove();
+            TopViewTuple curr = q.remove();
             TreeNode node = curr.node;
             int col = curr.col;
 
@@ -38,9 +38,9 @@ public class Bt_View_TopViewOfBinaryTree {
                 map.put(col, node.val);
 
             if(node.left !=  null)
-                q.add(new Tuple(node.left, col-1));
+                q.add(new TopViewTuple(node.left, col-1));
             if(node.right !=  null)
-                q.add(new Tuple(node.right, col+1));
+                q.add(new TopViewTuple(node.right, col+1));
         }
 
         List<Integer> ans = new ArrayList<>();
@@ -50,10 +50,10 @@ public class Bt_View_TopViewOfBinaryTree {
         return ans;
     }
 }
-class Tuple{
+class TopViewTuple{
     TreeNode node;
     int col;
-    public Tuple(TreeNode node, int col) {
+    public TopViewTuple(TreeNode node, int col) {
         this.node = node;
         this.col = col;
     }

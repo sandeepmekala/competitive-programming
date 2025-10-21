@@ -322,25 +322,23 @@ public class Streams {
 		// First type
 		persons
 				.stream()
-				.reduce((p1, p2) -> p1.age > p2.age ? p1 : p2)
+				.reduce((p1, p2) -> p1.age() > p2.age() ? p1 : p2)
 				.ifPresent(System.out::println); // Pamela
 
 		// Second type
 		Person result = persons
 				.stream()
 				.reduce(new Person("", 0), (p1, p2) -> {
-					p1.age += p2.age;
-					p1.name += p2.name;
-					return p1;
+					return new Person(p1.name() + p2.name(), p1.age() + p2.age());
 				});
 
-		System.out.format("name=%s; age=%s", result.name, result.age);
+		System.out.format("name=%s; age=%s", result.name(), result.age());
 		System.out.println();
 		// Third type
 		// Identity type can be any thing
 		Integer ageSum = persons
 				.stream()
-				.reduce(0, (sum, p) -> sum += p.age, (sum1, sum2) -> sum1 + sum2);
+				.reduce(0, (sum, p) -> sum += p.age(), (sum1, sum2) -> sum1 + sum2);
 
 		System.out.println(ageSum); // 76
 
@@ -351,7 +349,7 @@ public class Streams {
 				.reduce(0,
 						(sum, p) -> {
 							System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-							return sum += p.age;
+							return sum += p.age();
 						},
 						(sum1, sum2) -> {
 							System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
@@ -365,7 +363,7 @@ public class Streams {
 				.reduce(0,
 						(sum, p) -> {
 							System.out.format("accumulator: sum=%s; person=%s\n", sum, p);
-							return sum += p.age;
+							return sum += p.age();
 						},
 						(sum1, sum2) -> {
 							System.out.format("combiner: sum1=%s; sum2=%s\n", sum1, sum2);
@@ -530,12 +528,10 @@ record Person(String name, int age) {
 	}
 
 	public String getAgeCategory() {
-		return switch (age) {
-			case int a when a < 13 -> "Child";
-			case int a when a < 20 -> "Teenager";
-			case int a when a < 65 -> "Adult";
-			default -> "Senior";
-		};
+		if (age < 13) return "Child";
+		else if (age < 20) return "Teenager";
+		else if (age < 65) return "Adult";
+		else return "Senior";
 	}
 }
 
