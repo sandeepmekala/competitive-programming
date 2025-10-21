@@ -1,7 +1,7 @@
 package com.java.generics;
 
 public class GenericsWithMethod {
-    
+
     public static void main(String[] args) {
         GenericsWithMethod gm = new GenericsWithMethod();
         gm.print(10);

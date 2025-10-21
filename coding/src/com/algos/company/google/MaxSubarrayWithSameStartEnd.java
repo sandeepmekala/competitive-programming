@@ -11,12 +11,12 @@ public class MaxSubarrayWithSameStartEnd {
         Map<Integer, Integer> prefixSumMap = new HashMap<>();
         // Map to store the first occurrence index of each number
         Map<Integer, Integer> firstIndexMap = new HashMap<>();
-        
+
         int n = nums.length;
         int maxSum = Integer.MIN_VALUE;
         int start = -1;
         int end = -1;
-        
+
         int currentSum = 0;
 
         for (int i = 0; i < n; i++) {
@@ -25,7 +25,7 @@ public class MaxSubarrayWithSameStartEnd {
             if (firstIndexMap.containsKey(nums[i])) {
                 int firstIndex = firstIndexMap.get(nums[i]);
                 int previousPrefixSum = prefixSumMap.get(nums[i]);
-                
+
                 int subarraySum = currentSum - previousPrefixSum;
 
                 if (subarraySum > maxSum) {
@@ -41,10 +41,10 @@ public class MaxSubarrayWithSameStartEnd {
                 prefixSumMap.put(nums[i], currentSum);
             }
         }
-        
+
         return new int[] {start, end};
     }
-        
+
         public static void main(String[] args) {
             MaxSubarrayWithSameStartEnd sol = new MaxSubarrayWithSameStartEnd();
             int[] nums = {1, 3, 5, 6, 3, -6, 3};
@@ -52,4 +52,3 @@ public class MaxSubarrayWithSameStartEnd {
             System.out.println("Start index: " + result[0] + ", End index: " + result[1]);
         }
     }
-    

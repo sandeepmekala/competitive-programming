@@ -1,11 +1,11 @@
 package com.java.equals;
 
 public class ObjectEquals {
-    
+
         public static void main(String[] args) {
-            Person p1 = new Person("A", 1);            
+            Person p1 = new Person("A", 1);
             Person p2 = new Person("A", 1);
-            
+
             if(p1.equals(p2))
                 System.out.println("Equal");
             else
@@ -40,5 +40,5 @@ class Person{
             return false;
         return true;
     }
-    
+
 }

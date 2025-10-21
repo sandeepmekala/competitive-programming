@@ -53,4 +53,3 @@ public class ProducerConsumer {
         new Consumer(resource).start();
     }
 }
-

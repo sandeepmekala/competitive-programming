@@ -1,7 +1,7 @@
 package com.java.threads;
 
 public class OddEven {
-    
+
     public static void main(String[] args) {
         OddEven st = new OddEven();
         try{st.test();} catch(Exception e){}

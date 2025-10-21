@@ -47,17 +47,17 @@ public class AnnotationsExample {
 }
 
 @Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD})
-@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)   
+@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 @interface VeryImportant{}
 
 @Target(ElementType.METHOD)
-@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)   
+@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 @interface RunImmediately{
     int times() default 1;
 }
 
 @Target(ElementType.FIELD)
-@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)   
+@Retention(java.lang.annotation.RetentionPolicy.RUNTIME)
 @interface ImportString{}
 
 @VeryImportant
@@ -65,7 +65,7 @@ class Cat{
 
     @ImportString
     String name;
-    
+
     Cat(String name){
         this.name = name;
     }

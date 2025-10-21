@@ -14,18 +14,18 @@ public class Backtracking_CardPatternPartitioning {
     }
 
     private static boolean canFormPatterns(List<Card> cards, boolean[] vis, int ind, int count) {
-        if (count == 4) 
+        if (count == 4)
             return true;
 
         for (int i = ind; i < cards.size(); i++) {
             if (vis[i]) continue;
-            
+
             for (int j = i + 1; j < cards.size(); j++) {
                 if (vis[j]) continue;
-                
+
                 for (int k = j + 1; k < cards.size(); k++) {
                     if (vis[k]) continue;
-                    
+
                     if (isValidPattern(cards.get(i), cards.get(j), cards.get(k))) {
                         vis[i] = vis[j] = vis[k] = true;
                         if (canFormPatterns(cards, vis, i + 1, count + 1)) {

@@ -16,16 +16,16 @@ public class DP_MaxDistanceWithFuelConstraints {
     private static int getMaxDistanceHelper(int day, int fuelLeft, int[] speed, int capacity, int[][] dp) {
         if (day == speed.length) return 0;
         if (dp[day][fuelLeft] != -1) return dp[day][fuelLeft];
-        
+
         // Option 1: Skip the day to refuel
         int refuelOption = (fuelLeft < capacity) ? getMaxDistanceHelper(day + 1, fuelLeft + 1, speed, capacity, dp) : 0;
-        
+
         // Option 2: Drive on this day if there's fuel left
         int driveOption = (fuelLeft > 0) ? speed[day] + getMaxDistanceHelper(day + 1, fuelLeft - 1, speed, capacity, dp) : 0;
-        
+
         // Take the maximum of both options
         dp[day][fuelLeft] = Math.max(refuelOption, driveOption);
-        
+
         return dp[day][fuelLeft];
     }
 

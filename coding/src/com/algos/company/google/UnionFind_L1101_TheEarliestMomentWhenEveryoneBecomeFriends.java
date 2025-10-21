@@ -3,10 +3,10 @@ package com.algos.company.google;
 public class UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends {
     public static void main(String[] args) {
         UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends obj = new UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends();
-        
+
         // [t, x, y] => x and y become friends at time t
         int[][] logs = new int[][]{
-            {0,2,0},    
+            {0,2,0},
             {1,0,1},
             {3,0,3},
             {4,1,2},
@@ -22,7 +22,7 @@ public class UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends {
     // Remove Friend - If A and B are friends, unfriend them
     public int earliestAcq(int[][] logs, int n) {
         int[] parent = new int[n];
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < n; i++)
             parent[i] = i;
 
         int count = n;

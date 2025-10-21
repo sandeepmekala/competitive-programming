@@ -33,7 +33,7 @@ public class Trie_MinimalDirectorySelection {
         TrieNode node = root;
         for (String dir : dirs) {
             if(dir.isEmpty()) continue;
-            
+
             node.count--;
             node = node.children.get(dir);
         }
@@ -50,7 +50,7 @@ public class Trie_MinimalDirectorySelection {
             node = node.children.get(dir);
             prefix.append("/");
             prefix.append(dir);
-            if(node.count == 0) 
+            if(node.count == 0)
                 break;
         }
         if (!node.isVisited) {

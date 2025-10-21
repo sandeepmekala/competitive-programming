@@ -29,7 +29,7 @@ public class BipartiteMatching_SeatBookingCancellation {
                     match.put(seat, index);
                     return true;
                 }
-            }            
+            }
         }
         return false;
     }

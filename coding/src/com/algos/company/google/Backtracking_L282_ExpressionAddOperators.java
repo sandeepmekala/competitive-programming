@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Backtracking_L282_ExpressionAddOperators {
-    
+
     // Problem: https://leetcode.com/problems/expression-add-operators/description/
     // Idea: Backtracking
     // Time: O(4^n)
@@ -12,7 +12,7 @@ public class Backtracking_L282_ExpressionAddOperators {
         List<String> result = new ArrayList<>();
         if (num == null || num.length() == 0)
             return result;
-        
+
         dfs(result, "", num, target, 0, 0, 0);
         return result;
     }

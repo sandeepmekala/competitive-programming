@@ -37,7 +37,7 @@ public class Backtracking_FindSubsetMinPosEvaluate {
                 }
             }
         }
-        
+
         return false;
     }
 

@@ -4,20 +4,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class GameLoop_JumpGameWithCycleDetection {
-    
+
     // Problem: https://leetcode.com/discuss/interview-question/4878831/Google-onsite-question
     public static int findEndPosition(int[] nums, int x, int s) {
         int n = nums.length;
         int currInd = s;
         boolean isOddMove = true;
         Set<Integer> visited = new HashSet<>();
-        
+
         while (true) {
             if (visited.contains(currInd)) {
                 return -1; // Cycle detected
             }
             visited.add(currInd);
-            
+
             int nextInd = -1;
             if (isOddMove) {
                 // Find first index on the left with value A[currentIndex] + 1
@@ -36,11 +36,11 @@ public class GameLoop_JumpGameWithCycleDetection {
                     }
                 }
             }
-            
+
             if (nextInd == -1) {
                 return currInd; // No valid move can be made, return current index
             }
-            
+
             nums[currInd] += x; // Update the value at currentIndex
             currInd = nextInd; // Move to next index
             isOddMove = !isOddMove; // Toggle the move type

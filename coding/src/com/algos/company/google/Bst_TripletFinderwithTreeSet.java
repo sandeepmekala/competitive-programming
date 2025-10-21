@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.TreeSet;
 
 class Bst_TripletFinderwithTreeSet {
-    
+
     public static void main(String[] args) {
         TripletFinder obj = new TripletFinder();
         obj.init(5);

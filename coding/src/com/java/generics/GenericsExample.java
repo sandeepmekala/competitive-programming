@@ -7,7 +7,7 @@ public class GenericsExample {
         // Use to generalize the functionality to different types of classes.
         Printer<Integer> p = new Printer<>(10);
         p.print();
-        
+
         Printer<String> p1 = new Printer<>("Hello");
         p1.print();
     }
@@ -15,7 +15,7 @@ public class GenericsExample {
 
 class Printer<T>{
     T val;
-    
+
     Printer(T val){
         this.val = val;
     }

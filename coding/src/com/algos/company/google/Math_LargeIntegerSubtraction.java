@@ -9,20 +9,20 @@ public class Math_LargeIntegerSubtraction {
         // Convert the long integers to strings
         String s1 = Long.toString(a);
         String s2 = Long.toString(b);
-        
+
         // Swap strings if a < b
         if (a < b) {    // s1 should be greater than s2
             String temp = s1;
             s1 = s2;
             s2 = temp;
         }
-        
+
         // Reverse the strings
         StringBuilder sb1 = new StringBuilder(s1);
         StringBuilder sb2 = new StringBuilder(s2);
         sb1.reverse();
         sb2.reverse();
-        
+
         StringBuilder ans = new StringBuilder();
         // Perform subtraction
         int carry = 0;
@@ -41,15 +41,15 @@ public class Math_LargeIntegerSubtraction {
 
         // Reverse the result string
         ans.reverse();
-        
+
         // Remove leading zeros
         while (ans.length() > 1 && ans.charAt(0) == '0') {
             ans.deleteCharAt(0);
         }
-        
-        if(a < b) 
+
+        if(a < b)
             ans.insert(0, '-');
-        
+
         return ans.toString();
     }
 

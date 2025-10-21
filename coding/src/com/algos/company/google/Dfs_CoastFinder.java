@@ -5,7 +5,7 @@ public class Dfs_CoastFinder {
     private static final char LAND = 'X';
     private static final char WATER = '.';
     private static final char OCEAN = 'O';
-    
+
     public boolean isCoast(char[][] matrix, int row, int col) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;

@@ -42,7 +42,7 @@ public class String_EquationSyntaxValidator {
         char prev = ' ';
         for (char ch : expression.toCharArray()) {
             if (ch == ' ') continue;
-            
+
             if (ch == '(') {
                 balance++;
             } else if (ch == ')') {

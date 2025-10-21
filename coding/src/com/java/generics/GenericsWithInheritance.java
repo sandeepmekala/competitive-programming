@@ -25,11 +25,11 @@ class Dog{}
 // We can extend multiple interfaces but only one class with & separated. Class should be first.
 class Eater<T extends Animal>{
     T animal;
-    
+
     Eater(T animal){
         this.animal = animal;
     }
-    
+
     public void eat(){
         // Since, T is bounded to Animal, we can call eat method of Animal
         animal.eat();

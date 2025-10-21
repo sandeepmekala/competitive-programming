@@ -30,7 +30,7 @@ class Logger {
      */
     public boolean shouldPrintMessage(int timestamp, String message) {
         int expTime = limiter.getOrDefault(message, 0);
-        if (expTime > timestamp) 
+        if (expTime > timestamp)
             return false;
 
         limiter.put(message, timestamp + 10);
