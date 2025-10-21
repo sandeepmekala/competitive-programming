@@ -15,7 +15,7 @@ public class L369_PlusOneLinkedList {
             list.head = obj.plusOne(list.head);
             list.print();
 
-            list.hashCode()
+            list.hashCode();
         }
 
         // Problem: https://leetcode.com/problems/plus-one-linked-list/
