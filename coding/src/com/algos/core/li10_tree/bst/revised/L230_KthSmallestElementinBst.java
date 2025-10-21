@@ -2,7 +2,7 @@ package  com.algos.core.li10_tree.bst.revised;
 
 import java.util.Stack;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L230_KthSmallestElementinBst {
 
@@ -16,7 +16,7 @@ public class L230_KthSmallestElementinBst {
 		bst.insertIntoBST(root, 5);
 		bst.insertIntoBST(root, 15);
 		bst.insertIntoBST(root, 3);
-		
+
 		System.out.println(obj.kthSmallest(root, 3));
 
 	}
@@ -39,7 +39,7 @@ public class L230_KthSmallestElementinBst {
                 count++;
                 if(count == k)
                     return curr.val;
-                
+
                 curr = curr.right;
             }
         }

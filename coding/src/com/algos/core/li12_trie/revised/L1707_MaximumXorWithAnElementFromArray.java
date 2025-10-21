@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L1707_MaximumXorWithAnElementFromArray {
     public static void main(String args[]){
@@ -26,7 +26,7 @@ public class L1707_MaximumXorWithAnElementFromArray {
         Arrays.sort(nums);
         List<Query> offlineQueries = new ArrayList<>();
         for(int i=0; i<queries.length; i++){
-            offlineQueries.add(new Query(i, queries[i][0], queries[i][1])); 
+            offlineQueries.add(new Query(i, queries[i][0], queries[i][1]));
         }
         offlineQueries.sort((q1, q2) -> q1.mi-q2.mi);
 
@@ -53,8 +53,8 @@ class Query{
     int mi;
     Query(int index, int xi, int ai){
         this.index = index;
-        this.xi = xi; 
-        this.mi = ai; 
+        this.xi = xi;
+        this.mi = ai;
     }
 }
 class Trie2{

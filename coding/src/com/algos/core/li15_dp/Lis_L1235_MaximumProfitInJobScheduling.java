@@ -2,17 +2,17 @@ package  com.algos.core.li15_dp;
 
 import java.util.Arrays;
 
-import  com.algos.core.li30_model.Job;
+import com.algos.core.models.Job;
 
 public class Lis_L1235_MaximumProfitInJobScheduling {
 
 	public static void main(String[] args) {
 		Lis_L1235_MaximumProfitInJobScheduling obj = new Lis_L1235_MaximumProfitInJobScheduling();
-		
+
 		int[] starts = new int[] {1,2,3,3};
 		int[] ends = new int[] {3,4,5,6};
 		int[] profits = new int[] {50,10,40,70};
-		
+
 		System.out.println(obj.jobScheduling(starts, ends, profits));
 	}
 
@@ -21,7 +21,7 @@ public class Lis_L1235_MaximumProfitInJobScheduling {
 	 * Idea: Use profits tabulation array for jobs
 	 * If job j can be picked before ith job, update the profit of i.
 	 * TODO
-	 * 
+	 *
 	 * */
 	public int jobScheduling(int[] starts, int[] ends, int[] profits) {
 		int n = starts.length;
@@ -29,13 +29,13 @@ public class Lis_L1235_MaximumProfitInJobScheduling {
 		for(int i=0; i<starts.length; i++) {
 			jobs[i] = new Job(starts[i], ends[i], profits[i]);
 		}
-		
+
 		Arrays.sort(jobs, (j1, j2) -> j1.start-j2.start);
-		
+
 		int[] profit = new int[n];
-		for(int i=0; i<n; i++) 
+		for(int i=0; i<n; i++)
 			profit[i] = jobs[i].profit;
-		
+
 		int maxProfit = 0;
 		for(int i=1; i<n; i++) {
 			for(int j=0; j<i; j++) {

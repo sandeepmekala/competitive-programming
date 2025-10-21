@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.Edge;
-import  com.algos.core.li30_model.GraphAdjLst;
+import com.algos.core.models.Edge;
+import com.algos.core.models.GraphAdjLst;
 
 public class DetectCycle_DetectCycleInUndirectedGraph {
 
@@ -43,7 +43,7 @@ public class DetectCycle_DetectCycleInUndirectedGraph {
 		int[] vis = new int[n];
 		Queue<int[]> q = new LinkedList<int[]>();
 		q.add(new int[]{0, -1});
-		vis[0] = 1; 
+		vis[0] = 1;
 		while (!q.isEmpty()) {
 			int[] curr = q.remove();
 			int node = curr[0], parent = curr[1];
@@ -92,9 +92,9 @@ public class DetectCycle_DetectCycleInUndirectedGraph {
 			int srcParent = uf.find(src);
 			for(int dest: g.adj.get(src)) {
 				int destParent = uf.find(dest);
-				if (srcParent == destParent) 
+				if (srcParent == destParent)
 					return true;
-				
+
 				uf.unionByRank(srcParent, destParent);
 			}
 		}

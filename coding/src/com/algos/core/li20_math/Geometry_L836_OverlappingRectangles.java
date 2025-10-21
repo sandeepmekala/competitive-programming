@@ -1,6 +1,6 @@
 package  com.algos.core.li20_math;
 
-import  com.algos.core.li30_model.Point;
+import com.algos.core.models.Point;
 
 public class Geometry_L836_OverlappingRectangles {
 
@@ -18,20 +18,20 @@ public class Geometry_L836_OverlappingRectangles {
 	* Given 2 segments (left1, right1), (left2, right2)
 	* They overlap if, left1 < right2 && left2 < right1
 	*			 ----------------(3, 3)
-	*			 |				|	
+	*			 |				|
 	* 	 	-----|-------(2, 2)	|
-	*	 	|	 -------|-------- r2		
-	*	 	|	(1, 1)	|	
-	*	 	------------- r1	
+	*	 	|	 -------|-------- r2
+	*	 	|	(1, 1)	|
+	*	 	------------- r1
 	* 		(0, 0)
-	* 
+	*
 	* 		0------------2
 				 1--------------3
-	* 
+	*
 	*/
 
 	public boolean isRectangleOverlap(int[] rec1, int[] rec2) {
-		return rec1[0] < rec2[2] && rec2[0] < rec1[2] && 
+		return rec1[0] < rec2[2] && rec2[0] < rec1[2] &&
 		rec1[1] < rec2[3] && rec2[1] < rec1[3];
 	}
 }

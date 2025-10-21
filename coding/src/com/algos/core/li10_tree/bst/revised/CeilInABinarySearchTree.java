@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class CeilInABinarySearchTree {
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class CeilInABinarySearchTree {
 
     // Idea: when root val is larger, that could be one possible ceil value.
     // Assign it to ceild and try to minumize the ceil value by going left.
-    // Floor of a num is also similar logic. 
+    // Floor of a num is also similar logic.
     // Time: O(logn)
     // space: O(1)
     public int findCeil(TreeNode root, int key){

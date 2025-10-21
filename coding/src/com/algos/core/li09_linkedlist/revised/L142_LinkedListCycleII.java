@@ -1,6 +1,6 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L142_LinkedListCycleII {
 
@@ -20,11 +20,11 @@ public class L142_LinkedListCycleII {
         Idea:
 	 	    Step 1: Detect cycle using FCD.
 	 	    Step 2: Place one pointer at head of LL | Another pointer should be at the point where fast and slow meet.
-		    Step 3: Move 1st pointer and 2nd pointer by one step each. 
+		    Step 3: Move 1st pointer and 2nd pointer by one step each.
 		    Step 4: Both will meet again at entry point of cycle.
-	 */ 
+	 */
     public ListNode detectCycle(ListNode head) {
-        
+
         ListNode slow = head;
         ListNode fast = head;
         while(fast != null && fast.next != null){
@@ -39,7 +39,7 @@ public class L142_LinkedListCycleII {
                 return slow;
             }
         }
-        
+
         return null;
     }
 }

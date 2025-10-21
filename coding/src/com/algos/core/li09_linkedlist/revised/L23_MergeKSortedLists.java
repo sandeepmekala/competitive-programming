@@ -3,7 +3,7 @@ package com.algos.core.li09_linkedlist.revised;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-import com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L23_MergeKSortedLists {
 
@@ -35,7 +35,7 @@ public class L23_MergeKSortedLists {
 	}
 
 	// Problem: https://leetcode.com/problems/merge-k-sorted-lists/
-	// Idea: Push all the nodes to min heap. Pop the min node and add it to the result and push the next of it. 
+	// Idea: Push all the nodes to min heap. Pop the min node and add it to the result and push the next of it.
 	// Time: O(klogk + knlogk), Space: O(1)
 	public ListNode mergeKLists(ListNode[] lists) {
 		Queue<ListNode> pq = new PriorityQueue<>((n1, n2) -> n1.val - n2.val);

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L107_BinaryTreeLevelOrderTraversalII {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Bt_L107_BinaryTreeLevelOrderTraversalII {
         LinkedList<List<Integer>> result = new LinkedList<List<Integer>>();
         if(root == null)
             return result;
-            
+
         Queue<TreeNode> q = new ArrayDeque<TreeNode>();
 		q.add(root);
 		while(!q.isEmpty()) {
@@ -42,12 +42,12 @@ public class Bt_L107_BinaryTreeLevelOrderTraversalII {
 				TreeNode curr = q.remove();
 				level.add(curr.val);
                 if(curr.left != null)
-                    q.add(curr.left);    
+                    q.add(curr.left);
                 if(curr.right != null)
                     q.add(curr.right);
 			}
 
-            result.addFirst(level);    
+            result.addFirst(level);
 		}
 
         return result;

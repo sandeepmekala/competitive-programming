@@ -1,6 +1,6 @@
 package com.algos.core.li09_linkedlist.revised;
 
-import com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L24_SwapNodesinPairs {
     public static void main(String[] args) {
@@ -27,13 +27,13 @@ public class L24_SwapNodesinPairs {
         int length = getLength(head);
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        
+
         ListNode prev = null, curr = head;
         ListNode prevGroupLast = dummy, currGroupLast = null;
         while(length >= k){
             for(int i=0; i<k; i++) {
                 if(i == 0) currGroupLast = curr;
-                
+
                 ListNode next = curr.next;
                 curr.next = prev;
                 prev = curr;
@@ -44,10 +44,10 @@ public class L24_SwapNodesinPairs {
             length -= k;
         }
         prevGroupLast.next = curr;
-        
+
         return dummy.next;
     }
-    
+
     private int getLength(ListNode head) {
         int length = 0;
         ListNode temp = head;

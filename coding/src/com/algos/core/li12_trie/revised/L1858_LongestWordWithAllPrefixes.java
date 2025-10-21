@@ -1,17 +1,17 @@
 package  com.algos.core.li12_trie.revised;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L1858_LongestWordWithAllPrefixes {
     public static void main(String[] args) {
         L1858_LongestWordWithAllPrefixes obj = new L1858_LongestWordWithAllPrefixes();
-        
+
         String[] words = new String[]{"a", "banana", "app", "appl", "ap", "apply", "apple"};
         System.out.println(obj.longestWord(words));
     }
 
     // Problem: https://leetcode.com/problems/longest-word-with-all-prefixes/
-    // https://leetcode.ca/2021-07-14-1858-Longest-Word-With-All-Prefixes/ 
+    // https://leetcode.ca/2021-07-14-1858-Longest-Word-With-All-Prefixes/
     public String longestWord(String[] words) {
         TrieNode root = new TrieNode();
         for(String word: words)
@@ -29,7 +29,7 @@ public class L1858_LongestWordWithAllPrefixes {
         }
         return longest;
     }
-    
+
     public void insert(TrieNode root, String word) {
 		TrieNode curr = root;
         for(Character ch : word.toCharArray()){
@@ -41,7 +41,7 @@ public class L1858_LongestWordWithAllPrefixes {
         }
         curr.endOfWord = true;	// after new node is created current will be pointing to new node after for loop
 	}
-    
+
     private boolean checkIfPrefixesExists(TrieNode root, String word) {
         TrieNode curr = root;
         boolean flag = true;

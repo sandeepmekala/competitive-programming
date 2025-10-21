@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 
 public class Bt_L297_SerializeAndDeserializeBinaryTree {
@@ -26,7 +26,7 @@ public class Bt_L297_SerializeAndDeserializeBinaryTree {
 	}
 
 	// Problem: https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
-	// Idea: For encoding, load the elements in preorder traversal into list 
+	// Idea: For encoding, load the elements in preorder traversal into list
 	// For decoding, go in preorder. Always remove first element from list to build root node of preorder.
 	// Recursively pass the same list which removes the first elements from the list to build respective preoder nodes.
 	// Time: O(n)
@@ -54,9 +54,9 @@ public class Bt_L297_SerializeAndDeserializeBinaryTree {
 
 	private TreeNode deserialize(List<String> serialized) {
 		String val = serialized.remove(0);
-		if (val.equals("#")) 
+		if (val.equals("#"))
 			return null;
-		
+
 		TreeNode root = new TreeNode(Integer.parseInt(val));
 		root.left = deserialize(serialized);
 		root.right = deserialize(serialized);

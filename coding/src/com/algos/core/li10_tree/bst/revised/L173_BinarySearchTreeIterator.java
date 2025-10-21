@@ -2,7 +2,7 @@ package  com.algos.core.li10_tree.bst.revised;
 
 import java.util.Stack;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 class L173_BinarySearchTreeIterator {
 
@@ -11,7 +11,7 @@ class L173_BinarySearchTreeIterator {
 
     }
     // Problem: https://leetcode.com/problems/binary-search-tree-iterator/
-    // Idea: The first processed element would be left most. 
+    // Idea: The first processed element would be left most.
     // Hence, push all the elements to stack until the left most so that left most is available on top of the stack.
     // While process left most, it won't have any further lefts. Hence, the next processed will be left most in it right child. Push all the elements till left most in its right child.
     // Time: O(logn)
@@ -22,9 +22,9 @@ class L173_BinarySearchTreeIterator {
         while(curr != null){
             stack.push(curr);
             curr = curr.left;
-        } 
+        }
     }
-    
+
     public int next() {
         TreeNode next = stack.pop();
         TreeNode curr = next.right;
@@ -34,7 +34,7 @@ class L173_BinarySearchTreeIterator {
         }
         return next.val;
     }
-    
+
     public boolean hasNext() {
         return !stack.isEmpty();
     }

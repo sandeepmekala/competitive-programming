@@ -1,14 +1,14 @@
 package com.algos.core.li09_linkedlist.revised;
 
-import com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class SingleLinkedList {
 
 	public ListNode head;
-	
+
 	public static void main(String[] args) {
 		SingleLinkedList sll = new SingleLinkedList();
-		
+
 		sll.print();
 		sll.insertAfterEnd(10);
 		System.out.println();
@@ -24,22 +24,22 @@ public class SingleLinkedList {
 		sll.insertBeforeHead(50);
 		System.out.println();
 		sll.print();
-		
+
 		sll.insertAtKthPosition(60, 1);
 		sll.insertAtKthPosition(70, 2);
 		sll.insertAtKthPosition(80, 3);
 		System.out.println();
 		sll.print();
-		
+
 		sll.deleteAtKthPosition(1);
 		System.out.println();
 		sll.print();
-		
+
 		sll.reverse();
 		System.out.println();
 		sll.print();
 	}
-	
+
 	public void insertAfterEnd(int data){
 		if(head == null){
 			ListNode node = new ListNode(data);
@@ -50,9 +50,9 @@ public class SingleLinkedList {
 		while(temp.next!= null){
 			temp = temp.next;
 		}
-		
+
 		temp.next = new ListNode(data);
-		
+
 	}
 	public void insertBeforeHead(int data){
 		ListNode node = new ListNode(data);
@@ -64,7 +64,7 @@ public class SingleLinkedList {
 			System.out.println("List is empty");
 			return;
 		}
-		
+
 		ListNode temp = head;
 		while(temp != null){
 			System.out.print(temp.val+" ");
@@ -85,7 +85,7 @@ public class SingleLinkedList {
 		node.next = temp.next;
 		temp.next = node;
 	}
-	
+
 	public void deleteAtKthPosition(int k){
 		ListNode temp = head;
 		if(k == 1){
@@ -98,7 +98,7 @@ public class SingleLinkedList {
 
 		temp.next = temp.next.next;
 	}
-	
+
 	public void reverse(){
 		ListNode prev = null, curr = null, next;
 		curr = head;
@@ -110,7 +110,7 @@ public class SingleLinkedList {
 		}
 		head = prev;
 	}
-	
+
 	public void printRec(ListNode node){
 		if(node == null){
 			return;
@@ -118,7 +118,7 @@ public class SingleLinkedList {
 		System.out.print(node.val+" ");
 		printRec(node.next);
 	}
-	
+
 	public void reversePrintRec(ListNode node){
 		if(node == null){
 			return;
@@ -136,5 +136,5 @@ public class SingleLinkedList {
 		}
 		return count;
 	}
-	
+
 }

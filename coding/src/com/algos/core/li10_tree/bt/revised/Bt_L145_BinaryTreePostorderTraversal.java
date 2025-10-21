@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L145_BinaryTreePostorderTraversal {
-    
+
     public static void main(String[] args) {
         Bt_L145_BinaryTreePostorderTraversal obj = new Bt_L145_BinaryTreePostorderTraversal();
 
@@ -32,7 +32,7 @@ public class Bt_L145_BinaryTreePostorderTraversal {
         postorderTraversal(root, list);
         return list;
     }
-    
+
     private void postorderTraversal(TreeNode root, List<Integer> list) {
         if(root == null)
 			return;
@@ -44,9 +44,9 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 	// Time: O(n)
     // space: O(1)
     public List<Integer> postorderIterativeTwoStacks(TreeNode root) {
-		if(root == null) 
+		if(root == null)
 			return new ArrayList<>();
-		
+
 			Stack<TreeNode> stack1 = new Stack<TreeNode>();
 			Stack<TreeNode> stack2 = new Stack<TreeNode>();
 			stack1.push(root);
@@ -54,12 +54,12 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 				TreeNode curr = stack1.pop();
 			stack2.push(curr);
 
-			if(curr.left != null) 
+			if(curr.left != null)
 			stack1.push(curr.left);
-			if(curr.right != null) 
+			if(curr.right != null)
 			stack1.push(curr.right);
 		}
-		
+
 		List<Integer> postorder = new ArrayList<Integer>();
 		while(!stack2.isEmpty()) {
 			TreeNode curr = stack2.pop();
@@ -71,9 +71,9 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 
 	// Similar, like inorder
 	public List<Integer> postorderIterativeOneStack(TreeNode root) {
-		if(root == null) 
+		if(root == null)
 			return new ArrayList<Integer>();
-		
+
         List<Integer> postorder = new ArrayList<Integer>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		TreeNode curr = root;
@@ -82,7 +82,7 @@ public class Bt_L145_BinaryTreePostorderTraversal {
 				stack.push(curr);
 				curr = curr.left;
 			}else{
-				TreeNode right = stack.peek().right;	
+				TreeNode right = stack.peek().right;
 				if(right == null) {
 					right = stack.pop();
 					postorder.add(right.val);

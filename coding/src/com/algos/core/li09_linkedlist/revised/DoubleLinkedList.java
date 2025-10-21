@@ -1,10 +1,10 @@
 package com.algos.core.li09_linkedlist.revised;
 
-import com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class DoubleLinkedList {
 	private ListNode head;
-	
+
 	public static void main(String[] args) {
 		DoubleLinkedList dll = new DoubleLinkedList();
 
@@ -18,7 +18,7 @@ public class DoubleLinkedList {
 		dll.head = dll.reverse(dll.head);
 		dll.print();
 	}
-	
+
 	public void insertBeforeHead(int data){
 		ListNode node = new ListNode(data);
 		if(head == null){
@@ -33,15 +33,15 @@ public class DoubleLinkedList {
 	public ListNode reverse(ListNode head){
 		if(head == null || head.next == null)
 			return head;
-		
-		ListNode curr = head, prv = null;	
+
+		ListNode curr = head, prv = null;
 		while(curr != null){
 			prv = curr.prev;
 			curr.prev = curr.next;
 			curr.next = prv;
 			curr = curr.prev;
 		}
-		
+
 		return prv.prev;
 	}
 
@@ -50,7 +50,7 @@ public class DoubleLinkedList {
 			System.out.println("List is empty");
 			return;
 		}
-		
+
 		ListNode curr = head;
 		while(curr != null){
 			System.out.print(curr.getVal()+" ");

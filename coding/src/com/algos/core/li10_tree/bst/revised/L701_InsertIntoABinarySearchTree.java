@@ -1,6 +1,6 @@
  package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L701_InsertIntoABinarySearchTree {
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class L701_InsertIntoABinarySearchTree {
         System.out.println(root);
     }
 
-    // Problem: https://leetcode.com/problems/insert-into-a-binary-search-tree/ 
+    // Problem: https://leetcode.com/problems/insert-into-a-binary-search-tree/
 	// Idea: Find the node and if not found insert.
     // Time: O(logn)
     // Space: O(1)
@@ -35,7 +35,7 @@ public class L701_InsertIntoABinarySearchTree {
 	}
 
 	public TreeNode insertIntoBSTIterative(TreeNode  root, int val){
-		if(root == null) 
+		if(root == null)
 			return new TreeNode(val);
 
 		TreeNode curr = root;
@@ -57,5 +57,5 @@ public class L701_InsertIntoABinarySearchTree {
 			}
 		}
 		return root;
-	}	
+	}
 }

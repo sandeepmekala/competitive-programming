@@ -1,10 +1,10 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L237_DeleteNodeInALinkedList {
     public static void main(String[] args) {
-        
+
     }
 
     // Problem: https://leetcode.com/problems/delete-node-in-a-linked-list/

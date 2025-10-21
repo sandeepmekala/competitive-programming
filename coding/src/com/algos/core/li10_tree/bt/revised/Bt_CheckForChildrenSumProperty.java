@@ -1,14 +1,14 @@
 package  com.algos.core.li10_tree.bt.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_CheckForChildrenSumProperty {
     public static void main(String[] args) {
         //Bt_CheckForChildrenSumProperty obj = new Bt_CheckForChildrenSumProperty();
-    
+
     }
 
-    // Problem: 
+    // Problem:
     // Time: O(n)
     // space: O(1)
     static void changeTree(TreeNode root) {

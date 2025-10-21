@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L863_AllNodesDistanceKInBinaryTree {
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Bt_L863_AllNodesDistanceKInBinaryTree {
     }
 
     // Problem: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
-    // Idea: Create links to parent to treverse back to parents using a map. 
+    // Idea: Create links to parent to treverse back to parents using a map.
     // Traverse in 2 direction by counting the level until k. When level becomes k, nodes will be in q.
     // Time: O(n)
     // space: O(1)
@@ -43,9 +43,9 @@ public class Bt_L863_AllNodesDistanceKInBinaryTree {
         visited.add(target);
         int level = 0;
         while(!q.isEmpty()){
-            if(level == k) 
+            if(level == k)
                 break;
-            
+
             int size = q.size();
             for(int i=0; i<size; i++){
                 TreeNode node = q.remove();

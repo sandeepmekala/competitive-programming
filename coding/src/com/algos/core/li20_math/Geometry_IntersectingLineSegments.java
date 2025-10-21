@@ -1,12 +1,12 @@
 package  com.algos.core.li20_math;
 
-import  com.algos.core.li30_model.Point;
+import com.algos.core.models.Point;
 
 class Geometry_IntersectingLineSegments {
 
 	public static void main(String[] args) {
 		Geometry_IntersectingLineSegments obj = new Geometry_IntersectingLineSegments();
-		
+
 		Point p1 = new Point(1, 1);
 		Point q1 = new Point(10, 1);
 		Point p2 = new Point(1, 2);
@@ -25,10 +25,10 @@ class Geometry_IntersectingLineSegments {
 		q2 = new Point(10, 10);
 		System.out.println(obj.intersect(p1, q1, p2, q2));
 	}
-	
+
 	public boolean intersect(Point p1, Point q1, Point p2, Point q2) {
 		Geometry_GeometricUtil util = new Geometry_GeometricUtil();
-		
+
 		// Find the four orientations needed for general and
 		// special cases
 		int o1 = util.orientation(p1, q1, p2);

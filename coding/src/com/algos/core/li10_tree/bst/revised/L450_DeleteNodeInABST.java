@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L450_DeleteNodeInABST {
     public static void main(String[] args) {
@@ -9,7 +9,7 @@ public class L450_DeleteNodeInABST {
         L701_InsertIntoABinarySearchTree bst = new L701_InsertIntoABinarySearchTree();
         TreeNode root = bst.insertIntoBST(null, 10);
         bst.insertIntoBST(root, 2);
-        bst.insertIntoBST(root, 4); 
+        bst.insertIntoBST(root, 4);
         bst.insertIntoBST(root, 6);
         bst.insertIntoBST(root, 5);
         bst.insertIntoBST(root, 15);
@@ -31,7 +31,7 @@ public class L450_DeleteNodeInABST {
         } else if (data > root.val) {
             root.right = deleteNode(root.right, data);
         } else {
-            if (root.left == null) {            // no child or right child 
+            if (root.left == null) {            // no child or right child
                 return root.right;
             } else if (root.right == null) {    // one child
                 return root.left;

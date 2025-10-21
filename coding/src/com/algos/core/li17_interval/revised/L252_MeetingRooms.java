@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import  com.algos.core.li30_model.Interval;
+import com.algos.core.models.Interval;
 
 public class L252_MeetingRooms {
 
 	public static void main(String[] args) {
 		L252_MeetingRooms obj = new L252_MeetingRooms();
-		
+
 		List<Interval> intervals = new ArrayList<Interval>();
 		intervals.add(new Interval(1,2));
 		intervals.add(new Interval(2,3));
@@ -24,7 +24,7 @@ public class L252_MeetingRooms {
 	public boolean canAttendMeetings(List<Interval> intervals) {
         if(intervals.size() <= 1)
             return true;
-        
+
         Collections.sort(intervals, (i1, i2)->i1.start - i2.start);
 
         Interval prev = intervals.get(0);
@@ -32,9 +32,9 @@ public class L252_MeetingRooms {
             Interval curr = intervals.get(i);
             if(prev.end > curr.start)
                 return false;
-            
+
             prev = curr;
-        }      
+        }
 
         return true;
     }

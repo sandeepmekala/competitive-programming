@@ -3,10 +3,10 @@ package  com.algos.core.li12_trie.revised;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L208_ImplementTrie_PrefixTree {
-	
+
 	public static void main(String[] args) {
 		L208_ImplementTrie_PrefixTree trie = new L208_ImplementTrie_PrefixTree();
 
@@ -15,19 +15,19 @@ public class L208_ImplementTrie_PrefixTree {
 		trie.insert("cdf");
 		trie.insert("abcd");
 		trie.insert("lmn");
-		
+
 		trie.print();
 		System.out.println(trie.startsWith("ab"));	// b's child is has EoW as false. Hence should return true.
 		System.out.println(trie.search("abc"));
 		System.out.println(trie.search("lm"));
-		
+
 		// trie.delete("abc");
 		// System.out.println(trie.search("abc"));
 		// trie.delete("abgl");
 		// trie.print();
 		// trie.delete("abcd");
 		// trie.print();
-		
+
 	}
 
 	// Problem: https://leetcode.com/problems/implement-trie-prefix-tree/
@@ -37,7 +37,7 @@ public class L208_ImplementTrie_PrefixTree {
 	public L208_ImplementTrie_PrefixTree(){
 		root = new TrieNode();
 	}
-	
+
 	// O(m) where m is max lenght of a word
 	public void insert(String word) {
 		TrieNode curr = root;
@@ -47,39 +47,39 @@ public class L208_ImplementTrie_PrefixTree {
         }
         curr.endOfWord = true;	// after new node is created current will be pointing to new node after for loop
 	}
-	
+
 	public boolean startsWith(String prefix) {
 		TrieNode curr = root;
         for(Character ch : prefix.toCharArray()){
             if(!curr.map.containsKey(ch))
                 return false;
-    
+
             curr = curr.map.get(ch);
         }
         return true;
 	}
-	
+
 	// O(m) where m is max lenght of a word
 	public boolean search(String word) {
 		TrieNode curr = root;
         for(Character ch : word.toCharArray()){
             if(!curr.map.containsKey(ch))
                 return false;
-            
+
             curr = curr.map.get(ch);
         }
         return curr.endOfWord;
 	}
-	
+
 	// public void delete(String word) {
 	// 	delete(root, word, 0);
 	// }
-	
+
 	// private boolean delete(TrieNode root, String word, int index) {
 	// 	if(index == word.length()) {
 	// 		return root.map.isEmpty();
 	// 	}
-		
+
 	// 	char ch = word.charAt(index);
 	// 	if(root.map.containsKey(ch)) {
 	// 		TrieNode current = root.map.get(ch);
@@ -92,7 +92,7 @@ public class L208_ImplementTrie_PrefixTree {
 	// 	}
 	// 	return root.map.isEmpty();
 	// }
-	
+
 	private void print() {
 		Queue<TrieNode> queue = new ArrayDeque<TrieNode>();
 		queue.add(root);

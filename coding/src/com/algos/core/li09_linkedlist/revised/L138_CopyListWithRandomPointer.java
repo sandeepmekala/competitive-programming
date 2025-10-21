@@ -2,7 +2,7 @@ package  com.algos.core.li09_linkedlist.revised;
 
 import java.util.HashMap;
 
-import  com.algos.core.li30_model.Node;
+import com.algos.core.models.Node;
 
 public class L138_CopyListWithRandomPointer {
 
@@ -14,7 +14,7 @@ public class L138_CopyListWithRandomPointer {
 		list.insertAfterEnd(3);
 		list.insertAfterEnd(4);
 		list.insertAfterEnd(5);
-		
+
 	}
 
     // Problem: https://leetcode.com/problems/copy-list-with-random-pointer/
@@ -22,18 +22,18 @@ public class L138_CopyListWithRandomPointer {
     // In first pass create copies of each node and and store
     // In second pass, get the copy of each node and adjust its next and ran pointers.
     // You can solve it inplace by following 3 steps below:
-    //      You need to insert copy nodes next to their original nodes. 
-    //      Then create random ptrs. 
+    //      You need to insert copy nodes next to their original nodes.
+    //      Then create random ptrs.
     //      Then change next ptrs.
     public Node copyRandomList(Node head) {
         HashMap<Node, Node> map = new HashMap<>();
-        
+
         Node curr = head;
         while(curr != null){
             map.put(curr, new Node(curr.val));
             curr = curr.next;
         }
-        
+
         curr = head;
         while(curr != null){
             Node copy = map.get(curr);

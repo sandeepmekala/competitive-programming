@@ -1,9 +1,9 @@
 package com.algos.core.li09_linkedlist.revised;
 
-import com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L328_OddEvenLinkedList {
-    
+
     public static void main(String[] args) {
         L328_OddEvenLinkedList obj = new L328_OddEvenLinkedList();
 
@@ -23,7 +23,7 @@ public class L328_OddEvenLinkedList {
     public ListNode oddEvenList(ListNode head) {
         if(head == null || head.next == null)
             return head;
-        
+
         ListNode odd = head, even = head.next, evenHead = even;
         while(even != null && even.next != null){
             odd.next = odd.next.next;

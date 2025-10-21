@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 
 public class Bt_L102_BinaryTreeLevelOrderTraversal {
     public static void main(String[] args) {
         Bt_L102_BinaryTreeLevelOrderTraversal obj = new Bt_L102_BinaryTreeLevelOrderTraversal();
-        
+
         TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
@@ -30,7 +30,7 @@ public class Bt_L102_BinaryTreeLevelOrderTraversal {
         List<List<Integer>> ans = new ArrayList<>();
         if(root == null)
             return ans;
-            
+
         Queue<TreeNode> q = new LinkedList<>();
 		q.add(root);
 		while(!q.isEmpty()) {
@@ -40,12 +40,12 @@ public class Bt_L102_BinaryTreeLevelOrderTraversal {
 				TreeNode curr = q.remove();
 				level.add(curr.val);
                 if(curr.left != null)
-                    q.add(curr.left);    
+                    q.add(curr.left);
                 if(curr.right != null)
                     q.add(curr.right);
 			}
 
-            ans.add(level);    
+            ans.add(level);
 		}
         return ans;
     }

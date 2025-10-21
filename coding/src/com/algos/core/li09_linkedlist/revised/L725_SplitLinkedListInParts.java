@@ -2,7 +2,7 @@ package  com.algos.core.li09_linkedlist.revised;
 
 import java.util.Arrays;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L725_SplitLinkedListInParts {
 
@@ -20,10 +20,10 @@ public class L725_SplitLinkedListInParts {
 		list.insertAfterEnd(8);
 		list.insertAfterEnd(9);
 		list.insertAfterEnd(10);
-		
+
 		ListNode[] result = obj.splitListToParts(list.head, 3);
 		System.out.println(Arrays.toString(result));
-		
+
 	}
 
 	/*
@@ -33,7 +33,7 @@ public class L725_SplitLinkedListInParts {
 	 * */
 	public ListNode[] splitListToParts(ListNode head, int k) {
         int len = getLen(head);
-        
+
         ListNode[] result = new ListNode[k];
         int count=0, ind=0, psize = (int)Math.ceil(len/(k*1.0));;
         result[ind++] = head;
@@ -47,7 +47,7 @@ public class L725_SplitLinkedListInParts {
                 curr = phead;
                 count = 0;
                 result[ind++] = phead;
-                
+
                 len = len - psize;
                 k = k-1;
                 psize = (int)Math.ceil(len/(k*1.0));
@@ -55,7 +55,7 @@ public class L725_SplitLinkedListInParts {
                 curr = curr.next;
             }
         }
-        
+
         return result;
     }
 

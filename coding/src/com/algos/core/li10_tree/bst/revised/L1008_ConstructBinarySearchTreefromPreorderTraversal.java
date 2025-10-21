@@ -1,11 +1,11 @@
 package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L1008_ConstructBinarySearchTreefromPreorderTraversal {
     public static void main(String[] args) {
         L1008_ConstructBinarySearchTreefromPreorderTraversal obj = new L1008_ConstructBinarySearchTreefromPreorderTraversal();
-        
+
         int[] preorder = new int[]{8,5,1,7,10,12};
         obj.bstFromPreorder(preorder);
     }

@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L545_BoundaryOfBinaryTree {
     public static void main(String[] args) {
@@ -20,15 +20,15 @@ public class Bt_L545_BoundaryOfBinaryTree {
     }
 
     // Problem: https://leetcode.com/problems/boundary-of-binary-tree/
-    // https://www.lintcode.com/problem/878 
+    // https://www.lintcode.com/problem/878
     // Idea: Traverse left path to get left boundry and do inorder and pick up only leaves, then do right traversal and get right boundry.
     // Time: O(n)
     // space: O(1)
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> boundry = new ArrayList<>();
-        if(root == null) 
+        if(root == null)
             return boundry;
-        if(!isLeaf(root)) 
+        if(!isLeaf(root))
             boundry.add(root.val);
 
         addLeftBoundry(root, boundry);
@@ -41,12 +41,12 @@ public class Bt_L545_BoundaryOfBinaryTree {
     private void addLeftBoundry(TreeNode root, List<Integer> boundry) {
         TreeNode curr = root.left;
         while(curr != null){
-            if(!isLeaf(curr)) 
+            if(!isLeaf(curr))
                 boundry.add(curr.val);
 
-            if(curr.left !=  null) 
+            if(curr.left !=  null)
                 curr = curr.left;
-            else 
+            else
                 curr = curr.right;
         }
     }
@@ -55,12 +55,12 @@ public class Bt_L545_BoundaryOfBinaryTree {
         TreeNode curr = root.right;
         List<Integer> s = new ArrayList<>();
         while(curr != null){
-            if(!isLeaf(curr)) 
+            if(!isLeaf(curr))
                 s.add(curr.val);
 
-            if(curr.right !=  null) 
+            if(curr.right !=  null)
                 curr = curr.right;
-            else 
+            else
                 curr = curr.left;
         }
 
@@ -74,9 +74,9 @@ public class Bt_L545_BoundaryOfBinaryTree {
             return;
         }
 
-        if(root.left != null) 
+        if(root.left != null)
             addLeaves(root.left, boundry);
-        if(root.right != null) 
+        if(root.right != null)
             addLeaves(root.right, boundry);
     }
 

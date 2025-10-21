@@ -1,6 +1,6 @@
 package  com.algos.core.li12_trie.revised;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L1804_ImplementTrieII {
     public static void main(String[] args) {
@@ -31,7 +31,7 @@ public class L1804_ImplementTrieII {
             curr = curr.map.get(ch);
             curr.countPrefix += 1;
         }
-        curr.countEndWith += 1; 
+        curr.countEndWith += 1;
         curr.endOfWord = true;	// after new node is created current will be pointing to new node after for loop
 	}
 
@@ -39,7 +39,7 @@ public class L1804_ImplementTrieII {
         TrieNode curr = root;
         for(Character ch : word.toCharArray()){
             curr = curr.map.get(ch);
-            if(curr == null) 
+            if(curr == null)
                 return 0;
         }
 
@@ -50,7 +50,7 @@ public class L1804_ImplementTrieII {
         TrieNode curr = root;
         for(Character ch : prefix.toCharArray()){
             curr = curr.map.get(ch);
-            if(curr == null) 
+            if(curr == null)
                 return 0;
         }
 
@@ -63,6 +63,6 @@ public class L1804_ImplementTrieII {
             curr = curr.map.get(ch);
             curr.countPrefix -= 1;
         }
-        curr.countEndWith -= 1; 
+        curr.countEndWith -= 1;
     }
 }

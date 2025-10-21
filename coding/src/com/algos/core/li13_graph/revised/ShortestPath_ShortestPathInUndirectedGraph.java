@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.GraphAdjLst;
+import com.algos.core.models.GraphAdjLst;
 
 public class ShortestPath_ShortestPathInUndirectedGraph {
 
@@ -22,7 +22,7 @@ public class ShortestPath_ShortestPathInUndirectedGraph {
 		adj.get(1).add(3);
 		adj.get(3).add(0);
 		adj.get(3).add(4);
-		
+
 		System.out.println(obj.shortedPathToDest(adj, 0, 4));
 
 		int[] dist = obj.shortedPath(adj, 5, 0);
@@ -39,9 +39,9 @@ public class ShortestPath_ShortestPathInUndirectedGraph {
 		vis[src] = 1;
 		while(!queue.isEmpty()) {
 			int[] curr = queue.remove();
-			if(curr[0] == dest) 
+			if(curr[0] == dest)
 				return curr[1];
-			
+
 			for(int neigh: adj.get(curr[0])) {
 				if(vis[neigh] == 0) {
 					vis[neigh] = 1;
@@ -49,7 +49,7 @@ public class ShortestPath_ShortestPathInUndirectedGraph {
 				}
 			}
 		}
-		
+
 		return -1;
 	}
 
@@ -58,7 +58,7 @@ public class ShortestPath_ShortestPathInUndirectedGraph {
 		Queue<Integer> q = new LinkedList<>();
 		int[] dist = new int[n];
 		Arrays.fill(dist, Integer.MAX_VALUE);
-		
+
 		dist[0] = 0;
 		q.add(src);
 		while(!q.isEmpty()) {

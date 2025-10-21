@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L144_BinaryTreePreorderTraversal {
     public static void main(String[] args) {
         Bt_L144_BinaryTreePreorderTraversal obj = new Bt_L144_BinaryTreePreorderTraversal();
-        
+
         TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(4);
@@ -29,11 +29,11 @@ public class Bt_L144_BinaryTreePreorderTraversal {
         preorderTraversal(root, preorder);
         return preorder;
     }
-    
+
     private void preorderTraversal(TreeNode root, List<Integer> list) {
         if(root == null)
 			return;
-        
+
 		list.add(root.val);
 		preorderTraversal(root.left, list);
 		preorderTraversal(root.right, list);
@@ -44,18 +44,18 @@ public class Bt_L144_BinaryTreePreorderTraversal {
 	// Time: O(n)
     // space: O(1)
 	public List<Integer> preorderIterative(TreeNode root) {
-		if(root == null) 
+		if(root == null)
 			return new ArrayList<>();
-        
+
         List<Integer> preorder = new ArrayList<>();
 		Stack<TreeNode> stack = new Stack<TreeNode>();
 		stack.push(root);
-		while(!stack.isEmpty()) { 
+		while(!stack.isEmpty()) {
 			TreeNode curr = stack.pop();
 			preorder.add(curr.val);
-			if(curr.right != null) 
+			if(curr.right != null)
 				stack.add(curr.right);
-			if(curr.left != null) 
+			if(curr.left != null)
 				stack.add(curr.left);
 		}
 

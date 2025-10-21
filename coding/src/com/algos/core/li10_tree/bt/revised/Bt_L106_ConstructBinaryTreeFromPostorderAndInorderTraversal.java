@@ -3,19 +3,19 @@ package  com.algos.core.li10_tree.bt.revised;
 import java.util.HashMap;
 import java.util.Map;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 
 public class Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
 	public static void main(String[] args) {
-		Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal obj = 
+		Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal obj =
             new Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal();
-		
+
 		Bt_L94_BinaryTreeInorderTraversal bt = new Bt_L94_BinaryTreeInorderTraversal();
 		TreeNode root = obj.buildTree(new int[] {9,3,15,20,7}, new int[] {9,15,7,20,3});
 		System.out.println(bt.inorderTraversal(root));
 	}
-	
+
     // Problem: https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
     // Idea: Last element on postorder will be root of BST. This divides both inorder and post order arrays in to 2 halfs.
     // Recursively build left and right subtreesby passing half elements list for each recursive calls.
@@ -28,12 +28,12 @@ public class Bt_L106_ConstructBinaryTreeFromPostorderAndInorderTraversal {
 
         return buildTree(inorder, 0, inorder.length-1, postorder, 0, postorder.length-1, inIndMap);
     }
-    
+
     private TreeNode buildTree(int[] inorder, int is, int ie, int[] postorder, int ps, int pe,
             Map<Integer, Integer> inIndMap) {
         if(ps > pe || is > ie)
             return null;
-        
+
         TreeNode root = new TreeNode(postorder[pe]);
         int rootIndInInorder = inIndMap.get(root.val);
         int numsLeft = rootIndInInorder-is;

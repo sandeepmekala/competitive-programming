@@ -3,12 +3,12 @@ package  com.algos.core.li10_tree.bt.revised;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_662_MaximumWidthOfBinaryTree {
     public static void main(String[] args) {
         Bt_662_MaximumWidthOfBinaryTree obj = new Bt_662_MaximumWidthOfBinaryTree();
-        
+
         TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(3);
 		root.right = new TreeNode(2);
@@ -25,7 +25,7 @@ public class Bt_662_MaximumWidthOfBinaryTree {
     // Time: O(n)
     // space: O(1)
     public int widthOfBinaryTree(TreeNode root) {
-        if(root == null) 
+        if(root == null)
             return 0;
 
         int ans = 0;
@@ -35,7 +35,7 @@ public class Bt_662_MaximumWidthOfBinaryTree {
             int size = q.size();
             int first = -1, last = -1;
             int min = q.peek().index;
-            
+
             for(int i=0; i<size; i++){
                 Tuple3 curr = q.remove();
                 TreeNode node = curr.node;
@@ -44,11 +44,11 @@ public class Bt_662_MaximumWidthOfBinaryTree {
                 if(i==0) first = index;
                 if(i==size-1) last = index;
 
-                if(node.left != null) 
+                if(node.left != null)
                     q.add(new Tuple3(node.left, 2*index+1));
-                if(node.right != null) 
+                if(node.right != null)
                     q.add(new Tuple3(node.right, 2*index+2));
-            } 
+            }
 
             ans = Math.max(ans, last-first+1);
         }

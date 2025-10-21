@@ -1,19 +1,19 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L876_MiddleOfTheLinkedList {
 
 	public static void main(String[] args) {
 		L876_MiddleOfTheLinkedList obj = new L876_MiddleOfTheLinkedList();
-		
+
 		SingleLinkedList list = new SingleLinkedList();
 		list.insertAfterEnd(1);
 		list.insertAfterEnd(2);
 		list.insertAfterEnd(3);
 		list.insertAfterEnd(4);
 		list.insertAfterEnd(5);
-		
+
 		System.out.println(obj.middleNode(list.head));
 	}
 
@@ -25,7 +25,7 @@ public class L876_MiddleOfTheLinkedList {
             slow = slow.next;
             fast = fast.next.next;
         }
-        
+
         return slow;
     }
 }

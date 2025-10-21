@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import  com.algos.core.li30_model.GraphMatrix;
+import com.algos.core.models.GraphMatrix;
 
 public class Tsp_G01_TspWithNearestNeighbour {
 
 	public static void main(String args[]){
-		
+
 		Tsp_G01_TspWithNearestNeighbour obj = new Tsp_G01_TspWithNearestNeighbour();
-		GraphMatrix g = new GraphMatrix(5);		
-		
+		GraphMatrix g = new GraphMatrix(5);
+
 		g.addEdge(0, 1, 2);
 		g.addEdge(1, 0, 3);
 		g.addEdge(1, 2, 4);
@@ -21,11 +21,11 @@ public class Tsp_G01_TspWithNearestNeighbour {
 		g.addEdge(3, 2, 10);
 		g.addEdge(3, 0, 4);
 		g.addEdge(0, 3, 1);
-		
+
 		List<Integer> path = obj.tsp(g, 0);
 		System.out.println(path);
 	}
-	
+
 	// Problem: What is the shortest possible route that visits each city exactly once and returns to the origin city.
 	// Idea: Start from root, find next min dist vertex every time add it to stack to visit next
 	// If no next min vertex is found, exit
@@ -37,9 +37,9 @@ public class Tsp_G01_TspWithNearestNeighbour {
 		s.add(start);
 		while(!s.isEmpty()){
 			int curr = s.pop();
-			visited[curr] = true;			
+			visited[curr] = true;
 			path.add(curr);
-			
+
 			int minInd = -1;
 			int minWeight = Integer.MAX_VALUE;
 			for(int i=0; i<g.adjMatrix[curr].length; i++){
@@ -48,13 +48,13 @@ public class Tsp_G01_TspWithNearestNeighbour {
 					minWeight = g.adjMatrix[curr][i];
 				}
 			}
-			
+
 			if(minInd == -1)	// there is a min edge vertex to be visited.
 				break;
-				
+
 			s.add(minInd);
 		}
-		
+
 		for(int i=0; i<visited.length; i++){
 			if(!visited[i]){
 				System.out.println("No path exist to cover all nodes");

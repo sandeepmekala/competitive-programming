@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import  com.algos.core.li30_model.Interval;
+import com.algos.core.models.Interval;
 
 public class L253_MeetingRoomsII {
 
 	public static void main(String[] args) {
 		L253_MeetingRoomsII obj = new L253_MeetingRoomsII();
-		
+
 		List<Interval> intervals = new ArrayList<>();
 		intervals.add(new Interval(0,30));
 		intervals.add(new Interval(5,10));
@@ -30,7 +30,7 @@ public class L253_MeetingRoomsII {
         int n = intervals.size();
         if(n <= 1)
             return n;
-        
+
         List<Integer> starts = new ArrayList<>();
         List<Integer> ends = new ArrayList<>();
         for(Interval interval: intervals){

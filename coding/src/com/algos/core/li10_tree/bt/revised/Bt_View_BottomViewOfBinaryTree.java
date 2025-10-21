@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.TreeMap;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_View_BottomViewOfBinaryTree {
     public static void main(String[] args) {
@@ -35,9 +35,9 @@ public class Bt_View_BottomViewOfBinaryTree {
 
             map.put(col, node.val);
 
-            if(node.left !=  null) 
+            if(node.left !=  null)
                 q.add(new Tuple2(node.left, col-1));
-            if(node.right !=  null) 
+            if(node.right !=  null)
                 q.add(new Tuple2(node.right, col+1));
         }
         return new ArrayList<>(map.values());

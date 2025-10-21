@@ -1,6 +1,6 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L21_MergeTwoSortedLists {
     public static void main(String[] args) {
@@ -9,17 +9,17 @@ public class L21_MergeTwoSortedLists {
 		list1.insertAfterEnd(1);
 		list1.insertAfterEnd(2);
 		list1.insertAfterEnd(4);
-		
+
 		SingleLinkedList list2 = new SingleLinkedList();
 		list2.insertAfterEnd(1);
 		list2.insertAfterEnd(3);
 		list2.insertAfterEnd(4);
-		
+
 		ListNode head = obj.mergeTwoLists(list1.head, list2.head);
 		list1.head = head;
 		list1.print();
     }
-    
+
     // Problem: https://leetcode.com/problems/merge-two-sorted-lists/
     // Idea: Similar technique as mergin arrays.
     public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
@@ -38,11 +38,11 @@ public class L21_MergeTwoSortedLists {
 			}
 			curr = curr.next;
 		}
-		if(curr1 != null) 
+		if(curr1 != null)
 			curr.next = curr1;
-		if(curr2 != null) 
+		if(curr2 != null)
 			curr.next = curr2;
-		
+
 		return dummy.next;
     }
 }

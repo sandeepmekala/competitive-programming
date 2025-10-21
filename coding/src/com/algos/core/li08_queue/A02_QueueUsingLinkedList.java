@@ -1,6 +1,6 @@
 package  com.algos.core.li08_queue;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class A02_QueueUsingLinkedList {
 
@@ -24,7 +24,7 @@ public class A02_QueueUsingLinkedList {
 	public int dequeue(){
 		if(isEmpty())
 			return -1;
-		
+
 		int data = front.val;
 		if(front == rear){
 			front = rear = null;
@@ -46,10 +46,10 @@ public class A02_QueueUsingLinkedList {
 			temp = temp.getNext();
 		}
 	}
-	
+
 	public static void main(String[] args) {
 		A02_QueueUsingLinkedList queue = new A02_QueueUsingLinkedList();
-		
+
 		queue.enqueue(10);
 		queue.enqueue(20);
 		System.out.println("\nelements:");

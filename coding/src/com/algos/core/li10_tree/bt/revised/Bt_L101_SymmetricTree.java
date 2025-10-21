@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bt.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L101_SymmetricTree {
 
@@ -16,7 +16,7 @@ public class Bt_L101_SymmetricTree {
 		System.out.println(obj.isSymmetric(root));
 	}
 
-	
+
 	// Problem: https://leetcode.com/problems/symmetric-tree/
 	// Idea: We have to use two params denoting left and right sub trees which symmetric clones.
 	// Recursively, pass corresponding symmetric roots.
@@ -27,11 +27,11 @@ public class Bt_L101_SymmetricTree {
 	}
 
 	private boolean isSymmetric(TreeNode left, TreeNode right) {
-		if (left == null || right == null) 
+		if (left == null || right == null)
 			return left == right;
 
-		return (left.val == right.val) && 
-				isSymmetric(left.left, right.right) && 
+		return (left.val == right.val) &&
+				isSymmetric(left.left, right.right) &&
 				isSymmetric(left.right, right.left);
 	}
 

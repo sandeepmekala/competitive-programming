@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bt.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bt_L222_CountCompleteTreeNodes {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Bt_L222_CountCompleteTreeNodes {
     // Time: O(logn)
     // space: O(1)
     public int countNodes(TreeNode root) {
-        if(root == null) 
+        if(root == null)
             return 0;
 
         int lHeight = getLeftHeight(root);
@@ -30,7 +30,7 @@ public class Bt_L222_CountCompleteTreeNodes {
 
         if(lHeight == rHeight)
             return (int)Math.pow(2, lHeight) - 1;
-        else    
+        else
             return 1+countNodes(root.left)+countNodes(root.right);
     }
 

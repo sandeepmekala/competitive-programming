@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L99_RecoverBinarySearchTree {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class L99_RecoverBinarySearchTree {
     }
 
     private void inorder(TreeNode root){
-        if(root == null) 
+        if(root == null)
             return;
 
         inorder(root.left);

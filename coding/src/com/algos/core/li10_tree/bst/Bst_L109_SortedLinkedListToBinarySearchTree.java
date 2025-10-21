@@ -2,7 +2,7 @@ package  com.algos.core.li10_tree.bst;
 
 import com.algos.core.li09_linkedlist.revised.SingleLinkedList;
 import com.algos.core.li10_tree.bst.revised.L701_InsertIntoABinarySearchTree;
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class Bst_L109_SortedLinkedListToBinarySearchTree {
 
@@ -34,7 +34,7 @@ public class Bst_L109_SortedLinkedListToBinarySearchTree {
 	 * Idea: Head pointer is global for all recursive calls and it keeps on moving to right once every root node is built.
 	 * We should do inorder travelsal to build BST as first element in the list is left most element in BST.
 	 * We have to pass n. This helps us in building the tree in recursive way by splitting the elements in halfs.
-	 * 
+	 *
 	 * */
 	public TreeNode sortedListToBst(SingleLinkedList list, int n) {
 		if (n <= 0)

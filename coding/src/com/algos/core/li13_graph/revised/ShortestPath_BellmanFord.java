@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.algos.core.li30_model.Edge;
+import com.algos.core.models.Edge;
 
 public class ShortestPath_BellmanFord {
 

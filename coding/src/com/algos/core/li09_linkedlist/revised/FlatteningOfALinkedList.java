@@ -1,6 +1,6 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class FlatteningOfALinkedList {
     public static void main(String[] args) {
@@ -19,7 +19,7 @@ public class FlatteningOfALinkedList {
 
         head.next.next.next = new ListNode(28);
         head.next.next.next.bottom = new ListNode(35);
-        head.next.next.next.bottom.bottom = new ListNode(40);  
+        head.next.next.next.bottom.bottom = new ListNode(40);
 
         head = obj.flatten(head);
         while (head != null) {

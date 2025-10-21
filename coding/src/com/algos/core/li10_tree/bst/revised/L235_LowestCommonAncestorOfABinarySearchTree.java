@@ -1,6 +1,6 @@
 package  com.algos.core.li10_tree.bst.revised;
 
-import  com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L235_LowestCommonAncestorOfABinarySearchTree {
     public static void main(String[] args) {

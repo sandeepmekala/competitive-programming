@@ -1,6 +1,6 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L2_AddTwoNumbers {
 
@@ -10,19 +10,19 @@ public class L2_AddTwoNumbers {
 		list1.insertAfterEnd(2);
 		list1.insertAfterEnd(4);
 		list1.insertAfterEnd(3);
-		
+
 		SingleLinkedList list2 = new SingleLinkedList();
 		list2.insertAfterEnd(5);
 		list2.insertAfterEnd(6);
 		list2.insertAfterEnd(4);
-		
+
 		SingleLinkedList list = new SingleLinkedList();
 		list.head = obj.addTwoNumbers(list1.head, list2.head);
 		list.print();
 	}
- 
+
 	// Problem: https://leetcode.com/problems/add-two-numbers/
-	// Idea: Use similar number addition technique.	
+	// Idea: Use similar number addition technique.
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		ListNode start = new ListNode();
 		ListNode curr = start;
@@ -36,7 +36,7 @@ public class L2_AddTwoNumbers {
 			newNode.val = sum % 10;
 			carry = sum / 10;
 			curr.next = newNode;
-			
+
 			curr = curr.next;
 			if (l1 != null) l1 = l1.next;
 			if (l2 != null) l2 = l2.next;

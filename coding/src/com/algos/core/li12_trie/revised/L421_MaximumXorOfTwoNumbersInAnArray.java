@@ -1,6 +1,6 @@
 package  com.algos.core.li12_trie.revised;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L421_MaximumXorOfTwoNumbersInAnArray {
     public static void main(String[] args) {
@@ -60,5 +60,3 @@ class Trie{
         return max;
     }
 }
-
-

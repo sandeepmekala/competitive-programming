@@ -1,22 +1,22 @@
 package  com.algos.core.li12_trie.revised;
 
-import  com.algos.core.li30_model.TrieNode;
+import com.algos.core.models.TrieNode;
 
 public class L211_DesignAddAndSearchWordsDataStructure {
 
 	public static void main(String[] args) {
 		L211_DesignAddAndSearchWordsDataStructure obj = new L211_DesignAddAndSearchWordsDataStructure();
-		
+
 		obj.addWord("bad");
 		obj.addWord("dad");
 		obj.addWord("mad");
-		
+
 		System.out.println(obj.search("pad"));
 		System.out.println(obj.search("bad"));
 		System.out.println(obj.search(".ad"));
 		System.out.println(obj.search("b.."));
 	}
-	
+
     // Problem: https://leetcode.com/problems/design-add-and-search-words-data-structure/
     // Search words with '.' as wildcard
     // Idea: Use Trie to store words
@@ -25,7 +25,7 @@ public class L211_DesignAddAndSearchWordsDataStructure {
     public L211_DesignAddAndSearchWordsDataStructure() {
         root = new TrieNode();
     }
-	
+
 	public void addWord(String word) {
         TrieNode curr = root;
         for(char ch: word.toCharArray()){
@@ -34,11 +34,11 @@ public class L211_DesignAddAndSearchWordsDataStructure {
         }
         curr.endOfWord = true;
     }
-    
+
     public boolean search(String word) {
         return search(word, 0, root);   // when search char is '.' then we need to skip one char from word. Hence we need to pass index as well.
     }
-    
+
     private boolean search(String word, int ind, TrieNode curr){
         for(int i=ind; i<word.length(); i++){
             char ch = word.charAt(i);

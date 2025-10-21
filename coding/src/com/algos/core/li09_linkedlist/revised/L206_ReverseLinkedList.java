@@ -1,6 +1,6 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L206_ReverseLinkedList {
 
@@ -11,14 +11,14 @@ public class L206_ReverseLinkedList {
 		list.insertAfterEnd(2);
 		list.insertAfterEnd(3);
 		list.print();
-		
+
 		list.head = obj.reverseList(list.head);
 		// list.head = obj.reverseRec(list.head);
 		System.out.println();
 		list.print();
 
 	}
-	
+
 	// Problem: https://leetcode.com/problems/reverse-linked-list/
 	// Idea: Use prev, curr and next ptr's
 	public ListNode reverseList(ListNode head) {
@@ -30,14 +30,14 @@ public class L206_ReverseLinkedList {
             prev = curr;
             curr = next;
         }
-		
+
         return prev;
     }
 
 	public ListNode reverseRec(ListNode node){
 		if(node == null || node.next == null)
 			return node;
-		
+
 		ListNode newHead = reverseRec(node.next);
 		ListNode next = node.next;
 		next.next = node;

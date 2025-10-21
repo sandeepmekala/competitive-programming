@@ -1,48 +1,48 @@
 package  com.algos.core.li10_tree.others;
 
-import  com.algos.core.li30_model.AvlNode;
+import com.algos.core.models.AvlNode;
 
 public class AvlTree {
 
 	private static AvlNode root;
 	public static void main(String[] args) {
 		// l-l rotation
-		//				10						10		
+		//				10						10
 		//			  /	  \					  /	   \
 		//			5		20				-10		20
 		//		  /					->		/  \
 		//		-10						  -20	5
 		//	 	/
 		//	  -20
-		
+
 		// l-r rotation
 		//				10						10						10
 		//			  /	  \					  /	   \				  /	   \
 		//			5		20		l		 5		20		r		-5		20
-		//		  /					->		/  				->	   /   \	
+		//		  /					->		/  				->	   /   \
 		//		-10						  -5					 -10	5
 		//	 	   \					  /
 		//	  		-5					-10
-		
+
 		// r-l rotation
 		//				10						10						10
 		//			  /	  \					  /	   \				  /	   \
 		//			5		20		r		 5		20		l		 6		20
-		//		  	  \				->		  \				->	   /   \	
+		//		  	  \				->		  \				->	   /   \
 		//		       8				  	   6				 5		8
 		//	 	   	  /			  		        \
 		//	  		6					         8
-		
+
 		// r-r rotation
-		//				10						10		
+		//				10						10
 		//			  /	  \					  /	   \
 		//			5		20				 6		20
 		//		  	  \				->	   /   \
 		//		        6				 5       7
 		//	 			  \
 		//	  				7
-		// when height violates, it falls into one of the above cases for rotation 
-		
+		// when height violates, it falls into one of the above cases for rotation
+
 		AvlTree avlt = new AvlTree();
 		root = avlt.insert(root, 10);
 		avlt.insert(root, 5);
@@ -53,7 +53,7 @@ public class AvlTree {
 		avlt.insert(root, 30);
 		//avlt.insert(root, 40);	//r-r
 		avlt.insert(root, 25);
-		
+
 		inorder(root);
 	}
 	private AvlNode insert(AvlNode root, int data) {
@@ -93,7 +93,7 @@ public class AvlTree {
 		newRoot.right = root;
 		root.height = Math.max(height(root.left), height(root.right))+1;
 		newRoot.height = Math.max(height(newRoot.left), height(newRoot.right))+1;
-		
+
 		return newRoot;
 	}
 	private AvlNode rotationLeft(AvlNode root) {
@@ -102,7 +102,7 @@ public class AvlTree {
 		newRoot.left = root;
 		root.height = Math.max(height(root.left), height(root.right))+1;
 		newRoot.height = Math.max(height(newRoot.left), height(newRoot.right))+1;
-		
+
 		return newRoot;
 	}
 	private int height(AvlNode root) {
@@ -118,6 +118,6 @@ public class AvlTree {
 			inorder(root.right);
 		}
 	}
-	
+
 
 }

@@ -1,6 +1,6 @@
 package  com.algos.core.li07_stack;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class StackUsingLinkedList {
 
@@ -8,7 +8,7 @@ public class StackUsingLinkedList {
 	StackUsingLinkedList(){
 		top = null;
 	}
-	
+
 	private void push(int data){
 		ListNode node = new ListNode(data);
 		node.setNext(top);
@@ -54,7 +54,7 @@ public class StackUsingLinkedList {
 
 	public static void main(String[] args) {
 		StackUsingLinkedList stack = new StackUsingLinkedList();
-		
+
 		stack.push(10);
 		System.out.println();
 		stack.print();

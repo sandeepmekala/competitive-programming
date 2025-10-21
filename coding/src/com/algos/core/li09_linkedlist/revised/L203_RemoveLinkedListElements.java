@@ -1,20 +1,20 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L203_RemoveLinkedListElements {
 
 	public static void main(String[] args) {
 		L203_RemoveLinkedListElements obj = new L203_RemoveLinkedListElements();
-		
+
 		SingleLinkedList list = new SingleLinkedList();
 		list.insertAfterEnd(2);
 		list.insertAfterEnd(4);
 		list.insertAfterEnd(3);
 		list.insertAfterEnd(2);
-		
+
 		list.head = obj.removeElements(list.head, 2);
-		list.print();		
+		list.print();
 	}
 
 	/*
@@ -23,7 +23,7 @@ public class L203_RemoveLinkedListElements {
 	 * */
 	public ListNode removeElements(ListNode head, int val) {
         ListNode start = new ListNode();
-        start.next = head ; 
+        start.next = head ;
 
         ListNode curr = start;
         while(curr != null && curr.next != null){
@@ -31,7 +31,7 @@ public class L203_RemoveLinkedListElements {
                 curr.next = curr.next.next;
             else curr = curr.next;
         }
-        
+
         return start.next;
     }
 }

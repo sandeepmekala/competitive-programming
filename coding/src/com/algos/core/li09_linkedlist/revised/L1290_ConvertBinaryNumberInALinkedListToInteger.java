@@ -1,17 +1,17 @@
 package  com.algos.core.li09_linkedlist.revised;
 
-import  com.algos.core.li30_model.ListNode;
+import com.algos.core.models.ListNode;
 
 public class L1290_ConvertBinaryNumberInALinkedListToInteger {
 
 	public static void main(String[] args) {
 		L1290_ConvertBinaryNumberInALinkedListToInteger obj = new L1290_ConvertBinaryNumberInALinkedListToInteger();
-		
+
 		SingleLinkedList list = new SingleLinkedList();
 		list.insertAfterEnd(0);
 		list.insertAfterEnd(1);
 		list.insertAfterEnd(1);	// 3
-		
+
 		System.out.println(obj.getDecimalValue(list.head));
 	}
 
@@ -20,11 +20,10 @@ public class L1290_ConvertBinaryNumberInALinkedListToInteger {
 	int pow = 0;
     public int getDecimalValue(ListNode head) {
         if(head == null) return 0;
-		
+
         int sum = 0;
         sum = getDecimalValue(head.next);
         sum += head.val*Math.pow(2, pow++);
         return sum;
     }
 }
-

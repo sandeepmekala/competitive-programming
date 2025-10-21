@@ -2,7 +2,7 @@ package com.algos.core.li10_tree.bst.revised;
 
 import java.util.HashSet;
 
-import com.algos.core.li30_model.TreeNode;
+import com.algos.core.models.TreeNode;
 
 public class L653_TwoSumIvInputIsABst {
 

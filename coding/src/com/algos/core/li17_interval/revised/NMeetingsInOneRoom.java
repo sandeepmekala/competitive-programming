@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import  com.algos.core.li30_model.Interval;
+import com.algos.core.models.Interval;
 
 public class NMeetingsInOneRoom {
     public static void main(String args[]) {
@@ -17,7 +17,7 @@ public class NMeetingsInOneRoom {
     }
 
     // Problem: https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room-1587115620/1
-    // Idea: You need to sort them on ending. On begenning won't work as one event starting at the begenning might space complete length. 
+    // Idea: You need to sort them on ending. On begenning won't work as one event starting at the begenning might space complete length.
     // Picking that allow us to pick more events. Hence, we need to pick events which ends quickly to maximize.
     // Activity selection is similar to this problem
     // Time: O(nlogn)
@@ -30,15 +30,15 @@ public class NMeetingsInOneRoom {
 
         List<Integer> ans = new ArrayList<>();
         ans.add(intervals.get(0).pos);
-        
-        int lastEnd = intervals.get(0).end; 
+
+        int lastEnd = intervals.get(0).end;
         for(int i = 1;i<n;i++) {
             if(intervals.get(i).start > lastEnd) {
                 ans.add(intervals.get(i).pos);
-                lastEnd = intervals.get(i).end; 
+                lastEnd = intervals.get(i).end;
             }
         }
-        
+
         return ans;
     }
 }
