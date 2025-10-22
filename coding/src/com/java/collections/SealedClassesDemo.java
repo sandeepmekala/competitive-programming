@@ -1,4 +1,4 @@
-package com.java.sealed;
+package com.java.collections;
 
 /**
  * Java 17+ Sealed Classes Demonstration
