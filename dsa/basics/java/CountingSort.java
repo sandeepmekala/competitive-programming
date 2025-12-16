@@ -2,10 +2,10 @@ package basics.java;
 
 import java.util.Arrays;
 
-public class A06_CountingSort {
+public class CountingSort {
 
 	public static void main(String[] args) {
-		A06_CountingSort csort = new A06_CountingSort();
+		CountingSort csort = new CountingSort();
 		int numbers[] = {1,0,3,1,3,1};
 		int[] sortedNumbers = csort.countingSort(numbers);
 		System.out.println(Arrays.toString(sortedNumbers));

@@ -3,10 +3,10 @@ package basics.java;
 import java.util.Arrays;
 import java.util.Random;
 
-public class A05_QuickSort {
+public class QuickSort {
 
 	public static void main(String[] args) {
-		A05_QuickSort qsort = new A05_QuickSort();
+		QuickSort qsort = new QuickSort();
 		int[] numbers = {7,2,1,6,8,5,3,4};
 		qsort.quickSort(numbers,0,7);
 	}

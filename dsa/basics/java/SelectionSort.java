@@ -2,10 +2,10 @@ package basics.java;
 
 import java.util.Arrays;
 
-public class A03_SelectionSort {
+public class SelectionSort {
 
 	public static void main(String[] args) {
-		A03_SelectionSort ssort = new A03_SelectionSort();
+		SelectionSort ssort = new SelectionSort();
 		int[] numbers = {2,7,4,1,5,3};
 		System.out.println(Arrays.toString(numbers));
 		ssort.selectionSort(numbers);

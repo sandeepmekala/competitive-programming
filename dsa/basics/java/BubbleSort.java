@@ -2,10 +2,10 @@ package basics.java;
 
 import java.util.Arrays;
 
-public class A01_BubbleSort {
+public class BubbleSort {
 
 	public static void main(String[] args) {
-		A01_BubbleSort bsort = new A01_BubbleSort();
+		BubbleSort bsort = new BubbleSort();
 		int[] numbers = {2,7,4,1,5,3};
 		System.out.println(Arrays.toString(numbers));
 		bsort.bubbleSort(numbers);

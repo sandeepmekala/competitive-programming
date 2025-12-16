@@ -2,10 +2,10 @@ package basics.java;
 
 import java.util.Arrays;
 
-public class A02_InsertionSort {
+public class InsertionSort {
 
 	public static void main(String[] args) {
-		A02_InsertionSort isort = new A02_InsertionSort();
+		InsertionSort isort = new InsertionSort();
 		int[] numbers = {2,7,4,1,5,3};
 		System.out.println(Arrays.toString(numbers));
 		isort.inertionnSort(numbers);

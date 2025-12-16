@@ -3,10 +3,10 @@ package basics.java;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class A04_MergeSort {
+public class MergeSort {
 
 	public static void main(String[] args) {
-		A04_MergeSort msort = new A04_MergeSort();
+		MergeSort msort = new MergeSort();
 
 		int[] nums = {2,4,1,6,8,5,3,7};
 		msort.mergeSort(nums, 0, nums.length-1);

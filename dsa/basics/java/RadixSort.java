@@ -2,10 +2,10 @@ package basics.java;
 
 import java.util.Arrays;
 
-public class Al07_RadixSort {
+public class RadixSort {
 
 	public static void main(String[] args) {
-		Al07_RadixSort rsort = new Al07_RadixSort();
+		RadixSort rsort = new RadixSort();
 		int numbers[] = {53, 89, 150, 36, 633, 233};
 
 		int[] sortedNumbers = rsort.radixSort(numbers);
