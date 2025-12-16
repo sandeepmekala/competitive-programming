@@ -1,3 +1,11 @@
 coding/.vscode/settings.json
 out/
 .idea
+
+# Java compiled files
+*.class
+build/
+
+# Temporary files
+*.tmp
+*.temp
