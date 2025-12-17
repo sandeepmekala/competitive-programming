@@ -1,4 +1,3 @@
-
 public class String_EquationSyntaxValidator {
 
     public static void main(String[] args) {

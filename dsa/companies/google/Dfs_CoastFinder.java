@@ -1,4 +1,3 @@
-
 public class Dfs_CoastFinder {
 
     private static final char LAND = 'X';

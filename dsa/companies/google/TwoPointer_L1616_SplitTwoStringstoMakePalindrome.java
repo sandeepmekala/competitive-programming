@@ -1,4 +1,3 @@
-
 public class TwoPointer_L1616_SplitTwoStringstoMakePalindrome {
     public static void main(String[] args) {
         TwoPointer_L1616_SplitTwoStringstoMakePalindrome obj = new TwoPointer_L1616_SplitTwoStringstoMakePalindrome();

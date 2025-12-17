@@ -1,4 +1,3 @@
-
 public class SlidingWindow_BankTransactionMaxService {
 
     public static int maxTransactions(int initAmount, int[] transactions) {

@@ -1,4 +1,3 @@
-
 public class String_ValidParenthesisString2 {
 
     public static boolean checkValidString(String s) {

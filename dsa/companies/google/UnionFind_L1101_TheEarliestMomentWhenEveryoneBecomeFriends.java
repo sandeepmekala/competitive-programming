@@ -1,4 +1,3 @@
-
 public class UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends {
     public static void main(String[] args) {
         UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends obj = new UnionFind_L1101_TheEarliestMomentWhenEveryoneBecomeFriends();

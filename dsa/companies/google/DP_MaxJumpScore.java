@@ -1,4 +1,3 @@
-
 public class DP_MaxJumpScore {
 
     public static void main(String args[]) {
