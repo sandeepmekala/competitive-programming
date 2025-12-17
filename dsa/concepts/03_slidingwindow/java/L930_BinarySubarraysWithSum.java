@@ -1,4 +1,3 @@
-
 public class L930_BinarySubarraysWithSum {
 
     public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L4_MedianOf2SortedArrays {
 
 	public static void main(String[] args) {

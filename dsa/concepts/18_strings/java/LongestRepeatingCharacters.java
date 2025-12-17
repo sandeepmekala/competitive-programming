@@ -1,4 +1,3 @@
-
 public class LongestRepeatingCharacters {
 
 	public static void main(String[] args) {

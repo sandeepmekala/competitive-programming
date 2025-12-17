@@ -1,4 +1,3 @@
-
 public class RowWithMaximumNumberof1s {
 
         public static void main(String[] args) {

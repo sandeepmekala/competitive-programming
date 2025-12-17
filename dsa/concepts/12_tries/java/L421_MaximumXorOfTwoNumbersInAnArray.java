@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.TrieNode;
 
 public class L421_MaximumXorOfTwoNumbersInAnArray {

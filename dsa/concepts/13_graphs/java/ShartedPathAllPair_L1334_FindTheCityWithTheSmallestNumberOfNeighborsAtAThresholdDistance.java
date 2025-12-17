@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class ShartedPathAllPair_L1334_FindTheCityWithTheSmallestNumberOfNeighborsAtAThresholdDistance {

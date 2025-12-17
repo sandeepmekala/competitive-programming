@@ -1,4 +1,3 @@
-
 public class L520_DetectCapital {
 
 	public static void main(String[] args) {

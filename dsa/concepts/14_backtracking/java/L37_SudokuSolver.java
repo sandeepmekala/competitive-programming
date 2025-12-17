@@ -1,4 +1,3 @@
-
 public class L37_SudokuSolver {
     public static void main(String[] args) {
         L37_SudokuSolver obj = new L37_SudokuSolver();

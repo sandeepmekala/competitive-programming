@@ -1,4 +1,3 @@
-
 public class L74_SearchA2DMatrix {
 
     public static void main(String[] args) {

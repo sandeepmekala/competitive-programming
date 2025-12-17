@@ -1,4 +1,3 @@
-
 public class L647_PalindromicSubstrings {
 
 	public static void main(String[] args) {

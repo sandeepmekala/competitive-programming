@@ -1,4 +1,3 @@
-
 public class Grid_L62_UniquePaths {
 
 	public static void main(String[] args) {

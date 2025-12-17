@@ -1,4 +1,3 @@
-
 public class Subsequence_NinjasTraining {
     public static void main(String args[]) {
         Subsequence_NinjasTraining obj = new Subsequence_NinjasTraining();

@@ -1,5 +1,3 @@
-package basics.java;
-
 public class HeapSort {
 
 	public static void main(String[] args) {

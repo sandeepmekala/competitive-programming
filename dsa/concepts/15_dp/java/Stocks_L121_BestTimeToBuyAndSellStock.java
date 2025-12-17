@@ -1,4 +1,3 @@
-
 public class Stocks_L121_BestTimeToBuyAndSellStock {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class UnionFind_L684_RedundantConnection {

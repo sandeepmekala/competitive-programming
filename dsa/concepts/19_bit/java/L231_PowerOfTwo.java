@@ -1,4 +1,3 @@
-
 public class L231_PowerOfTwo {
 
 	public static void main(String[] args) {

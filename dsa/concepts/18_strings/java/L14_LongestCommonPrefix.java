@@ -1,4 +1,3 @@
-
 public class L14_LongestCommonPrefix {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L35_SearchInsertPosition {
 
         public static void main(String[] args) {

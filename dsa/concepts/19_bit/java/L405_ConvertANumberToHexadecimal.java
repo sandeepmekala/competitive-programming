@@ -1,4 +1,3 @@
-
 public class L405_ConvertANumberToHexadecimal {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L371_SumOfTwoIntegers {
 
     public static void main(String[] args) {

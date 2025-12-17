@@ -1,5 +1,3 @@
-package li01_array.java;
-
 import java.util.Arrays;
 import java.util.List;
 

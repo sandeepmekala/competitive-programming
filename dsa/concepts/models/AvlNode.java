@@ -1,5 +1,3 @@
-package concepts.models;
-
 public class AvlNode{
 
 	public AvlNode left;

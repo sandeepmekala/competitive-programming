@@ -1,4 +1,3 @@
-
 public class Grid_TwoStartNMultiEnd_L1463_CherryPickupII {
     public static void main(String args[]){
         Grid_TwoStartNMultiEnd_L1463_CherryPickupII obj = new Grid_TwoStartNMultiEnd_L1463_CherryPickupII();

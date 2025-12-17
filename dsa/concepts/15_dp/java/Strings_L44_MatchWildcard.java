@@ -1,4 +1,3 @@
-
 public class Strings_L44_MatchWildcard {
 
 	public static void main(String[] args) {

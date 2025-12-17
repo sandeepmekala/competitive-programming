@@ -1,4 +1,3 @@
-
 public class L704_BinarySearch {
 
 	public static void main(String[] args) {

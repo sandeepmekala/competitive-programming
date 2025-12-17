@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class L485_MaxConsecutiveOnes {
 
 	public static void main(String[] args) {

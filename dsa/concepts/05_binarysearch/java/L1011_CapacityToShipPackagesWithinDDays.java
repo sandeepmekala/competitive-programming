@@ -1,4 +1,3 @@
-
 public class L1011_CapacityToShipPackagesWithinDDays {
 
     public static void main(String[] args) {

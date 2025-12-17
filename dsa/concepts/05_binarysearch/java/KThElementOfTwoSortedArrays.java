@@ -1,4 +1,3 @@
-
 public class KThElementOfTwoSortedArrays {
     public static void main(String args[]) {
         KThElementOfTwoSortedArrays obj = new KThElementOfTwoSortedArrays();

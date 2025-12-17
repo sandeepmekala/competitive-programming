@@ -1,4 +1,3 @@
-
 public class L605_CanPlaceFlowers {
 
 	public static void main(String[] args) {

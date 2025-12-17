@@ -1,5 +1,3 @@
-package concepts.models;
-
 public class Job {
 	public int start;
 	public int end;

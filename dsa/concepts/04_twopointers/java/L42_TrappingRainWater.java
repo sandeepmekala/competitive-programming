@@ -1,4 +1,3 @@
-
 public class L42_TrappingRainWater {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class MakeArrayElementsZero {
 
 	public static void main(String[] args) {

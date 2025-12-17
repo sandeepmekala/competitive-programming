@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class Bipartite_L1820_MaximumNumberOfAcceptedInvitations {

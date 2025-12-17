@@ -1,4 +1,3 @@
-
 public class L1482_MinimumNumberofDaystoMakemBouquets {
     public static void main(String[] args) {
         L1482_MinimumNumberofDaystoMakemBouquets obj = new L1482_MinimumNumberofDaystoMakemBouquets();

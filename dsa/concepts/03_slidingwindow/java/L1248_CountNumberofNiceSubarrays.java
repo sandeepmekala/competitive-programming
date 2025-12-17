@@ -1,4 +1,3 @@
-
 public class L1248_CountNumberofNiceSubarrays {
 
     public static void main(String[] args) {

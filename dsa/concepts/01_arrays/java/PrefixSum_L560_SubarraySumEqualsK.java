@@ -1,5 +1,3 @@
-package li01_array.java;
-
 import java.util.HashMap;
 
 public class PrefixSum_L560_SubarraySumEqualsK {

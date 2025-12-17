@@ -1,4 +1,3 @@
-
 public class L774_MinimizeMaxDistancetoGasStation {
 
     public static void main(String[] args) {

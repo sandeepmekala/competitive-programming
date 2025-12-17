@@ -1,4 +1,3 @@
-
 public class L326_PowerOfThree {
 
 	public static void main(String[] args) {

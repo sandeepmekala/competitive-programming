@@ -1,4 +1,3 @@
-
 public class L162_FindPeakElement {
 
     public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package concepts.models;
-
 public class HuffmanNode implements Comparable<HuffmanNode> {
 
 	public int freq;

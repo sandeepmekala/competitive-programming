@@ -1,4 +1,3 @@
-
 public class Grid_MultiStartNEnd_L931_MinimumFallingPathSum {
     public static void main(String[] args) {
         Grid_MultiStartNEnd_L931_MinimumFallingPathSum obj = new Grid_MultiStartNEnd_L931_MinimumFallingPathSum();

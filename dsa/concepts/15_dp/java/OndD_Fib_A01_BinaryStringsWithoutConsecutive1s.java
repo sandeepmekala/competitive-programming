@@ -1,4 +1,3 @@
-
 public class OndD_Fib_A01_BinaryStringsWithoutConsecutive1s {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L135_Candy {
 
     public static void main(String[] args) {

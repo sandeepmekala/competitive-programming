@@ -1,4 +1,3 @@
-
 public class L171_ExcelSheetColumnNumber {
 
 	public static void main(String[] args) {

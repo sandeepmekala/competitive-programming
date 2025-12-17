@@ -1,4 +1,3 @@
-
 public class L1901_FindaPeakElementII {
 
         public static void main(String[] args) {

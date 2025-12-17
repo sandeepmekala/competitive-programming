@@ -1,4 +1,3 @@
-
 public class Partitions_EvaluateBooleanExpressionToTrue {
     public static void main(String[] args) {
         Partitions_EvaluateBooleanExpressionToTrue obj = new Partitions_EvaluateBooleanExpressionToTrue();

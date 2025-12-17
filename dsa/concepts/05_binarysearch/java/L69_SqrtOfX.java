@@ -1,4 +1,3 @@
-
 public class L69_SqrtOfX {
 
 	public static void main(String[] args) {

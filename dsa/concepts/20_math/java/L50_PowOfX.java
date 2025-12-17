@@ -1,4 +1,3 @@
-
 public class L50_PowOfX {
 
 	public static void main(String[] args) {

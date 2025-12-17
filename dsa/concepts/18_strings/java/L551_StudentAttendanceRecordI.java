@@ -1,4 +1,3 @@
-
 public class L551_StudentAttendanceRecordI {
 
 	public static void main(String[] args) {

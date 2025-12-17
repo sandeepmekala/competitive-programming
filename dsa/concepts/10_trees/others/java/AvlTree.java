@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.AvlNode;
 
 public class AvlTree {

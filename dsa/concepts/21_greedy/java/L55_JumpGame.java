@@ -1,4 +1,3 @@
-
 public class L55_JumpGame {
 
 	public static void main(String[] args) {

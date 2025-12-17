@@ -1,4 +1,3 @@
-
 public class L137_SingleNumberII {
 	public static void main(String[] args) {
 		L137_SingleNumberII obj = new L137_SingleNumberII();

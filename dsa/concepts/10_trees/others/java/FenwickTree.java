@@ -1,4 +1,3 @@
-
 public class FenwickTree {
     public static void main(String[] args) {
         FenwickTree obj = new FenwickTree(5);

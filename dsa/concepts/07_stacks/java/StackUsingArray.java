@@ -1,4 +1,3 @@
-
 public class StackUsingArray {
 
 	private int max_size = 101;

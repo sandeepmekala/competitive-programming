@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class L152_MaximumProductOfSubArray {
 
 	public static void main(String[] args) {

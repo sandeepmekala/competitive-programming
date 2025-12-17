@@ -1,4 +1,3 @@
-
 public class Rectangles_L221_MatrixMaximalSquare {
 
 	public static void main(String[] args) {

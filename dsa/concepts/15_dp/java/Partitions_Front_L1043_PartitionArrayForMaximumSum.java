@@ -1,4 +1,3 @@
-
 public class Partitions_Front_L1043_PartitionArrayForMaximumSum {
     public static void main(String[] args) {
         Partitions_Front_L1043_PartitionArrayForMaximumSum obj = new Partitions_Front_L1043_PartitionArrayForMaximumSum();

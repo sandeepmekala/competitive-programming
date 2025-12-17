@@ -1,4 +1,3 @@
-
 public class Partitions_L887_SuperEggDrop {
 	// Problem: https://leetcode.com/problems/super-egg-drop/
 	public int superEggDrop(int eggs, int floors){

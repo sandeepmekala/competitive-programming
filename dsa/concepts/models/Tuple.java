@@ -1,5 +1,3 @@
-package concepts.models;
-
 class Tuple{
     public TreeNode node;
     public int row;

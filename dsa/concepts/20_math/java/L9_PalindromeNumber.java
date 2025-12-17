@@ -1,4 +1,3 @@
-
 public class L9_PalindromeNumber {
 
 	public static void main(String[] args) {

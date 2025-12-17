@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class L665_NonDecreasingArray {
 
     public static void main(String[] args) {

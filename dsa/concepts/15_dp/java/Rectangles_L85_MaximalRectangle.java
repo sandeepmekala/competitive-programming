@@ -1,4 +1,3 @@
-
 import java.util.Stack;
 
 public class Rectangles_L85_MaximalRectangle {

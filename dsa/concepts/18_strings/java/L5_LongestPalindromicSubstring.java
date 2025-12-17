@@ -1,4 +1,3 @@
-
 public class L5_LongestPalindromicSubstring {
 
 	public static void main(String[] args) {

@@ -1,5 +1,4 @@
 
-
 public class Subsequence_L322_CoinsChange {
 
 	public static void main(String[] args) {

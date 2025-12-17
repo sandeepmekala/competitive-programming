@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.TreeNode;
 
 public class Bt_L100_SameTree {

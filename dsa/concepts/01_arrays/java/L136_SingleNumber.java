@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class L136_SingleNumber {
 
 	public static void main(String[] args) {

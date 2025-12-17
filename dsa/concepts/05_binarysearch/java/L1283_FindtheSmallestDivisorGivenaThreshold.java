@@ -1,4 +1,3 @@
-
 public class L1283_FindtheSmallestDivisorGivenaThreshold {
     public static void main(String[] args) {
         L1283_FindtheSmallestDivisorGivenaThreshold obj = new L1283_FindtheSmallestDivisorGivenaThreshold();

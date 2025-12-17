@@ -1,4 +1,3 @@
-
 public class Strings_L72_EditDistance {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class Strings_Lcs_LongestCommonSubstring {
 
 	public static void main(String[] args) {

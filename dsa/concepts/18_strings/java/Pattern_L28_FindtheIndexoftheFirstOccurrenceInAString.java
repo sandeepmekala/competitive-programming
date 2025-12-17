@@ -1,4 +1,3 @@
-
 public class Pattern_L28_FindtheIndexoftheFirstOccurrenceInAString {
 
 	public static void main(String[] args) {

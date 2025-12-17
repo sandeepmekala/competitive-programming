@@ -1,4 +1,3 @@
-
 public class Partitions_A05_OptimalCostBinarySearchTree {
 
 	public static void main(String[] args) {

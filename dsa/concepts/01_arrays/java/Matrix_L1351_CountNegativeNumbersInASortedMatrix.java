@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class Matrix_L1351_CountNegativeNumbersInASortedMatrix {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L258_AddDigits {
 
 	public static void main(String[] args) {

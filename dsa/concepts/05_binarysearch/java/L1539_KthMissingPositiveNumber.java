@@ -1,4 +1,3 @@
-
 public class L1539_KthMissingPositiveNumber {
 
     public static void main(String[] args) {

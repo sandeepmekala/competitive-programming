@@ -1,5 +1,3 @@
-package concepts.models;
-
 public class Subset {
 	public int val;
 	public int parent;

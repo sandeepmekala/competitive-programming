@@ -1,4 +1,3 @@
-
 public class L43_MultiplyStrings {
 
 	public static void main(String[] args) {

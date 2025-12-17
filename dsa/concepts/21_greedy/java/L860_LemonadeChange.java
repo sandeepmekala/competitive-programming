@@ -1,4 +1,3 @@
-
 public class L860_LemonadeChange {
     public static void main(String[] args) {
         L860_LemonadeChange obj = new L860_LemonadeChange();

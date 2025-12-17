@@ -1,4 +1,3 @@
-
 public class Subsequence_L494_TargetSum {
     public static void main(String[] args) {
         Subsequence_L494_TargetSum obj = new Subsequence_L494_TargetSum();

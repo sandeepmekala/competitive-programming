@@ -1,4 +1,3 @@
-
 public class Partitions_L99_UniqueBinarySearchTrees {
 	public static void main(String[] orgs) {
 		Partitions_L99_UniqueBinarySearchTrees obj = new Partitions_L99_UniqueBinarySearchTrees();

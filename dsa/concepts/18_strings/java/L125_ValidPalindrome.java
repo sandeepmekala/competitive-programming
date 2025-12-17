@@ -1,4 +1,3 @@
-
 public class L125_ValidPalindrome {
 
     public static void main(String[] args) {

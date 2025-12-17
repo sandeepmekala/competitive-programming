@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class L268_MissingNumber {
 
 	public static void main(String[] args) {

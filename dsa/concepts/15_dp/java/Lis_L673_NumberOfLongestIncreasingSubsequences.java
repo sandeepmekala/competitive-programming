@@ -1,4 +1,3 @@
-
 import java.util.Arrays;
 
 public class Lis_L673_NumberOfLongestIncreasingSubsequences {

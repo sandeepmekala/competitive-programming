@@ -1,4 +1,3 @@
-
 public class Strings_Lcs_L1092_ShortestCommonSupersequence {
     public static void main(String[] args) {
         Strings_Lcs_L1092_ShortestCommonSupersequence obj = new Strings_Lcs_L1092_ShortestCommonSupersequence();

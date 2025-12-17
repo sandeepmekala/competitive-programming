@@ -1,4 +1,3 @@
-
 public class Strings_Lcs_L1312_MinimumInsertionStepsToMakeAStringPalindrome {
     public static void main(String[] args) {
         Strings_Lcs_L1312_MinimumInsertionStepsToMakeAStringPalindrome obj = new Strings_Lcs_L1312_MinimumInsertionStepsToMakeAStringPalindrome();

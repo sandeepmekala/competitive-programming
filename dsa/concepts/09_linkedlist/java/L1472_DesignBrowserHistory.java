@@ -1,4 +1,3 @@
-
 public class L1472_DesignBrowserHistory {
     public static void main(String[] args) {
         L1472_DesignBrowserHistory obj = new L1472_DesignBrowserHistory();

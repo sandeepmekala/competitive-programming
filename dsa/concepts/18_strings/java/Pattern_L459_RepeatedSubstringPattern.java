@@ -1,4 +1,3 @@
-
 public class Pattern_L459_RepeatedSubstringPattern {
 
 	public static void main(String[] args) {

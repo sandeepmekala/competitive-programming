@@ -1,4 +1,3 @@
-
 public class L26_RemoveDuplicatesFromSortedArray {
 
 	public static void main(String[] args) {

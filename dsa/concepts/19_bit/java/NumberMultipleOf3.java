@@ -1,4 +1,3 @@
-
 public class NumberMultipleOf3 {
 
 	public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L29_DivideTwoIntegers {
     public static void main(String[] args) {
         L29_DivideTwoIntegers obj = new L29_DivideTwoIntegers();

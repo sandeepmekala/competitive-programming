@@ -1,4 +1,3 @@
-
 public class L482_LicenseKeyFormatting {
 
 	public static void main(String[] args) {

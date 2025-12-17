@@ -1,4 +1,3 @@
-
 public class L477_TotalHammingDistance {
 
 	public static void main(String[] args) {

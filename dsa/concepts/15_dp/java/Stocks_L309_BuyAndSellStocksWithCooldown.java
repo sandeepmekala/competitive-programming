@@ -1,4 +1,3 @@
-
 public class Stocks_L309_BuyAndSellStocksWithCooldown {
 
 	public static void main(String[] args) {

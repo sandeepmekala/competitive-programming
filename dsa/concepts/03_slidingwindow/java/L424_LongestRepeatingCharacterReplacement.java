@@ -1,4 +1,3 @@
-
 public class L424_LongestRepeatingCharacterReplacement {
 
 	public static void main(String[] args) {

@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class Matrix_RotateMatrixByOneElement {
 
 	public static void main(String[] args) {

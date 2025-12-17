@@ -1,5 +1,3 @@
-package concepts.models;
-
 public class Edge implements Comparable<Edge>{
 	public int src;
 	public int dest;

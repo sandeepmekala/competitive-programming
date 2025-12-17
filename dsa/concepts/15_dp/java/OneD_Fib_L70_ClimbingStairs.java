@@ -1,4 +1,3 @@
-
 public class OneD_Fib_L70_ClimbingStairs {
 
 	public static void main(String[] args) {

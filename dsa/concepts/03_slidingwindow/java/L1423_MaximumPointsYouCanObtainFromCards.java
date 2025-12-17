@@ -1,4 +1,3 @@
-
 public class L1423_MaximumPointsYouCanObtainFromCards {
 
     public static void main(String[] args) {

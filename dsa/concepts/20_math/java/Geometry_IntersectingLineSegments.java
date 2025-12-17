@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.Point;
 
 class Geometry_IntersectingLineSegments {

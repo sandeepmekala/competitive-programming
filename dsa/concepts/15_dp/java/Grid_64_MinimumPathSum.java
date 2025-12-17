@@ -1,4 +1,3 @@
-
 public class Grid_64_MinimumPathSum {
 
 	public static void main(String[] args) {

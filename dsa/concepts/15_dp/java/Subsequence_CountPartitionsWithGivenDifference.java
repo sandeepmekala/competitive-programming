@@ -1,4 +1,3 @@
-
 public class Subsequence_CountPartitionsWithGivenDifference {
     public static void main(String[] args) {
         Subsequence_CountPartitionsWithGivenDifference obj = new Subsequence_CountPartitionsWithGivenDifference();

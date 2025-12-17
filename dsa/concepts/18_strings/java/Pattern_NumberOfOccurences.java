@@ -1,4 +1,3 @@
-
 public class Pattern_NumberOfOccurences {
 
 	public static void main(String[] args) {

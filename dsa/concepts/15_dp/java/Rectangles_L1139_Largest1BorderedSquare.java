@@ -1,4 +1,3 @@
-
 public class Rectangles_L1139_Largest1BorderedSquare {
 	public static void main(String[] args) {
 		Rectangles_L1139_Largest1BorderedSquare obj = new Rectangles_L1139_Largest1BorderedSquare();

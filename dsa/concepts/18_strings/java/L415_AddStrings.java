@@ -1,4 +1,3 @@
-
 public class L415_AddStrings {
 
 	public static void main(String[] args) {

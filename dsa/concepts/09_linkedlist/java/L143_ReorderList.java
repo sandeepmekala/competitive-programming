@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.ListNode;
 
 public class L143_ReorderList {

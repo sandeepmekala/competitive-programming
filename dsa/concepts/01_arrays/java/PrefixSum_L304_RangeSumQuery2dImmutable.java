@@ -1,5 +1,3 @@
-package li01_array.java;
-
 public class PrefixSum_L304_RangeSumQuery2dImmutable {
 
 	public static void main(String[] args) {

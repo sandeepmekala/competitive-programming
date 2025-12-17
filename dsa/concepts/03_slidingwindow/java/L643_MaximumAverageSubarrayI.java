@@ -1,4 +1,3 @@
-
 public class L643_MaximumAverageSubarrayI {
 
 	public static void main(String[] args) {

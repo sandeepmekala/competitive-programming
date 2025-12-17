@@ -1,4 +1,3 @@
-
 import com.algos.topics.models.Point;
 
 public class Geometry_GeometricUtil {

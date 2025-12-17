@@ -1,4 +1,3 @@
-
 public class L1004_MaxConsecutiveOnesIII {
 
         public static void main(String[] args) {

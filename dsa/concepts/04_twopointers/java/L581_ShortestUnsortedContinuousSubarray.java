@@ -1,4 +1,3 @@
-
 public class L581_ShortestUnsortedContinuousSubarray {
 
 	public static void main(String[] args) {

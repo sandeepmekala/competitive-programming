@@ -1,4 +1,3 @@
-
 public class L389_FindTheDifference {
 
 	public static void main(String[] args) {

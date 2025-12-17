@@ -1,4 +1,3 @@
-
 public class Partitions_A04_UniqueBinaryTreesGivenPreorder {
 
 	public static void main(String[] args) {

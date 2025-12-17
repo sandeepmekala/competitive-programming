@@ -1,4 +1,3 @@
-
 public class L374_GuessNumberHigherOrLower {
 
 	public static void main(String[] args) {

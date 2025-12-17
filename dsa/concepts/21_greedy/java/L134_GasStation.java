@@ -1,4 +1,3 @@
-
 public class L134_GasStation {
 
 	public static void main(String[] args) {

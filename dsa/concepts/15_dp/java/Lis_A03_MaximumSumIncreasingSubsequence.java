@@ -1,4 +1,3 @@
-
 public class Lis_A03_MaximumSumIncreasingSubsequence {
 
 	public static void main(String[] args) {

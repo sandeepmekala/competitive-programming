@@ -1,4 +1,3 @@
-
 public class L997_FindTheTownJudge {
 
 	public static void main(String[] args) {

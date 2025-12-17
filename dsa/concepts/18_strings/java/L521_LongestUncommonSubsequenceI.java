@@ -1,4 +1,3 @@
-
 public class L521_LongestUncommonSubsequenceI {
 
 	public static void main(String[] args) {

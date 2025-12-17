@@ -1,4 +1,3 @@
-
 public class L209_MinimumSizeSubarraySum {
 
 	public static void main(String[] args) {

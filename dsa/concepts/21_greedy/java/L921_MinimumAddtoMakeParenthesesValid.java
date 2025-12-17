@@ -1,4 +1,3 @@
-
 public class L921_MinimumAddtoMakeParenthesesValid {
 
     public static void main(String[] args) {

@@ -1,4 +1,3 @@
-
 public class L2220_MinimumBitFlipsToConvertNumber {
 
 	public static void main(String[] args) {

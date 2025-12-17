@@ -1,4 +1,3 @@
-
 public class L52_NQueensII {
 	public static void main(String args[]) {
 		L52_NQueensII nqueen = new L52_NQueensII();

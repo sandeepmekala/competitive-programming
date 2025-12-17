@@ -1,4 +1,3 @@
-
 public class OneD_Fib_L746_MinCostClimbingStairs {
 
 	public static void main(String[] args) {

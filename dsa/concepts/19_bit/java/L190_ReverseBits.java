@@ -1,4 +1,3 @@
-
 public class L190_ReverseBits {
 
 	public static void main(String[] args) {

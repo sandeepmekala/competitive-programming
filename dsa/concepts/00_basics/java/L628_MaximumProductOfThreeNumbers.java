@@ -1,5 +1,3 @@
-package basics.java;
-
 import java.util.Arrays;
 
 public class L628_MaximumProductOfThreeNumbers {

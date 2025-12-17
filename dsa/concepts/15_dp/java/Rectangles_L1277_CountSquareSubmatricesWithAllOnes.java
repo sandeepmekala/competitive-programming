@@ -1,4 +1,3 @@
-
 public class Rectangles_L1277_CountSquareSubmatricesWithAllOnes {
     public static void main(String[] args) {
         Rectangles_L1277_CountSquareSubmatricesWithAllOnes obj = new Rectangles_L1277_CountSquareSubmatricesWithAllOnes();

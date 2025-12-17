@@ -1,4 +1,3 @@
-
 public class L2387_MedianOfARowWiseSortedMatrix {
     public static void main(String[] args) {
         L2387_MedianOfARowWiseSortedMatrix obj = new L2387_MedianOfARowWiseSortedMatrix();

@@ -1,4 +1,3 @@
-
 public class L240_SearchA2DMatrixII {
 
 	public static void main(String[] args) {

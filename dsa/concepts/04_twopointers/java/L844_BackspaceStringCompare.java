@@ -1,4 +1,3 @@
-
 public class L844_BackspaceStringCompare {
 
 	public static void main(String[] args) {

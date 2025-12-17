@@ -1,4 +1,3 @@
-
 public class L875_KokoEatingBananas {
 
 	public static void main(String[] args) {

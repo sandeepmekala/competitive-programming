@@ -1,4 +1,3 @@
-
 public class L540_SingleElementInASortedArray {
 
 	public static void main(String[] args) {

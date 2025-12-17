@@ -1,4 +1,3 @@
-
 public class L925_LongPressedName {
 
 	public static void main(String[] args) {
