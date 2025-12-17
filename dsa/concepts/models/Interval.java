@@ -1,3 +1,4 @@
+package concepts.models;
 
 public class Interval {
 	public int start, end, pos;

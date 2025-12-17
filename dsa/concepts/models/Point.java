@@ -1,3 +1,4 @@
+package concepts.models;
 
 public class Point {
 	public int x, y;

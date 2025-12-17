@@ -1,3 +1,4 @@
+package concepts.models;
 
 public class Job {
 	public int start;

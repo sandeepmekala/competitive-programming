@@ -1,3 +1,4 @@
+package concepts.models;
 
 /**
  * Graph representation using adjacency matrix
