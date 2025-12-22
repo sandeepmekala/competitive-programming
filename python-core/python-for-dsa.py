@@ -1,19 +1,22 @@
 # Dynamic typing
+import heapq
+from collections import deque
+import math
 n = 0
-print('n =',n)
+print('n =', n)
 
 n = 'abc'
-print('n =',n)
+print('n =', n)
 
 # Multiple assignments
 n, m = 1, 2
-print('n =',n)
-print('m =',m)  
+print('n =', n)
+print('m =', m)
 
 # Incrementing a variable
 n = n + 1
 n += 1
-print('n =',n)
+print('n =', n)
 
 # None is null(no value)
 n = 0
@@ -32,26 +35,26 @@ elif n == 0:
     n = 1
 else:
     n -= 1
-    
+
 # While loop are same
 n = 0
 while n < 5:
     print(n)
     n += 1
-    
+
 # For loop with range
 # i = 0 to 4
 for i in range(5):
-    print('i =',i)  
-    
+    print('i =', i)
+
 # i = 2 to 5
-for i in range(2,6):
+for i in range(2, 6):
     print(i)
-    
+
 # i = 5 to 2 (decrementing)
 for i in range(5, 1, -1):
     print(i)
-    
+
 # Division is float by default
 print(5/2)
 
@@ -70,21 +73,20 @@ print(5 % 2)
 print(-3 % 2)
 
 # Alternative way to get modulus
-import math
-print(math.fmod(-3,2))
+print(math.fmod(-3, 2))
 
 # More math functions
 print(math.ceil(2.3))
 print(math.floor(2.7))
 print(math.sqrt(16))
-print(math.pow(2,3))
+print(math.pow(2, 3))
 
 # Max / Min integer values
 float('inf')
 float('-inf')
 
 # Python number are infinite, so there's no overflow
-print(math.pow(2,1000))
+print(math.pow(2, 1000))
 
 # Array (list) declaration
 arr = [1, 2, 3]
@@ -95,7 +97,7 @@ arr.append(4)
 print(arr)
 
 arr.pop()
-print(arr)  
+print(arr)
 
 # O(n) to insert or remove from the middle
 arr.insert(1, 7)
@@ -119,7 +121,7 @@ print(arr[-2])
 print(arr[1:4])  # from index 1 to index 3
 
 # Unpacking
-a, b, c = [1,2,3]
+a, b, c = [1, 2, 3]
 print(a, b, c)
 
 # Loop through array
@@ -128,22 +130,22 @@ nums = [1, 2, 3, 4, 5]
 # Using index
 for i in range(len(nums)):
     print(nums[i])
-    
+
 # Without index
 for n in nums:
     print(n)
-    
+
 # With index and value
 for i, n in enumerate(nums):
     print(i, n)
-    
+
 # Looping through multiple arrays
 nums1 = [1, 3, 5]
 nums2 = [2, 4, 6]
 print(zip(nums1, nums2))
 for n1, n2 in zip(nums1, nums2):
     print(n1, n2)
-    
+
 # Reverse a list
 nums = [1, 2, 3]
 nums.reverse()
@@ -164,7 +166,7 @@ arr.sort(key=lambda x: len(x))
 print(arr)
 
 # List comprehensions
-squares = [i* i for i in range(5)]
+squares = [i * i for i in range(5)]
 print(squares)
 
 # 2D lists
@@ -193,7 +195,6 @@ s = " ".join(words)
 print(s)
 
 # Queue (double-ended queue)
-from collections import deque
 queue = deque()
 queue.append(1)
 queue.append(2)
@@ -208,7 +209,7 @@ print(queue)
 queue.pop()
 print(queue)
 
-# HashSet
+# Set
 hashset = set()
 hashset.add(1)
 hashset.add(2)
@@ -220,7 +221,7 @@ print(hashset)
 hashset.remove(1)
 print(hashset)
 
-print(2 in hashset) 
+print(2 in hashset)
 print(3 in hashset)
 
 # list to set
@@ -249,13 +250,13 @@ print('a' in hashmap)
 hashmap = {'x': 10, 'y': 20}
 for key in hashmap:
     print(key, hashmap[key])
-    
+
 for val in hashmap.values():
     print(val)
-    
+
 for key, val in hashmap.items():
     print(key, val)
-    
+
 # Dict comprehensions
 squares = {i: i * i for i in range(5)}
 print(squares)
@@ -280,14 +281,13 @@ print(hashmap)
 
 hashset = set()
 hashset.add((4, 5))
-print(hashset)  
+print(hashset)
 
 # Won't work
 # hashset.add([4,5])
 
 # Heaps
 # Arrays underneath
-import heapq
 minheap = []
 heapq.heappush(minheap, 3)
 heapq.heappush(minheap, 2)
@@ -300,7 +300,7 @@ print(minheap)
 while minheap:
     print(heapq.heappop(minheap))
 
-# No max heap in Python    
+# No max heap in Python
 # Max heap by created by mutating values by -1 on push and pop
 maxheap = []
 heapq.heappush(maxheap, -3)
@@ -310,7 +310,7 @@ print(maxheap)
 
 while maxheap:
     print(-heapq.heappop(maxheap))
-    
+
 # Build heap from existing array
 arr = [3, 1, 4, 2]
 heapq.heapify(arr)
@@ -318,44 +318,59 @@ print(arr)
 
 while arr:
     print(heapq.heappop(arr))
-    
+
 # Functions
+
+
 def add(a, b):
     return a + b
+
+
 print(add(2, 3))
 
 # Easily access outer variables
+
+
 def outer(a, b):
     c = "c"
-    
+
     def inner(c):
         return a + b + c
     return inner(c)
+
+
 print(outer("a", "b"))
 
 # Nonlocal variable
 # Can modify objects but not reassign unless declared nonlocal
+
+
 def double(nums, n):
     def helper():
         for i in range(len(nums)):
             nums[i] *= 2
-        
+
         nonlocal n
         n *= 2
-    helper()    
+    helper()
     print(nums, n)
+
+
 double([1, 2, 3], 5)
 
 # Class
+
+
 class Dog:
     species = 'Canis familiaris'  # class variable
-    
+
     def __init__(self, name, age):
         self.name = name  # instance variable
         self.age = age    # instance variable
-        
+
     def bark(self):
         return f"{self.name} says woof!"
-    
+
+
 dog1 = Dog("Buddy", 3)
 print(dog1.bark())
