@@ -1,41 +1,40 @@
-"""
-L31 - Next Permutation
+# L31 - Next Permutation
+#
+# Problem: https://leetcode.com/problems/next-permutation/
+# Idea:
+# 1. Find the rightmost index `i` such that nums[i] < nums[i + 1]
+# 2. Find the smallest element greater than nums[i] to its right
+# 3. Swap them
+# 4. Reverse the suffix starting at i + 1
+# 2, 1, 5, 4, 3 -> Everything after 5 is in decreasing order.
+# 543 is largest after 1. We can't get any number greater then that. So, we have to increase 1 to next possible num.
+#
+# Time: O(n)
+# Space: O(1)
 
-Problem: https://leetcode.com/problems/next-permutation/
-Idea: Find rightmost ascending pair, swap with next larger element, reverse suffix
-Time: O(n)
-Space: O(1)
-"""
 
 def next_permutation(nums):
-    # Find the rightmost character that is smaller than its next character
-    i = len(nums) - 2
+    n = len(nums)
+
+    i = n - 2
     while i >= 0 and nums[i] >= nums[i + 1]:
-        i -= 1
-    
-    if i >= 0:  # If such character exists
-        # Find the smallest character on right side of above character that is greater than above character
-        j = len(nums) - 1
+        i -= 1                  # finds 2 in 2,3,1
+
+    if i >= 0:
+        j = n - 1
         while nums[j] <= nums[i]:
-            j -= 1
-        
-        # Swap the found characters
-        nums[i], nums[j] = nums[j], nums[i]
-    
-    # Reverse the suffix starting at i+1
-    nums[i + 1:] = reversed(nums[i + 1:])
+            j -= 1              # finds 3 in 2,3,1, which is greater then 2.
+        nums[i], nums[j] = nums[j], nums[i]  # 2,3,1 -> 3,2,1
+
+    l, r = i+1, n-1
+    while (l < r):              # 3,2,1 -> 3,1,2
+        nums[l], nums[r] = nums[r], nums[l]
+        l += 1
+        r -= 1
 
 
+# -------------------- TEST --------------------
 if __name__ == "__main__":
-    test_cases = [
-        [1, 2, 3],
-        [3, 2, 1],
-        [1, 1, 5],
-        [1, 3, 2],
-        [2, 3, 1]
-    ]
-    
-    for nums in test_cases:
-        original = nums.copy()
-        next_permutation(nums)
-        print(f"{original} -> {nums}")
+    nums = [1, 3, 2]
+    next_permutation(nums)
+    print(nums)

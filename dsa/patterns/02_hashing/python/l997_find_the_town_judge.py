@@ -1,30 +1,35 @@
-"""
-L997 - Find the Town Judge
+# L997 - Find the Town Judge
+#
+# Problem: https://leetcode.com/problems/find-the-town-judge/
+#
+# Idea:
+# - Maintain two arrays:
+#   1. truster[i]: number of people person i trusts
+#   2. trusted[i]: number of people who trust person i
+# - Judge trusts nobody → truster[judge] == 0
+# - Everyone else trusts judge → trustee[judge] == n - 1
+#
+# Time: O(n + len(trust))
+# Space: O(n)
 
-Problem: https://leetcode.com/problems/find-the-town-judge/
-Idea: From the trust array maintain the count of each truster and trustee.
-Judge will have n-1 trustee's and 0 truster's.
-Time: O(n)
-Space: O(n)
-"""
 
 def find_judge(n, trust):
     truster = [0] * (n + 1)
-    trustee = [0] * (n + 1)
-    
-    for t in trust:
-        truster[t[0]] += 1
-        trustee[t[1]] += 1
-    
-    for i in range(1, n + 1):
-        if trustee[i] == n - 1 and truster[i] == 0:
-            return i
-    
+    trusted = [0] * (n + 1)
+
+    for a, b in trust:
+        truster[a] += 1
+        trusted[b] += 1
+
+    for person in range(1, n + 1):
+        if truster[person] == 0 and trusted[person] == n - 1:
+            return person
+
     return -1
 
 
+# -------------------- TEST --------------------
 if __name__ == "__main__":
     n = 3
     trust = [[1, 3], [2, 3]]
-    print(f"Input: n = {n}, trust = {trust}")
-    print(f"Town judge: {find_judge(n, trust)}")
+    print(find_judge(n, trust))  # Output: 3

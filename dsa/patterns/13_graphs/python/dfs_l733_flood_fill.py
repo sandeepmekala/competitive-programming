@@ -1,60 +1,41 @@
-"""
-Problem:
-https://leetcode.com/problems/flood-fill/
-
-Idea:
-- Perform DFS from the starting cell (sr, sc)
-- Store the original source color
-- Recursively move in 4 directions
-- If the current cell color matches the source color,
-  repaint it with the new color
-- Stop recursion when out of bounds or color doesn't match
-
-Time: O(m * n)
-Space: O(m * n)  (recursion stack)
-"""
+# Problem:
+# https://leetcode.com/problems/flood-fill/
+#
+# Idea:
+# - Perform DFS from the starting cell (sr, sc)
+# - Store the original source color
+# - Recursively move in 4 directions
+# - If the current cell color matches the source color,
+#   repaint it with the new color
+# - Stop recursion when out of bounds or color doesn't match
+#
+# Time: O(m * n)
+# Space: O(m * n)  (recursion stack)
 
 
 def flood_fill(image, sr, sc, color):
+    rows, cols = len(image), len(image[0])
     src_color = image[sr][sc]
 
     # If source color and new color are same, no change needed
     if src_color == color:
         return image
 
-    dfs(image, sr, sc, src_color, color)
+    # DFS to repaint connected pixels
+    def dfs(r, c):
+        # Check if cell is inside grid and matches source color
+        if not (0 <= r < rows and 0 <= c < cols):
+            return
+        if image[r][c] != src_color:
+            return
+
+        image[r][c] = color
+
+        for dr, dc in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            dfs(r + dr, c + dc)
+
+    dfs(sr, sc)
     return image
-
-
-"""
-DFS to repaint connected pixels
-"""
-
-
-def dfs(image, i, j, src_color, new_color):
-    if not is_safe(image, i, j, src_color):
-        return
-
-    image[i][j] = new_color
-
-    dfs(image, i + 1, j, src_color, new_color)
-    dfs(image, i - 1, j, src_color, new_color)
-    dfs(image, i, j + 1, src_color, new_color)
-    dfs(image, i, j - 1, src_color, new_color)
-
-
-"""
-Check if cell is inside grid and matches source color
-"""
-
-
-def is_safe(image, i, j, src_color):
-    m, n = len(image), len(image[0])
-    return (
-        0 <= i < m and
-        0 <= j < n and
-        image[i][j] == src_color
-    )
 
 
 # -------------------- TEST --------------------

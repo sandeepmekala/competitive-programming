@@ -59,7 +59,7 @@ print("--------------------------------Operators")
 print(2 * 3)
 print(10 / 2)   # 5.0 not 5
 
-print(2 ** 3)
+print(2 ** 3) # 8
 print(2 ** 3.)  # 8.0
 
 
