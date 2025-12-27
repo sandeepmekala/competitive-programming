@@ -6,7 +6,7 @@ Time: O(n)
 Space: O(1)
 """
 
-def two_sum(numbers, target):
+def two_sum(nums, target):
     """
     Find two numbers in a sorted array that add up to target.
     
@@ -17,16 +17,16 @@ def two_sum(numbers, target):
     Returns:
         List[int] - 1-indexed positions of the two numbers
     """
-    i, j = 0, len(numbers) - 1
+    l, r = 0, len(nums) - 1
     
-    while i < j:
-        current_sum = numbers[i] + numbers[j]
+    while l < r:
+        current_sum = nums[l] + nums[r]
         if current_sum == target:
-            return [i + 1, j + 1]  # 1-indexed
+            return [l + 1, r + 1]  # 1-indexed
         elif current_sum > target:
-            j -= 1
+            r -= 1
         else:
-            i += 1
+            l += 1
     
     return []
 
