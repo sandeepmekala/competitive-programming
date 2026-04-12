@@ -38,17 +38,17 @@ def max_sub_array_len(nums, k):
 def max_sub_array_len_two_pointers(nums, k):
 
     left = 0
-    running_sum = 0
+    curr_sum = 0
     max_len = 0
 
     for right, num in enumerate(nums):
-        running_sum += num
+        curr_sum += num
 
-        while running_sum > k:
-            running_sum -= nums[left]
+        while curr_sum > k:
+            curr_sum -= nums[left]
             left += 1
 
-        if running_sum == k:
+        if curr_sum == k:
             max_len = max(max_len, right - left + 1)
 
     return max_len

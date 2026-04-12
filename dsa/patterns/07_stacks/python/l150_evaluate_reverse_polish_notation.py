@@ -1,19 +1,18 @@
-"""
-Problem: https://leetcode.com/problems/evaluate-reverse-polish-notation/
-Idea:
-Evaluate the expression from left to right.
-Push numbers onto a stack.
-When an operator is found, pop two operands, apply the operator,
-and push the result back to the stack.
+# Problem: https://leetcode.com/problems/evaluate-reverse-polish-notation/
+#
+# Idea:
+# Evaluate the expression from left to right.
+# Push numbers onto a stack.
+# When an operator is found, pop two operands, apply the operator,
+# and push the result back to the stack.
+#
+# EvaluatePrefix is similar, except traversal is from right to left.
+# For EvaluatePrefix, operand order changes:
+# first popped value is op1, second popped value is op2.
 
-EvaluatePrefix is similar, except traversal is from right to left.
-For EvaluatePrefix, operand order changes:
-first popped value is op1, second popped value is op2.
-"""
-
-def eval_rpn(tokens):
+def eval_rpn(tokens: list[str]) -> int:
     operators = {"+", "-", "*", "/"}
-    stack = []
+    stack: list[int] = []
 
     for token in tokens:
         if token not in operators:
@@ -35,6 +34,6 @@ def eval_rpn(tokens):
     return stack.pop()
 
 
-# Example usage
+# Driver code
 if __name__ == "__main__":
     print(eval_rpn(["2", "1", "+", "3", "*"]))  # 9

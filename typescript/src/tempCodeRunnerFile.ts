@@ -1,0 +1,1 @@
+// This will cause an error since occupation is not defined in the Person interface

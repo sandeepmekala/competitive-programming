@@ -1,52 +1,54 @@
-"""
-LeetCode 34 - Find First and Last Position of Element in Sorted Array
+# LeetCode 34 - Find First and Last Position of Element in Sorted Array
+#
+# Idea:
+# Use lower bound and upper bound via binary search.
+# Lower bound: smallest ind such that nums[ind] >= x
+# Upper bound: smallest ind such that nums[ind] > x
 
-Idea:
-Use lower bound and upper bound via binary search.
+# Time Complexity: O(log n)
+# Space Complexity: O(1)
 
-Time Complexity: O(log n)
-Space Complexity: O(1)
-"""
+def lower_bound(nums: list[int], target: int) -> int:
+    left, right = 0, len(nums) - 1
+    ans = len(nums)
 
-def lower_bound(nums, target):
-    low, high = 0, len(nums) - 1
-    res = len(nums)
+    while left <= right:
+        mid = left + (right - left) // 2
 
-    while low <= high:
-        mid = (low + high) // 2
         if nums[mid] >= target:
-            res = mid
-            high = mid - 1
+            ans = mid
+            right = mid - 1
         else:
-            low = mid + 1
+            left = mid + 1
 
-    return res
+    return ans
 
 
-def upper_bound(nums, target):
-    low, high = 0, len(nums) - 1
-    res = len(nums)
+def upper_bound(nums: list[int], target: int) -> int:
+    left, right = 0, len(nums) - 1
+    ans = len(nums)
 
-    while low <= high:
-        mid = (low + high) // 2
+    while left <= right:
+        mid = left + (right - left) // 2
+
         if nums[mid] > target:
-            res = mid
-            high = mid - 1
+            ans = mid
+            right = mid - 1
         else:
-            low = mid + 1
+            left = mid + 1
 
-    return res
+    return ans
 
 
-def search_range(nums, target):
+def search_range(nums: list[int], target: int) -> list[int]:
     n = len(nums)
 
-    lb = lower_bound(nums, target)
-    if lb == n or nums[lb] != target:
+    left = lower_bound(nums, target)
+    if left == n or nums[left] != target:
         return [-1, -1]
 
-    ub = upper_bound(nums, target)
-    return [lb, ub - 1]
+    right = upper_bound(nums, target) - 1
+    return [left, right]
 
 
 # Driver code

@@ -1,47 +1,48 @@
-"""
-Problem: https://www.geeksforgeeks.org/counting-inversions/?ref=lbp
-Idea:
-Use merge sort.
-While merging two sorted halves, if an element from the right half
-is smaller than an element from the left half, then all remaining
-elements in the left half form an inversion with this element.
-"""
+# Problem: https://www.geeksforgeeks.org/counting-inversions/?ref=lbp
+#
+# Idea:
+# Use merge sort.
+# While merging two sorted halves, if an element from the right half
+# is smaller than an element from the left half, then all remaining
+# elements in the left half form an inversion with this element.
 
-def count_inversions(nums):
-    def merge_sort(left, right):
+def count_inversions(nums: list[int]) -> int:
+    def merge_sort(left: int, right: int) -> int:
         if left >= right:
             return 0
 
         mid = (left + right) // 2
-        count = merge_sort(left, mid)
-        count += merge_sort(mid + 1, right)
-        count += merge(left, mid, right)
-        return count
+        inversions = merge_sort(left, mid)
+        inversions += merge_sort(mid + 1, right)
+        inversions += merge(left, mid, right)
 
-    def merge(left, mid, right):
+        return inversions
+
+    def merge(left: int, mid: int, right: int) -> int:
         inversions = 0
-        temp = []
+        merged = []
+
         i, j = left, mid + 1
 
         while i <= mid and j <= right:
             if nums[i] <= nums[j]:
-                temp.append(nums[i])
+                merged.append(nums[i])
                 i += 1
             else:
-                temp.append(nums[j])
-                inversions += (mid - i + 1)  # all remaining left elements
+                merged.append(nums[j])
+                inversions += (mid - i + 1)  # all remaining left subarray
                 j += 1
 
-        temp.extend(nums[i:mid + 1])
-        temp.extend(nums[j:right + 1])
+        merged.extend(nums[i:mid + 1])
+        merged.extend(nums[j:right + 1])
 
-        nums[left:right + 1] = temp
+        nums[left:right + 1] = merged
         return inversions
 
     return merge_sort(0, len(nums) - 1)
 
 
-# Example usage
+# Driver code
 if __name__ == "__main__":
     arr = [5, 3, 2, 4, 1]
     print(count_inversions(arr))  # 8

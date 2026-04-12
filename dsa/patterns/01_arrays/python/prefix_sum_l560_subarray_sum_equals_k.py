@@ -9,6 +9,8 @@
 #
 # Time: O(n)
 # Space: O(n)
+# Approach 2: can be solved with 2 pointers also with less space.
+# But that doesn't work for negative nums and 0's.
 
 
 def subarray_sum(nums, k):

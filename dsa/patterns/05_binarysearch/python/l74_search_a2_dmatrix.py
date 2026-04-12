@@ -1,35 +1,30 @@
-"""
-LeetCode 74 - Search a 2D Matrix
+# LeetCode 74 - Search a 2D Matrix
+#
+# Idea:
+# Treat the 2D matrix as a sorted 1D array.
+# Apply binary search on indices [0, m*n - 1].
+#
+# Mapping:
+# row = mid // n
+# col = mid % n
+#
+# Time Complexity: O(log(m*n))
+# Space Complexity: O(1)
 
-Idea:
-Treat the 2D matrix as a sorted 1D array.
-Apply binary search on indices [0, m*n - 1].
+def search_matrix(matrix: list[list[int]], target: int) -> bool:
+    rows, cols = len(matrix), len(matrix[0])
+    left, right = 0, rows * cols - 1
 
-Mapping:
-row = mid // n
-col = mid % n
-
-Time Complexity: O(log(m*n))
-Space Complexity: O(1)
-"""
-
-def search_matrix(matrix, target):
-    if not matrix or not matrix[0]:
-        return False
-
-    m, n = len(matrix), len(matrix[0])
-    low, high = 0, m * n - 1
-
-    while low <= high:
-        mid = (low + high) // 2
-        row, col = mid // n, mid % n
+    while left <= right:
+        mid = (left + right) // 2
+        row, col = divmod(mid, cols)
 
         if matrix[row][col] == target:
             return True
-        elif matrix[row][col] < target:
-            low = mid + 1
+        if matrix[row][col] < target:
+            left = mid + 1
         else:
-            high = mid - 1
+            right = mid - 1
 
     return False
 

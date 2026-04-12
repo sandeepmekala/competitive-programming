@@ -1,41 +1,39 @@
-"""
-LeetCode 875 - Koko Eating Bananas
-
-Idea:
-Binary search on eating speed k.
-- Minimum speed = 1
-- Maximum speed = max(piles)
-
-For a given speed k, compute total hours required.
-If hours <= h, try smaller k.
-Else, increase k.
-
-Time Complexity: O(n log max(piles))
-Space Complexity: O(1)
-"""
+# LeetCode 875 - Koko Eating Bananas
+#
+# Idea:
+# Binary search on eating speed k.
+# - Minimum speed = 1
+# - Maximum speed = max(piles)
+#
+# For a given speed k, compute total hours required.
+# If hours <= h, try smaller k.
+# Else, increase k.
+#
+# Time Complexity: O(n log max(piles))
+# Space Complexity: O(1)
 
 import math
 
 
-def hours_required(piles, speed):
+def hours_required(piles: list[int], speed: int) -> int:
     hours = 0
     for pile in piles:
         hours += math.ceil(pile / speed)
     return hours
 
 
-def min_eating_speed(piles, h):
-    low, high = 1, max(piles)
-    ans = high
+def min_eating_speed(piles: list[int], h: int) -> int:
+    left, right = 1, max(piles)
+    ans = right
 
-    while low <= high:
-        mid = (low + high) // 2
+    while left <= right:
+        mid = (left + right) // 2
 
         if hours_required(piles, mid) <= h:
             ans = mid
-            high = mid - 1   # try slower speed
+            right = mid - 1   # try slower speed
         else:
-            low = mid + 1    # need faster speed
+            left = mid + 1    # need faster speed
 
     return ans
 
