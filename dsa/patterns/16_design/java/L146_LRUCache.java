@@ -61,12 +61,12 @@ public class L146_LRUCache {
 	}
 
 	class Node {
-		Node prev, next;
 		int key, value;
+		Node prev, next;
 
-		Node(int _key, int _value) {
-			key = _key;
-			value = _value;
+		Node(int key, int value) {
+			this.key = key;
+			this.value = value;
 		}
 	}
 }

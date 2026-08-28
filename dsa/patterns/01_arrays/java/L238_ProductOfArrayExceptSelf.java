@@ -8,14 +8,14 @@ public class L238_ProductOfArrayExceptSelf {
 	}
 
     // Problem: https://leetcode.com/problems/product-of-array-except-self/
-    // Idea: Track prefix and suffix products. Result is prefix prod*suffix prod.
+    // Idea: Track prefix and suffix products. Result is prefix_prod*suffix_prod
 	public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
         int[] result = new int[n];
         int prefixProd = 1;
         int suffixProd = 1;
         for(int i=0; i<n; i++){
-            result[i] = prefixProd;
+            result[i] = prefixProd; 
             prefixProd *= nums[i];
         }
 
