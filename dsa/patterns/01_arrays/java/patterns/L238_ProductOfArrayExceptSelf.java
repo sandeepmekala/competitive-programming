@@ -15,7 +15,7 @@ public class L238_ProductOfArrayExceptSelf {
         int prefixProd = 1;
         int suffixProd = 1;
         for(int i=0; i<n; i++){
-            result[i] = prefixProd; 
+            result[i] = prefixProd;
             prefixProd *= nums[i];
         }
 
